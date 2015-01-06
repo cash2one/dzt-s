@@ -19,7 +19,7 @@
         /*店铺管理content*/
         .channel{height: 64px;line-height: 64px;}
         .channel-title{font-size: 18px;font-weight: 400;display: inline;}
-        .channel .dzt-btn{margin: 0px 0 10px 20px;}
+        .channel .btn-addShop{margin: 0px 0 10px 20px;}
         #shop-list-table span[class^="shop-type-"]:before,#shop-list-table i[class^="ico-"]:before{font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
         
         #shop-list-table{}
@@ -155,7 +155,7 @@
                 <div class="channel row">
                     <div class="col-xs-12">
                         <h1 class="channel-title">监控店铺管理</h1>
-                        <button type="button" class="btn btn-primary">添加店铺</button>
+                        <button type="button" class="btn btn-primary btn-addShop" data-toggle="modal" data-target="#add-shop-dialog">添加店铺</button>
                         <span style="display:inline-block;line-height:32px;margin-left:10px;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;color:#777;">当前[专业版]：可监控3个店铺 已监控2个店铺</span>
                     </div>
                 </div>
@@ -179,7 +179,9 @@
                                     <td><span class="i-sales-volume">32123</span><i class="ico-down">2.5%</i></td>
                                     <td><span class="i-sales-amount">136.25万</span><i class="ico-up">3.5%</i></td>
                                     <td><span class="search-words">35</span><i class="ico-up">3.5%</i></td>
-                                    <td><i class="tip" data-toggle="tooltip" data-placement="left" title="该店5天后可修改"></i><button type="button" class="btn btn-primary">分析</button></td>
+                                    <td>
+                                        <i class="tip" data-toggle="tooltip" data-placement="left" title="该店5天后可修改"></i><button type="button" class="btn btn-primary">分析</button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><span class="shop-type-tm i-shop-name">几度家居旗舰店</span></td>
@@ -193,7 +195,7 @@
                                     <td><span class="i-sales-volume">32123</span><i class="ico-down">2.5%</i></td>
                                     <td><span class="i-sales-amount">136.25万</span><i class="ico-up">3.5%</i></td>
                                     <td><span class="search-words">35</span><i class="ico-up">3.5%</i></td>
-                                    <td><i class="tip delable" data-toggle="tooltip" data-placement="left" title="该店可修改"></i><button type="button" class="btn btn-primary">分析</button><a class="del-link" href="#myModal" data-toggle="modal" shop-id="123456">删除</a></td>
+                                    <td><i class="tip delable" data-toggle="tooltip" data-placement="left" title="该店可修改"></i><button type="button" class="btn btn-default">分析</button><a class="del-link" href="#del-warning-dialog" data-toggle="modal" shop-id="123456">删除</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -211,7 +213,24 @@
             </ul>
         </div>
      </div>
-     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal fade" id="add-shop-dialog" tabindex="-1" role="dialog" aria-labelledby="addShopLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="addShopLabel">添加店铺</h4>
+          </div>
+          <div class="modal-body">
+            添加店铺？
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary">添加监控</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="modal fade" id="del-warning-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
@@ -223,7 +242,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger">确认</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
           </div>
         </div>
       </div>
@@ -238,8 +257,8 @@
         $(".del-link").click(function(e){
             var shop_id = $(this).attr("shop-id");
             var shop_name = $(this).parents("tr").find(".i-shop-name").text();
-            $(".modal-content .modal-body").html("停止监控 <span class='text-danger'>" + shop_name + "<span>？");
-            $(".modal-content .btn-danger").attr("onclick","del_shop("+shop_id+")");
+            $("#del-warning-dialog .modal-body").html("停止监控 <span class='text-danger'>" + shop_name + "<span>？");
+            $("#del-warning-dialog .btn-danger").attr("onclick","del_shop("+shop_id+")");
         })
         $(function(){
             $("#shop-list-table .tip").tooltip();
