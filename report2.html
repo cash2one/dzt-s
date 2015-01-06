@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>店侦探</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        @font-face {font-family: 'iconfont';
+            src: url('fonts/iconfont.eot'); /* IE9*/
+            src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+            url('fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('fonts/iconfont.svg#uxiconfont') format('svg'); /* iOS 4.1- */
+        }
+        /*消除基本样式*/
+        body,dl,dt,dd,ul,ol,li,pre,form,fieldset,input,p,blockquote{margin:0;padding:0;font-weight:400;font-size:12px;}
+        ul,li{list-style:none;}
+        
+        a:visited,a:focus{text-decoration: none;}
+        a:focus{outline:none;-moz-outline:none;}
+        
+        /*常用类*/
+        .l{float: left;}
+        .r{float: right;}
+        .p0{padding: 0px;}
+
+        /*链接颜色*/
+        a,a:hover{color: #4184f3;}
+
+        html{height: 100%;}
+        body{height:100%;background: #fff;font-family: "微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;}
+        .ico-font{font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
+        /*头部样式*/
+       .header-wrapper{background: #fff;height: 56px;line-height: 56px;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);width: 100%;position: fixed;z-index: 2;/* border-bottom: 1px solid #eae9e9;*/}
+        .header-wrapper .logo-des{margin-left: 10px;}
+        .header-right-side li{float: right;}
+        .header-right-side a{font-size: 14px;}
+/*        .header-right-side .user a{display: inline-flex;}*/
+        .header-right-side .user{margin-left: 40px;}
+        .header-right-side .user .ico-font{-webkit-transition: color 0.2s ease-out 0s;-moz-transition: color 0.2s ease-out 0s;transition: color 0.2s ease-out 0s;}
+        .header-right-side .user a:hover{text-decoration: none;}
+        .header-right-side .user .account{color: #222;margin-right: 7px;}
+        .header-right-side .user .ico-font{font-size: 32px;color: #4184f3;vertical-align: -5px;}
+        .header-right-side .user a:hover .ico-font,.header-right-side .user a:focus .ico-font{color: #f35a4a;}
+/*        用户菜单*/
+        #user-menu{width: 120px;border-bottom: none;}
+        #user-menu .ico-font{font-size: 20px;color: #4184f3;margin-right: 10px;vertical-align:0px;}
+        #user-menu a{color: #777;font-size: 14px;display: block;padding-left: 10px;}
+        #user-menu a:hover{text-decoration: none;background-color: rgba(0,0,0,0.035);color: #222;}
+        #user-menu a:hover .ico-font{color: #f35a4a;}
+        #user-menu li{line-height: 40px;float: none;}
+        
+        .contain-body{width: 100%;height: 100%;}
+/*        左侧导航*/
+        .nav-side{padding-top: 56px;min-height: 100%;background-color: #fafafa;width: 216px;margin-right: -100%;position: relative;z-index: 1;}
+        .nav-side .ver-box{font-size: 18px;height: 56px;line-height: 56px;text-align: center;margin: 0 20px;border-bottom: 1px solid #ededed;}
+        .nav-side .help-box{margin: 20px 20px 0 20px;border-top: 1px solid #ededed;}
+        .nav-side .help-box ul{margin-top: 20px;}
+        .nav-side .help-box li{line-height: 30px;}
+        .nav-side .help-box li a{color: #777;}
+        .nav-side .help-box li a:hover{text-decoration: none;color: #222;}
+        .nav-side .help-box li.help-service a{margin-right: 20px}
+        .nav-side .help-box li.help-service a:hover .ico-font{color: #f35a4a;}
+        .nav-side .help-box .ico-font{font-size: 16px;margin-right: 4px;color: #4184f3;}
+        .nav-tree-box{padding-top: 13px;}
+        
+        .nav-tree a{text-decoration: none;display: block;padding-top: 3px;padding-bottom: 3px;padding-right: 20px;line-height: 25px;}
+        .nav-tree-box dl .checked,.nav-tree a:hover{background-color: rgba(0,0,0,0.035);color: #222;}
+        
+        .nav-tree-box>dl>dt{margin-top: 5px;}
+        
+        .nav-tree-box dl a{font-size: 15px;color: #222;font-weight: 700;padding-left: 20px;}
+        .nav-tree-box dl dl a{font-size: 14px;font-weight: normal;padding-left: 36px;}
+        .nav-tree-box dl dl dl a{font-size: 13px;font-weight: normal;padding-left: 52px;color: #777;}
+        
+        .nav-tree-box dl .unfold a:after,.nav-tree-box dl .fold a:after{float: right;font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
+        .nav-tree-box dl .unfold a:after{content: "\e613";}
+        .nav-tree-box dl .fold a:after{content: "\e612";}
+        
+        .nav-tree-box dl .checked{color: #4184f3;border-left:5px solid #4184f3;padding-left: 15px;}
+        .nav-tree-box dl dl .checked{padding-left: 31px;}
+        .nav-tree-box dl dl dl .checked{padding-left: 47px;}
+
+        .content{width: 100%;padding-top: 56px;}
+        .content-body{height: 300px;margin-left: 216px;}
+
+/*        loading-pie*/
+        #loading-pie .hold{width:100px; height:100px; background:#fff;position:absolute;display: inline-block;z-index:-1;border-radius: 100%;}
+        #loading-pie #hold1{clip:rect(0px,100px,100px,0px);}
+        #loading-pie #hold2{clip:rect(0px,100px,100px,50px);}
+        #loading-pie .pie{width:100px; height:100px;border-radius:100%;background-color: #4184f3;position:absolute;}
+        #loading-pie .pie-l{clip:rect(0px,50px,100px,0px);animation: pieround-l 2s infinite ease-out;-webkit-animation: pieround-l 2s infinite ease-out;-moz-animation:pieround-l 2s infinite ease-out;}
+        #loading-pie .pie-r{clip:rect(0px,100px,100px,50px);animation: pieround-r 2s infinite infinite ease-in;-webkit-animation: pieround-r 2s infinite ease-in;-moz-animation:pieround-r 2s infinite ease-in;}
+/*      animation: pieround-l 1s infinite ease-out;-webkit-animation: pieround-l 5s infinite ease-out;
+        animation: pieround-r 1s infinite infinite ease-in;-webkit-animation: pieround-r 5s infinite ease-in;
+        */
+        #loading-pie #pie-bg{width:90px; height:90px; margin:5px 0 0 5px; background-color:#fff; border-radius:100%; position:absolute; z-index:2;}
+/*        #loading-pie #pie-bg2{height:50px;width:100px;background-color:#fff;}*/
+/*
+        #loading-pie .pie-l {
+            -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+        }
+*/
+        @keyframes pieround-l{
+            0%,25%{transform:rotate(180deg);}
+            50%,75%{transform:rotate(360deg);}
+            100%{transform:rotate(540deg);}
+        }
+        @-webkit-keyframes pieround-l {
+          0%,25%{ -webkit-transform: rotate(180deg);}
+          50%,75%{ -webkit-transform: rotate(360deg);}
+          100%{-webkit-transform:rotate(540deg);}
+        }
+        @-moz-keyframes pieround-l {
+          0%,25%{transform: rotate(180deg);}
+          50%,75%{transform: rotate(360deg);}
+          100%{transform:rotate(540deg);}
+        }
+        @keyframes pieround-r{
+            0%{transform:rotate(180deg);}
+            25%,50%{transform:rotate(360deg);}
+            75%,100%{transform:rotate(540deg);}
+        }
+        
+        @-webkit-keyframes pieround-r {
+          0%{ -webkit-transform: rotate(180deg);}
+          25%,50%{-webkit-transform: rotate(360deg);}
+          75%,100%{-webkit-transform:rotate(540deg);}
+        }
+        @-moz-keyframes pieround-r {
+          0%{transform: rotate(180deg);}
+          25%,50%{transform: rotate(360deg);}
+          75%,100%{transform:rotate(540deg);}
+        }
+/*        交易分析content*/
+
+    </style>
+  </head>
+  <body>
+   <div class="container-fluid header-wrapper">
+       <div class="row">
+           <div class="col-xs-6 col-logo">
+               <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+               <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+           </div>
+           <div class="col-xs-6 header-right-side">
+               <ul class="clearfix">
+                  <li class="user">
+                      <a id="user-button" href="#"><span class="account">102700317@qq.com</span><span class="ico-font">&#xe604;</span></a>
+                  </li>
+                  <li class="pay-text"><a href="#">续费升级</a></li>
+               </ul>
+           </div>
+       </div>
+  </div>
+  <div class="contain-body clearfix">
+     <div class="nav-side l">
+         <div class="ver-box">专业版</div>
+         <div class="nav-tree-box">
+             <dl class="nav-tree">
+                 <dt class="nav-tree-node">
+                     <a href="#"><span>监控店铺</span></a>
+                 </dt>
+                 <dd>
+                     <dl>
+                         <dt>
+                             <a href="#">管理</a>
+                         </dt>
+                         <dd></dd>
+                     </dl>
+                 </dd>
+                 <dt class="nav-tree-node">
+                     <a href="#">整店分析</a>
+                 </dt>
+                 <dd>
+                     <dl>
+                         <dt>
+                             <div class="nav-tree-child">
+                                 <a href="#">交易分析</a>
+                             </div>
+                         </dt>
+                         <dd class="hide">
+                             <dl>
+                                 <dt><a href="#">概况报告</a></dt>
+                                 <dd></dd>
+                                 <dt><a href="#">深入分析</a></dt>
+                                 <dd></dd>
+                             </dl>
+                         </dd>
+                         <dt>
+                             <div class="nav-tree-child">
+                                 <a href="#">引流分析</a>
+                             </div>
+                         </dt>
+                         <dd class="hide">
+                             <dl>
+                                 <dt><a href="#">概况报告</a></dt>
+                                 <dd></dd>
+                                 <dt><a href="#">深入分析</a></dt>
+                                 <dd></dd>
+                             </dl>
+                         </dd>
+                         <dt>
+                             <div class="nav-tree-child">
+                                 <a href="#">营销分析</a>
+                             </div>
+                         </dt>
+                         <dd class="hide">
+                             <dl>
+                                 <dt><a href="#">概况报告</a></dt>
+                                 <dd></dd>
+                                 <dt><a href="#">深入分析</a></dt>
+                                 <dd></dd>
+                             </dl>
+                         </dd>
+                         <dt>
+                             <div class="nav-tree-child">
+                                 <a href="#">商品分析</a>
+                             </div>
+                         </dt>
+                         <dd class="hide">
+                             <dl>
+                                 <dt><a href="#">概况报告</a></dt>
+                                 <dd></dd>
+                                 <dt><a href="#">深入分析</a></dt>
+                                 <dd></dd>
+                             </dl>
+                         </dd>
+                     </dl>
+                 </dd>
+             </dl>
+         </div>
+         <div class="help-box">
+             <ul>
+                 <li class="help-service"><a href="#"><span class="ico-font">&#xe61a;</span>客服</a><a href="#"><span class="ico-font">&#xe618;</span>客服</a></li>
+             </ul>
+         </div>
+     </div>
+     <div class="content">
+        <div class="content-body">
+           <div id="loading-pie">
+              <div id="hold1" class="hold"><div class="pie pie-l"></div></div>
+              <div id="hold2" class="hold"><div class="pie pie-r"></div></div>
+              <div id="pie-bg"></div>
+              <div id="pie-bg2"></div>
+           </div>
+        </div> 
+     </div>
+     <div id="user-pop-html" class="hide">
+         <div id="user-menu" class="user-menu">
+            <ul>
+                <li><a href="#"><span class="ico-font">&#xe605;</span>用户设置</a></li>
+                <li><a href="#"><span class="ico-font">&#xe607;</span>客服帮助</a></li>
+                <li><a href="#"><span class="ico-font">&#xe615;</span>退出</a></li>
+            </ul>
+        </div>
+     </div>
+  </div>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".nav-tree-box dt").each(function(i){
+              if(!$(this).next("dd").is(":empty")){
+                $(this).hover(
+                    function(e){
+                        if($(this).next("dd").is(":visible")){
+                            $(this).addClass("fold");
+                        }else{
+                            $(this).addClass("unfold");
+                        }
+                    },function(e){
+                        $(this).removeClass("fold");
+                        $(this).removeClass("unfold");
+                    });
+                $(this).click(function(e){
+                    $(this).next("dd").toggleClass("hide");
+                    $(this).toggleClass("fold");
+                    $(this).toggleClass("unfold");
+                })
+              }else{
+                $(this).click(function(e){
+                    $(".nav-tree-box a").removeClass("checked");
+                    $(this).find("a").toggleClass("checked");
+                });
+              }
+            });
+            $("#user-button").popover({
+                trigger:'focus',
+                placement:'bottom',
+                html:true,
+                content:$("#user-pop-html").html()
+            });
+        })
+    </script>
+  </body>
+</html>

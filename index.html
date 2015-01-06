@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>店侦探</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        /*消除基本样式*/
+        body,dl,dt,dd,ul,ol,li,pre,form,fieldset,input,p,blockquote{margin:0;padding:0;font-weight:400;font-size:12px;}
+        ul,li{list-style:none;}
+        
+        /*常用类*/
+        .l{float: left;}
+        .r{float: right;}
+        .p0{padding: 0px;}
+        /*图标*/
+        .ico{background-image: url(images/sprites.png);}
+        .ico16{background-image: url(images/sprites.png);display: inline-block;width: 16px;height: 16px;}
+        .ico-user{background-position: 0 0px;}
+        .ico-setting{background-position: 0 -28px;}
+        .ico-out{background-position: 0 -56px;}
+        .ico-manage-shop{background-position: 0 -96px;}
+        .ico-shop-report{background-position: 0 -124px;}
+        /*链接颜色*/
+        .header-toolbar a,.nav-side a{color: #fff;}
+        
+        body{background: #f4f3de;}
+        
+        /*头部样式*/
+        .header-wrapper{background: #32323a;height: 50px;color: #FFFFFF;}
+        .header-wrapper .col-logo{line-height: 50px;}
+        .container{width: 1210px !important;}
+        .header-toolbar{background: #f35a4a;height: 40px;color: #fff;line-height: 40px;}
+        .header-toolbar ul{margin-bottom: 0;}
+        .header-toolbar li{float: left;margin: 0 15px;line-height: 40px;font-size: 14px;}
+        .header-toolbar .ico16{margin-right: 7px;height: 30px;}
+        /*左侧导航*/
+        .nav-side{background-color: #32323a;padding:0px;min-height: 900px;font-family: "微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;}
+/*        .nav-side ul{margin-top: 10px;}*/
+        .nav-side li{height: 60px;line-height: 60px;font-size: 14px;padding-left: 30px;}
+        .nav-side li .ico16{margin: 22px 7px 0 0;}
+        .nav-side li.checked,.nav-side li.hover{background-color: #49494e;}
+/*        右侧内容*/
+        .content{background-color: #fff;min-height: 900px;font-family: "微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;}
+        .nav-tab a{width: 20%;float: left;height: 57px;line-height: 57px;border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;background: #f3f3f3;text-align: center;font-size: 20px;}
+        .nav-tab a.checked{background: #fff;border-bottom: none;}
+        .nav-tab a{color: #979797;}
+        .nav-tab a:hover{text-decoration: none;color: #666;}
+        .nav-tab a.checked{color: #f35a4a;}
+        .nav-tab a.two-row{position: relative;line-height: 50px;}
+        .nav-tab a i{position: absolute;margin-top: -30px;margin-left: -39px;margin-left: 28px\0;/*兼容ie8*/color:#979797;font-size: 12px;font-style: normal;}
+        @media screen and (min-width:0\0) {.nav-tab a i{margin-left: 28px;}}/*兼容ie9 10 11*/
+        
+        .nav-shop{height: 57px;border-bottom: 1px solid #ccc; position: relative;}
+        .nav-shop .shop-name{width: 93%;font-size: 18px;line-height: 57px;text-align: center;color: #1987cf;}
+        .nav-shop .shop-name-list{border: 1px solid #ccc;margin-left: -1px; margin-top: -1px;border-top:1px dotted #eee;position:absolute;width: 100%;}
+        .nav-shop .shop-name-list li{font-size: 16px;line-height: 40px;padding-left: 20px;border-bottom:1px dotted #eee;}
+        .nav-shop .shop-name-list li:hover{background: #f9f9f9;cursor: pointer;}
+        .nav-shop .switch-button{height: 56px;width: 7%;background-color: #e6e6e6;background-position: 3px -140px;cursor:pointer;}
+        .nav-shop .switch-button:hover{background-color: #d6d6d6;}
+/*        底部*/
+        .bottom-container{margin: 30px auto;}
+        .bottom{height: 150px;background: #fff;}
+        
+    </style>
+  </head>
+  <body>
+   <div class="header-wrapper">
+      <div class="container">
+        <div class="row">
+            <div class="col-xs-3 col-logo">
+                <img src="images/logo.png" alt="">
+            </div>
+        </div>
+      </div> 
+   </div>
+   <div class="header-toolbar">
+       <div class="container">
+           <div class="row">
+               <div class="col-xs-12 clearfix">
+                   <ul class="clearfix r">
+                       <li>专业版</li>
+                       <li><span class="ico16 ico-user l"></span><a href="#">lizihang</a></li>
+                       <li><span class="ico16 ico-setting l"></span><a href="#">设置</a></li>
+                       <li><span class="ico16 ico-out l"></span><a href="#">退出</a></li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+   </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2 nav-side">
+                <ul class="dzt-nav">
+                    <li><span class="ico16 ico-manage-shop l"></span><a href="#" class="">监控店铺管理</a></li>
+                    <li class="checked"><span class="ico16 ico-shop-report l"></span><a href="#">店铺分析报告</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-10 content">
+                <div class="row">
+                    <div class="col-xs-8 p0">
+                        <div class="nav-tab clearfix">
+                            <a class="checked two-row" href="#">报告首页<br/><i>默认(昨日数据)</i></a>
+                            <a class="" href="#">交易分析</a>
+                            <a href="#">引流分析</a>
+                            <a href="#">营销分析</a>
+                            <a href="#">商品分析</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 p0">
+                        <div class="nav-shop">
+                            <div class="shop-name l">几度家具旗舰店</div>
+                            <div class="ico switch-button l"></div>
+                            <div class="clearfix"></div>
+                            <ul class="shop-name-list hide">
+                                <li>1. 几度家具旗舰店</li>
+                                <li>2. 几度家具旗舰店</li>
+                                <li>3. 几度家具旗舰店</li>
+                                <li>4. 几度家具旗舰店</li>
+                                <li>5. 几度家具旗舰店</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-container container">
+        <div class="row">
+            <div class="bottom col-xs-12">
+                
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="application/javascript">
+        $(function(){
+            $(".dzt-nav li").hover(
+                function(e){
+                    $(this).addClass("hover");
+                },
+                function(e){
+                    $(this).removeClass("hover");
+                });
+            $(".nav-shop .switch-button").click(function(e){
+                $(".nav-shop .shop-name-list").toggleClass("hide");
+            });
+        })
+    </script>
+  </body>
+</html>

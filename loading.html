@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>圆环</title>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <style>
+        /*        loading*/
+        #loading-point{margin: 0px auto;width: 150px;text-align: center;}
+        #loading-point div{
+            width: 6px;
+            height: 6px;
+            display: inline-block;
+            margin-right: 4px;
+            background-color: #f35a4a;
+            border-radius: 100%;
+            -webkit-animation: bouncedelay 1s infinite ease-out;
+            -moz-animation:bouncedelay 1s infinite ease-out;
+            -o-animation:bouncedelay 1s infinite ease-out; 
+            animation: bouncedelay 1s infinite ease-out;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;}
+        #loading-point .bounce1 {
+            -webkit-animation-delay: -0.4s;
+            animation-delay: -0.4s;
+        }
+        #loading-point .bounce2 {
+            -webkit-animation-delay: -0.2s;
+            animation-delay: -0.2s;
+        }
+        @keyframes bouncedelay {
+            0%, 50%, 100% {transform: scale(0.7);-webkit-transform: scale(0.7);opacity:0.5;} 
+            20% {transform: scale(1);-webkit-transform: scale(1);opacity:1;}
+        }
+        @-webkit-keyframes bouncedelay {
+          0%, 50%, 100% { -webkit-transform: scale(0.7);opacity:0.5;}
+          20% { -webkit-transform: scale(1);opacity:1;}
+        }
+        @-moz-keyframes bouncedelay{
+            0%, 50%, 100% {transform: scale(0.7);opacity:0.5;} 
+            20% {transform: scale(1);opacity:1;}
+        }
+        @-o-keyframes bouncedelay{
+            0%, 50%, 100% {transform: scale(0.7);opacity:0.5;} 
+            20% {transform: scale(1);opacity:1;}
+        }
+/*        圆环*/
+        .ui-spinner {
+            margin: 270px auto;
+            background-color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            position: relative;
+        }
+        .ui-spinner .side {
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            width: 50%;
+        }
+        .ui-spinner .side-left {
+            left: 0;
+        }
+        .ui-spinner .side-right {
+            left: 50%;
+        }
+        .ui-spinner .side .fill {
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+/*
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+*/
+            height: 100%;
+            width: 100%;
+            border-radius: 999px;
+            position: absolute;
+            background-color: #55fc5a;
+            opacity: 0.8;
+        }
+        .ui-spinner .side-left .fill {
+            left: 100%;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            -webkit-animation-name: ui-spinner-rotate-left;
+            animation-name: ui-spinner-rotate-left;
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+            -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+        }
+        .ui-spinner .side-right .fill {
+            left: -100%;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            -webkit-animation-name: ui-spinner-rotate-right;
+            animation-name: ui-spinner-rotate-right;
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+            -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+        }
+        @-webkit-keyframes ui-spinner-rotate-right {
+            0% {-webkit-transform: rotate(0deg);}
+            25%,50%{-webkit-transform: rotate(180deg);}
+            75%,100%{-webkit-transform: rotate(360deg);}
+        }
+        @keyframes ui-spinner-rotate-right {
+            0% {transform: rotate(0deg);}
+            25%,50%{transform: rotate(180deg);}
+            75%,100%{transform: rotate(360deg);}
+        }
+        @-webkit-keyframes ui-spinner-rotate-left {
+            0%,25%{-webkit-transform: rotate(0deg);}
+            50%,75%{-webkit-transform: rotate(180deg);}
+            100% {-webkit-transform: rotate(360deg);}
+        }
+        @keyframes ui-spinner-rotate-left {
+            0%,25%{transform: rotate(0deg);}
+            50%,75%{transform: rotate(180deg);}
+            100% {transform: rotate(360deg);}
+        }
+        .spinner-bg{background-color: #fff;width: 42px;height: 42px;border-radius: 50%;position: absolute;margin: 4px;}
+        
+    </style>
+</head>
+
+<body>
+    <div id="loading-point">
+       <div class="bounce1"></div>
+       <div class="bounce2"></div>
+       <div class="bounce3"></div>
+    </div>
+    <div class="ui-spinner">
+        <span class="side side-left">
+            <span class="fill"></span>
+        </span>
+        <span class="side side-right">
+            <span class="fill"></span>
+        </span>
+        <div class="spinner-bg"></div>
+    </div>
+</body>
+
+</html>

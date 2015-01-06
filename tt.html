@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<style>
+/*        loading-pie*/
+        #loading-pie .hold{width:100px; height:100px; background:#fff;position:absolute;display: inline-block;z-index:-1;border-radius: 100%;}
+        #loading-pie #hold1{clip:rect(0px,100px,100px,0px);}
+        #loading-pie #hold2{clip:rect(0px,100px,100px,50px);}
+        #loading-pie .pie{width:100px; height:100px;border-radius:100%;background-color: #4184f3;position:absolute;}
+        #loading-pie .pie-l{clip:rect(0px,50px,100px,0px);animation: pieround-l 2s infinite ease-out;-webkit-animation: pieround-l 2s infinite ease-out;-moz-animation:pieround-l 2s infinite ease-out;}
+        #loading-pie .pie-r{clip:rect(0px,100px,100px,50px);animation: pieround-r 2s infinite infinite ease-in;-webkit-animation: pieround-r 2s infinite ease-in;-moz-animation:pieround-r 2s infinite ease-in;}
+/*      animation: pieround-l 1s infinite ease-out;-webkit-animation: pieround-l 5s infinite ease-out;
+        animation: pieround-r 1s infinite infinite ease-in;-webkit-animation: pieround-r 5s infinite ease-in;
+        */
+        #loading-pie #pie-bg{width:90px; height:90px; margin:5px 0 0 5px; background-color:#fff; border-radius:100%; position:absolute; z-index:2;}
+/*        #loading-pie #pie-bg2{height:50px;width:100px;background-color:#fff;}*/
+/*
+        #loading-pie .pie-l {
+            -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+        }
+*/
+        @keyframes pieround-l{
+            0%,25%{transform:rotate(180deg);}
+            50%,75%{transform:rotate(360deg);}
+            100%{transform:rotate(540deg);}
+        }
+        @-webkit-keyframes pieround-l {
+          0%,25%{ -webkit-transform: rotate(180deg);}
+          50%,75%{ -webkit-transform: rotate(360deg);}
+          100%{transform:rotate(540deg);}
+        }
+        @-moz-keyframes pieround-l {
+          0%,25%{ -webkit-transform: rotate(180deg);}
+          50%,75%{ -webkit-transform: rotate(360deg);}
+          100%{transform:rotate(540deg);}
+        }
+        @keyframes pieround-r{
+            0%{transform:rotate(180deg);}
+            25%,50%{transform:rotate(360deg);}
+            75%,100%{transform:rotate(540deg);}
+        }
+        
+        @-webkit-keyframes pieround-r {
+          0%{ -webkit-transform: rotate(180deg);}
+          25%,50%{ -webkit-transform: rotate(360deg);}
+          75%,100%{transform:rotate(540deg);}
+        }
+        @-moz-keyframes pieround-r {
+          0%{ -webkit-transform: rotate(180deg);}
+          25%,50%{ -webkit-transform: rotate(360deg);}
+          75%,100%{transform:rotate(540deg);}
+        }
+</style>
+<style>
+    /*        loading三个小点CSS动画*/
+        #loading-point{margin: 0px auto;width: 150px;text-align: center;}
+        #loading-point div{
+            width: 6px;
+            height: 6px;
+            display: inline-block;
+            margin-right: 4px;
+            background-color: #f35a4a;
+            border-radius: 100%;
+            -webkit-animation: bouncedelay 1s infinite ease-out;
+            -moz-animation:bouncedelay 1s infinite ease-out;
+            -o-animation:bouncedelay 1s infinite ease-out; 
+            animation: bouncedelay 1s infinite ease-out;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;}
+        #loading-point .bounce1 {
+            -webkit-animation-delay: -0.4s;
+            animation-delay: -0.4s;
+        }
+        #loading-point .bounce2 {
+            -webkit-animation-delay: -0.2s;
+            animation-delay: -0.2s;
+        }
+        @keyframes bouncedelay {
+            0%, 50%, 100% {transform: scale(0.7);-webkit-transform: scale(0.7);opacity:0.5;} 
+            20% {transform: scale(1);-webkit-transform: scale(1);opacity:1;}
+        }
+        @-webkit-keyframes bouncedelay {
+          0%, 50%, 100% { -webkit-transform: scale(0.7);opacity:0.5;}
+          20% { -webkit-transform: scale(1);opacity:1;}
+        }
+        @-moz-keyframes bouncedelay{
+            0%, 50%, 100% {transform: scale(0.7);opacity:0.5;} 
+            20% {transform: scale(1);opacity:1;}
+        }
+        @-o-keyframes bouncedelay{
+            0%, 50%, 100% {transform: scale(0.7);opacity:0.5;} 
+            20% {transform: scale(1);opacity:1;}
+        }
+</style>
+<body>
+   <div id="loading-point">
+       <div class="bounce1"></div>
+       <div class="bounce2"></div>
+       <div class="bounce3"></div>
+   </div>
+   <div id="loading-pie">
+      <div id="hold1" class="hold"><div class="pie pie-l"></div></div>
+      <div id="hold2" class="hold"><div class="pie pie-r"></div></div>
+      <div id="pie-bg"></div>
+      <div id="pie-bg2"></div>
+   </div>
+</body>
+</html>
