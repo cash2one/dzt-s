@@ -96,6 +96,7 @@
         .content-body{margin-left: 216px;height: auto;}
 
 /*        content通用*/
+/*
         .dzt-btn{height: 30px;color: #fff;font-size: 13px;font-weight: 0;border-radius: 2px;padding:9px 14px;line-height: 80%;border: 1px solid #ccc;background-color: #fff;color: #222;white-space: nowrap;}
         .dzt-btn:focus,.dzt-btn:active{outline: 0 none;}
         .dzt-btn:active{box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.125) inset;}
@@ -105,6 +106,7 @@
         
         .dzt-btn-red{color:#fff;background-color: #f35a4a;border: 1px solid #d64637;}
         .dzt-btn-red:hover{background-color: #e54d3e;}
+*/
         /*店铺管理content*/
         .channel{height: 64px;line-height: 64px;}
         .channel-title{font-size: 18px;font-weight: 400;display: inline;}
@@ -311,9 +313,8 @@
             确认停止监控此店铺？
           </div>
           <div class="modal-footer">
-           <button type="button" class="btn btn-primary">确认</button>
-            <button type="button" class="dzt-btn dzt-btn-red">确认</button>
-            <button type="button" class="dzt-btn dzt-btn-blue" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-danger">确认</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
           </div>
         </div>
       </div>
@@ -329,7 +330,7 @@
             var shop_id = $(this).attr("shop-id");
             var shop_name = $(this).parents("tr").find(".i-shop-name").text();
             $(".modal-content .modal-body").html("停止监控 <span class='text-danger'>" + shop_name + "<span>？");
-            $(".modal-content .dzt-btn-red").attr("onclick","del_shop("+shop_id+")");
+            $(".modal-content .btn-danger").attr("onclick","del_shop("+shop_id+")");
         })
         $(function(){
             $("#shop-list-table .tip").tooltip();
