@@ -16,6 +16,18 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
+        input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+            color:    #222;
+        }
+        input:-moz-placeholder, textarea:-moz-placeholder {
+            color:    #222;
+        }
+        input::-moz-placeholder, textarea::-moz-placeholder {
+            color:    #666;
+        }
+        input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+            color:    #666;
+        }
         /*店铺管理content*/
         .channel{height: 64px;line-height: 64px;}
         .channel-title{font-size: 18px;font-weight: 400;display: inline;}
@@ -61,12 +73,9 @@
 
         #shop-list-table th.order-desc a::after,#shop-list-table th.headerSortUp a::after{content: "\e625";vertical-align: bottom;}
         #shop-list-table th.headerSortDown a::after{content: "\e624";vertical-align: bottom;}
-        #shop-list-table th.upAnimation a::after{content: "\e624";-webkit-transform:rotateZ(180deg);transform: rotateZ(180deg);-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
-        #shop-list-table th.downAnimation a::after{content: "\e625";-webkit-transform:rotateZ(-180deg);transform: rotateZ(-180deg);-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
-/*
-        #shop-list-table th.order-desc a:after{content: "\e625"; margin-left: 6px;display:inline-block;font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.1px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
-        #shop-list-table th.order-desc a:active::after{transform: rotate(-180deg);}
-*/
+        #shop-list-table th.upAnimation a::after{content: "\e624";-webkit-transform:rotateZ(180deg);-moz-transform:rotateZ(180deg);transform: rotateZ(180deg);-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
+        #shop-list-table th.downAnimation a::after{content: "\e625";-webkit-transform:rotateZ(-180deg);-moz-transform:rotateZ(-180deg);transform: rotateZ(-180deg);-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
+
 
         #add-shop-dialog .ico-font{font-size:24px;color:#4184f3; }
         #add-shop-dialog .alert{padding: 8px 15px;}-
@@ -179,7 +188,7 @@
                     <div class="col-xs-12">
                         <h1 class="channel-title">监控店铺管理</h1>
                         <button type="button" class="btn btn-primary btn-addShop" data-toggle="modal" data-target="#add-shop-dialog">添加店铺</button>
-                        <span class="version-tip">当前[专业版]：可监控3个店铺 已监控2个店铺</span>
+                        <span class="version-tip">[<strong class="text-info">专业版</strong>]：可监控<strong class="text-info">3</strong>个店铺，已监控<strong class="text-info">2</strong>个店铺</span>
                     </div>
                 </div>
                 <div class="row">
