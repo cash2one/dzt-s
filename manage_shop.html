@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>店侦探</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dzt.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        /*店铺管理content*/
+        .channel{height: 64px;line-height: 64px;}
+        .channel-title{font-size: 18px;font-weight: 400;display: inline;}
+        .channel .btn-addShop{margin: 0px 0 10px 20px;}
+        .channel .version-tip{color:#777;margin-left: 15px;}
+        #shop-list-table span[class^="shop-type-"]:before,#shop-list-table i[class^="ico-"]:before{font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
+
+        #shop-list-table{}
+        #shop-list-table th.shop-name{min-width: 220px;white-space: nowrap;}
+        #shop-list-table th.sales-volume,#shop-list-table th.sales-amount,#shop-list-table th.search-words{min-width: 150px;}
+        #shop-list-table th.op{min-width: 145px;}
+        #shop-list-table thead th{font-size: 12px;border-bottom: 2px solid #e7e7e7;font-weight: 100; color: #777777;-webkit-transition: color 0.2s ease-out 0s;-moz-transition: color 0.2s ease-out 0s;transition: color 0.2s ease-out 0s;cursor: pointer;}
+        #shop-list-table thead th:hover{color:#222;}
+        #shop-list-table tbody td{font-size: 14px;vertical-align:middle;padding:15px 9px;border-bottom: 1px solid #e7e7e7;color: #222;}
+        #shop-list-table .shop-type-tb:before{content: "\e60f";font-size: 18px;margin-right: 4px;color: #ff4e00;}
+        #shop-list-table .shop-type-tm:before{content: "\e61f";font-size: 18px;margin-right: 4px;color: #c40000;}
+
+        #shop-list-table .ico-down,#shop-list-table .ico-down:before{color: #5cae50;}
+        #shop-list-table .ico-up,#shop-list-table .ico-up:before{color: #f35a4a;}
+        #shop-list-table .ico-down:before{content: "\e622";}
+        #shop-list-table .ico-up:before{content: "\e623";}
+        #shop-list-table i[class^="ico-"]{margin-left: 5px;font-style: normal;font-size: 10px;}
+        #shop-list-table .tip{background-color: #ffce55;border: 1px solid #e8af22;border-radius: 50%; width: 8px;height: 8px; display: inline-block;margin:0 13px 0 0;position: relative;}
+        #shop-list-table .tip:hover{cursor: pointer;}
+        #shop-list-table .delable{background-color: #4184f3;border: 1px solid #3778e3;}
+        #shop-list-table .tooltip.in{margin-top: -4px;}
+        #shop-list-table .tooltip-arrow{border-left-color: #ffce55;}
+        #shop-list-table .tooltip-inner{background-color: #ffce55;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;padding:4px 8px 5px}
+        #shop-list-table .delable+.tooltip .tooltip-arrow{border-left-color: #4184f3;}
+        #shop-list-table .delable+.tooltip .tooltip-inner{background-color: #4184f3;}
+        #shop-list-table .del-link{font: 12px/1.5 tahoma, arial, \5b8b\4f53;margin-left: 23px;color: #f35a4a;}
+        #shop-list-table .del-link:hover{text-decoration:underline;}
+/*
+        #shop-list-table th .ico-font{display: none;}
+        #shop-list-table th .order-desc:{display: inline-block;}
+*/
+        #shop-list-table th.order-desc.sort{color:#4184f3;}
+        #shop-list-table th.order-desc span:after{content: "\e625";}
+        #shop-list-table th.sort span:after{color:#4184f3;}
+
+        #add-shop-dialog .ico-font{font-size:24px;color:#4184f3; }
+        #add-shop-dialog .alert{padding: 8px 15px;}
+    </style>
+  </head>
+  <body>
+   <div class="container-fluid header-wrapper">
+       <div class="row">
+           <div class="col-xs-6 col-logo">
+               <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+               <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+           </div>
+           <div class="col-xs-6 header-right-side">
+               <ul class="clearfix">
+                  <li class="user">
+                      <a id="user-button" href="#"><span class="account">102700317@qq.com</span><span class="ico-font">&#xe604;</span></a>
+                  </li>
+                  <li class="pay-text"><a href="#">续费升级</a></li>
+               </ul>
+           </div>
+       </div>
+  </div>
+  <div class="contain-body clearfix">
+     <div class="nav-side l">
+         <div class="ver-box">专业版</div>
+         <div class="nav-tree-box">
+             <dl class="nav-tree">
+                 <dt class="nav-tree-node">
+                     <a href="#"><span>监控店铺</span></a>
+                 </dt>
+                 <dd>
+                     <dl>
+                         <dt>
+                             <a href="#">管理</a>
+                         </dt>
+                         <dd></dd>
+                     </dl>
+                 </dd>
+                 <dt class="nav-tree-node">
+                     <a href="#">整店分析</a>
+                 </dt>
+                 <dd>
+                     <dl>
+                         <dt>
+                             <div class="nav-tree-child">
+                                 <a href="#">交易分析</a>
+                             </div>
+                         </dt>
+                         <dd class="hide">
+                             <dl>
+                                 <dt><a href="#">概况报告</a></dt>
+                                 <dd></dd>
+                                 <dt><a href="#">深入分析</a></dt>
+                                 <dd></dd>
+                             </dl>
+                         </dd>
+                         <dt>
+                             <div class="nav-tree-child">
+                                 <a href="#">引流分析</a>
+                             </div>
+                         </dt>
+                         <dd class="hide">
+                             <dl>
+                                 <dt><a href="#">概况报告</a></dt>
+                                 <dd></dd>
+                                 <dt><a href="#">深入分析</a></dt>
+                                 <dd></dd>
+                             </dl>
+                         </dd>
+                         <dt>
+                             <div class="nav-tree-child">
+                                 <a href="#">营销分析</a>
+                             </div>
+                         </dt>
+                         <dd class="hide">
+                             <dl>
+                                 <dt><a href="#">概况报告</a></dt>
+                                 <dd></dd>
+                                 <dt><a href="#">深入分析</a></dt>
+                                 <dd></dd>
+                             </dl>
+                         </dd>
+                         <dt>
+                             <div class="nav-tree-child">
+                                 <a href="#">商品分析</a>
+                             </div>
+                         </dt>
+                         <dd class="hide">
+                             <dl>
+                                 <dt><a href="#">概况报告</a></dt>
+                                 <dd></dd>
+                                 <dt><a href="#">深入分析</a></dt>
+                                 <dd></dd>
+                             </dl>
+                         </dd>
+                     </dl>
+                 </dd>
+             </dl>
+         </div>
+         <div class="help-box">
+             <ul>
+                 <li class="help-service"><a href="#"><span class="ico-font">&#xe61a;</span>客服</a><a href="#"><span class="ico-font">&#xe618;</span>客服</a></li>
+             </ul>
+         </div>
+     </div>
+     <div class="content l">
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="channel row">
+                    <div class="col-xs-12">
+                        <h1 class="channel-title">监控店铺管理</h1>
+                        <button type="button" class="btn btn-primary btn-addShop" data-toggle="modal" data-target="#add-shop-dialog">添加店铺</button>
+                        <span class="version-tip">当前[专业版]：可监控3个店铺 已监控2个店铺</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table id="shop-list-table" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th width="29%" class="shop-name">店铺名</th>
+                                    <th width="20%" class="sales-volume order-desc sort">7天销量<span class="ico-font">&nbsp;</span></th>
+                                    <th width="20%" class="sales-amount">7天销售额<span class="ico-font">&nbsp;</span></th>
+                                    <th width="20%" class="search-words">7天自然引流词数<span class="ico-font">&nbsp;</span></th>
+                                    <th width="11%" class="op">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="shop-type-tb i-shop-name">几度家居旗舰店</span>
+                                    </td>
+                                    <td><span class="i-sales-volume">32123</span><i class="ico-down">2.5%</i></td>
+                                    <td><span class="i-sales-amount">136.25万</span><i class="ico-up">3.5%</i></td>
+                                    <td><span class="search-words">35</span><i class="ico-up">3.5%</i></td>
+                                    <td>
+                                        <i class="tip" data-toggle="tooltip" data-placement="left" title="该店5天后可修改"></i><button type="button" class="btn btn-primary">分析</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="shop-type-tm i-shop-name">几度家居旗舰店</span></td>
+                                    <td>323<i class="ico-down">2.5%</i></td>
+                                    <td>1.25万<i class="ico-up">3.5%</i></td>
+                                    <td>35<i class="ico-up">3.5%</i></td>
+                                    <td><i class="tip" data-toggle="tooltip" data-placement="left" title="该店3天后可修改"></i><button type="button" class="btn btn-primary">分析</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="shop-type-tb i-shop-name">几度家居旗舰店</span></td>
+                                    <td><span class="i-sales-volume">32123</span><i class="ico-down">2.5%</i></td>
+                                    <td><span class="i-sales-amount">136.25万</span><i class="ico-up">3.5%</i></td>
+                                    <td><span class="search-words">35</span><i class="ico-up">3.5%</i></td>
+                                    <td><i class="tip delable" data-toggle="tooltip" data-placement="left" title="该店可修改"></i><button type="button" class="btn btn-default">分析</button><a class="del-link" href="#del-warning-dialog" data-toggle="modal" shop-id="123456">删除</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+     <div id="user-pop-html" class="hide">
+         <div id="user-menu" class="user-menu">
+            <ul>
+                <li><a href="#"><span class="ico-font">&#xe605;</span>用户设置</a></li>
+                <li><a href="#"><span class="ico-font">&#xe607;</span>客服帮助</a></li>
+                <li><a href="#"><span class="ico-font">&#xe615;</span>退出</a></li>
+            </ul>
+        </div>
+     </div>
+     <div class="modal fade" id="add-shop-dialog" tabindex="-1" role="dialog" aria-labelledby="addShopLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+         <form role="form">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="addShopLabel">添加店铺</h4>
+          </div>
+          <div class="modal-body">
+              <div class="form-group">
+                <div class="alert alert-warning alert-dismissible" role="alert"><strong>注意：</strong>添加监控后至少30天后才可更换。</div>
+                <div class="input-group">
+                    <div class="input-group-addon ico-font">&#xe619;</div>
+                    <input type="email" class="form-control input-lg" id="shop-keyword" placeholder="请输入需要监控的店铺旺旺ID或店铺名">
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-primary">添加监控</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+     <div class="modal fade" id="del-warning-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">警告</h4>
+          </div>
+          <div class="modal-body">
+            确认停止监控此店铺？
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger">确认</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="application/javascript">
+        function del_shop(id){
+            alert("删除店铺"+id);
+        }
+        $(".del-link").click(function(e){
+            var shop_id = $(this).attr("shop-id");
+            var shop_name = $(this).parents("tr").find(".i-shop-name").text();
+            $("#del-warning-dialog .modal-body").html("停止监控 <span class='text-danger'>" + shop_name + "<span>？");
+            $("#del-warning-dialog .btn-danger").attr("onclick","del_shop("+shop_id+")");
+        })
+        $(function(){
+            $("#shop-list-table .tip").tooltip();
+            $("#shop-list-table th").hover(function(e){
+                if(!$(this).is(".sort")){
+                    $(this).addClass("order-desc");
+                }
+            },function(e){
+                if(!$(this).is(".sort")){
+                    $(this).removeClass("order-desc");
+                }
+            })
+        })
+        $(function(){
+            $(".nav-tree-box dt").each(function(i){
+              if(!$(this).next("dd").is(":empty")){
+                $(this).hover(
+                    function(e){
+                        if($(this).next("dd").is(":visible")){
+                            $(this).addClass("fold");
+                        }else{
+                            $(this).addClass("unfold");
+                        }
+                    },function(e){
+                        $(this).removeClass("fold");
+                        $(this).removeClass("unfold");
+                    });
+                $(this).click(function(e){
+                    $(this).next("dd").toggleClass("hide");
+                    $(this).toggleClass("fold");
+                    $(this).toggleClass("unfold");
+                })
+              }else{
+                $(this).click(function(e){
+                    $(".nav-tree-box a").removeClass("checked");
+                    $(this).find("a").toggleClass("checked");
+                });
+              }
+            });
+            $("#user-button").popover({
+                trigger:'focus',
+                placement:'bottom',
+                html:true,
+                content:$("#user-pop-html").html()
+            });
+        })
+    </script>
+  </body>
+</html>
