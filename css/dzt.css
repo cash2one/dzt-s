@@ -76,3 +76,11 @@
 
         .content{padding-top: 56px;width: 100%;}
         .content-body{margin-left: 216px;height: auto;}
+/*      footer*/
+        .footer{background-color: rgba(0,0,0,0.05);padding: 40px 10px;}
+        .footer-links{margin: 0px auto 10px;text-align: center;}
+        .footer-links li{margin-left: 20px;display: inline-block;}
+        .footer-links li:first-child{margin-left: 0px;;}
+        .footer-links li a{color: #777;font-size: 14px;}
+        .footer-links li a:hover{color: #222;}
+        .copyright-row .copyright{margin: 10px auto 10px;display: inline-block;color: #999;}

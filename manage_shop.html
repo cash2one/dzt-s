@@ -23,7 +23,6 @@
         .channel .version-tip{color:#777;margin-left: 15px;}
         #shop-list-table span[class^="shop-type-"]:before,#shop-list-table i[class^="ico-"]:before{font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
 
-        #shop-list-table{}
         #shop-list-table th.shop-name{min-width: 220px;white-space: nowrap;}
         #shop-list-table th.sales-volume,#shop-list-table th.sales-amount,#shop-list-table th.search-words{min-width: 150px;}
         #shop-list-table th.op{min-width: 145px;}
@@ -220,15 +219,35 @@
             </div>
         </div>
      </div>
-     <div id="user-pop-html" class="hide">
-         <div id="user-menu" class="user-menu">
+  </div>
+   <div class="container-fluid footer">
+       <div class="row">
+           <div class="col-xs-12">
+               <ul class="footer-links clearfix">
+                   <li><a href="#">关于我们</a></li>
+                   <li><a href="#">人才招聘</a></li>
+                   <li><a href="#">人才招聘</a></li>
+                   <li><a href="#">官方微信</a></li>
+                   <li><a href="#">意见反馈</a></li>
+               </ul>
+           </div>
+       </div>
+       <div class="row copyright-row">
+           <div class="col-xs-12 text-center">
+               <span class="copyright">店侦探-淘宝数据分析专家 © 2013 dzt.com 粤ICP备13046353号-7</span>
+           </div>
+       </div>
+   </div>
+    <div id="user-pop-html" class="hide">
+        <div id="user-menu" class="user-menu">
             <ul>
                 <li><a href="#"><span class="ico-font">&#xe605;</span>用户设置</a></li>
                 <li><a href="#"><span class="ico-font">&#xe607;</span>客服帮助</a></li>
                 <li><a href="#"><span class="ico-font">&#xe615;</span>退出</a></li>
             </ul>
         </div>
-     </div>
+    </div>
+<!--    manage-shop-start   -->
      <div class="modal fade" id="add-shop-dialog" tabindex="-1" role="dialog" aria-labelledby="addShopLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -271,19 +290,12 @@
         </div>
       </div>
     </div>
-  </div>
+<!--    manage-shop-end   -->
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.tablesorter.min.js"></script>
     <script type="text/javascript">
-        function sleep(numberMillis) {
-           var now = new Date();
-           var exitTime = now.getTime() + numberMillis;
-           while (true) {
-               now = new Date();
-               if (now.getTime() > exitTime)    return;
-            }
-        }
+        //manage-shop-css-start
         function del_shop(id){
             alert("删除店铺"+id);
         }
@@ -328,6 +340,7 @@
                 }
             })
         })
+        //manage-shop-css-end
         $(function(){
             $(".nav-tree-box dt").each(function(i){
               if(!$(this).next("dd").is(":empty")){

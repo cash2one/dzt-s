@@ -16,41 +16,7 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        /*店铺管理content*/
-        .channel{height: 64px;line-height: 64px;}
-        .channel-title{font-size: 18px;font-weight: 400;display: inline;}
-        .channel .btn-addShop{margin: 0px 0 10px 20px;}
-        .channel .version-tip{color:#777;margin-left: 15px;}
-        #shop-list-table span[class^="shop-type-"]:before,#shop-list-table i[class^="ico-"]:before{font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
 
-        #shop-list-table{}
-        #shop-list-table th.shop-name{min-width: 220px;white-space: nowrap;}
-        #shop-list-table th.sales-volume,#shop-list-table th.sales-amount,#shop-list-table th.search-words{min-width: 150px;}
-        #shop-list-table th.op{min-width: 145px;}
-        #shop-list-table thead th{font-size: 12px;border-bottom: 2px solid #e7e7e7;font-weight: 100; color: #777777;-webkit-transition: color 0.2s ease-out 0s;-moz-transition: color 0.2s ease-out 0s;transition: color 0.2s ease-out 0s;cursor: pointer;}
-        #shop-list-table thead th:hover{color:#222;}
-        #shop-list-table tbody td{font-size: 14px;vertical-align:middle;padding:15px 9px;border-bottom: 1px solid #e7e7e7;color: #222;}
-        #shop-list-table .shop-type-tb:before{content: "\e60f";font-size: 18px;margin-right: 4px;color: #ff4e00;}
-        #shop-list-table .shop-type-tm:before{content: "\e61f";font-size: 18px;margin-right: 4px;color: #c40000;}
-
-        #shop-list-table .ico-down,#shop-list-table .ico-down:before{color: #5cae50;}
-        #shop-list-table .ico-up,#shop-list-table .ico-up:before{color: #f35a4a;}
-        #shop-list-table .ico-down:before{content: "\e622";}
-        #shop-list-table .ico-up:before{content: "\e623";}
-        #shop-list-table i[class^="ico-"]{margin-left: 5px;font-style: normal;font-size: 10px;}
-        #shop-list-table .tip{background-color: #ffce55;border: 1px solid #e8af22;border-radius: 50%; width: 8px;height: 8px; display: inline-block;margin:0 13px 0 0;position: relative;}
-        #shop-list-table .tip:hover{cursor: pointer;}
-        #shop-list-table .delable{background-color: #4184f3;border: 1px solid #3778e3;}
-        #shop-list-table .tooltip.in{margin-top: -4px;}
-        #shop-list-table .tooltip-arrow{border-left-color: #ffce55;}
-        #shop-list-table .tooltip-inner{background-color: #ffce55;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;padding:4px 8px 5px}
-        #shop-list-table .delable+.tooltip .tooltip-arrow{border-left-color: #4184f3;}
-        #shop-list-table .delable+.tooltip .tooltip-inner{background-color: #4184f3;}
-        #shop-list-table .del-link{font: 12px/1.5 tahoma, arial, \5b8b\4f53;margin-left: 23px;color: #f35a4a;}
-        #shop-list-table .del-link:hover{text-decoration:underline;}
-
-        #add-shop-dialog .ico-font{font-size:24px;color:#4184f3; }
-        #add-shop-dialog .alert{padding: 8px 15px;}
     </style>
   </head>
   <body>
@@ -160,18 +126,34 @@
             </div>
         </div>
      </div>
-     <div id="user-pop-html" class="hide">
-         <div id="user-menu" class="user-menu">
+  </div>
+   <div class="container-fluid footer">
+       <div class="row">
+           <div class="col-xs-12">
+               <ul class="footer-links clearfix">
+                   <li><a href="#">关于我们</a></li>
+                   <li><a href="#">人才招聘</a></li>
+                   <li><a href="#">人才招聘</a></li>
+                   <li><a href="#">官方微信</a></li>
+                   <li><a href="#">意见反馈</a></li>
+               </ul>
+           </div>
+       </div>
+       <div class="row copyright-row">
+           <div class="col-xs-12 text-center">
+               <span class="copyright">店侦探-淘宝数据分析专家 © 2013 dzt.com 粤ICP备13046353号-7</span>
+           </div>
+       </div>
+   </div>
+    <div id="user-pop-html" class="hide">
+        <div id="user-menu" class="user-menu">
             <ul>
                 <li><a href="#"><span class="ico-font">&#xe605;</span>用户设置</a></li>
                 <li><a href="#"><span class="ico-font">&#xe607;</span>客服帮助</a></li>
                 <li><a href="#"><span class="ico-font">&#xe615;</span>退出</a></li>
             </ul>
         </div>
-     </div>
-
-
-  </div>
+    </div>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="application/javascript">

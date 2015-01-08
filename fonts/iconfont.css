@@ -22,9 +22,11 @@
 
 .icon-tianmaoxingxiang2:before { content: "\e61c"; }
 
-.icon-tianmaoxingxiang1:before { content: "\e61d"; }
-
 .icon-icon:before { content: "\e628"; }
+
+.icon-mail:before { content: "\e62a"; }
+
+.icon-key:before { content: "\e61d"; }
 
 .icon-favorfill:before { content: "\e600"; }
 
@@ -79,6 +81,10 @@
 .icon-service:before { content: "\e617"; }
 
 .icon-mao:before { content: "\e61e"; }
+
+.icon-lock:before { content: "\e62b"; }
+
+.icon-user:before { content: "\e62c"; }
 
 .icon-folds:before { content: "\e612"; }
 
