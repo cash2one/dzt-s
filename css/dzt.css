@@ -85,3 +85,7 @@
         .footer-links li a{color: #777;font-size: 14px;}
         .footer-links li a:hover{color: #222;}
         .copyright-row .copyright{margin: 10px auto 10px;display: inline-block;color: #999;}
+
+        .input-label{display: none;}
+        .input-labell{_display: block;display: block\9;}/*ie7,8,9,10可见*/
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {.input-label{display: none;}}/*仅ie10可见*/

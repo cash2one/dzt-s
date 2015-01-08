@@ -22,11 +22,15 @@
 
 .icon-tianmaoxingxiang2:before { content: "\e61c"; }
 
+.icon-spam:before { content: "\e633"; }
+
 .icon-icon:before { content: "\e628"; }
 
 .icon-mail:before { content: "\e62a"; }
 
 .icon-key:before { content: "\e61d"; }
+
+.icon-iconfontdui:before { content: "\e634"; }
 
 .icon-check:before { content: "\e62d"; }
 

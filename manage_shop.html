@@ -63,11 +63,7 @@
         #add-shop-dialog .ico-font{font-size:24px;color:#4184f3; }
         #add-shop-dialog .alert{padding: 8px 15px;}
 
-        #keyword-label{display: none;}
-        #keyword-label{_display: block;display: block\9;}
-        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-            #keyword-label{display: none;}
-        }
+
     </style>
   </head>
   <body>
@@ -265,7 +261,7 @@
           <div class="modal-body">
               <div class="form-group">
                 <div class="alert alert-warning alert-dismissible" role="alert"><strong>注意：</strong>添加监控后至少30天后才可更换。</div>
-                <label id="keyword-label" for="shop-keyword">请输入需要监控的店铺旺旺ID或店铺名</label>
+                <label id="keyword-label" for="shop-keyword" class="control-label input-label">请输入需要监控的店铺旺旺ID或店铺名</label>
                 <div class="input-group">
                     <div class="input-group-addon ico-font">&#xe619;</div>
                     <input type="email" class="form-control input-lg" id="shop-keyword" placeholder="请输入需要监控的店铺旺旺ID或店铺名">

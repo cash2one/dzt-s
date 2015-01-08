@@ -22,9 +22,9 @@
         .input-box .input-group-addon{font-size: 22px;color:#556270;}
         .input-box .has-error .input-group-addon{color:#d50f1f;}
         .input-box .has-error .form-control-feedback.ico-font::before{content: "\e62e";font-size: 20px;}
-        .input-box .tooltip{}
-        .input-box .tooltip .tooltip-arrow{border-right-color: #4184f3;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);}
-        .input-box .tooltip .tooltip-inner{background-color: #4184f3;white-space: nowrap;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);}
+
+        .input-box .tooltip .tooltip-arrow{border-right-color: #4184f3;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);}
+        .input-box .tooltip .tooltip-inner{background-color: #4184f3;white-space: nowrap;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);}
         .input-box .has-error .tooltip .tooltip-arrow{border-right-color: #d50f1f;}
         .input-box .has-error .tooltip .tooltip-inner{background-color: #d50f1f;}
 
@@ -34,10 +34,6 @@
         .input-box .form-group{margin-bottom: 25px;}
         .reg-tip{font-size:12px;}
         .btn-submit{width: 100%;}
-/*
-        .ico-font-ok:before{content: "\e62d";font-size: 20px;}
-        .ico-font-no:before{content: "\e62e";font-size: 20px;}
-*/
 
         .checked-line{height: 20px;border-top: 1px solid #cccccc;}
         .tab-row{border-bottom: 1px solid #cccccc;margin-bottom: 25px;}
@@ -53,14 +49,14 @@
         body.sign-up #sign-up a{color: #f35a4a;}
         body.sign-up #sign-up{border-bottom: 1px solid #f35a4a;}
         body.sign-up .sign-up-form{display: block;}
-/*
-        .tab-row li.checked{border-bottom: 1px solid #f35a4a;}
-        .tab-row li.checked a{color: #f35a4a;}
-*/
+
 /*        .form-links{margin-top: 25px;margin-bottom: 0px;}*/
         .form-links .checkbox{margin-top: 0px;}
         .form-links li{float: left;}
         .form-links li:first-child{margin-right: 45px;}
+        .sign-info.alert-success::before,.sign-info.alert-danger::before{font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.1px;-moz-osx-font-smoothing: grayscale;margin-right: 10px;}
+        .sign-info.alert-success::before{content: "\e634";}
+        .sign-info.alert-danger::before{content: "\e633";}
     </style>
   </head>
   <body class="sign-in">
@@ -84,30 +80,34 @@
                        <div class="sign-up-form">
                            <form role="form">
                               <div class="form-group">
+                                <label for="signUpEmail" class="input-label control-label">登陆邮箱</label>
                                 <div class="input-group">
                                   <div class="input-group-addon ico-font">&#xe62a;</div>
-                                  <input class="form-control input-lg" type="email" placeholder="登陆邮箱">
+                                  <input id="signUpEmail" class="form-control input-lg" type="email" placeholder="登陆邮箱">
                                   <span class="ico-font form-control-feedback"></span>
                                 </div>
                               </div>
                               <div class="form-group">
+                               <label for="signUpPassWord" class="input-label control-label">登陆密码</label>
                                 <div class="input-group">
                                   <div class="input-group-addon ico-font">&#xe61d;</div>
-                                  <input class="form-control input-lg" type="password" placeholder="登陆密码">
+                                  <input id="signUpPassWord" class="form-control input-lg" type="password" placeholder="登陆密码">
                                   <span class="ico-font form-control-feedback"></span>
                                 </div>
                               </div>
                               <div class="form-group">
+                               <label for="nickName" class="input-label control-label">用户昵称</label>
                                 <div class="input-group">
                                   <div class="input-group-addon ico-font">&#xe62c;</div>
-                                  <input class="form-control input-lg" type="text" placeholder="用户昵称">
+                                  <input id="nickName" class="form-control input-lg" type="text" placeholder="用户昵称">
                                   <span class="ico-font form-control-feedback"></span>
                                 </div>
                               </div>
                               <div class="form-group">
+                               <label for="sellerWangWang" class="input-label control-label">卖家旺旺</label>
                                 <div class="input-group">
                                   <div class="input-group-addon ico-font">&#xe619;</div>
-                                  <input class="form-control input-lg" type="text" placeholder="卖家旺旺" data-toggle="tooltip" data-placement="right" title="用于账号激活验证，务必真实填写！">
+                                  <input id="sellerWangWang" class="form-control input-lg" type="text" placeholder="卖家旺旺" data-toggle="tooltip" data-placement="right" title="用于账号激活验证，务必真实填写！">
                                   <span class="ico-font form-control-feedback"></span>
                                 </div>
                               </div>
@@ -117,16 +117,18 @@
                        <div class="sign-in-form">
                            <form role="form">
                               <div class="form-group">
+                               <label for="signInEmail" class="input-label control-label">邮箱</label>
                                 <div class="input-group">
                                   <div class="input-group-addon ico-font">&#xe62a;</div>
-                                  <input class="form-control input-lg" type="email" placeholder="邮箱">
+                                  <input id="signInEmail" class="form-control input-lg" type="email" placeholder="邮箱">
                                   <span class="ico-font form-control-feedback"></span>
                                 </div>
                               </div>
                               <div class="form-group">
+                               <label for="signInPassWord" class="input-label control-label">密码</label>
                                 <div class="input-group">
                                   <div class="input-group-addon ico-font">&#xe62b;</div>
-                                  <input class="form-control input-lg" type="password" placeholder="密码">
+                                  <input id="signInPassWord" class="form-control input-lg" type="password" placeholder="密码">
                                   <span class="ico-font form-control-feedback"></span>
                                 </div>
                               </div>
@@ -144,11 +146,21 @@
                                       </li>
                                   </ul>
                               </div>
-                              <div class="alert alert-danger">密码错误！</div>
+                              <div class="sign-info alert alert-danger">密码错误！</div>
                               <button type="submit" class="btn btn-primary btn-lg btn-submit">登录</button>
                             </form>
                        </div>
                     </div>
+                </div>
+            </div>
+            <div class="row reg-success-row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <div class="alert alert-success text-center"><h3>注册成功！</h3><hr>3秒后自动跳转到登陆，也可以<a href="#">点击这里</a>登陆</div>
+                </div>
+            </div>
+            <div class="row reg-error-row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <div class="alert alert-danger text-center"><h3>注册失败！</h3><hr>3秒后自动返回重新注册，也可以<a href="#">点击这里</a>返回</div>
                 </div>
             </div>
         </div>
