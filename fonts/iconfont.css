@@ -72,6 +72,8 @@
 
 .icon-delete:before { content: "\e627"; }
 
+.icon-externallink:before { content: "\e635"; }
+
 .icon-tmall:before { content: "\e60a"; }
 
 .icon-attention:before { content: "\e60b"; }
@@ -101,6 +103,8 @@
 .icon-lock:before { content: "\e62b"; }
 
 .icon-user:before { content: "\e62c"; }
+
+.icon-externallink1:before { content: "\e637"; }
 
 .icon-folds:before { content: "\e612"; }
 
