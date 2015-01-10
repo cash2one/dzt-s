@@ -16,27 +16,26 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        .container-bg{height: 100%;}
+/*        .container-bg{height: 100%;}*/
         .top-row{margin-top: 56px;}
         .main-title{margin-bottom: 50px;}
         .main-title h4{color: #777;}
-        .search-row{margin:100px auto 300px;}
-        .search-form-group,.search-input-group{width: 100%;}
-        .search-form-group{margin-left: -100px;padding-left: 100px;white-space: nowrap;}
-        
+        .search-row{margin:100px auto 200px;width: 600px;}
+        #search{width: 470px;}
+/*        .search-form-group,.search-input-group{width: 100%;}*/
+/*        .search-form-group{margin-left: -95px;padding-left: 95px;}*/
+        .btn-submit-search{margin-left: 5px;}
         .search-type-tab{margin-bottom: 10px;}
         .search-type-tab li{float: left;padding: 5px 10px;border-radius: 2px;position: relative;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
         .search-type-tab li a{font-size: 17px;color: #777;-webkit-transition: color 0.2s ease-out 0s;-moz-transition: color 0.2s ease-out 0s;transition: color 0.2s ease-out 0s;}
-        .search-type-tab li a:hover{color:#222; }
-        
-        .search-input-group .form-control.search-input{}
+        .search-type-tab li a:hover{color:#222;}
 
         body.type-key-word #type-key-word,body.type-product #type-product,body.type-shop #type-shop{background-color: #f35a4a;}
         body.type-key-word #type-key-word a,body.type-product #type-product a,body.type-shop #type-shop a{color: #fff;}
         body.type-key-word #type-key-word .arrow,body.type-product #type-product .arrow,body.type-shop #type-shop .arrow{position: absolute;border-bottom: 0px;height: 0;width: 0;bottom: -5px;border-style: solid;left: 50%;margin-left: -5px; border-width: 5px 5px 0px 5px; border-color: transparent;border-top-color:#f35a4a;}
 
         
-        .col-search{min-width: 400px;}
+/*        .col-search{min-width: 400px;}*/
     </style>
   </head>
   <body class="type-key-word">
@@ -56,33 +55,34 @@
            </div>
        </div>
   </div>
-  <div class="container-fluid container-bg">
-    <div class="row top-row">
-        <div class="col-xs-12">
+  <div class="content">
+      <div class="container-fluid">
+        <div class="row top-row">
+            <div class="col-xs-12">
+            </div>
         </div>
-    </div>
-
-    <div class="row search-row">
-        <div class="col-xs-4 col-xs-offset-4 col-md-5 col-md-offset-3 col-lg-4 col-lg-offset-4 col-search">
-          <div class="text-center main-title">
-             <h1>看看别人的生意怎么做？</h1>
-             <h4>分析你的对手，学习你的对手，超越你的对手</h4>
-          </div>
-           <ul class="search-type-tab clearfix">
-               <li id="type-key-word"><a href="javascript:;">关键词</a><div class="arrow"></div></li>
-               <li id="type-product"><a href="javascript:;">宝贝</a><div class="arrow"></div></li>
-               <li id="type-shop"><a href="javascript:;">店铺</a><div class="arrow"></div></li>
-           </ul>
-            <form class="form-inline" role="form">
-              <div class="form-group search-form-group">
-                <div class="input-group search-input-group">
-                  <input id="search" class="form-control input-lg search-input" type="text" placeholder="请输入您要查询的关键词">
-                </div>
+        <div class="row search-row">
+            <div class="col-xs-12 col-search">
+              <div class="text-center main-title">
+                 <h1>看看别人的生意怎么做？</h1>
+                 <h4>分析你的对手，学习你的对手，超越你的对手</h4>
               </div>
-              <button type="submit" class="btn btn-danger btn-lg btn-submit-search">&nbsp;&nbsp;搜&nbsp;索&nbsp;&nbsp;</button>
-            </form>
+               <ul class="search-type-tab clearfix">
+                   <li id="type-key-word"><a href="javascript:;">关键词</a><div class="arrow"></div></li>
+                   <li id="type-product"><a href="javascript:;">宝贝</a><div class="arrow"></div></li>
+                   <li id="type-shop"><a href="javascript:;">店铺</a><div class="arrow"></div></li>
+               </ul>
+                <form class="form-inline clearfix" role="form">
+                  <div class="form-group search-form-group l">
+                    <div class="input-group search-input-group">
+                      <input id="search" class="form-control input-lg search-input" type="text" placeholder="请输入您要查询的关键词">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-danger btn-lg btn-submit-search l">&nbsp;&nbsp;搜&nbsp;索&nbsp;&nbsp;</button>
+                </form>
+            </div>
         </div>
-    </div>
+      </div>
   </div>
    <div class="footer-bottom">
        <div class="container-fluid footer">

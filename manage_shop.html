@@ -16,6 +16,7 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
+
         /*店铺管理content*/
         .channel{height: 64px;line-height: 64px;}
         .channel-title{font-size: 18px;font-weight: 400;display: inline;}
@@ -24,7 +25,7 @@
         #shop-list-table span[class^="shop-type-"]:before,#shop-list-table i[class^="ico-"]:before{font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
 
         #shop-list-table th.shop-name{min-width: 220px;white-space: nowrap;}
-        #shop-list-table th.sales-volume,#shop-list-table th.sales-amount,#shop-list-table th.search-words{min-width: 150px;}
+        #shop-list-table th.sales-volume,#shop-list-table th.sales-amount,#shop-list-table th.sword-num,#shop-list-table th.dfword-num{min-width: 80px;}
         #shop-list-table th.op{min-width: 145px;}
         #shop-list-table thead th{font-size: 12px;border-bottom: 2px solid #e7e7e7;font-weight: 100; color: #777777;}
 /*        #shop-list-table thead th:hover{color:#222;}*/
@@ -83,165 +84,167 @@
            </div>
        </div>
   </div>
-  <div class="contain-body clearfix">
-     <div class="nav-side l">
-         <div class="ver-box">专业版</div>
-         <div class="nav-tree-box">
-             <dl class="nav-tree">
-                 <dt class="nav-tree-node">
-                     <a href="#"><span>监控店铺</span></a>
-                 </dt>
-                 <dd>
-                     <dl>
-                         <dt>
-                             <a href="#">管理</a>
-                         </dt>
-                         <dd></dd>
-                     </dl>
-                 </dd>
-                 <dt class="nav-tree-node">
-                     <a href="#">整店分析</a>
-                 </dt>
-                 <dd>
-                     <dl>
-                         <dt>
-                             <div class="nav-tree-child">
-                                 <a href="#">交易分析</a>
-                             </div>
-                         </dt>
-                         <dd class="hide">
-                             <dl>
-                                 <dt><a href="#">概况报告</a></dt>
-                                 <dd></dd>
-                                 <dt><a href="#">深入分析</a></dt>
-                                 <dd></dd>
-                             </dl>
-                         </dd>
-                         <dt>
-                             <div class="nav-tree-child">
-                                 <a href="#">引流分析</a>
-                             </div>
-                         </dt>
-                         <dd class="hide">
-                             <dl>
-                                 <dt><a href="#">概况报告</a></dt>
-                                 <dd></dd>
-                                 <dt><a href="#">深入分析</a></dt>
-                                 <dd></dd>
-                             </dl>
-                         </dd>
-                         <dt>
-                             <div class="nav-tree-child">
-                                 <a href="#">营销分析</a>
-                             </div>
-                         </dt>
-                         <dd class="hide">
-                             <dl>
-                                 <dt><a href="#">概况报告</a></dt>
-                                 <dd></dd>
-                                 <dt><a href="#">深入分析</a></dt>
-                                 <dd></dd>
-                             </dl>
-                         </dd>
-                         <dt>
-                             <div class="nav-tree-child">
-                                 <a href="#">商品分析</a>
-                             </div>
-                         </dt>
-                         <dd class="hide">
-                             <dl>
-                                 <dt><a href="#">概况报告</a></dt>
-                                 <dd></dd>
-                                 <dt><a href="#">深入分析</a></dt>
-                                 <dd></dd>
-                             </dl>
-                         </dd>
-                     </dl>
-                 </dd>
-             </dl>
+  <div class="content-bg">
+      <div class="contain-body clearfix">
+         <div class="nav-side l">
+             <div class="ver-box">专业版</div>
+             <div class="nav-tree-box">
+                 <dl class="nav-tree">
+                     <dt class="nav-tree-node">
+                         <a href="#"><span>监控店铺</span></a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <a href="#">管理</a>
+                             </dt>
+                             <dd></dd>
+                         </dl>
+                     </dd>
+                     <dt class="nav-tree-node">
+                         <a href="#">整店分析</a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">交易分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">引流分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">营销分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">商品分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                         </dl>
+                     </dd>
+                 </dl>
+             </div>
+             <div class="help-box">
+                 <ul>
+                     <li class="help-service"><a href="#"><span class="ico-font">&#xe61a;</span>客服</a><a href="#"><span class="ico-font">&#xe618;</span>客服</a></li>
+                 </ul>
+             </div>
          </div>
-         <div class="help-box">
-             <ul>
-                 <li class="help-service"><a href="#"><span class="ico-font">&#xe61a;</span>客服</a><a href="#"><span class="ico-font">&#xe618;</span>客服</a></li>
-             </ul>
-         </div>
-     </div>
-     <div class="content l">
-        <div class="content-body">
-            <div class="container-fluid">
-                <div class="channel row">
-                    <div class="col-xs-12">
-                        <h1 class="channel-title">监控店铺管理</h1>
-                        <button type="button" class="btn btn-primary btn-addShop" data-toggle="modal" data-target="#add-shop-dialog">添加店铺</button>
-                        <span class="version-tip">[<strong class="text-info">专业版</strong>]：可监控<strong class="text-info">3</strong>个店铺，已监控<strong class="text-info">2</strong>个店铺</span>
+         <div class="content-side l">
+            <div class="content-body container-fluid">
+                    <div class="channel row">
+                        <div class="col-xs-12">
+                            <h1 class="channel-title">监控店铺管理</h1>
+                            <button type="button" class="btn btn-primary btn-addShop" data-toggle="modal" data-target="#add-shop-dialog">添加店铺</button>
+                            <span class="version-tip">[<strong class="text-info">专业版</strong>]：可监控<strong class="text-info">3</strong>个店铺，已监控<strong class="text-info">2</strong>个店铺</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <table id="shop-list-table" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="29%" class="shop-name">店铺名</th>
+                                        <th width="15%" class="sales-volume order"><a href="#">7天销量</a></th>
+                                        <th width="15%" class="sales-amount order"><a href="#">7天销售额</a></th>
+                                        <th width="15%" class="sword-num order"><a href="#">7天自然引流词</a></th>
+                                        <th width="15%" class="dfword-num order"><a href="#">7天豆腐块词</a></th>
+                                        <th width="11%" class="op">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="shop-type-tb i-shop-name">a几度家居旗舰店</span>
+                                        </td>
+                                        <td><span class="i-sales-volume">223</span><i class="ico-down">2.5%</i></td>
+                                        <td><span class="i-sales-amount">126万</span><i class="ico-up">2.5%</i></td>
+                                        <td><span class="i-sword-num">28</span><i class="ico-up">3.5%</i></td>
+                                        <td><span class="i-dfword-num">28</span><i class="ico-up">3.5%</i></td>
+                                        <td>
+                                            <i class="tip" data-toggle="tooltip" data-placement="left" title="该店5天后可修改"></i><button type="button" class="btn btn-primary">分析</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="shop-type-tm i-shop-name">b几度家居旗舰店</span></td>
+                                        <td><span class="i-sales-volume">323</span><i class="ico-down">2.5%</i></td>
+                                        <td><span class="i-sales-amount">136万</span><i class="ico-up">3.5%</i></td>
+                                        <td><span class="i-sword-num">15</span><i class="ico-up">3.5%</i></td>
+                                        <td><span class="i-dfword-num">5</span><i class="ico-up">35%</i></td>
+                                        <td><i class="tip" data-toggle="tooltip" data-placement="left" title="该店3天后可修改"></i><button type="button" class="btn btn-primary">分析</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="shop-type-tb i-shop-name">c几度家居旗舰店</span></td>
+                                        <td><span class="i-sales-volume">313</span><i class="ico-down">0.51%</i></td>
+                                        <td><span class="i-sales-amount">135万</span><i class="ico-up">3.15%</i></td>
+                                        <td><span class="i-sword-num">35</span><i class="ico-up">3.5%</i></td>
+                                        <td><span class="i-dfword-num">2</span><i class="ico-up">36%</i></td>
+                                        <td><i class="tip delable" data-toggle="tooltip" data-placement="left" title="该店可修改"></i><button type="button" class="btn btn-primary">分析</button><a class="del-link" href="#del-warning-dialog" data-toggle="modal" shop-id="123456">删除</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <table id="shop-list-table" class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th width="29%" class="shop-name">店铺名</th>
-                                    <th width="20%" class="sales-volume order"><a href="#">7天销量</a></th>
-                                    <th width="20%" class="sales-amount order"><a href="#">7天销售额</a></th>
-                                    <th width="20%" class="search-words order"><a href="#">7天自然引流词数</a><span class="ico-font">&nbsp;</span></th>
-                                    <th width="11%" class="op">操作</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="shop-type-tb i-shop-name">几度家居旗舰店</span>
-                                    </td>
-                                    <td><span class="i-sales-volume">223</span><i class="ico-down">2.5%</i></td>
-                                    <td><span class="i-sales-amount">126万</span><i class="ico-up">2.5%</i></td>
-                                    <td><span class="search-words">28</span><i class="ico-up">3.5%</i></td>
-                                    <td>
-                                        <i class="tip" data-toggle="tooltip" data-placement="left" title="该店5天后可修改"></i><button type="button" class="btn btn-primary">分析</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><span class="shop-type-tm i-shop-name">几度家居旗舰店</span></td>
-                                    <td>323<i class="ico-down">2.5%</i></td>
-                                    <td>136万<i class="ico-up">3.5%</i></td>
-                                    <td>15<i class="ico-up">3.5%</i></td>
-                                    <td><i class="tip" data-toggle="tooltip" data-placement="left" title="该店3天后可修改"></i><button type="button" class="btn btn-primary">分析</button></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="shop-type-tb i-shop-name">几度家居旗舰店</span></td>
-                                    <td><span class="i-sales-volume">313</span><i class="ico-down">0.51%</i></td>
-                                    <td><span class="i-sales-amount">135万</span><i class="ico-up">3.15%</i></td>
-                                    <td><span class="search-words">35</span><i class="ico-up">3.5%</i></td>
-                                    <td><i class="tip delable" data-toggle="tooltip" data-placement="left" title="该店可修改"></i><button type="button" class="btn btn-primary">分析</button><a class="del-link" href="#del-warning-dialog" data-toggle="modal" shop-id="123456">删除</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+         </div>
+      </div>
+  </div>
+    <div class="container-fluid footer">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="footer-links clearfix">
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">人才招聘</a></li>
+                    <li><a href="#">人才招聘</a></li>
+                    <li><a href="#">官方微信</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                </ul>
             </div>
         </div>
-     </div>
-  </div>
-   <div class="footer-bottom">
-       <div class="container-fluid footer">
-       <div class="row">
-           <div class="col-xs-12">
-               <ul class="footer-links clearfix">
-                   <li><a href="#">关于我们</a></li>
-                   <li><a href="#">人才招聘</a></li>
-                   <li><a href="#">人才招聘</a></li>
-                   <li><a href="#">官方微信</a></li>
-                   <li><a href="#">意见反馈</a></li>
-               </ul>
-           </div>
-       </div>
-       <div class="row copyright-row">
-           <div class="col-xs-12 text-center">
-               <span class="copyright">店侦探-淘宝数据分析专家 © 2013 dzt.com 粤ICP备13046353号-7</span>
-           </div>
-       </div>
-   </div>
-   </div>
+        <div class="row copyright-row">
+            <div class="col-xs-12 text-center">
+                <span class="copyright">店侦探-淘宝数据分析专家 © 2013 dzt.com 粤ICP备13046353号-7</span>
+            </div>
+        </div>
+    </div>
     <div id="user-pop-html" class="hide">
         <div id="user-menu" class="user-menu">
             <ul>
@@ -300,7 +303,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.tablesorter.min.js"></script>
     <script type="text/javascript">
-        //manage-shop-css-start
+        //manage-shop-js-start
         function del_shop(id){
             alert("删除店铺"+id);
         }
@@ -310,16 +313,33 @@
             $("#del-warning-dialog .modal-body").html("停止监控 <span class='text-danger'>" + shop_name + "<span>？");
             $("#del-warning-dialog .btn-danger").attr("onclick","del_shop("+shop_id+")");
         })
+
         $(function(){
             $("#shop-list-table .tip").tooltip();
 
+            $.tablesorter.addParser({
+                id: 'numParser',
+                is: function(s, table, cell, $cell) {
+                    return false;
+                },
+                format: function(s, table, cell, cellIndex) {
+                    return $(cell).find("span").text().replace("万","0000");
+                },
+                parsed: false,
+                type: 'numeric'
+            });
             $("#shop-list-table").tablesorter({
-                header:{
+                headers:{
                     0:{sorter:false},
-                    4:{sorter:false}
+                    1:{sorter:'numParser'},
+                    2:{sorter:'numParser'},
+                    3:{sorter:'numParser'},
+                    4:{sorter:'numParser'},
+                    5:{sorter:false}
                 },
                 sortInitialOrder:"desc"
             });
+            //实现排序小图标动画效果，配合CSS
             $("#shop-list-table th.header a").click(function(e){
                 $("#shop-list-table th").removeClass("order-desc");
                 var th = $(this).parent();
@@ -333,6 +353,7 @@
 
                 }
             })
+            //实现鼠标放在表格头部的时候，显示出排序小图标
             $("#shop-list-table th.order a").hover(function(e){
                 var th = $(this).parent();
                 if(!th.is(".headerSortDown") & !th.is(".headerSortUp")){
@@ -345,7 +366,7 @@
                 }
             })
         })
-        //manage-shop-css-end
+        //manage-shop-js-end
         $(function(){
             $(".nav-tree-box dt").each(function(i){
               if(!$(this).next("dd").is(":empty")){
