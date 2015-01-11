@@ -16,6 +16,7 @@
         .l{float: left;}
         .r{float: right;}
         .p0{padding: 0px;}
+        .font-simsun{font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
 
         /*链接颜色*/
         a,a:hover{color: #4184f3;}
@@ -45,7 +46,7 @@
         #user-menu li{line-height: 40px;float: none;}
         .contain-body{width: 100%;height: 100%;}
 /*      后台 -- 左侧导航*/
-        .nav-side{min-height: 100%;background-color: #fafafa;width: 216px;margin-right: -100%;position: relative;z-index: 1;}
+        .nav-side{min-height: 100%;background-color: #fafafa;width: 216px;margin-right: -100%;position: relative;z-index: 1;letter-spacing: 0.4px;position: fixed;}
         .nav-side .ver-box{font-size: 18px;height: 56px;line-height: 56px;text-align: center;margin: 0 20px;border-bottom: 1px solid #ededed;}
         .nav-side .help-box{margin: 20px 20px 0 20px;border-top: 1px solid #ededed;}
         .nav-side .help-box ul{margin-top: 20px;}
@@ -75,8 +76,8 @@
         .nav-tree-box dl dl dl .checked{padding-left: 47px;}
 
         .content{padding-top: 56px;width: 100%;margin-bottom: 100px;}/*前台content：首页，注册等*/
-        .content-bg{padding-top: 56px;height:100%;}/*后台content*/
-        .content-side{width: 100%;height: auto;}
+        .content-bg{padding-top: 56px;height:auto;}/*后台content*/
+        .content-side{width: 100%;height: auto;padding-bottom: 20px;}
         .content-body{margin-left: 216px;}
 
 /*      footer*/

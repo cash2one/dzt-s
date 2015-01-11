@@ -19,7 +19,7 @@
 
 
         .padding-box{padding-left: 15px;padding-right: 15px;}
-        .padding-row{padding-bottom: 17px;padding-top: 13px;}
+        .padding-row{padding-bottom: 17px;padding-top: 17px;}
         .switch-shop-row{border-bottom: 1px solid #e7e7e7;}
         .switch-shop-menu>h4{cursor: pointer;color: #f35a4a;margin:0px;}
         .switch-shop-menu>h4>.caret{color: #777777;}
@@ -36,7 +36,7 @@
         .data-title{font-size: 18px;color: #222;}
         .data-title>.ico-font{font-size: 16px;margin-left: 10px;}
 
-        .data-tab-box .tab .data-ratio span::before{font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
+        .btn-export::before,.data-tab-box .tab .data-ratio span::before{font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
 
         .border-box{border: 1px solid #e7e7e7;}
         .shadow-row{border: 2px solid #f9f9f9;}
@@ -47,8 +47,8 @@
         .data-tab-box .tab .tooltip-arrow{border-top-color: #4184f3;}
         .data-tab-box .tab .tooltip-inner{background-color: #4184f3;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;padding:4px 8px 5px}
 
-        .data-tab-box .tab .data-volume{color:#888;font-size: 24px;font-weight: 700;font-family: Arial; }
-        .data-tab-box .tab .data-ratio{color:#999;font-size: 12px;}
+        .data-tab-box .tab .data-volume{color:#888;font-size: 24px;font-weight: 700;font-family: tahoma,Arial; }
+        .data-tab-box .tab .data-ratio{color:#999;font-size: 12px;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
         .data-tab-box .tab .data-ratio .up{color: #f35a4a;}
         .data-tab-box .tab .data-ratio .down{color: #5cae50;}
         .data-tab-box .tab .data-ratio .up::before{content:'\e623';color: #f35a4a;}
@@ -63,18 +63,25 @@
         .data-tab-box .tab:hover{cursor: pointer;}
         .data-tab-box .tab:first-child{border-left:none;}
 
+        .data-chart{height: 280px;padding:10px 0px;}
+
         .table-row{margin-top: 22px;}
         .table-col{padding-left: 0;padding-right: 0;}
-        .tb-head-bar,.tb-footer-bar{background-color: #f5f5f5;line-height: 48px;width: 100%;height: 48px;border: 1px solid #e7e7e7;}
+        .tb-head-bar,.tb-footer-bar{background-color: #f5f5f5;width: 100%;height: 48px;border: 1px solid #e7e7e7;padding: 8px 15px; }
         .tb-head-bar{border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-width: 2px;}
         .tb-footer-bar{border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;border-top-width: 1px;}
-        .data-table{margin-bottom: 0;}
+        .data-table{margin-bottom: 0;letter-spacing:0.5px;}
         .data-table > thead > tr > th{border-bottom: none;}
         .data-table th:first-child{border-left: 1px solid #e7e7e7;}
         .data-table th:last-child{border-right:1px solid #e7e7e7;}
         .data-table td{border: 1px solid #e7e7e7;}
-        .data-table>thead>tr>th,.data-table>tbody>tr>td{padding:15px 8px;font-size: 12px;}
+        .data-table>thead>tr>th,.data-table>tbody>tr>td{padding:13px 8px;font-size: 13px;}
         .data-table tr>td:first-child{text-align: right;}
+        .btn-left{border-top-left-radius: 5px;border-bottom-left-radius: 5px;}
+        .btn-right{border-top-right-radius: 5px;border-bottom-right-radius: 5px;}
+        .page-info{vertical-align:middle;color:#777;}
+        .btn-export::before{content: '\e63a';font-size: 12px;color: #777;}
+
 
     </style>
   </head>
@@ -203,9 +210,9 @@
                         </div>
                         <div class="col-xs-7 col-xs-offset-2 text-right switch-date-col">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-default active">昨天<span></span></button>
+                                <button type="button" class="btn btn-default">昨天<span></span></button>
                                 <button type="button" class="btn btn-default">3天<span></span></button>
-                                <button type="button" class="btn btn-default">7天<span></span></button>
+                                <button type="button" class="btn btn-default active">7天<span></span></button>
                                 <button type="button" class="btn btn-default">14天<span></span></button>
                                 <button type="button" class="btn btn-default">30天<span></span></button>
                             </div>
@@ -248,7 +255,9 @@
                             </div>
                             <div class="row border-box" style="border-top:none;">
                                 <div class="col-xs-12">
-                                    ddddd
+                                    <div class="data-chart">
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -257,7 +266,21 @@
                     </div>
                     <div class="row table-row">
                         <div class="col-xs-12 table-col">
-                            <div class="tb-head-bar"></div>
+                            <div class="tb-head-bar">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <a href="#" class="btn btn-default btn-export"> 导出</a>
+                                        <button type="button" class="btn btn-primary">深入分析交易</button>
+                                    </div>
+                                    <div class="col-xs-8 text-right">
+                                       <span class="page-info">第1页（共3页）</span>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-left"><span class="ico-font">&#xe637;</span></button>
+                                            <button type="button" class="btn btn-default btn-right"><span class="ico-font">&#xe636;</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <table class="data-table table table-hover">
                                     <thead>
                                         <tr>
@@ -265,40 +288,40 @@
                                             <th width="24%">日期</th>
                                             <th width="24%">销量</th>
                                             <th width="24%">销售额</th>
-                                            <th width="24%">商品数</th>
+                                            <th width="24%">销售商品数</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
+                                            <td>1.</td>
                                             <td>2014-05-06</td>
                                             <td>123</td>
                                             <td>123</td>
                                             <td>123</td>
                                         </tr>
                                         <tr>
-                                            <td>2</td>
+                                            <td>2.</td>
                                             <td>2014-05-07</td>
                                             <td>176</td>
                                             <td>176</td>
                                             <td>176</td>
                                         </tr>
                                         <tr>
-                                            <td>3</td>
+                                            <td>3.</td>
                                             <td>2014-05-08</td>
                                             <td>321</td>
                                             <td>321</td>
                                             <td>321</td>
                                         </tr>
                                         <tr>
-                                            <td>4</td>
+                                            <td>4.</td>
                                             <td>2014-05-09</td>
                                             <td>421</td>
                                             <td>421</td>
                                             <td>421</td>
                                         </tr>
                                         <tr>
-                                            <td>5</td>
+                                            <td>5.</td>
                                             <td>2014-05-10</td>
                                             <td>256</td>
                                             <td>256</td>
@@ -306,7 +329,17 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            <div class="tb-footer-bar"></div>
+                            <div class="tb-footer-bar">
+                                <div class="row">
+                                    <div class="col-xs-8 col-xs-offset-4 text-right">
+                                        <span class="page-info">第1页（共3页）</span>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-left"><span class="ico-font">&#xe637;</span></button>
+                                            <button type="button" class="btn btn-default btn-right"><span class="ico-font">&#xe636;</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -314,24 +347,7 @@
          </div>
       </div>
   </div>
-<div class="container-fluid footer">
-    <div class="row">
-        <div class="col-xs-12">
-            <ul class="footer-links clearfix">
-                <li><a href="#">关于我们</a></li>
-                <li><a href="#">人才招聘</a></li>
-                <li><a href="#">人才招聘</a></li>
-                <li><a href="#">官方微信</a></li>
-                <li><a href="#">意见反馈</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="row copyright-row">
-        <div class="col-xs-12 text-center">
-            <span class="copyright">店侦探-淘宝数据分析专家 © 2013 dzt.com 粤ICP备13046353号-7</span>
-        </div>
-    </div>
-</div>
+
     <div id="user-pop-html" class="hide">
         <div id="user-menu" class="user-menu">
             <ul>
