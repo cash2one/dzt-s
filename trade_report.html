@@ -40,7 +40,10 @@
 
         .border-box{border: 1px solid #e7e7e7;}
         .shadow-row{border: 2px solid #f9f9f9;}
-        .data-tab-box .tab{background: url(images/data_tab_bg.gif) repeat-x left bottom;background-image:-webkit-linear-gradient(to top, #f7f7f7, #fff);background-image:linear-gradient(to top,#f7f7f7, #fff);}
+        .data-tab-box .tab{background: url(images/data_tab_bg.gif) repeat-x left bottom;background-image:-webkit-linear-gradient(to top, #f7f7f7, #fff);background-image:linear-gradient(to top,#f7f7f7, #fff);border-left: 1px solid #e7e7e7;padding-top: 7px;padding-bottom: 7px;}
+        .data-tab-box .tab:hover{cursor: pointer;background-image:-webkit-linear-gradient(to top, #f0f0f0, #fff);background-image:linear-gradient(to top,#f0f0f0, #fff);}
+        .data-tab-box .tab:first-child{border-left:none;}
+
         .data-tab-box .tab .data-type{color:#777;}
         .data-tab-box .tab .data-type .help-icon{font-size: 16px;float: right;color: #dcdcdc;}
         .data-tab-box .tab .data-type .help-icon:hover{color: #4184f3;}
@@ -59,9 +62,6 @@
         .data-tab-box .tab.checked .data-volume{color:#222;}
         .data-tab-box .tab.checked .data-ratio{}
         .data-tab-box .tab.checked .arrow{width: 13px;height: 13px;background: url(images/sprites.png) no-repeat 0 0;position: absolute;left: 50%;margin-left: -13px;}
-        .data-tab-box .tab{border-left: 1px solid #e7e7e7;padding-top: 7px;padding-bottom: 7px;}
-        .data-tab-box .tab:hover{cursor: pointer;}
-        .data-tab-box .tab:first-child{border-left:none;}
 
         .data-chart{height: 280px;padding:10px 0px;}
 
