@@ -255,7 +255,7 @@
                             </div>
                             <div class="row border-box" style="border-top:none;">
                                 <div class="col-xs-12">
-                                    <div class="data-chart">
+                                    <div id="my-chart" class="data-chart">
 
                                     </div>
                                 </div>
@@ -359,10 +359,150 @@
     </div>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="application/javascript">
+    <script src="js/echarts.js"></script>
+    <script type="text/javascript">
+        //=============店铺管理js-start=============
+        var myChart;
+        require.config({
+            paths:{
+                echarts:'js/dist'
+            }
+        });
+        require(
+            [
+                'echarts',
+                'echarts/chart/line'
+            ],
+            function(ec){
+                myChart = ec.init(document.getElementById('my-chart'));
+                var option = {
+                    title : {
+                        text: '最近7天销量',
+                        textStyle:{
+                            color: '#222',
+                            fontFamily:'Arial,Helvetica,"微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif',
+                            fontWeight:'normal',
+                            fontSize:16
+                        },
+                        subtext: '11月10日-12月8日'
+                    },
+                    color : ['#f35a4a','#4184f3'],
+                    grid : {
+                        x : 60,
+                        x2 : 30,
+                        borderWidth : 0
+                    },
+                    tooltip : {
+                        trigger: 'axis',
+                        showDelay:20,
+                        hideDely:100,
+                        transitionDuration:0.2,
+                        backgroundColor:'rgba(255,255,255,0.9)',
+                        borderColor:'#e7e7e7',
+                        borderRadius:2,
+                        borderWidth:1,
+                        textStyle:{ color:'#777'},
+                        axisPointer:{
+                            type : 'line',
+                            lineStyle : {
+                                color: '#999',
+                                width: 1,
+                                type: 'dotted'
+                            },
+                            crossStyle : {
+                                color: '#999',
+                                width: 1,
+                                type: 'dashed'
+                            },
+                            shadowStyle : {
+                                size: 'auto',
+                                color: 'rgba(150,150,150,0.3)'
+                            }
+                        }
+                    },
+                    legend: {
+                        data:['销量'],
+                        orient:'horizontal',
+                        x:'left',
+                        y:'bottom'
+                    },
+                    toolbox: {
+                        show : false,
+                        feature : {
+                            mark : {show: true},
+                            dataView : {show: true, readOnly: false},
+                            magicType : {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: true}
+                        }
+                    },
+                    calculable : false,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            splitLine:{show : false},
+                            boundaryGap : true,
+                            axisLine:{show:false},//边轴
+                            axisTick:{show:false},
+                            data : ['11-10','11-11','11-12','11-13','11-14','11-15','11-16','11-17','11-18','11-19','11-20','11-21','11-22','11-23','11-24','11-25','11-26','11-27','11-28','11-29','11-30','12-1','12-2','12-3','12-4','12-5','12-6','12-7','12-8','12-9']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            axisLine:{show:false},//边轴
+                            splitLine:{lineStyle:{type:'dotted'}},
+                            axisLabel : {
+                                formatter: function(value){
+                                    return parseInt(value)+' 件';
+                                }
+                            }
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'销量',
+                            type:'line',
+                            smooth:true,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: true,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#f35a4a"
+                                        },
+                                    },
+                                    lineStyle : {
+                                        color:'#f35a4a'
+                                    },
+                                    borderWidth:3,
+                                    borderColor:'#f35a4a'
+                                },
+                                emphasis : {
+
+                                }
+                            },
+                            data:[11,11,15,13,12,13,20,25,23,28,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+            }
+        );
+
         $(function(){
-            $(".help-icon").tooltip({trigger:'hover'})
+            $(".help-icon").tooltip({trigger:'hover'});
+            $(".data-tab-box .tab").click(function(){
+                $(".data-tab-box .tab").removeClass("checked");
+                $(this).addClass("checked");
+            });
+            $(window).resize(function(){
+               myChart.resize();//重置图表大小
+            });
         })
+        //===========end===========
         $(function(){
             $(".nav-tree-box dt").each(function(i){
               if(!$(this).next("dd").is(":empty")){
