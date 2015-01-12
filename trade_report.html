@@ -376,6 +376,8 @@
             function(ec){
                 myChart = ec.init(document.getElementById('my-chart'));
                 var option = {
+                    animationDuration:500,
+                    animationEasing:'CircularInOut',
                     title : {
                         text: '最近7天销量',
                         textStyle:{
@@ -396,7 +398,7 @@
                         trigger: 'axis',
                         showDelay:20,
                         hideDely:100,
-                        transitionDuration:0.2,
+                        transitionDuration:0.1,
                         backgroundColor:'rgba(255,255,255,0.9)',
                         borderColor:'#e7e7e7',
                         borderRadius:2,
@@ -427,7 +429,7 @@
                         y:'bottom'
                     },
                     toolbox: {
-                        show : false,
+                        show : true,
                         feature : {
                             mark : {show: true},
                             dataView : {show: true, readOnly: false},
