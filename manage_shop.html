@@ -168,6 +168,9 @@
                  </ul>
              </div>
          </div>
+         <div class="pack-toggle text-center">
+             <span id="pack-toggle-trigger" class="pack-toggle-trigger ico-font center-block"></span>
+         </div>
          <div class="content-side l">
             <div class="content-body container-fluid">
                     <div class="channel row">
@@ -227,15 +230,7 @@
          </div>
       </div>
   </div>
-    <div id="user-pop-html" class="hide">
-        <div id="user-menu" class="user-menu">
-            <ul>
-                <li><a href="#"><span class="ico-font">&#xe605;</span>用户设置</a></li>
-                <li><a href="#"><span class="ico-font">&#xe607;</span>客服帮助</a></li>
-                <li><a href="#"><span class="ico-font">&#xe615;</span>退出</a></li>
-            </ul>
-        </div>
-    </div>
+
 <!--    manage-shop-start   -->
      <div class="modal fade" id="add-shop-dialog" tabindex="-1" role="dialog" aria-labelledby="addShopLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -283,6 +278,7 @@
 <!--    manage-shop-end   -->
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/dzt_bg.js"></script>
     <script src="js/jquery.tablesorter.min.js"></script>
     <script type="text/javascript">
         //manage-shop-js-start
@@ -349,39 +345,6 @@
             })
         })
         //manage-shop-js-end
-        $(function(){
-            $(".nav-tree-box dt").each(function(i){
-              if(!$(this).next("dd").is(":empty")){
-                $(this).hover(
-                    function(e){
-                        if($(this).next("dd").is(":visible")){
-                            $(this).addClass("fold");
-                        }else{
-                            $(this).addClass("unfold");
-                        }
-                    },function(e){
-                        $(this).removeClass("fold");
-                        $(this).removeClass("unfold");
-                    });
-                $(this).click(function(e){
-                    $(this).next("dd").toggleClass("hide");
-                    $(this).toggleClass("fold");
-                    $(this).toggleClass("unfold");
-                })
-              }else{
-                $(this).click(function(e){
-                    $(".nav-tree-box a").removeClass("checked");
-                    $(this).find("a").toggleClass("checked");
-                });
-              }
-            });
-            $("#user-button").popover({
-                trigger:'focus',
-                placement:'bottom',
-                html:true,
-                content:$("#user-pop-html").html()
-            });
-        })
     </script>
   </body>
 </html>

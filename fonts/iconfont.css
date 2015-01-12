@@ -22,6 +22,12 @@
 
 .icon-tianmaoxingxiang2:before { content: "\e61c"; }
 
+.icon-chiping:before { content: "\e640"; }
+
+.icon-shuangjiantouyou:before { content: "\e641"; }
+
+.icon-shuangjiantouzuo:before { content: "\e642"; }
+
 .icon-spam:before { content: "\e633"; }
 
 .icon-icon:before { content: "\e628"; }

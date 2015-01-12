@@ -75,6 +75,18 @@
         .nav-tree-box dl dl .checked{padding-left: 31px;}
         .nav-tree-box dl dl dl .checked{padding-left: 47px;}
 
+        /*收缩样式*/
+        .pack-toggle{height:36px;line-height: 36px;position: fixed;bottom: 10px;width: 216px;background: #fafafa;z-index: 999;}
+        .pack-toggle:hover{background: #f6f6f6;cursor: pointer;}
+        .pack-toggle:hover .pack-toggle-trigger{color: #4184f3;}
+        .pack-toggle .pack-toggle-trigger{color: #777;}
+        .pack-toggle-trigger::before{content: '\e642';}
+        body.hide-nav .content-bg>.contain-body>.nav-side{display: none;}
+        body.hide-nav .content-bg>.contain-body>.pack-toggle{width: 36px;height:30px;line-height: 30px;bottom: 10px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;background-color: #4184f3;}
+        body.hide-nav .content-bg>.contain-body>.pack-toggle:hover{background-color: #2974f1;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);}
+        body.hide-nav .content-bg>.contain-body>.pack-toggle .pack-toggle-trigger::before{content: '\e641';color: #fff;}
+        body.hide-nav .content-bg .content-body{margin-left: 0;}
+
         .content{padding-top: 56px;width: 100%;margin-bottom: 100px;}/*前台content：首页，注册等*/
         .content-bg{padding-top: 56px;height:auto;}/*后台content*/
         .content-side{width: 100%;height: auto;padding-bottom: 20px;}
