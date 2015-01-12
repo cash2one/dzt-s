@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>店侦探</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        ul,li{list-style:none;margin: 0;padding: 0;}
+        @font-face {font-family: 'signfont';
+            src: url('../fonts/signfont.eot'); /* IE9*/
+            src: url('../fonts/signfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('../fonts/signfont.woff') format('woff'), /* chrome、firefox */
+            url('../fonts/signfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('../fonts/signfont.svg#uxiconfont') format('svg'); /* iOS 4.1- */
+        }
+
+        .ico{font-family:"signfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
+
+        .input-group-addon{font-size: 22px;color:#556270;}
+
+        .has-error .input-group-addon{color:#d50f1f;}
+        .has-error .form-control-feedback.ico::before{content: "\e602";font-size: 20px;}
+
+        .form-group .tooltip .tooltip-arrow{border-right-color: #4184f3;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);}
+        .form-group .tooltip .tooltip-inner{background-color: #4184f3;white-space: nowrap;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);}
+        .form-group.has-error .tooltip .tooltip-arrow{border-right-color: #d50f1f;}
+        .form-group.has-error .tooltip .tooltip-inner{background-color: #d50f1f;}
+
+        .form-group.has-success .input-group-addon{color:#35AA47;}
+        .form-group.has-success .form-control-feedback.ico::before{content: "\e601";font-size: 20px;}
+        .form-control-feedback{height: 43px;line-height: 43px;width: 43px;}
+        .form-group{margin-bottom: 25px;}
+
+        .reg-tip{font-size:12px;}
+
+        .checked-line{height: 20px;border-top: 1px solid #cccccc;}
+        .tab-row{border-bottom: 1px solid #cccccc;margin-bottom: 25px;}
+        .tab-row li a{font-size: 17px;color: #222;}
+        .tab-row li{float: left;padding: 10px;margin-bottom: -1px;}
+
+
+        .form-links .checkbox{margin-top: 0px;}
+        .form-links li{float: left;}
+        .form-links li:first-child{margin-right: 45px;}
+        .sign-info.alert-success::before,.sign-info.alert-danger::before{font-family:"signfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.1px;-moz-osx-font-smoothing: grayscale;margin-right: 10px;}
+        .sign-info.alert-success::before{content: "\e601";}
+        .sign-info.alert-danger::before{content: "\e602";}
+
+        .form-group .input-label{display: none;}
+        .form-group .input-label{_display: block;display: block\9;}/*ie7,8,9,10可见*/
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {.form-group .input-label{display: none;}}/*仅ie10可见*/
+    </style>
+  </head>
+  <body>
+<form role="form">
+      <div class="form-group">
+        <label for="signUpMobile" class="input-label">登陆手机</label>
+        <div class="input-group">
+          <div class="input-group-addon ico">&#xe603;</div>
+          <input id="signUpMobile" class="form-control input-lg" type="text" placeholder="登陆手机">
+          <div class="input-group-addon" style="font-size:13px;">获取验证码</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="signUpCode" class="input-label">验证码</label>
+        <div class="input-group">
+          <div class="input-group-addon ico">&#xe607;</div>
+          <input id="signUpCode" class="form-control input-lg" type="text" placeholder="验证码">
+          <span class="ico form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group">
+       <label for="signUpPassWord" class="input-label">登陆密码</label>
+        <div class="input-group">
+          <div class="input-group-addon ico">&#xe600;</div>
+          <input id="signUpPassWord" class="form-control input-lg" type="password" placeholder="登陆密码">
+          <span class="ico form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group">
+       <label for="signUpPassWordConfirm" class="input-label">再次输入密码</label>
+        <div class="input-group">
+          <div class="input-group-addon ico">&#xe604;</div>
+          <input id="signUpPassWordConfirm" class="form-control input-lg" type="password" placeholder="再次输入密码" data-toggle="tooltip" data-placement="right" title="两次输入的密码不一致！">
+          <span class="ico form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group">
+       <label for="signUpQQ" class="input-label">QQ</label>
+        <div class="input-group">
+          <div class="input-group-addon ico">&#xe606;</div>
+          <input id="signUpQQ" class="form-control input-lg" type="text" placeholder="QQ">
+          <span class="ico form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group">
+       <label for="nickName" class="input-label">用户昵称</label>
+        <div class="input-group">
+          <div class="input-group-addon ico">&#xe605;</div>
+          <input id="nickName" class="form-control input-lg" type="text" placeholder="用户昵称">
+          <span class="ico form-control-feedback"></span>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">注册账号</button>
+    </form>
+    <form role="form">
+      <div class="form-group">
+       <label for="signInMobile" class="input-label">手机</label>
+        <div class="input-group">
+          <div class="input-group-addon ico">&#xe603;</div>
+          <input id="signInMobile" class="form-control input-lg" type="email" placeholder="手机">
+          <span class="ico-font form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group">
+       <label for="signInPassWord" class="input-label">密码</label>
+        <div class="input-group">
+          <div class="input-group-addon ico">&#xe604;</div>
+          <input id="signInPassWord" class="form-control input-lg" type="password" placeholder="密码">
+          <span class="ico-font form-control-feedback"></span>
+        </div>
+      </div>
+      <div class="form-group form-links">
+          <ul class="clearfix">
+              <li>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> 一周内免登陆
+                    </label>
+                  </div>
+              </li>
+              <li>
+                  <a href="#">忘记密码</a>
+              </li>
+          </ul>
+      </div>
+      <div class="sign-info alert alert-danger">密码错误！</div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">登录</button>
+    </form>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("input.form-control").tooltip({
+                trigger:'focus'
+            });
+        })
+    </script>
+  </body>
+</html>

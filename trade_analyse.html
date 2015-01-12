@@ -67,6 +67,7 @@
 
         .data-chart{padding:10px 0px;}
         #tab-date-chart{height: 500px;}
+        #analyse-chart{height:300px;}
 
         .table-row{margin-top: 22px;}
         .table-col{padding-left: 0;padding-right: 0;}
@@ -80,6 +81,13 @@
         .data-table td{border: 1px solid #e7e7e7;}
         .data-table>thead>tr>th,.data-table>tbody>tr>td{padding:13px 8px;font-size: 13px;}
         .data-table tr>td:first-child{text-align: right;}
+        /* 产品列表表格*/
+        #product-list-table tr>td:first-child{text-align: left;}
+        .data-table img{border: 1px solid #CCC;}
+        .data-table .img-box{float: left;}
+        .data-table .title-box{padding-left:10px;height: 38px;line-height: 18px;overflow: hidden;text-overflow: ellipsis;}
+        #product-list-table td{line-height: 40px;}
+
         .btn-left{border-top-left-radius: 5px;border-bottom-left-radius: 5px;}
         .btn-right{border-top-right-radius: 5px;border-bottom-right-radius: 5px;}
         .page-info{vertical-align:middle;color:#777;}
@@ -212,11 +220,21 @@
                     </div>
                     <div class="row padding-row switch-date-row">
                         <div id="data-des" class="col-xs-3" style="line-height:28px;">
-                            最近七天概况
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-default">销售量</button>
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">销售量</a></li>
+                                <li><a href="#">销售金额</a></li>
+                                <li><a href="#">销售商品数</a></li>
+                              </ul>
+                            </div>
                         </div>
 
                         <div class="col-xs-6 col-xs-offset-3 text-right switch-date-col">
-
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default" day-length="1">昨天<span></span></button>
                                 <button type="button" class="btn btn-default" day-length="3">3天<span></span></button>
@@ -229,10 +247,7 @@
                     </div>
 
                     <div class="row padding-row">
-                        <div class="col-xs-6">
-                            <a class="data-title" href="#">交易报告<span class="ico-font">&#xe635;</span></a>
-                        </div>
-                        <div class="col-xs-6 clearfix">
+                        <div class="col-xs-12 clearfix">
                             <div id="date-select" style="display:none;">
                                 <button class="btn btn-primary r">确定</button>
                                 <div class="input-daterange input-group r">
@@ -246,36 +261,8 @@
                     <div class="row data-tab-box">
                         <div class="col-xs-12">
                             <div class="row border-box">
-                                <div class="tab-box clearfix">
-                                    <div class="col-xs-4 tab checked" id="sales-volume">
-                                        <ul>
-                                            <li class="data-type">7天销量<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店所有商品的销售总量">&#xe607;</a></li>
-                                            <li class="data-volume">353</li>
-                                            <li class="data-ratio">较上7天<span class="up">3%</span></li>
-                                            <li class="arrow"></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-xs-4 tab" id="sales-amount">
-                                        <ul>
-                                            <li class="data-type">7天销售额<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店的销售金额（注：手动改价无法统计到）">&#xe607;</a></li>
-                                            <li class="data-volume">￥3,531.00</li>
-                                            <li class="data-ratio">较上7天<span class="down">3%</span></li>
-                                            <li class="arrow"></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-xs-4 tab" id="sales-product-sum">
-                                        <ul>
-                                            <li class="data-type">7天销售商品数<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店销售的商品数量（例：1个链接销售10件商品，算1个）">&#xe607;</a></li>
-                                            <li class="data-volume">13</li>
-                                            <li class="data-ratio">较上7天<span class="down">3%</span></li>
-                                            <li class="arrow"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row border-box" style="border-top:none;">
                                 <div class="col-xs-12">
-                                    <div id="tab-date-chart" class="data-chart">
+                                    <div id="analyse-chart" class="data-chart">
 
                                     </div>
                                 </div>
@@ -284,13 +271,8 @@
                     </div>
                     <div class="row shadow-row">
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12 p0">
-                            <button class="btn btn-default btn-lg" style="margin-top:15px;">导出数据</button>&nbsp;&nbsp;
-                            <button class="btn btn-primary btn-lg" style="margin-top:15px;">深入交易分析</button>
-                        </div>
-                    </div>
-                    <div class="row table-row hide">
+
+                    <div class="row table-row">
                         <div class="col-xs-12 table-col">
                             <div class="tb-head-bar">
                                 <div class="row">
@@ -307,51 +289,36 @@
                                     </div>
                                 </div>
                             </div>
-                            <table class="data-table table table-hover">
+                            <table id="product-list-table" class="data-table table table-hover">
                                     <thead>
                                         <tr>
-                                            <th width="4%"></th>
-                                            <th width="24%">日期</th>
-                                            <th width="24%">销量</th>
-                                            <th width="24%">销售额</th>
-                                            <th width="24%">销售商品数</th>
+                                            <th width="26%">宝贝名称</th>
+                                            <th width="18%">30天营销</th>
+                                            <th width="9%">价格</th>
+                                            <th width="9%">评价数</th>
+                                            <th width="9%">收藏量</th>
+                                            <th width="9%">30天销量</th>
+                                            <th width="9%">销量环比</th>
+                                            <th width="9%">操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1.</td>
-                                            <td>2014-05-06</td>
-                                            <td>123</td>
-                                            <td>123</td>
-                                            <td>123</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2.</td>
-                                            <td>2014-05-07</td>
-                                            <td>176</td>
-                                            <td>176</td>
-                                            <td>176</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3.</td>
-                                            <td>2014-05-08</td>
-                                            <td>321</td>
-                                            <td>321</td>
-                                            <td>321</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4.</td>
-                                            <td>2014-05-09</td>
-                                            <td>421</td>
-                                            <td>421</td>
-                                            <td>421</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5.</td>
-                                            <td>2014-05-10</td>
-                                            <td>256</td>
-                                            <td>256</td>
-                                            <td>256</td>
+                                            <td>
+                                               <div class="img-box">
+                                                  <img src="images/none-pic.gif" alt="">
+                                               </div>
+                                               <div class="title-box">
+                                                   中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包
+                                               </div>
+                                            </td>
+                                            <td>ddd</td>
+                                            <td>￥123.00</td>
+                                            <td>1203</td>
+                                            <td>32145</td>
+                                            <td>524</td>
+                                            <td><span class="up">3%</span></td>
+                                            <td><button class="btn btn-primary">详情</button></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -414,7 +381,7 @@
                 'echarts/chart/bar'
             ],
             function(ec){
-                g_data_chart = ec.init(document.getElementById('tab-date-chart'));
+                g_data_chart = ec.init(document.getElementById('analyse-chart'));
                 var option = {
                     animationDuration:500,
                     animationEasing:'CircularInOut',
