@@ -63,7 +63,7 @@
         .data-tab-box .tab.checked .data-ratio{}
         .data-tab-box .tab.checked .arrow{width: 13px;height: 13px;background: url(images/sprites.png) no-repeat 0 0;position: absolute;left: 50%;margin-left: -13px;}
 
-        .data-chart{height: 280px;padding:10px 0px;}
+        .data-chart{height: 300px;padding:10px 0px;}
 
         .table-row{margin-top: 22px;}
         .table-col{padding-left: 0;padding-right: 0;}
@@ -210,11 +210,12 @@
                         </div>
                         <div class="col-xs-7 col-xs-offset-2 text-right switch-date-col">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-default">昨天<span></span></button>
-                                <button type="button" class="btn btn-default">3天<span></span></button>
-                                <button type="button" class="btn btn-default active">7天<span></span></button>
-                                <button type="button" class="btn btn-default">14天<span></span></button>
-                                <button type="button" class="btn btn-default">30天<span></span></button>
+                                <button type="button" class="btn btn-default" day-length="1">昨天<span></span></button>
+                                <button type="button" class="btn btn-default" day-length="3">3天<span></span></button>
+                                <button type="button" class="btn btn-default active" day-length="7">7天<span></span></button>
+                                <button type="button" class="btn btn-default" day-length="14">14天<span></span></button>
+                                <button type="button" class="btn btn-default" day-length="30">30天<span></span></button>
+                                <button type="button" class="btn btn-default ico-font" day-length="0" style="font-size:13px;">&#xe638;<span></span></button>
                             </div>
                         </div>
                     </div>
@@ -227,7 +228,7 @@
                         <div class="col-xs-12">
                             <div class="row border-box">
                                 <div class="tab-box clearfix">
-                                    <div class="col-xs-4 tab checked">
+                                    <div class="col-xs-4 tab checked" id="sales-volume">
                                         <ul>
                                             <li class="data-type">7天销量<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店所有商品的销售总量">&#xe607;</a></li>
                                             <li class="data-volume">353</li>
@@ -235,7 +236,7 @@
                                             <li class="arrow"></li>
                                         </ul>
                                     </div>
-                                    <div class="col-xs-4 tab">
+                                    <div class="col-xs-4 tab" id="sales-amount">
                                         <ul>
                                             <li class="data-type">7天销售额<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店的销售金额（注：手动改价无法统计到）">&#xe607;</a></li>
                                             <li class="data-volume">￥3,531.00</li>
@@ -243,7 +244,7 @@
                                             <li class="arrow"></li>
                                         </ul>
                                     </div>
-                                    <div class="col-xs-4 tab">
+                                    <div class="col-xs-4 tab" id="sales-product-sum">
                                         <ul>
                                             <li class="data-type">7天销售商品数<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店销售的商品数量（例：1个链接销售10件商品，算1个）">&#xe607;</a></li>
                                             <li class="data-volume">13</li>
@@ -361,8 +362,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/echarts.js"></script>
     <script type="text/javascript">
-        //=============店铺管理js-start=============
-        var myChart;
+        //=============交易报告js-start=============
+        var g_data_chart;
+        var g_last_update = new Date('2015/11/2 12:01:00');
+        var g_day_length = 1;
+        var g_data_type = "";//tab的id
         require.config({
             paths:{
                 echarts:'js/dist'
@@ -371,15 +375,17 @@
         require(
             [
                 'echarts',
-                'echarts/chart/line'
+                'echarts/chart/line',
+                'echarts/chart/bar'
             ],
             function(ec){
-                myChart = ec.init(document.getElementById('my-chart'));
+                g_data_chart = ec.init(document.getElementById('my-chart'));
                 var option = {
                     animationDuration:500,
                     animationEasing:'CircularInOut',
                     title : {
                         text: '最近7天销量',
+                        itemGap:17,
                         textStyle:{
                             color: '#222',
                             fontFamily:'Arial,Helvetica,"微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif',
@@ -391,14 +397,15 @@
                     color : ['#f35a4a','#4184f3'],
                     grid : {
                         x : 60,
+                        y : 80,
                         x2 : 30,
                         borderWidth : 0
                     },
                     tooltip : {
                         trigger: 'axis',
-                        showDelay:20,
+                        showDelay:0,
                         hideDely:100,
-                        transitionDuration:0.1,
+                        transitionDuration:0,
                         backgroundColor:'rgba(255,255,255,0.9)',
                         borderColor:'#e7e7e7',
                         borderRadius:2,
@@ -430,12 +437,14 @@
                     },
                     toolbox: {
                         show : true,
+                        itemSize:12,
+                        color:['#FF6B6B','#4184f3','#C7F464','#556270','#C44D58','#4ECDC4'],
                         feature : {
-                            mark : {show: true},
-                            dataView : {show: true, readOnly: false},
+                            mark : {show: false},
+                            dataView : {show: false, readOnly: false},
                             magicType : {show: true, type: ['line', 'bar']},
                             restore : {show: true},
-                            saveAsImage : {show: true}
+                            saveAsImage : {show: false}
                         }
                     },
                     calculable : false,
@@ -453,6 +462,7 @@
                         {
                             type : 'value',
                             axisLine:{show:false},//边轴
+//                            splitNumber:2,
                             splitLine:{lineStyle:{type:'dotted'}},
                             axisLabel : {
                                 formatter: function(value){
@@ -466,6 +476,8 @@
                             name:'销量',
                             type:'line',
                             smooth:true,
+                            barMaxWidth:16,
+                            symbolSize:3,
                             itemStyle:{
                                 normal: {
                                     label : {
@@ -479,8 +491,8 @@
                                     lineStyle : {
                                         color:'#f35a4a'
                                     },
-                                    borderWidth:3,
-                                    borderColor:'#f35a4a'
+//                                    borderWidth:3,
+//                                    borderColor:'#f35a4a'
                                 },
                                 emphasis : {
 
@@ -490,20 +502,61 @@
                         }
                     ]
                 };
-                myChart.setOption(option);
+                g_data_chart.setOption(option);
             }
         );
 
+        function getNewOption(day_length,data_type){
+            var title;
+            var sub_title;
+            var option;
+            switch(data_type){
+            case "sales-volume":
+                title = "最近" + day_length + "天销量"
+                break;
+            case "sales-amount":
+                title = "最近" + day_length + "天销售额"
+                break;
+            case "sales-product-sum":
+                title = "最近" + day_length + "天销售商品数"
+                break;
+            }
+            option = {
+                title : {
+                    text : title,
+                    subtext: '11月10日-12月8日'
+                }
+            }
+            return option;
+        }
+        function updateGlobalVar(){
+            g_day_length = $(".switch-date-col button.active").attr("day-length");
+            g_data_type = $(".data-tab-box .tab.checked").attr("id");
+        }
+
+        function updateChart(){
+            updateGlobalVar();
+            g_data_chart.setOption(getNewOption(g_day_length,g_data_type));
+        }
         $(function(){
             $(".help-icon").tooltip({trigger:'hover'});
+            $(".switch-date-col button").click(function(){
+                $(".switch-date-col button").removeClass("active");
+                $(this).addClass("active");
+                updateChart();
+            })
             $(".data-tab-box .tab").click(function(){
                 $(".data-tab-box .tab").removeClass("checked");
                 $(this).addClass("checked");
+                updateChart();
+
             });
             $(window).resize(function(){
-               myChart.resize();//重置图表大小
+               g_data_chart.resize();//重置图表大小
             });
         })
+        //===========日期操作类============
+
         //===========end===========
         $(function(){
             $(".nav-tree-box dt").each(function(i){
