@@ -27,6 +27,7 @@
         .switch-shop-menu.open>h4{color: #777;}
         .switch-shop-menu .dropdown-menu>li>a{padding:8px 20px;font-size: 14px;}
         .switch-shop-menu.open .dropdown-menu>li>a:hover{color:#f35a4a;}
+        .switch-shop-row .last-update{margin-left: 25px;margin-top: 3px;color: #777;}
         .switch-date-row{border-bottom: 1px solid #e7e7e7;}
         .switch-date-col .btn{color: #777;padding:4px 18px;letter-spacing:2px;}
         .switch-date-col .btn.active{position: relative;color:#222;background-color: #efefef;background-image: linear-gradient(to bottom,#efefef, #fff);}
@@ -63,7 +64,7 @@
         .data-tab-box .tab.checked .data-ratio{}
         .data-tab-box .tab.checked .arrow{width: 13px;height: 13px;background: url(images/sprites.png) no-repeat 0 0;position: absolute;left: 50%;margin-left: -13px;}
 
-        .data-chart{height: 300px;padding:10px 0px;}
+        .data-chart{height: 500px;padding:10px 0px;}
 
         .table-row{margin-top: 22px;}
         .table-col{padding-left: 0;padding-right: 0;}
@@ -83,6 +84,9 @@
         .btn-export::before{content: '\e63a';font-size: 12px;color: #777;}
 
 
+        /*时间选择pop*/
+        #date-select .date-ico:hover{cursor: pointer;box-shadow:0 1px 1px rgba(0, 0, 0, 0.2); }
+        .switch-date-col .popover{max-width: 300px;}
     </style>
   </head>
   <body>
@@ -190,8 +194,8 @@
             <div class="content-body container-fluid">
                 <div class="padding-box">
                     <div class="row padding-row switch-shop-row">
-                        <div class="col-xs-12">
-                            <div class="dropdown switch-shop-menu">
+                        <div class="col-xs-12 clearfix">
+                            <div class="dropdown switch-shop-menu l">
                                 <h4 class="dropdown-toggle" id="switch-shop-title" data-toggle="dropdown">
                                 几度家居旗舰店
                                 <span class="caret"></span>
@@ -202,6 +206,7 @@
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">几度家居旗舰店</a></li>
                                 </ul>
                             </div>
+                            <div class="last-update l">最后更新：2015-5-1</div>
                         </div>
                     </div>
                     <div class="row padding-row switch-date-row">
@@ -215,7 +220,7 @@
                                 <button type="button" class="btn btn-default active" day-length="7">7天<span></span></button>
                                 <button type="button" class="btn btn-default" day-length="14">14天<span></span></button>
                                 <button type="button" class="btn btn-default" day-length="30">30天<span></span></button>
-                                <button type="button" class="btn btn-default ico-font" day-length="0" style="font-size:13px;">&#xe638;<span></span></button>
+                                <button type="button" class="btn btn-default ico-font" id="date-select-button" day-length="0" style="font-size:13px;">&#xe638;<span></span></button>
                             </div>
                         </div>
                     </div>
@@ -265,7 +270,13 @@
                     </div>
                     <div class="row shadow-row">
                     </div>
-                    <div class="row table-row">
+                    <div class="row">
+                        <div class="col-xs-12 p0 text-center">
+                            <button class="btn btn-default btn-lg" style="margin-top:15px;">导出数据</button>&nbsp;&nbsp;
+                            <button class="btn btn-primary btn-lg" style="margin-top:15px;">深入交易分析</button>
+                        </div>
+                    </div>
+                    <div class="row table-row hide">
                         <div class="col-xs-12 table-col">
                             <div class="tb-head-bar">
                                 <div class="row">
@@ -343,12 +354,34 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
          </div>
       </div>
   </div>
 
+<div id="date-select-pop" class="hide">
+    <div id="date-select">
+        <form class="form" role="form">
+            <div class="form-group">
+                <label class="sr-only" for="fromDate">开始时间</label>
+                <div class="input-group">
+                    <input type="email" class="form-control" id="fromDate" placeholder="开始时间">
+                    <div class="input-group-addon ico-font date-ico">&#xe638;</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="toDate">结束时间</label>
+                <div class="input-group">
+                    <input type="email" class="form-control" id="toDate" placeholder="结束时间">
+                    <div class="input-group-addon ico-font date-ico">&#xe638;</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default">确定</button>
+        </form>
+    </div>
+</div>
     <div id="user-pop-html" class="hide">
         <div id="user-menu" class="user-menu">
             <ul>
@@ -462,7 +495,7 @@
                         {
                             type : 'value',
                             axisLine:{show:false},//边轴
-//                            splitNumber:2,
+                            splitNumber:6,
                             splitLine:{lineStyle:{type:'dotted'}},
                             axisLabel : {
                                 formatter: function(value){
@@ -491,8 +524,6 @@
                                     lineStyle : {
                                         color:'#f35a4a'
                                     },
-//                                    borderWidth:3,
-//                                    borderColor:'#f35a4a'
                                 },
                                 emphasis : {
 
@@ -556,7 +587,14 @@
             });
         })
         //===========日期操作类============
-
+        $(function(){
+            $("#date-select-button").popover({
+                trigger:'click',
+                placement:'bottom',
+                html:true,
+                content:$("#date-select-pop").html()
+            });
+        })
         //===========end===========
         $(function(){
             $(".nav-tree-box dt").each(function(i){
