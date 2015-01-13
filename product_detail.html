@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <title>店侦探</title>
+    <title>产品详情</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -68,7 +68,7 @@
 
         .data-chart{padding:10px 0px;}
         #tab-data-chart{height: 500px;}
-        #analyse-chart{height:300px;}
+        #product-data-chart,#analyse-chart{height:300px;}
 
         .table-row{margin-top: 22px;}
         .table-col{padding-left: 0;padding-right: 0;}
@@ -104,6 +104,23 @@
 
         #date-select .btn{margin-left: 10px;}
         #date-select input{width: 130px;}
+
+        #product-info-row .product-img{}
+        #product-info-row .product-img img{border: 1px solid #CCC;margin-top: 20px;}
+        #product-info-row .product-info{padding-left: 152px;}
+        #product-info-row .product-info li.info{margin-bottom: 13px;}
+        #product-info-row .product-info .pro-title a{font-size: 16px;color: #222;}
+        #product-info-row .product-info .pro-title a::after{content: '\e635'; margin-left: 10px;color: #4184f3;}
+        #product-info-row .product-info .pro-title a:hover::after{text-decoration: none;}
+        #product-info-row .product-info .tooltip.right .tooltip-arrow{border-right-color: #4184f3;}
+        #product-info-row .product-info .tooltip-inner{background-color: #4184f3;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;padding:4px 8px 5px}
+        #product-info-row .pro-other-info i,#product-info-row .pro-price i{font-style: normal;color: #777;margin-right: 36px;}
+        #product-info-row .pro-price .price{font-size: 18px;color: #f35a4a;}
+        #product-info-row .pro-price .price::before{content:'￥';font-size: 18px;color: #777;}
+        #product-info-row .pro-other-info i span{color: #222;}
+        #product-info-row .info-item{padding: 7px 13px;border: 1px solid #e7e7e7;background-color: #fafafa;}
+        #product-info-row .info-item li{font-size: 16px;color: #222;text-align: center;}
+        #product-info-row .info-item li:first-child{font-size: 13px;color: #777;margin-bottom: 7px;}
     </style>
   </head>
   <body>
@@ -228,12 +245,59 @@
                         <div class="last-update l">最后更新：2015-5-1</div>
                     </div>
                 </div>
-                <div class="row padding-row switch-date-row border-bottom-row">
+                <div class="row padding-row border-bottom-row">
+                    <div class="col-xs-6">
+                        <span class="data-title">产品详情</span>
+                    </div>
+                </div>
+                <div class="row padding-row" id="product-info-row">
+                    <div class="col-xs-12">
+                        <div class="clearfix">
+                            <div class="product-img l">
+                                <img src="images/none_pic120.gif" alt="">
+                            </div>
+                            <ul class="product-info">
+                                <li class="info pro-title"><a class="ico-after" href="#" data-toggle="tooltip" data-placement="right" title="跳转到淘宝查看">学院风帆布双肩包韩版大学生包书包潮男士背包欧美时尚女生旅游包</a></li>
+                                <li class="info pro-price"><i>原价：<span class="price"><del>123.00</del></span></i><i>实售：<span class="price">123.00</span></i></li>
+                                <li class="info pro-other-info"><i>上下架：<span>星期五 12:00:00</span></i><i>类目：<span>家具/家居用品</span></i></li>
+                                <li class="info">
+                                   <div class="row">
+                                       <div class="col-xs-3">
+                                           <ul class="info-item">
+                                               <li>30天销量</li>
+                                               <li>12345<span class="ico-before up">3%</span></li>
+                                           </ul>
+                                       </div>
+                                       <div class="col-xs-3">
+                                           <ul class="info-item">
+                                               <li>30天销售额</li>
+                                               <li>￥123.45万<span class="ico-before down">3%</span></li>
+                                           </ul>
+                                       </div>
+                                       <div class="col-xs-3">
+                                           <ul class="info-item">
+                                               <li>收藏量</li>
+                                               <li>12345</li>
+                                           </ul>
+                                       </div>
+                                       <div class="col-xs-3">
+                                           <ul class="info-item">
+                                               <li>评价数</li>
+                                               <li>12345</li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row padding-row border-bottom-row switch-date-row">
                     <div id="data-des" class="col-xs-3" style="line-height:28px;">
                         最近七天概况
                     </div>
 
-                    <div class="col-xs-6 col-xs-offset-3 text-right switch-date-col">
+                    <div class="col-xs-9 text-right switch-date-col">
 
                         <div class="btn-group">
                             <button type="button" class="btn btn-default" day-length="1">昨天<span></span></button>
@@ -246,54 +310,11 @@
                     </div>
                 </div>
 
-                <div class="row padding-row">
-                    <div class="col-xs-6">
-                        <a class="data-title" href="#">交易报告<span class="ico-font">&#xe635;</span></a>
-                    </div>
-                    <div class="col-xs-6 clearfix">
-                        <div id="date-select" style="display:none;">
-                            <button class="btn btn-primary r">确定</button>
-                            <div class="input-daterange input-group r">
-                                <input type="text" class="form-control text-center" id="fromDate" placeholder="开始时间" name="start"/>
-                                <div class="input-group-addon">~</div>
-                                <input type="text" class="form-control text-center" id="toDate" placeholder="结束时间" name="end" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row data-tab-box">
                     <div class="col-xs-12">
-                        <div class="row border-box">
-                            <div class="tab-box clearfix">
-                                <div class="col-xs-4 tab checked" id="sales-volume">
-                                    <ul>
-                                        <li class="data-type">7天销量<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店所有商品的销售总量">&#xe607;</a></li>
-                                        <li class="data-volume">353</li>
-                                        <li class="data-ratio">较上7天<span class="up">3%</span></li>
-                                        <li class="arrow"></li>
-                                    </ul>
-                                </div>
-                                <div class="col-xs-4 tab" id="sales-amount">
-                                    <ul>
-                                        <li class="data-type">7天销售额<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店的销售金额（注：手动改价无法统计到）">&#xe607;</a></li>
-                                        <li class="data-volume">￥3,531.00</li>
-                                        <li class="data-ratio">较上7天<span class="down">3%</span></li>
-                                        <li class="arrow"></li>
-                                    </ul>
-                                </div>
-                                <div class="col-xs-4 tab" id="sales-product-sum">
-                                    <ul>
-                                        <li class="data-type">7天销售商品数<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店销售的商品数量（例：1个链接销售10件商品，算1个）">&#xe607;</a></li>
-                                        <li class="data-volume">13</li>
-                                        <li class="data-ratio">较上7天<span class="down">3%</span></li>
-                                        <li class="arrow"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row border-box" style="border-top:none;">
                             <div class="col-xs-12">
-                                <div id="tab-data-chart" class="data-chart">
+                                <div id="product-data-chart" class="data-chart">
 
                                 </div>
                             </div>
@@ -423,7 +444,7 @@
                 'echarts/chart/bar'
             ],
             function(ec){
-                g_data_chart = ec.init(document.getElementById('tab-date-chart'));
+                g_data_chart = ec.init(document.getElementById('product-data-chart'));
                 var option = {
                     animationDuration:500,
                     animationEasing:'CircularInOut',
@@ -581,7 +602,7 @@
             g_data_chart.setOption(getNewOption(g_day_length,g_data_type));
         }
         $(function(){
-            $(".help-icon").tooltip({trigger:'hover'});//帮助
+            $(".pro-title a").tooltip({trigger:'hover'});//帮助
 
             $(".switch-date-col button").click(function(){
                 $(".switch-date-col button").removeClass("active");
@@ -591,17 +612,10 @@
                 }else{
                     $("#date-select").show();
                 }
-                updateChart();
+//                updateChart();
             })
-            $(".data-tab-box .tab").click(function(){
-                $(".data-tab-box .tab").removeClass("checked");
-                $(this).addClass("checked");
-                updateChart();
 
-            });
-//            $(window).resize(function(){
-//               g_data_chart.resize();//重置图表大小
-//            });
+;
             $(".content-body").resize(function(){
                g_data_chart.resize();//navside变化时需要重置图表
             });

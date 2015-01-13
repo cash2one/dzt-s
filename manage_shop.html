@@ -33,10 +33,12 @@
         #shop-list-table .shop-type-tb:before{content: "\e60f";font-size: 18px;margin-right: 4px;color: #ff4e00;}
         #shop-list-table .shop-type-tm:before{content: "\e61f";font-size: 18px;margin-right: 4px;color: #c40000;}
 
-        #shop-list-table .ico-down,#shop-list-table .ico-down:before{color: #5cae50;}
-        #shop-list-table .ico-up,#shop-list-table .ico-up:before{color: #f35a4a;}
-        #shop-list-table .ico-down:before{content: "\e622";}
-        #shop-list-table .ico-up:before{content: "\e623";}
+        #shop-list-table .ico-down,#shop-list-table .ico-down::before{color: #5cae50;}
+        #shop-list-table .ico-up,#shop-list-table .ico-up::before{color: #f35a4a;}
+        #shop-list-table .ico-flat,#shop-list-table .ico-flat::before{color: #777;}
+        #shop-list-table .ico-down::before{content: "\e622";}
+        #shop-list-table .ico-up::before{content: "\e623";}
+        #shop-list-table .ico-flat::before{content: "\e640";}
         #shop-list-table i[class^="ico-"]{margin-left: 5px;font-style: normal;font-size: 10px;}
         #shop-list-table .tip{background-color: #ffce55;border: 1px solid #e8af22;border-radius: 50%; width: 8px;height: 8px; display: inline-block;margin:0 13px 0 0;position: relative;}
         #shop-list-table .tip:hover{cursor: pointer;}
@@ -199,7 +201,7 @@
                                             <span class="shop-type-tb i-shop-name">a几度家居旗舰店</span>
                                         </td>
                                         <td><span class="i-sales-volume">223</span><i class="ico-down">2.5%</i></td>
-                                        <td><span class="i-sales-amount">126万</span><i class="ico-up">2.5%</i></td>
+                                        <td><span class="i-sales-amount">126万</span><i class="ico-flat">0%</i></td>
                                         <td><span class="i-sword-num">28</span><i class="ico-up">3.5%</i></td>
                                         <td><span class="i-dfword-num">28</span><i class="ico-up">3.5%</i></td>
                                         <td>
@@ -258,12 +260,12 @@
         </div>
       </div>
     </div>
-     <div class="modal fade" id="del-warning-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal fade" id="del-warning-dialog" tabindex="-1" role="dialog" aria-labelledby="warningLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title text-danger" id="myModalLabel">警告</h4>
+            <h4 class="modal-title text-danger" id="warningLabel">警告</h4>
           </div>
           <div class="modal-body">
             确认停止监控此店铺？

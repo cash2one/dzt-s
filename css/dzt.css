@@ -11,6 +11,7 @@
 
         a:hover,a:visited,a:focus{text-decoration: none;}
         a:focus{outline:none;-moz-outline:none;}
+        .hover-line:hover{text-decoration:underline;}
 
         /*常用类*/
         .l{float: left;}
@@ -23,7 +24,11 @@
 
         html{height: 100%;}
         body{height:100%;color: #222222; background: #fff;font-family: "微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;}
-        .ico-font{font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
+        .ico-before::before,.ico-after::after,.ico-font{font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
+        .up.ico-before::before{content: '\e623';color: #f35a4a;}
+        .down.ico-before::before{content: '\e622';color: #5cae50;}
+        .flat.ico-before::before{content: '\e640';color: #777;}
+
         /*头部样式*/
        .header-wrapper{background: #fff;height: 56px;line-height: 56px;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);width: 100%;position: fixed;z-index: 999;/* border-bottom: 1px solid #eae9e9;*/}
         .col-logo{min-width: 340px;}
