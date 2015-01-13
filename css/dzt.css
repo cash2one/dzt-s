@@ -18,6 +18,7 @@
         .r{float: right;}
         .p0{padding: 0px;}
         .font-simsun{font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
+        .rmb-before:before{content:'￥'};
 
         /*链接颜色*/
         a,a:hover{color: #4184f3;}

@@ -29,10 +29,10 @@
         .switch-shop-menu.open .dropdown-menu>li>a:hover{color:#f35a4a;}
         .switch-shop-row .last-update{margin-left: 25px;margin-top: 3px;color: #777;}
 
-        .switch-date-col .btn{color: #777;padding:4px 18px;letter-spacing:2px;}
-        .switch-date-col .btn.active{position: relative;color:#222;background-color: #efefef;background-image: linear-gradient(to bottom,#efefef, #fff);}
-        .switch-date-col .btn.active:hover{box-shadow: none;}
-        .switch-date-col .btn.active span{width: 100%;height: 100%; border-bottom: 2px solid #4184f3;position: absolute;left: 0px;bottom: 0px;}
+        .switch-date-btn-group .btn{color: #777;padding:4px 18px;letter-spacing:2px;}
+        .switch-date-btn-group .btn.active{position: relative;color:#222;background-color: #efefef;background-image: linear-gradient(to bottom,#efefef, #fff);}
+        .switch-date-btn-group .btn.active:hover{box-shadow: none;}
+        .switch-date-btn-group .btn.active span{width: 100%;height: 100%; border-bottom: 2px solid #4184f3;position: absolute;left: 0px;bottom: 0px;}
         #data-des{color: #777;}
         .data-title{font-size: 18px;color: #222;margin: 0px;}
         .data-title>.ico-font{font-size: 16px;margin-left: 10px;}
@@ -102,8 +102,11 @@
         .btn-export::before{content: '\e63a';font-size: 12px;color: #777;}
 
 
-        #date-select .btn{margin-left: 10px;}
-        #date-select input{width: 130px;}
+        /*日期选择*/
+        .datepicker-box{display:inline;vertical-align: middle;}
+        .datepicker-box .btn{margin-left: 10px;}
+        .datepicker-box .input-group input{width: 100px;}
+        .datepicker-box .input-daterange .input-group-addon{line-height: 1;}
     </style>
   </head>
   <body>
@@ -228,14 +231,13 @@
                         <div class="last-update l">最后更新：2015-5-1</div>
                     </div>
                 </div>
-                <div class="row padding-row switch-date-row border-bottom-row">
+                <div class="row padding-row border-bottom-row">
                     <div id="data-des" class="col-xs-3" style="line-height:28px;">
                         最近七天概况
                     </div>
 
-                    <div class="col-xs-6 col-xs-offset-3 text-right switch-date-col">
-
-                        <div class="btn-group">
+                    <div class="col-xs-6 col-xs-offset-3 text-right">
+                        <div class="btn-group switch-date-btn-group">
                             <button type="button" class="btn btn-default" day-length="1">昨天<span></span></button>
                             <button type="button" class="btn btn-default" day-length="3">3天<span></span></button>
                             <button type="button" class="btn btn-default active" day-length="7">7天<span></span></button>
@@ -251,8 +253,9 @@
                         <a class="data-title" href="#">交易报告<span class="ico-font">&#xe635;</span></a>
                     </div>
                     <div class="col-xs-6 clearfix">
-                        <div id="date-select" style="display:none;">
-                            <button class="btn btn-primary r">确定</button>
+                        <div class="datepicker-box" style="display:none;">
+                            <button class="btn btn-default r" id="cancle-picker">取消</button>
+                            <button class="btn btn-primary r" id="submit-picker">确定</button>
                             <div class="input-daterange input-group r">
                                 <input type="text" class="form-control text-center" id="fromDate" placeholder="开始时间" name="start"/>
                                 <div class="input-group-addon">~</div>
@@ -401,13 +404,14 @@
     <script type="text/javascript">
         //=============交易报告js-start=============
         //日期选择初始化
-        $('#date-select .input-daterange').datepicker({
+        $('.datepicker-box .input-daterange').datepicker({
             language: "zh-CN",
             orientation: "auto right",
-            autoclose: true
+            autoclose: true,
+            format:'yyyy-m-d'
         });
 
-        //图表配置
+       //图表配置
         var g_data_chart;
         var g_day_length = 1;
         var g_data_type = "";//tab的id
@@ -423,7 +427,7 @@
                 'echarts/chart/bar'
             ],
             function(ec){
-                g_data_chart = ec.init(document.getElementById('tab-date-chart'));
+                g_data_chart = ec.init(document.getElementById('tab-data-chart'));
                 var option = {
                     animationDuration:500,
                     animationEasing:'CircularInOut',
@@ -583,13 +587,13 @@
         $(function(){
             $(".help-icon").tooltip({trigger:'hover'});//帮助
 
-            $(".switch-date-col button").click(function(){
-                $(".switch-date-col button").removeClass("active");
+            $(".switch-date-btn-group button").click(function(){
+                $(".switch-date-btn-group button").removeClass("active");
                 $(this).addClass("active");
                 if(!$(this).is("#date-select-button")){
-                    $("#date-select").hide();
+                    $(".datepicker-box").css("display","none");
                 }else{
-                    $("#date-select").show();
+                    $(".datepicker-box").css("display","inline");
                 }
                 updateChart();
             })
