@@ -22,7 +22,6 @@
         .channel-title{font-size: 18px;font-weight: 400;display: inline;}
         .channel .btn-addShop{margin: 0px 0 10px 20px;}
         .channel .version-tip{color:#777;margin-left: 15px;}
-        #shop-list-table span[class^="shop-type-"]:before,#shop-list-table i[class^="ico-"]:before{font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
 
         #shop-list-table th.shop-name{min-width: 220px;white-space: nowrap;}
         #shop-list-table th.sales-volume,#shop-list-table th.sales-amount,#shop-list-table th.sword-num,#shop-list-table th.dfword-num{min-width: 80px;}
@@ -30,15 +29,8 @@
         #shop-list-table thead th{font-size: 12px;border-bottom: 2px solid #e7e7e7;font-weight: 100; color: #777777;}
 /*        #shop-list-table thead th:hover{color:#222;}*/
         #shop-list-table tbody td{font-size: 14px;vertical-align:middle;padding:15px 9px;border-bottom: 1px solid #e7e7e7;color: #222;}
-        #shop-list-table .shop-type-tb:before{content: "\e60f";font-size: 18px;margin-right: 4px;color: #ff4e00;}
-        #shop-list-table .shop-type-tm:before{content: "\e61f";font-size: 18px;margin-right: 4px;color: #c40000;}
+        #shop-list-table .shop-taobao::before,#shop-list-table .shop-tmall::before{font-size: 18px;margin-right: 4px;}
 
-        #shop-list-table .ico-down,#shop-list-table .ico-down::before{color: #5cae50;}
-        #shop-list-table .ico-up,#shop-list-table .ico-up::before{color: #f35a4a;}
-        #shop-list-table .ico-flat,#shop-list-table .ico-flat::before{color: #777;}
-        #shop-list-table .ico-down::before{content: "\e622";}
-        #shop-list-table .ico-up::before{content: "\e623";}
-        #shop-list-table .ico-flat::before{content: "\e640";}
         #shop-list-table i[class^="ico-"]{margin-left: 5px;font-style: normal;font-size: 10px;}
         #shop-list-table .tip{background-color: #ffce55;border: 1px solid #e8af22;border-radius: 50%; width: 8px;height: 8px; display: inline-block;margin:0 13px 0 0;position: relative;}
         #shop-list-table .tip:hover{cursor: pointer;}
@@ -51,16 +43,15 @@
         #shop-list-table .del-link{font: 12px/1.5 tahoma, arial, \5b8b\4f53;margin-left: 23px;color: #f35a4a;}
         #shop-list-table .del-link:hover{text-decoration:underline;}
 
-        #shop-list-table th.order a::after{margin-left: 6px;font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.1px;-moz-osx-font-smoothing: grayscale;font-weight: 700;display: inline-block;}
-        #shop-list-table th.order a{color: #777777;-webkit-transition: color 0.3s ease-out 0s;-moz-transition: color 0.3s ease-out 0s;transition: color 0.3s ease-out 0s;vertical-align: bottom;}
-        #shop-list-table th.order a:hover{color: #222;}
-        #shop-list-table th.headerSortDown a:hover,#shop-list-table th.headerSortUp a:hover{color: #4184f3;}
-        #shop-list-table th.headerSortDown a,#shop-list-table th.headerSortUp a{color:#4184f3;}
 
-        #shop-list-table th.order-desc a::after,#shop-list-table th.headerSortUp a::after{content: "\e625";vertical-align: bottom;}
-        #shop-list-table th.headerSortDown a::after{content: "\e624";vertical-align: bottom;}
-        #shop-list-table th.upAnimation a::after{content: "\e624";-webkit-transform:rotateZ(180deg);-moz-transform:rotateZ(180deg);transform: rotateZ(180deg);-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
-        #shop-list-table th.downAnimation a::after{content: "\e625";-webkit-transform:rotateZ(-180deg);-moz-transform:rotateZ(-180deg);transform: rotateZ(-180deg);-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
+
+        .sort-table th .ico-after::after{margin-left: 6px;font-weight: 700;display: inline-block;}
+        .sort-table th .ico-after{color: #777;-webkit-transition: color 0.3s ease-out 0s;-moz-transition: color 0.3s ease-out 0s;transition: color 0.3s ease-out 0s;vertical-align: bottom;cursor: pointer;}
+        .sort-table th .ico-after:hover,.sort-table th.headerSortDown .ico-after:hover,.sort-table th.headerSortUp .ico-after:hover,.sort-table th.headerSortDown .ico-after,.sort-table th.headerSortUp .ico-after{color: #4184f3;}
+        .sort-table th .ico-after:hover::after,.sort-table th.headerSortUp .ico-after::after{content: "\e625";vertical-align: bottom;}
+        .sort-table th.headerSortDown .ico-after::after{content: "\e624";vertical-align: bottom;}
+        .sort-table th.upAnimation .ico-after::after{content: "\e624";-webkit-transform:rotateZ(180deg);-moz-transform:rotateZ(180deg);transform: rotateZ(180deg);-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
+        .sort-table th.downAnimation .ico-after::after{content: "\e625";-webkit-transform:rotateZ(-180deg);-moz-transform:rotateZ(-180deg);transform: rotateZ(-180deg);-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
 
 
         #add-shop-dialog .ico-font{font-size:24px;color:#4184f3; }
@@ -184,44 +175,44 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
-                            <table id="shop-list-table" class="table table-hover">
+                            <table id="shop-list-table" class="table table-hover sort-table">
                                 <thead>
                                     <tr>
                                         <th width="29%" class="shop-name">店铺名</th>
-                                        <th width="15%" class="sales-volume order"><a href="#">7天销量</a></th>
-                                        <th width="15%" class="sales-amount order"><a href="#">7天销售额</a></th>
-                                        <th width="15%" class="sword-num order"><a href="#">7天自然引流词</a></th>
-                                        <th width="15%" class="dfword-num order"><a href="#">7天豆腐块词</a></th>
+                                        <th width="15%" class="sales-volume"><span class="ico-after">7天销量</span></th>
+                                        <th width="15%" class="sales-amount"><span class="ico-after">7天销售额</span></th>
+                                        <th width="15%" class="sword-num"><span class="ico-after">7天自然引流词</span></th>
+                                        <th width="15%" class="dfword-num"><span class="ico-after">7天豆腐块词</span></th>
                                         <th width="11%" class="op">操作</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <span class="shop-type-tb i-shop-name">a几度家居旗舰店</span>
+                                            <span class="shop-taobao ico-before i-shop-name">a几度家居旗舰店</span>
                                         </td>
-                                        <td><span class="i-sales-volume">223</span><i class="ico-down">2.5%</i></td>
-                                        <td><span class="i-sales-amount">126万</span><i class="ico-flat">0%</i></td>
-                                        <td><span class="i-sword-num">28</span><i class="ico-up">3.5%</i></td>
-                                        <td><span class="i-dfword-num">28</span><i class="ico-up">3.5%</i></td>
+                                        <td><span class="i-sales-volume">223</span><i class="ico-before down">2.5%</i></td>
+                                        <td><span class="i-sales-amount">126万</span><i class="ico-before flat">0%</i></td>
+                                        <td><span class="i-sword-num">28</span><i class="ico-before up">3.5%</i></td>
+                                        <td><span class="i-dfword-num">28</span><i class="ico-before up">3.5%</i></td>
                                         <td>
                                             <i class="tip" data-toggle="tooltip" data-placement="left" title="该店5天后可修改"></i><button type="button" class="btn btn-primary">分析</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><span class="shop-type-tm i-shop-name">b几度家居旗舰店</span></td>
-                                        <td><span class="i-sales-volume">323</span><i class="ico-down">2.5%</i></td>
-                                        <td><span class="i-sales-amount">136万</span><i class="ico-up">3.5%</i></td>
-                                        <td><span class="i-sword-num">15</span><i class="ico-up">3.5%</i></td>
-                                        <td><span class="i-dfword-num">5</span><i class="ico-up">35%</i></td>
+                                        <td><span class="shop-tmall ico-before i-shop-name">b几度家居旗舰店</span></td>
+                                        <td><span class="i-sales-volume">323</span><i class="ico-before down">2.5%</i></td>
+                                        <td><span class="i-sales-amount">136万</span><i class="ico-before up">3.5%</i></td>
+                                        <td><span class="i-sword-num">15</span><i class="ico-before up">3.5%</i></td>
+                                        <td><span class="i-dfword-num">5</span><i class="ico-before up">35%</i></td>
                                         <td><i class="tip" data-toggle="tooltip" data-placement="left" title="该店3天后可修改"></i><button type="button" class="btn btn-primary">分析</button></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="shop-type-tb i-shop-name">c几度家居旗舰店</span></td>
-                                        <td><span class="i-sales-volume">313</span><i class="ico-down">0.51%</i></td>
-                                        <td><span class="i-sales-amount">135万</span><i class="ico-up">3.15%</i></td>
-                                        <td><span class="i-sword-num">35</span><i class="ico-up">3.5%</i></td>
-                                        <td><span class="i-dfword-num">2</span><i class="ico-up">36%</i></td>
+                                        <td><span class="shop-taobao ico-before i-shop-name">c几度家居旗舰店</span></td>
+                                        <td><span class="i-sales-volume">313</span><i class="ico-before down">0.51%</i></td>
+                                        <td><span class="i-sales-amount">135万</span><i class="ico-before up">3.15%</i></td>
+                                        <td><span class="i-sword-num">35</span><i class="ico-before up">3.5%</i></td>
+                                        <td><span class="i-dfword-num">2</span><i class="ico-before up">36%</i></td>
                                         <td><i class="tip delable" data-toggle="tooltip" data-placement="left" title="该店可修改"></i><button type="button" class="btn btn-primary">分析</button><a class="del-link" href="#del-warning-dialog" data-toggle="modal" shop-id="123456">删除</a></td>
                                     </tr>
                                 </tbody>
@@ -296,7 +287,7 @@
 
         $(function(){
             $("#shop-list-table .tip").tooltip();
-
+            //表格排序实现
             $.tablesorter.addParser({
                 id: 'numParser',
                 is: function(s, table, cell, $cell) {
@@ -319,8 +310,8 @@
                 },
                 sortInitialOrder:"desc"
             });
-            //实现排序小图标动画效果，配合CSS
-            $("#shop-list-table th.header a").click(function(e){
+            //实现排序小图标动画效果，配合CSS，必须在排序实现后面执行下面代码
+            $("#shop-list-table th.header .ico-after").click(function(e){
                 $("#shop-list-table th").removeClass("order-desc");
                 var th = $(this).parent();
                 if(th.is(".headerSortDown")){
@@ -332,20 +323,8 @@
                     setTimeout(function(){th.removeClass("downAnimation");},200);
 
                 }
-            })
-            //实现鼠标放在表格头部的时候，显示出排序小图标
-            $("#shop-list-table th.order a").hover(function(e){
-                var th = $(this).parent();
-                if(!th.is(".headerSortDown") & !th.is(".headerSortUp")){
-                    th.addClass("order-desc");
-                }
-            },function(e){
-                var th = $(this).parent();
-                if(!th.is(".headerSortDown") & !th.is(".headerSortUp")){
-                    th.removeClass("order-desc");
-                }
-            })
-        })
+            });
+        });
         //manage-shop-js-end
     </script>
   </body>
