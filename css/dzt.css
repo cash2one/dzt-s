@@ -18,7 +18,7 @@
         .r{float: right;}
         .p0{padding: 0px;}
         .font-simsun{font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
-        .rmb-before:before{content:'￥'};
+        .rmb-before:before{content:'￥';font-size: 14px;};
 
         /*链接颜色*/
         a,a:hover{color: #4184f3;}
@@ -37,8 +37,17 @@
         .shop-taobao.ico-before::before{content: "\e60f";color: #ff4e00;}
         .shop-tmall.ico-before::before{content: "\e61f";color: #c40000;}
 
+        /*帮助tooltip*/
+        .help{cursor: pointer;color: #ccc;font-size: 14px;}
+        .help:hover{color: #36ae48;}
+        .help+.tooltip.right .tooltip-arrow{border-right-color: #36ae48;}
+        .help+.tooltip.left .tooltip-arrow{border-left-color: #36ae48;}
+        .help+.tooltip.bottom .tooltip-arrow{border-bottom-color: #36ae48;}
+        .help+.tooltip.top .tooltip-arrow{border-top-color: #36ae48;}
+        .help+.tooltip .tooltip-inner{background-color: #36ae48;padding:8px;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
+
         /*头部样式*/
-       .header-wrapper{background: #fff;height: 56px;line-height: 56px;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);width: 100%;position: fixed;z-index: 999;/* border-bottom: 1px solid #eae9e9;*/}
+        .header-wrapper{background: #fff;height: 56px;line-height: 56px;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);width: 100%;position: fixed;z-index: 999;/* border-bottom: 1px solid #eae9e9;*/}
         .col-logo{min-width: 340px;}
         .header-wrapper .logo-des{margin-left: 10px;}
         .header-right-side li{float: right;}

@@ -46,10 +46,8 @@
         .data-tab-box .tab:first-child{border-left:none;}
 
         .data-tab-box .tab .data-type{color:#777;}
-        .data-tab-box .tab .data-type .help-icon{font-size: 16px;float: right;color: #dcdcdc;}
-        .data-tab-box .tab .data-type .help-icon:hover{color: #4184f3;}
-        .data-tab-box .tab .tooltip-arrow{border-top-color: #4184f3;}
-        .data-tab-box .tab .tooltip-inner{background-color: #4184f3;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;padding:4px 8px 5px}
+        .data-tab-box .tab .data-type .help{font-size: 16px;float: right;}
+
 
         .data-tab-box .tab .data-volume{color:#888;font-size: 24px;font-weight: 700;font-family: tahoma,Arial; }
         .data-tab-box .tab .data-ratio{color:#999;font-size: 12px;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
@@ -270,7 +268,7 @@
                             <div class="tab-box clearfix">
                                 <div class="col-xs-4 tab checked" id="sales-volume">
                                     <ul>
-                                        <li class="data-type">7天销量<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店所有商品的销售总量">&#xe607;</a></li>
+                                        <li class="data-type">7天销量<span class="ico-font help" data-toggle="tooltip" title="最近7天该店所有商品的销售总量">&#xe607;</span></li>
                                         <li class="data-volume">353</li>
                                         <li class="data-ratio">较上7天<span class="up">3%</span></li>
                                         <li class="arrow"></li>
@@ -278,7 +276,7 @@
                                 </div>
                                 <div class="col-xs-4 tab" id="sales-amount">
                                     <ul>
-                                        <li class="data-type">7天销售额<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店的销售金额（注：手动改价无法统计到）">&#xe607;</a></li>
+                                        <li class="data-type">7天销售额<span class="ico-font help" data-toggle="tooltip" title="最近7天该店的销售金额（注：手动改价无法统计到）">&#xe607;</span></li>
                                         <li class="data-volume">￥3,531.00</li>
                                         <li class="data-ratio">较上7天<span class="down">3%</span></li>
                                         <li class="arrow"></li>
@@ -286,7 +284,7 @@
                                 </div>
                                 <div class="col-xs-4 tab" id="sales-product-sum">
                                     <ul>
-                                        <li class="data-type">7天销售商品数<a class="ico-font help-icon" href="javascript:;" data-toggle="tooltip" data-placement="top" title="最近7天该店销售的商品数量（例：1个链接销售10件商品，算1个）">&#xe607;</a></li>
+                                        <li class="data-type">7天销售商品数<span class="ico-font help" data-toggle="tooltip" title="最近7天该店销售的商品数量（例：1个链接销售10件商品，算1个）">&#xe607;</span></li>
                                         <li class="data-volume">13</li>
                                         <li class="data-ratio">较上7天<span class="down">3%</span></li>
                                         <li class="arrow"></li>
@@ -585,7 +583,10 @@
             g_data_chart.setOption(getNewOption(g_day_length,g_data_type));
         }
         $(function(){
-            $(".help-icon").tooltip({trigger:'hover'});//帮助
+            $(".ico-font.help").tooltip({//帮助
+                placement:'top',
+                trigger:'hover'
+            });
 
             $(".switch-date-btn-group button").click(function(){
                 $(".switch-date-btn-group button").removeClass("active");
