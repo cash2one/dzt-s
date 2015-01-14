@@ -109,8 +109,8 @@
         .nav-tabs{padding-left: 15px;}
         .nav-tabs .active{position: relative;}
         .nav-tabs .active span{/*display: block;width: 100%; height: 0px;border: 1px solid #4184f3;border-top-left-radius: 4px;border-top-right-radius: 4px; position: absolute;top: 0px;left: 0px;*/}
-        .nav-tabs>li span.ico-font{font-size:14px;margin-right:5px;}
-        .nav-tabs>li>a{font-size: 14px;padding: 5px 20px;margin-right: 5px;}
+        .nav-tabs>li span.ico-font{font-size:14px;margin-right:3px;}
+        .nav-tabs>li>a{font-size: 14px;padding: 5px 13px;margin-right: 5px;}
         .nav-tabs>li.active>a{color: #222;background-color:#f5f5f5;border-bottom: 1px solid #f5f5f5;border-top-left-radius: 4px;border-top-right-radius:4px;font-weight: 700;}
         .nav-tabs>li.active>a:hover{background-color: #f5f5f5;color: #222;}
         /*nav-pills通用*/
@@ -135,13 +135,17 @@
         #product-info-row .info-item{padding: 17px;border:1.1px solid #e7e7e7;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);position: relative;margin-top: 10px;}
         #product-info-row .info-item .help{position: absolute;top: 7px;right: 7px;}
         #product-info-row .info-item i{font-style: normal;font-size: 12px;}
-        #product-info-row .info-item li{ font-size: 17px;color: #222;/*text-align: center;*/}
-        #product-info-row .info-item li:first-child{font-size: 13px;color: #777;margin-bottom: 13px; }
+        #product-info-row .info-item li{font-size: 17px;color: #222;/*text-align: center;*/}
+        #product-info-row .info-item li:first-child{font-size: 13px;color: #777;margin-bottom: 13px;font-weight: 700;}
         #product-info-row .info-item li .ico-before{font-size: 10px;margin-left: 3px;position: absolute;right: 7px}
         .btn-goback{padding: 0 10px;margin-top:-5px;margin-right: 10px;}
         .btn-goback .ico-font{font-size:16px;}
 
+        #sales-volume-precent{height: 400px;}
+        .sales-volume-precent-col .legend{margin: 20px;}
+        .sales-volume-precent-col .legend li{float: left;margin-right: 20px;}
 
+        #buyer-level{height: 400px;}
     </style>
   </head>
   <body>
@@ -315,23 +319,101 @@
                     </div>
                 </div>
                 <div class="row padding-row"></div>
+                <!--            tab    -->
                 <div class="row">
                     <div class="col-xs-12 p0">
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation"><a href="#"><span class="ico-font">&#xe648;</span>销售情况</a></li>
-                            <li role="presentation" class="active"><a href="#"><span class="ico-font">&#xe601;</span>成交特征<span></span></a></li>
+                            <li role="presentation" class="active"><a href="#"><span class="ico-font">&#xe648;</span>销售情况</a></li>
+                            <li role="presentation"><a href="#"><span class="ico-font">&#xe601;</span>成交特征<span></span></a></li>
                             <li role="presentation"><a href="#"><span class="ico-font">&#xe646;</span>促销分析</a></li>
                             <li role="presentation"><a href="#"><span class="ico-font">&#xe63e;</span>变动跟踪</a></li>
                         </ul>
                     </div>
                 </div>
+                <!--      销售情况     -->
+                <div class="row padding-row border-bottom-row">
+                    <div id="data-des" class="col-xs-3" style="line-height:28px;">
+                        7天销售趋势
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="padding:4px 18px;letter-spacing:2px;">
+                            销量 <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">销量</a></li>
+                            <li><a href="#">销售额</a></li>
+                            <li><a href="#">销售商品数</a></li>
+                          </ul>
+                        </div>
+                        &nbsp;&nbsp;
+                        <div class="btn-group switch-date-btn-group">
+                            <button type="button" class="btn btn-default" day-length="1">昨天<span></span></button>
+                            <button type="button" class="btn btn-default" day-length="3">3天<span></span></button>
+                            <button type="button" class="btn btn-default active" day-length="7">7天<span></span></button>
+                            <button type="button" class="btn btn-default" day-length="14">14天<span></span></button>
+                            <button type="button" class="btn btn-default" day-length="30">30天<span></span></button>
+                            <button type="button" class="btn btn-default ico-font" id="date-select-button" day-length="0" style="font-size:13px;">&#xe638;<span></span></button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row padding-row datepicker-row border-bottom-row" style="display:none">
+                    <div class="col-xs-12">
+                        <div class="datepicker-box">
+                            <button class="btn btn-default r" id="cancle-picker" onclick="$('.datepicker-row').hide();$('#date-select-button').removeClass('active')">取消</button>
+                            <button class="btn btn-primary r" id="submit-picker">确定</button>
+                            <div class="input-daterange input-group r">
+                                <input type="text" class="form-control text-center" id="fromDate" placeholder="开始时间" name="start"/>
+                                <div class="input-group-addon">~</div>
+                                <input type="text" class="form-control text-center" id="toDate" placeholder="结束时间" name="end" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row border-box" style="border-top:none;">
+                            <div class="col-xs-12">
+                                <div id="product-data-chart" class="data-chart">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row padding-row">
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <div class="col-xs-12 sales-volume-precent-col">
+                                <h4>销量占全店比例</h4>
+                                <ul class="legend clearfix">
+                                    <li><span style="color:#058dc7;">■ </span>该宝贝销量</li>
+                                    <li><span style="color:#50b432;">■ </span>全店销量</li>
+                                </ul>
+                                <div id="sales-volume-precent" class="text-center">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="buyer-level"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--      成交特征-按小时成交趋势   去除下面第一层div-->
+                <div class="hide" title="成交特征-按小时成交趋势">
                 <div class="row padding-row nav-tabs-child">
                     <div class="col-xs-12">
                         <ul class="nav nav-pills" role="tablist">
                           <li role="presentation" class="active"><a href="#">按小时成交趋势</a></li>
                           <li role="presentation"><a href="#">按星期成交趋势</a></li>
-                          <li role="presentation"><a href="#">买家等级分布</a></li>
                           <li role="presentation"><a href="#">促销价成交比例</a></li>
+                          <li role="presentation"><a href="#">买家等级分布</a></li>
                         </ul>
                     </div>
                 </div>
@@ -375,7 +457,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row data-tab-box">
+                <div class="row">
                     <div class="col-xs-12">
                         <div class="row border-box" style="border-top:none;">
                             <div class="col-xs-12">
@@ -386,14 +468,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="row shadow-row">
-                </div>
+                <div class="row shadow-row"></div>
                 <div class="row table-row">
                     <div class="col-xs-12 table-col">
                         <div class="tb-head-bar">
                             <div class="row">
                                 <div class="col-xs-4">
-                                    <h4>TOP 5</h4>
+                                    <h4>销量TOP 5</h4>
                                 </div>
                                 <div class="col-xs-8 text-right">
                                    <span class="page-info">第1页（共3页）</span>
@@ -407,11 +488,10 @@
                         <table class="data-table table table-hover">
                                 <thead>
                                     <tr>
-                                        <th width="4%"></th>
-                                        <th width="24%">时间</th>
-                                        <th width="24%">销量</th>
-                                        <th width="24%">销售额</th>
-                                        <th width="24%">销售商品数</th>
+                                        <th width="8%"></th>
+                                        <th width="22%">时间</th>
+                                        <th width="35%">销量</th>
+                                        <th width="35%">销售额</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -420,12 +500,10 @@
                                         <td>21:00-22:00</td>
                                         <td>123</td>
                                         <td>123</td>
-                                        <td>123</td>
                                     </tr>
                                     <tr>
                                         <td>2.</td>
                                         <td>20:00-21:00</td>
-                                        <td>176</td>
                                         <td>176</td>
                                         <td>176</td>
                                     </tr>
@@ -434,12 +512,10 @@
                                         <td>22:00-23:00</td>
                                         <td>321</td>
                                         <td>321</td>
-                                        <td>321</td>
                                     </tr>
                                     <tr>
                                         <td>4.</td>
                                         <td>10:00-11:00</td>
-                                        <td>421</td>
                                         <td>421</td>
                                         <td>421</td>
                                     </tr>
@@ -448,11 +524,10 @@
                                         <td>09:00-10:00</td>
                                         <td>256</td>
                                         <td>256</td>
-                                        <td>256</td>
                                     </tr>
                                 </tbody>
                             </table>
-                        <div class="tb-footer-bar">
+                        <div class="tb-footer-bar hide">
                             <div class="row">
                                 <div class="col-xs-8 col-xs-offset-4 text-right">
                                     <span class="page-info">第1页（共3页）</span>
@@ -465,6 +540,8 @@
                         </div>
                     </div>
                 </div>
+                </div>
+
             </div>
          </div>
       </div>
@@ -474,6 +551,7 @@
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/dzt_bg.js"></script>
+    <script src="js/jquery.sparkline.min.js"></script>
     <script src="js/echarts.js"></script>
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
@@ -494,8 +572,7 @@
 
         //图表配置
         var g_data_chart;
-        var g_day_length = 1;
-        var g_data_type = "";//tab的id
+        var g_buyer_level_bar
         require.config({
             paths:{
                 echarts:'js/dist'
@@ -505,7 +582,8 @@
             [
                 'echarts',
                 'echarts/chart/line',
-                'echarts/chart/bar'
+                'echarts/chart/bar',
+                'echarts/chart/pie',
             ],
             function(ec){
                 g_data_chart = ec.init(document.getElementById('product-data-chart'));
@@ -540,6 +618,12 @@
                         borderRadius:2,
                         borderWidth:1,
                         textStyle:{ color:'#777'},
+//                        formatter:'时间：{b}:00<br/>{a}：{c} 件',
+                        formatter:function(params,ticket,callback){
+                            var res = "时间：" + params[0].name + ' 时 - ' + (parseInt(params[0].name)+1) + ' 时';
+                            res += '<br/>' + params[0].seriesName + '：' + params[0].value + " 件";
+                            return res;
+                        },
                         axisPointer:{
                             type : 'line',
                             lineStyle : {
@@ -637,6 +721,154 @@
             }
         );
 
+        require(
+            [
+                'echarts',
+                'echarts/chart/line',
+                'echarts/chart/bar',
+                'echarts/chart/pie',
+            ],
+            function(ec){
+                g_buyer_level_bar = ec.init(document.getElementById('buyer-level'));
+                var option = {
+                    animationDuration:500,
+                    animationEasing:'CircularInOut',
+                    title : {
+                        text: '按小时成交趋势',
+                        itemGap:17,
+                        textStyle:{
+                            color: '#222',
+                            fontFamily:'Arial,Helvetica,"微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif',
+                            fontWeight:'normal',
+                            fontSize:16
+                        },
+//                        subtext: '11月10日-12月8日'
+                    },
+                    color : ['#4184f3','#f35a4a'],
+                    grid : {
+                        x : 60,
+                        y : 50,
+                        x2 : 30,
+                        borderWidth : 0
+                    },
+                    tooltip : {
+                        trigger: 'axis',
+                        showDelay:0,
+                        hideDely:100,
+                        transitionDuration:0,
+                        backgroundColor:'rgba(255,255,255,0.9)',
+                        borderColor:'#e7e7e7',
+                        borderRadius:2,
+                        borderWidth:1,
+                        textStyle:{ color:'#777'},
+//                        formatter:'时间：{b}:00<br/>{a}：{c} 件',
+                        formatter:function(params,ticket,callback){
+                            var res = "时间：" + params[0].name + ' 时 - ' + (parseInt(params[0].name)+1) + ' 时';
+                            res += '<br/>' + params[0].seriesName + '：' + params[0].value + " 件";
+                            return res;
+                        },
+                        axisPointer:{
+                            type : 'line',
+                            lineStyle : {
+                                color: '#999',
+                                width: 1,
+                                type: 'dotted'
+                            },
+                            crossStyle : {
+                                color: '#999',
+                                width: 1,
+                                type: 'dashed'
+                            },
+                            shadowStyle : {
+                                size: 'auto',
+                                color: 'rgba(150,150,150,0.3)'
+                            }
+                        }
+                    },
+                    legend: {
+                        data:['销量'],
+                        orient:'horizontal',
+                        x:'left',
+                        y:'bottom'
+                    },
+                    toolbox: {
+                        show : true,
+                        itemSize:12,
+                        color:['#FF6B6B','#4184f3','#C7F464','#556270','#C44D58','#4ECDC4'],
+                        feature : {
+                            mark : {show: false},
+                            dataView : {show: false, readOnly: false},
+                            magicType : {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: false}
+                        }
+                    },
+                    calculable : false,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            splitLine:{show : false},
+                            boundaryGap : true,
+                            axisLine:{show:false},//边轴
+                            axisTick:{show:false},
+                            data : ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            axisLine:{show:false},//边轴
+                            splitNumber:6,
+                            splitLine:{lineStyle:{type:'dotted'}},
+                            axisLabel : {
+                                formatter: function(value){
+                                    return parseInt(value)+' 件';
+                                }
+                            }
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'销量',
+                            type:'line',
+                            smooth:true,
+                            barMaxWidth:16,
+                            symbolSize:3,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: true,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#4184f3"//标记文字颜色
+                                        },
+                                    },
+                                    lineStyle : {
+                                        color:'#4184f3'//线条
+                                    },
+                                    areaStyle : {
+                                        color:'rgba(65,132,243,0.2)',
+                                        type:'default'
+                                    },
+                                },
+                                emphasis : {
+
+                                }
+                            },
+                            data:[10,5,1,0,0,0,0,3,8,16,29,26,31,29,33,36,34,38,27,29,35,36,42,15]
+                        }
+                    ]
+                };
+                g_buyer_level_bar.setOption(option);
+            }
+        );
+        $("#sales-volume-precent").sparkline([90,10 ], {
+            type: 'pie',
+            width: '200',
+            height: '200',
+            sliceColors: ['#058dc7','#50b432','#ff9900','#109618','#66aa00','#dd4477','#0099c6','#990099 ']
+        });
         function getNewOption(day_length,data_type){
             var title;
             var sub_title;
