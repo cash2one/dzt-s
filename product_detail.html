@@ -383,13 +383,13 @@
                     </div>
                 </div>
                 <div class="row padding-row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-12 col-md-6">
                         <div class="row">
                             <div class="col-xs-12 sales-volume-precent-col">
                                 <h4>销量占全店比例</h4>
                                 <ul class="legend clearfix">
-                                    <li><span style="color:#058dc7;">■ </span>该宝贝销量</li>
-                                    <li><span style="color:#50b432;">■ </span>全店销量</li>
+                                    <li><span class="ico-font" style="color:#C7F464;">&#xe644; </span>该宝贝销量</li>
+                                    <li><span class="ico-font" style="color:#415C71;">&#xe644; </span>全店销量</li>
                                 </ul>
                                 <div id="sales-volume-precent" class="text-center">
 
@@ -397,7 +397,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-12 col-md-6">
                         <div class="row">
                             <div class="col-xs-12">
                                 <div id="buyer-level"></div>
@@ -546,7 +546,9 @@
          </div>
       </div>
   </div>
-
+<style>
+.tooltip-class{margin-right: 10px;margin-bottom: 12px;}
+</style>
 
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -863,11 +865,15 @@
                 g_buyer_level_bar.setOption(option);
             }
         );
-        $("#sales-volume-precent").sparkline([90,10 ], {
+        $("#sales-volume-precent").sparkline([130,10], {
             type: 'pie',
             width: '200',
             height: '200',
-            sliceColors: ['#058dc7','#50b432','#ff9900','#109618','#66aa00','#dd4477','#0099c6','#990099 ']
+            offset: 270,
+            numberFormatter:function(number){return Math.round(parseFloat(number)*100)/100;;},
+            sliceColors: ['#415C71','#C7F464','#4ECDC4','#FF6B6B','#66aa00','#C44D58','#0099c6','#990099 '],
+            highlightLighten:1.2,
+            tooltipFormat: $.spformat('<span style="color: {{color}}">&#9679;</span> {{percent}}%</span>', 'tooltip-class')
         });
         function getNewOption(day_length,data_type){
             var title;
