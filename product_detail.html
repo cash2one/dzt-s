@@ -20,6 +20,8 @@
         .padding-box{padding-left: 15px;padding-right: 15px;}
         .padding-row{padding-bottom: 17px;padding-top: 17px;}
         .border-bottom-row{border-bottom: 1px solid #e7e7e7;}
+        .border-box{border: 1px solid #e7e7e7;}
+        .shadow-row{border: 2px solid #f9f9f9;}
 
         .switch-shop-menu>h4{cursor: pointer;color: #f35a4a;margin:0px;}
         .switch-shop-menu>h4>.caret{color: #777777;}
@@ -39,8 +41,7 @@
 
         .data-table .flat::before,.data-table .down::before,.data-table .up::before,.btn-export::before,.data-tab-box .tab .data-ratio span::before{font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
 
-        .border-box{border: 1px solid #e7e7e7;}
-        .shadow-row{border: 2px solid #f9f9f9;}
+
 /*        .shadow-row .btn-more{position: absolute;left: 50%;width: 50px;height: 12px;top: -3px;line-height: 0px;}*/
         .data-tab-box .tab{background: url(images/data_tab_bg.gif) repeat-x left bottom;background-image:-webkit-linear-gradient(to top, #f7f7f7, #fff);background-image:linear-gradient(to top,#f7f7f7, #fff);border-left: 1px solid #e7e7e7;padding-top: 7px;padding-bottom: 7px;}
         .data-tab-box .tab:hover{cursor: pointer;background-image:-webkit-linear-gradient(to top, #f0f0f0, #fff);background-image:linear-gradient(to top,#f0f0f0, #fff);}
@@ -124,7 +125,7 @@
         .nav-pills>li:not(.active)>a:hover{background-color: #ccc;}
 
         #product-info-row .product-img{}
-        #product-info-row .product-img img{border: 1px solid #CCC;margin-top: 20px;}
+        #product-info-row .product-img img{border: 1px solid #CCC;}
         #product-info-row .product-info{padding-left: 152px;}
         #product-info-row .product-info li.info{margin-bottom: 23px;}
         #product-info-row .product-info .pro-title{font-size: 16px;color: #222;}
@@ -135,7 +136,7 @@
         #product-info-row .pro-price .price{font-size: 18px;color: #f35a4a;}
         #product-info-row .pro-price .price::before{content:'￥';font-size: 18px;color: #777;}
         #product-info-row .pro-other-info i span{color: #222;}
-        #product-info-row .info-item{padding: 17px;border:1.1px solid #e7e7e7;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);position: relative;margin-top: 10px;}
+        #product-info-row .info-item{padding: 17px;border:1.1px solid #e7e7e7;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);position: relative;margin-top: 15px;}
         #product-info-row .info-item .help{position: absolute;top: 7px;right: 7px;}
         #product-info-row .info-item i{font-style: normal;font-size: 12px;}
         #product-info-row .info-item li{font-size: 17px;color: #222;/*text-align: center;*/}
@@ -144,14 +145,24 @@
         .btn-goback{padding: 0 10px;margin-top:-5px;margin-right: 10px;}
         .btn-goback .ico-font{font-size:16px;}
 
-        #sales-volume-precent,#sales-sum-precent{margin:20px auto;}
-        .sales-volume-precent-col .legend{margin: 20px;}
-        .sales-volume-precent-col .legend li{float: left;margin-right: 20px;}
+
+        .pie-container{padding-top: 17px;padding-bottom: 17px;}
+        .pie-container .pie-box{margin:20px auto;}
+        .pie-container h4{margin-top: 0px;}
+        .pie-container h4 .ico-font{font-size: 20px;margin-right: 7px;color: #f35a4a;}
+        .pie-container .legend{margin: 20px;}
+        .pie-container .legend>li{margin-bottom: 20px;}
+        /*.pie-box{position: relative;}
+        .pie-box .hover-box{position: absolute;width: 80px;height: 80px;margin:50px 50px 50px -40px;background: #fff;left: 50%;border-radius: 100%;top: 0px;text-align: center;line-height: 80px;font-size: 16px;}该类可将饼形图变成环形图，放在饼形图div后面*/
 
 /*        图表div*/
         #product-day-trade-data-chart{height: 280px;}/*成交走势*/
         #product-week-trade-data-chart{height: 280px;}/*按星期成交趋势*/
-        #buyer-level-chart{height: 280px;}/*买家等级分布*/
+        #buyer-level-chart{height: 220px;}/*买家等级分布，如需修改高度，需要配合旁边的div修改，否则会出现高度不一致的情况*/
+
+/*        饼形图提示样式*/
+        .jqtooltip-class{margin-right: 10px;margin-bottom: 12px;}
+        #jqstooltip{background-color:rgba(255,255,255,0.95);border: 1px solid #e7e7e7;border-radius: 2px;color: #777;}
     </style>
   </head>
   <body>
@@ -292,36 +303,36 @@
                                 <li class="info pro-title">学院风帆布双肩包韩版大学生包书包潮男士背包欧美时尚女生旅游包<a class="hover-line" href="#">[ 查看宝贝 ]</a></li>
                                 <li class="info pro-price"><i>原价：<span class="price"><del>123.00</del></span></i><i>实售：<span class="price">123.00</span></i></li>
                                 <li class="info pro-other-info"><i>上下架：<span>星期五 12:00:00</span></i><i>类目：<span>家具/家居用品</span></i></li>
-                                <li class="info">
-                                   <div class="row">
-                                       <div class="col-xs-12 col-sm-6 col-md-3">
-                                           <ul class="info-item">
-                                               <li>30天销量<span class="help ico-font r" title="最近30天该宝贝的销售量">&#xe607;</span></li>
-                                               <li>12345<span class="ico-before up">3%</span></li>
-                                           </ul>
-                                       </div>
-                                       <div class="col-xs-12 col-sm-6 col-md-3">
-                                           <ul class="info-item">
-                                               <li>30天销售额<span class="help ico-font r" title="最近30天该宝贝的销售额（手动改价无法统计）">&#xe607;</span></li>
-                                               <li class="rmb-before"><abbr title="1,234,512.00">123.45<i>万</i></abbr><span class="ico-before down">3%</span></li>
-                                           </ul>
-                                       </div>
-                                       <div class="col-xs-12 col-sm-6 col-md-3">
-                                           <ul class="info-item">
-                                               <li>收藏量<span class="help ico-font r" title="该宝贝总的收藏量">&#xe607;</span></li>
-                                               <li>12345</li>
-                                           </ul>
-                                       </div>
-                                       <div class="col-xs-12 col-sm-6 col-md-3">
-                                           <ul class="info-item">
-                                               <li>评价数<span class="help ico-font r" title="该宝贝现有的总的评价数量">&#xe607;</span></li>
-                                               <li>12345</li>
-                                           </ul>
-                                       </div>
-                                   </div>
-                                </li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="row">
+                           <div class="col-xs-12 col-sm-6 col-md-3">
+                               <ul class="info-item">
+                                   <li>30天销量<span class="help ico-font r" title="最近30天该宝贝的销售量">&#xe607;</span></li>
+                                   <li>12345<span class="ico-before up">3%</span></li>
+                               </ul>
+                           </div>
+                           <div class="col-xs-12 col-sm-6 col-md-3">
+                               <ul class="info-item">
+                                   <li>30天销售额<span class="help ico-font r" title="最近30天该宝贝的销售额（手动改价无法统计）">&#xe607;</span></li>
+                                   <li class="rmb-before"><abbr title="1,234,512.00">123.45<i>万</i></abbr><span class="ico-before down">3%</span></li>
+                               </ul>
+                           </div>
+                           <div class="col-xs-12 col-sm-6 col-md-3">
+                               <ul class="info-item">
+                                   <li>收藏量<span class="help ico-font r" title="该宝贝总的收藏量">&#xe607;</span></li>
+                                   <li>12345</li>
+                               </ul>
+                           </div>
+                           <div class="col-xs-12 col-sm-6 col-md-3">
+                               <ul class="info-item">
+                                   <li>评价数<span class="help ico-font r" title="该宝贝现有的总的评价数量">&#xe607;</span></li>
+                                   <li>12345</li>
+                               </ul>
+                           </div>
+                       </div>
                     </div>
                 </div>
                 <div class="row padding-row"></div>
@@ -492,40 +503,52 @@
                         </div>
                     </div>
                 </div>
-                <div class="row padding-row">
-                    <div class="col-xs-12 col-md-6">
-                        <div class="row">
-                            <div class="col-xs-12 sales-volume-precent-col">
-                                <h4>销量占比</h4>
-                                <ul class="legend clearfix">
-                                    <li><span class="ico-font" style="color:#C7F464;">&#xe644; </span>该宝贝销量</li>
-                                    <li><span class="ico-font" style="color:#415C71;">&#xe644; </span>全店销量</li>
-                                </ul>
-                                <div id="sales-volume-precent" class="text-center">
+                <div class="row padding-row broder-row">
+                    <div class="col-xs-12 col-md-6 border-box">
+                        <div class="pie-container">
+                            <h4><span class="ico-font">&#xe645;</span>7天销售占比</h4>
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <div class="pie-box">
+                                        <div id="sales-volume-precent" class="text-center">
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <ul class="legend clearfix">
+                                        <li><span class="ico-font" style="color:#C7F464;">&#xe644; </span>该宝贝销量</li>
+                                        <li><span class="ico-font" style="color:#4184f3;">&#xe644; </span>全店销量</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-md-6">
-                        <div class="row">
-                            <div class="col-xs-12 sales-volume-precent-col">
-                                <h4>销量额占比</h4>
-                                <ul class="legend clearfix">
-                                    <li><span class="ico-font" style="color:#C7F464;">&#xe644; </span>该宝贝销售额</li>
-                                    <li><span class="ico-font" style="color:#415C71;">&#xe644; </span>全店销售额</li>
-                                </ul>
-                                <div id="sales-sum-precent" class="text-center">
+                    <div class="col-xs-12 col-md-6 border-box">
+                        <div class="pie-container ">
+                            <h4><span class="ico-font">&#xe645;</span>7天销售额占比</h4>
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <div class="pie-box">
+                                        <div id="sales-sum-precent" class="text-center">
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <ul class="legend clearfix">
+                                        <li><span class="ico-font" style="color:#C7F464;">&#xe644; </span>该宝贝销售额</li>
+                                        <li><span class="ico-font" style="color:#4184f3;">&#xe644; </span>全店销售额</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
-                <!--      成交特征-按小时成交趋势   去除下面第一层div-->
-                <div class="" title="成交特征-按小时成交趋势">
-                <div class="row padding-row nav-tabs-child">
+                <!--      成交特征-按星期成交趋势   去除下面第一层div-->
+                <div class="" title="成交特征-按星期成交趋势">
+                <div class="row padding-row nav-tabs-child hide">
                     <div class="col-xs-12">
                         <ul class="nav nav-pills" role="tablist">
                           <li role="presentation" class="active"><a href="#">按星期成交趋势</a></li>
@@ -536,7 +559,7 @@
                 </div>
                 <div class="row padding-row border-bottom-row">
                     <div id="data-des" class="col-xs-3" style="line-height:28px;">
-                        最近7天按小时成交趋势
+                        最近7天按星期成交趋势
                     </div>
                     <div class="col-xs-9 text-right">
                         <div class="btn-group">
@@ -551,8 +574,6 @@
                         </div>
                         &nbsp;&nbsp;
                         <div class="btn-group switch-date-btn-group">
-                            <button type="button" class="btn btn-default" day-length="1">昨天<span></span></button>
-                            <button type="button" class="btn btn-default" day-length="3">3天<span></span></button>
                             <button type="button" class="btn btn-default active" day-length="7">7天<span></span></button>
                             <button type="button" class="btn btn-default" day-length="14">14天<span></span></button>
                             <button type="button" class="btn btn-default" day-length="30">30天<span></span></button>
@@ -606,7 +627,7 @@
                                 <thead>
                                     <tr>
                                         <th width="8%"></th>
-                                        <th width="22%">时间</th>
+                                        <th width="22%">星期</th>
                                         <th width="35%">销量</th>
                                         <th width="35%">销售额</th>
                                     </tr>
@@ -614,31 +635,31 @@
                                 <tbody>
                                     <tr>
                                         <td>1.</td>
-                                        <td>21:00-22:00</td>
+                                        <td>星期六</td>
                                         <td>123</td>
                                         <td>123</td>
                                     </tr>
                                     <tr>
                                         <td>2.</td>
-                                        <td>20:00-21:00</td>
+                                        <td>星期天</td>
                                         <td>176</td>
                                         <td>176</td>
                                     </tr>
                                     <tr>
                                         <td>3.</td>
-                                        <td>22:00-23:00</td>
+                                        <td>星期二</td>
                                         <td>321</td>
                                         <td>321</td>
                                     </tr>
                                     <tr>
                                         <td>4.</td>
-                                        <td>10:00-11:00</td>
+                                        <td>星期一</td>
                                         <td>421</td>
                                         <td>421</td>
                                     </tr>
                                     <tr>
                                         <td>5.</td>
-                                        <td>09:00-10:00</td>
+                                        <td>星期五</td>
                                         <td>256</td>
                                         <td>256</td>
                                     </tr>
@@ -657,15 +678,43 @@
                         </div>
                     </div>
                 </div>
+                <div class="row padding-row">
+                    <div class="col-xs-12 col-md-6 border-box">
+                        <div class="pie-container">
+                            <h4><span class="ico-font">&#xe645;</span>7天促销价成交量占比</h4>
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <div class="pie-box">
+                                        <div id="off-price-precent" class="text-center">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <ul class="legend clearfix">
+                                        <li><span class="ico-font" style="color:#C7F464;">&#xe644; </span>促销价销量</li>
+                                        <li><span class="ico-font" style="color:#4184f3;">&#xe644; </span>原价销量</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 border-box">
+                        <div class="pie-container">
+                            <h4><span class="ico-font">&#xe649;</span>7天买家等级分布</h4>
+                            <div id="buyer-level-chart" class="text-center">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
 
             </div>
          </div>
       </div>
   </div>
-<style>
-.tooltip-class{margin-right: 10px;margin-bottom: 12px;}
-</style>
+
 
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -716,7 +765,7 @@
                 'echarts/chart/pie',
             ],
             function(ec){
-                g_data_chart = ec.init(document.getElementById('product-week-trade-data-chart'));
+                g_data_chart = ec.init(document.getElementById('product-day-trade-data-chart'));
                 var option = {
                     animationDuration:500,
                     animationEasing:'CircularInOut',
@@ -731,7 +780,7 @@
                         },
 //                        subtext: '11月10日-12月8日'
                     },
-                    color : ['#4184f3','#f35a4a'],
+                    color : ['#f35a4a','#4184f3'],
                     grid : {
                         x : 60,
                         y : 50,
@@ -828,16 +877,16 @@
                                         position: 'top',
                                         textStyle:{
                                             fontSize:12,
-                                            color:"#4184f3"//标记文字颜色
+//                                            color:"#4184f3"//标记文字颜色
                                         },
                                     },
-                                    lineStyle : {
-                                        color:'#4184f3'//线条
-                                    },
-                                    areaStyle : {
-                                        color:'rgba(65,132,243,0.2)',
-                                        type:'default'
-                                    },
+//                                    lineStyle : {
+//                                        color:'#4184f3'//线条
+//                                    },
+//                                    areaStyle : {
+//                                        color:'rgba(65,132,243,0.2)',
+//                                        type:'default'
+//                                    },
                                 },
                                 emphasis : {
 
@@ -851,115 +900,110 @@
             }
         );
 //买家等级占比
-//        require(
-//            ['echarts','echarts/chart/bar'],
-//            function(ec){
-//                g_buyer_level_bar = ec.init(document.getElementById('buyer-level'));
-//                var option = {
-//                    animationDuration:500,
-//                    animationEasing:'CircularInOut',
-//                    title : {
-//                        text: '买家等级占比',
-//                        itemGap:17,
-//                        textStyle:{
-//                            color: '#222',
-//                            fontFamily:'Arial,Helvetica,"微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif',
-//                            fontWeight:'normal',
-//                            fontSize:17
-//                        }
-//                    },
-//                    color : ['#50b432'],
-//                    grid : {
-//                        x : 70,
-//                        y : 50,
-//                        x2 : 30,
-//                        borderWidth : 0
-//                    },
-//                    tooltip : {
-//                        trigger: 'axis',
-//                        showDelay:0,
-//                        hideDely:100,
-//                        transitionDuration:0,
-//                        backgroundColor:'rgba(255,255,255,0.95)',
-//                        borderColor:'#e7e7e7',
-//                        borderRadius:2,
-//                        borderWidth:1,
-//                        textStyle:{ color:'#777'},
-////                        formatter:'时间：{b}:00<br/>{a}：{c} 件',
-//                        formatter:'{b}：{c}%',
-//                        axisPointer:{
-//                            type : 'line',
-//                            lineStyle : {
-//                                color: '#999',
-//                                width: 1,
-//                                type: 'dotted'
-//                            }
-//                        }
-//                    },
-//                    legend: {
-//                        data:['占比'],
-//                        orient:'horizontal',
-//                        x:'left',
-//                        y:'bottom'
-//                    },
-//                    toolbox: {
-//                        show : false,
-//                    },
-//                    calculable : false,
-//                    yAxis : [
-//                        {
-//                            type : 'category',
-//                            splitLine:{show : false},
-//                            boundaryGap : true,
-//                            axisLine:{show:false},//边轴
-//                            axisTick:{show:false},
-//                            data : ['一心','二心','三心','四心','五心','一钻及以上']
-//                        }
-//                    ],
-//                    xAxis : [
-//                        {
-//                            type : 'value',
-//                            axisLine:{show:false},//边轴
-//                            splitNumber:6,
-//                            splitLine:{lineStyle:{type:'dotted'}},
-//                            axisLabel : {
-//                                formatter: function(value){
-//                                    return parseInt(value)+' %';
-//                                }
-//                            }
-//                        }
-//                    ],
-//                    series : [
-//                        {
-//                            name:'占比',
-//                            type:'bar',
-//                            smooth:true,
-//                            barMaxWidth:16,
-//                            itemStyle:{
-//                                normal: {
-//                                    label : {
-//                                        show: true,
-//                                        position: 'right',
-//                                        formatter:'{c}%',
-//                                        textStyle:{
-//                                            fontSize:12,
-//                                            color:"#777"//标记文字颜色
-//                                        },
-//                                    }
-//                                },
-//                                emphasis : {
-//
-//                                }
-//                            },
-//                            data:[38,27,29,35,36,12]
-//                        }
-//                    ]
-//                };
-//                g_buyer_level_bar.setOption(option);
-//            }
-//        );
-        //销量占比
-        $("#sales-volume-precent").sparkline([130,10], {
+        require(
+            ['echarts','echarts/chart/bar'],
+            function(ec){
+                g_buyer_level_bar = ec.init(document.getElementById('buyer-level-chart'));
+                var option = {
+                    animationDuration:500,
+                    animationEasing:'CircularInOut',
+                    title : {
+                        text: '',
+                        itemGap:17,
+                        textStyle:{
+                            color: '#222',
+                            fontFamily:'Arial,Helvetica,"微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif',
+                            fontWeight:'normal',
+                            fontSize:17
+                        }
+                    },
+                    color : ['#50b432'],
+                    grid : {
+                        x : 70,
+                        y : 20,
+                        x2 : 30,
+                        y2 : 25,
+                        borderWidth : 0
+                    },
+                    tooltip : {
+                        trigger: 'axis',
+                        showDelay:0,
+                        hideDely:100,
+                        transitionDuration:0,
+                        backgroundColor:'rgba(255,255,255,0.95)',
+                        borderColor:'#e7e7e7',
+                        borderRadius:2,
+                        borderWidth:1,
+                        textStyle:{ color:'#777'},
+//                        formatter:'时间：{b}:00<br/>{a}：{c} 件',
+                        formatter:'{b}：{c}%',
+                        axisPointer:{
+                            type : 'line',
+                            lineStyle : {
+                                color: '#999',
+                                width: 1,
+                                type: 'dotted'
+                            }
+                        }
+                    },
+                    toolbox: {
+                        show : false,
+                    },
+                    calculable : false,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            splitLine:{show : false},
+                            boundaryGap : true,
+                            axisLine:{show:false},//边轴
+                            axisTick:{show:false},
+                            data : ['一心','二心','三心','四心','五心','一钻及以上']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            axisLine:{show:false},//边轴
+                            splitNumber:5,
+                            splitLine:{lineStyle:{type:'dotted'}},
+                            axisLabel : {
+                                formatter: function(value){
+                                    return parseInt(value)+' %';
+                                }
+                            }
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'占比',
+                            type:'bar',
+                            smooth:true,
+                            barMaxWidth:16,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: true,
+                                        position: 'top',
+                                        formatter:'{c}%',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#777"//标记文字颜色
+                                        },
+                                    }
+                                },
+                                emphasis : {
+
+                                }
+                            },
+                            data:[38,27,29,35,36,12]
+                        }
+                    ]
+                };
+                g_buyer_level_bar.setOption(option);
+            }
+        );
+        //7天促销价成家了占比
+        $("#off-price-precent").sparkline([130,50], {
             type: 'pie',
             width: '180',
             height: '180',
@@ -967,7 +1011,18 @@
             numberFormatter:function(number){return Math.round(parseFloat(number)*100)/100;;},
             sliceColors: ['#4184f3','#C7F464'],
             highlightLighten:1.2,
-            tooltipFormat: $.spformat('<span style="color: {{color}}">&#9679;</span> {{percent}}%</span>', 'tooltip-class')
+            tooltipFormat: $.spformat('<span style="color: {{color}}">&#9679;</span> {{percent}}%</span>', 'jqtooltip-class')
+        });
+        //销量占比
+        $("#sales-volume-precent").sparkline([130,50], {
+            type: 'pie',
+            width: '180',
+            height: '180',
+            offset: 270,
+            numberFormatter:function(number){return Math.round(parseFloat(number)*100)/100;;},
+            sliceColors: ['#4184f3','#C7F464'],
+            highlightLighten:1.2,
+            tooltipFormat: $.spformat('<span style="color: {{color}}">&#9679;</span> {{percent}}%</span>', 'jqtooltip-class')
         });
 
         //销售额占比
@@ -979,7 +1034,7 @@
             numberFormatter:function(number){return Math.round(parseFloat(number)*100)/100;;},
             sliceColors: ['#4184f3','#C7F464'],
             highlightLighten:1.2,
-            tooltipFormat: $.spformat('<span style="color: {{color}}">&#9679;</span> {{percent}}%</span>', 'tooltip-class')
+            tooltipFormat: $.spformat('<span style="color: {{color}}">&#9679;</span> {{percent}}%</span>', 'jqtooltip-class')
         });
 
         function getNewOption(day_length,data_type){
@@ -1031,6 +1086,7 @@
 ;
             $(".content-body").resize(function(){
                g_data_chart.resize();//navside变化时需要重置图表
+               g_buyer_level_bar.resize();
             });
         })
 

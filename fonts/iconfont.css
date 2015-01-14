@@ -124,6 +124,8 @@
 
 .icon-qq:before { content: "\e61a"; }
 
+.icon-piegraph:before { content: "\e645"; }
+
 .icon-service:before { content: "\e617"; }
 
 .icon-you:before { content: "\e636"; }
@@ -139,6 +141,10 @@
 .icon-qq1:before { content: "\e63d"; }
 
 .icon-111:before { content: "\e63f"; }
+
+.icon-rankfill:before { content: "\e649"; }
+
+.icon-rank:before { content: "\e64a"; }
 
 .icon-folds:before { content: "\e612"; }
 
