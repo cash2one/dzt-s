@@ -36,6 +36,8 @@
 
 .icon-icon:before { content: "\e628"; }
 
+.icon-moban162:before { content: "\e64f"; }
+
 .icon-mail:before { content: "\e62a"; }
 
 .icon-key:before { content: "\e61d"; }
@@ -112,6 +114,8 @@
 
 .icon-yanzhengma:before { content: "\e63b"; }
 
+.icon-yingxiaozhongxin:before { content: "\e64b"; }
+
 .icon-rechargefill:before { content: "\e610"; }
 
 .icon-recharge:before { content: "\e611"; }
@@ -125,6 +129,8 @@
 .icon-aliwangwang:before { content: "\e619"; }
 
 .icon-qq:before { content: "\e61a"; }
+
+.icon-icon2:before { content: "\e650"; }
 
 .icon-piegraph:before { content: "\e645"; }
 

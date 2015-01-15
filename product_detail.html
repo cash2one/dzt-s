@@ -115,7 +115,7 @@
         .nav-tabs .active{position: relative;}
         .nav-tabs .active span{/*display: block;width: 100%; height: 0px;border: 1px solid #4184f3;border-top-left-radius: 4px;border-top-right-radius: 4px; position: absolute;top: 0px;left: 0px;*/}
         .nav-tabs>li span.ico-font{font-size:14px;margin-right:3px;}
-        .nav-tabs>li>a{font-size: 14px;padding: 5px 13px;margin-right: 5px;}
+        .nav-tabs>li>a{font-size: 14px;padding: 8px 13px;margin-right: 5px;}
         .nav-tabs>li.active>a{color: #222;background-color:#f5f5f5;border-bottom: 1px solid #f5f5f5;border-top-left-radius: 4px;border-top-right-radius:4px;font-weight: 700;}
         .nav-tabs>li.active>a:hover{background-color: #f5f5f5;color: #222;}
         /*nav-pills通用*/
@@ -178,6 +178,7 @@
         .price-promotion-table .price-label{font-size: 12px;padding: 3px 8px;background-color: #f35a4a;color: #fff;letter-spacing: 1px;}
 
         .marking-table i{font-style: normal;margin-right: 10px;font-size: 14px;}
+        .service-table i{font-style: normal;margin-right: 15px;}
     </style>
   </head>
   <body>
@@ -349,10 +350,35 @@
                            </div>
                        </div>
                     </div>
+                    <div class="col-xs-12">
+                        <div class="btn-group">
+                            <button id="more-service-info-button" class="btn btn-default dropdown-toggle font-simsun" style="margin:17px 0px;">显示服务及支付信息 <span class="caret"></span></button>
+                        </div>
+                    </div>
+                    <div id="more-service-info" class="col-xs-12" style="display:none;">
+                        <table class="table gtable service-table font-simsun">
+                            <thead>
+                                <tr>
+                                    <th width="150">服务及承诺</th>
+                                    <th>内容</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>服务承诺</td>
+                                    <td><i>7天无理由</i><i>15天退货</i><i>品质承诺</i><i>消保</i><i>运费险</i><i>公益宝贝</i></td>
+                                </tr>
+                                <tr>
+                                    <td>支付方式</td>
+                                    <td><i>信用卡支付</i><i>集分宝</i><i>支付宝支付</i><i>货到付款</i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="row padding-row"></div>
+
                 <!--            tab    -->
-                <div class="row">
+                <div class="row" style="margin-top:17px;">
                     <div class="col-xs-12 p0">
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation"><a href="#"><span class="ico-font">&#xe648;</span>销售情况</a></li>
@@ -362,7 +388,7 @@
                         </ul>
                     </div>
                 </div>
-                <!--      销售情况     -->
+                <!--      销售情况    去除下面第一层div -->
                 <div class="hide">
                 <div class="row padding-row border-bottom-row">
                     <div id="data-des" class="col-xs-3" style="line-height:28px;">
@@ -725,14 +751,18 @@
                 </div>
                 </div>
                 <!--      促销分析     -->
-
-                <div class="row margin-top-row">
+                <div class="row margin-top-row hide">
                     <div class="col-sm-12 col-md-4">
                         <div class="pie-container price-promotion-container">
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="border-bottom-row">
-                                        <h4><span class="ico-font">&#xe646;</span>价格促销 <small>昨天</small></h4>
+                                    <div class="border-bottom-row clearfix">
+                                        <h4 class="l"><span class="ico-font">&#xe646;</span>价格促销</h4>
+                                        <div class="btn-group r">
+                                          <button id="date-for-sales" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            2014-5-6 <span class="caret"></span>
+                                          </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -742,11 +772,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>折扣促销</td>
-                                                <td><i class="ico-font text-danger" style="font-size:18px;font-weight:700;">&#xe62d;</i></td>
-                                            </tr>
-                                            <tr>
-                                                <td>折扣力度</td>
-                                                <td><span class="text-danger">5.5</span>折</td>
+                                                <td><span class="text-danger">5.5</span> 折</td>
                                             </tr>
                                             <tr>
                                                 <td>促销标签</td>
@@ -754,11 +780,11 @@
                                             </tr>
                                             <tr>
                                                 <td>店铺红包</td>
-                                                <td>抵<span class="rmb-before text-danger">4.94</span>元</td>
+                                                <td>抵 <span class="rmb-before text-danger">4.94</span></td>
                                             </tr>
                                             <tr>
                                                 <td>淘金币</td>
-                                                <td>抵<span class="rmb-before  text-danger">4.94</span>元</td>
+                                                <td>抵 <span class="rmb-before  text-danger">4.94</span></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -770,8 +796,13 @@
                         <div class="pie-container price-promotion-container">
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="border-bottom-row">
-                                        <h4><span class="ico-font">&#xe646;</span>参与的营销活动</h4>
+                                    <div class="border-bottom-row clearfix">
+                                        <h4 class="l"><span class="ico-font">&#xe64b;</span>参与的营销</h4>
+                                        <div class="btn-group r">
+                                          <button id="date-for-marking" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            2014-5-6 <span class="caret"></span>
+                                          </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -835,7 +866,69 @@
                         </div>
                     </div>
                 </div>
+                <!--      变动跟踪     -->
+                <style>
+                .time-line{width: 100%;height: 5px;background-color: #e7e7e7;border-radius: 6px;display: flex;margin-top: 34px;}
+                .time-line span{width: 3.3%;text-align: center;margin-top:-5px;position: relative;}
+                .time-line i{font-style: normal;border:2px solid #fff;width: 18px;height: 18px;border-radius: 50%; display: inline-block; text-align: center;background-color:#f35a4a;cursor: pointer;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;visibility:hidden; }
+                .time-line i.edit::before{content: '\e64f';font-size: 12px;color: #fff;vertical-align:top;line-height: 13px;margin-left: 2px;}
+                .time-line i.edit{visibility: visible;}
+                .time-line i.active{transform: scale(1.6,1.6);}
+                .time-line span:hover i.edit+.tooltip{opacity: 1;}
+                .time-line span:hover i{transform: scale(1.6,1.6);}
 
+                .time-line i.edit+.tooltip{width: 70px;left: 50%;margin-left: -35px;opacity: 0.7;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;cursor: pointer;}
+                .time-line i.edit+.tooltip.top{top: -35px;}
+                .time-line i.edit+.tooltip.top .tooltip-arrow{border-top-color: #36ae48;}
+                .time-line i.edit+.tooltip.bottom .tooltip-arrow{border-bottom-color: #36ae48;}
+                .time-line i.edit+.tooltip .tooltip-inner{background-color: #36ae48; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
+
+                .time-line i.active+.tooltip{opacity: 1;}
+                .time-line i.active+.tooltip.top .tooltip-arrow{border-top-color: #f35a4a;}
+                .time-line i.active+.tooltip.bottom .tooltip-arrow{border-bottom-color: #f35a4a;}
+                .time-line i.active+.tooltip .tooltip-inner{background-color: #f35a4a;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
+                </style>
+                <div class="row padding-row">
+                    <div class="col-xs-12">
+                        <h4>操作变动时间线 <small>-12月</small></h4>
+
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="time-line">
+                            <span><i class="d-1 ico-before" title="12月1日"></i></span>
+                            <span><i class="d-2 ico-before" title="12月2日"></i></span>
+                            <span><i class="d-3 ico-before" title="12月3日"></i></span>
+                            <span><i class="d-4 ico-before" title="12月4日"></i></span>
+                            <span><i class="d-5 ico-before edit" title="12月5日"></i></span>
+                            <span><i class="d-6 ico-before edit" title="12月6日"></i></span>
+                            <span><i class="d-7 ico-before" title="12月7日"></i></span>
+                            <span><i class="d-8 ico-before" title="12月8日"></i></span>
+                            <span><i class="d-9 ico-before" title="12月9日"></i></span>
+                            <span><i class="d-10 ico-before" title="12月10日"></i></span>
+                            <span><i class="d-11 ico-before" title="12月11日"></i></span>
+                            <span><i class="d-12 ico-before edit active" title="12月12日"></i></span>
+                            <span><i class="d-13 ico-before" title="12月13日"></i></span>
+                            <span><i class="d-14 ico-before" title="12月14日"></i></span>
+                            <span><i class="d-15 ico-before" title="12月15日"></i></span>
+                            <span><i class="d-16 ico-before edit" title="12月16日"></i></span>
+                            <span><i class="d-17 ico-before" title="12月17日"></i></span>
+                            <span><i class="d-18 ico-before" title="12月18日"></i></span>
+                            <span><i class="d-19 ico-before edit" title="12月19日"></i></span>
+                            <span><i class="d-20 ico-before" title="12月20日"></i></span>
+                            <span><i class="d-21 ico-before" title="12月21日"></i></span>
+                            <span><i class="d-22 ico-before" title="12月22日"></i></span>
+                            <span><i class="d-23 ico-before" title="12月23日"></i></span>
+                            <span><i class="d-24 ico-before edit" title="12月24日"></i></span>
+                            <span><i class="d-25 ico-before" title="12月25日"></i></span>
+                            <span><i class="d-26 ico-before" title="12月26日"></i></span>
+                            <span><i class="d-27 ico-before" title="12月27日"></i></span>
+                            <span><i class="d-28 ico-before" title="12月28日"></i></span>
+                            <span><i class="d-29 ico-before" title="12月29日"></i></span>
+                            <span><i class="d-30 ico-before" title="12月30日"></i></span>
+                            <span><i class="d-31 ico-before edit" title="12月31日"></i></span>
+                        </div>
+                    </div>
+                </div>
             </div>
          </div>
       </div>
@@ -851,11 +944,55 @@
     <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script type="text/javascript">
         //=============产品详情js-start=============
-        //帮助tooltip
+        //时间线
+        $(function(){
+            $('.time-line i.edit').each(function(i,e){
+                if($(this).is(':even')){
+                    direction = "top";
+                }else{
+                    direction = "bottom";
+                }
+                $(this).after('<div class="tooltip ' +
+                    direction + ' in"><div class="tooltip-arrow"></div><div class="tooltip-inner">' + $(this).attr('title') + '</div></div>');
+            });
+            $('.time-line i.edit,.time-line i.edit .tooltip').click(function(){
+                $('.time-line i').removeClass("active");
+                if($(this).is(".tooltip")){
+                    $(this).parent().find("i").addClass("active");
+                }else{
+                    $(this).addClass("active");
+                }
+
+            })
+        });
+
+//        $(".time-line i.edit:odd").tooltip({
+//            placement:'top',
+//            trigger:'manual'
+//        });
+//        $(".time-line i.edit:even").tooltip({
+//            placement:'bottom',
+//            trigger:'manual'
+//        });
+//        $(".time-line i.edit").tooltip('show');
+//
+//        帮助tooltip
         $('.help').tooltip({
-            placement:'top',
+            placement:'bottom',
             trigger:'hover'
         });
+        //显示宝贝服务及支付信息
+        $("#more-service-info-button").click(function(){
+            if($("#more-service-info").is(':visible')){
+                $(this).parent().removeClass('open');
+                $(this).html('显示服务及支付信息 <span class="caret"></span>');
+                $("#more-service-info").hide();
+            }else{
+                $(this).parent().addClass('open');
+                $(this).html('隐藏服务及支付信息 <span class="caret"></span>');
+                $("#more-service-info").show();
+            }
+        })
         //显示/隐藏更多数据表格
         function showDataTable(e){
             if($("#data-table-row").is(":hidden")){
@@ -867,6 +1004,25 @@
             }
 
         }
+        ////价格促销日期选择
+        $('#date-for-sales').datepicker({
+            language: "zh-CN",
+            orientation: "auto right",
+            autoclose: true,
+            format:'yyyy-m-d'
+        }).on('changeDate', function(e){
+            $('#date-for-sales').html(e.format(0,'yyyy-m-d') + ' <span class="caret"></span>')
+        });
+        //参与的营销日期选择
+        $('#date-for-marking').datepicker({
+            language: "zh-CN",
+            orientation: "auto right",
+            autoclose: true,
+            format:'yyyy-m-d'
+        }).on('changeDate', function(e){
+            $('#date-for-marking').html(e.format(0,'yyyy-m-d') + ' <span class="caret"></span>')
+        });
+
         //日期选择初始化
         $('.datepicker-box .input-daterange').datepicker({
             language: "zh-CN",
@@ -1040,7 +1196,7 @@
                     color : ['#777','#f35a4a','#4184f3'],
                     grid : {
                         x : 70,
-                        y : 30,
+                        y : 10,
                         x2 : 30,
                         y2 :70,
                         borderWidth : 0
