@@ -174,8 +174,10 @@
         .price-promotion-table>tbody>tr>td{border-top: none;padding:13px 13px 13px 40px;}
 /*        .price-promotion-table>tbody>tr:first-child>td{border-top:none;}*/
         .price-promotion-table>tbody>tr>td:first-child{text-align: right;width: 100px;background-color: #fafafa;border-top: 5px solid #fff;padding-left: 13px;}
-        .price-promotion-table>tbody>tr>td:first-child::before{}
+/*        .price-promotion-table>tbody>tr>td:first-child::before{}*/
         .price-promotion-table .price-label{font-size: 12px;padding: 3px 8px;background-color: #f35a4a;color: #fff;letter-spacing: 1px;}
+
+        .marking-table i{font-style: normal;margin-right: 10px;font-size: 14px;}
     </style>
   </head>
   <body>
@@ -724,87 +726,23 @@
                 </div>
                 <!--      促销分析     -->
 
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="pie-container price-promotion-container">
-                            <div class="row ">
-                                <div class="col-xs-12 border-bottom-row">
-                                    <h4><span class="ico-font">&#xe646;</span>当前价格促销</h4>
-                                </div>
-                            </div>
-                            <div class="row padding-row">
-                                <div class="col-xs-12">
-                                    <table class="table price-promotion-table">
-                                        <tbody>
-                                            <tr>
-                                                <td>折扣促销</td>
-                                                <td><i class="ico-font text-success">&#xe62d;</i></td>
-                                            </tr>
-                                            <tr>
-                                                <td>折扣力度</td>
-                                                <td><span class="text-danger">5.5</span>折</td>
-                                            </tr>
-                                            <tr>
-                                                <td>促销标签</td>
-                                                <td><span class="price-label font-simsun">即将涨价</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>店铺红包</td>
-                                                <td>抵<span class="rmb-before text-danger">4.94</span>元</td>
-                                            </tr>
-                                            <tr>
-                                                <td>淘金币</td>
-                                                <td>抵<span class="rmb-before  text-danger">4.94</span>元</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="pie-container">
-                            <div class="row border-bottom-row">
-                                <div class="col-xs-12">
-                                    <h4><span class="ico-font">&#xe64c;</span>30天价格走势</h4>
-                                </div>
-                            </div>
-
-                            <div class="row padding-row">
-                                <div class="col-xs-12">
-                                    <div class="btn-group">
-                                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                        款式A <span class="caret"></span>
-                                      </button>
-                                      <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">款式A</a></li>
-                                        <li><a href="#">款式B</a></li>
-                                        <li><a href="#">款式C</a></li>
-                                      </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div id="product-price-trend">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row margin-top-row">
-                    <div class="col-sm-12 col-md-6 border-box">
+                    <div class="col-sm-12 col-md-4">
                         <div class="pie-container price-promotion-container">
-                            <h4><span class="ico-font">&#xe646;</span>营销活动</h4>
                             <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="border-bottom-row">
+                                        <h4><span class="ico-font">&#xe646;</span>价格促销 <small>昨天</small></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row padding-row">
                                 <div class="col-xs-12">
                                     <table class="table price-promotion-table">
                                         <tbody>
                                             <tr>
                                                 <td>折扣促销</td>
-                                                <td><i class="ico-font text-success">&#xe62d;</i></td>
+                                                <td><i class="ico-font text-danger" style="font-size:18px;font-weight:700;">&#xe62d;</i></td>
                                             </tr>
                                             <tr>
                                                 <td>折扣力度</td>
@@ -828,10 +766,52 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-6 border-box">
-                        <div class="pie-container">
-                            <h4><span class="ico-font">&#xe64c;</span>30天价格走势</h4>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="pie-container price-promotion-container">
                             <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="border-bottom-row">
+                                        <h4><span class="ico-font">&#xe646;</span>参与的营销活动</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row padding-row">
+                                <div class="col-xs-12">
+                                    <table class="table price-promotion-table marking-table">
+                                        <tbody>
+                                            <tr>
+                                                <td>店铺促销</td>
+                                                <td><i>满就减</i><i>拍下减</i><i>套餐优惠</i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>店铺推广</td>
+                                                <td><i>直通车</i><i>淘宝客</i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>站内活动</td>
+                                                <td><i>聚划算</i><i>淘金币</i><i>天猫预售</i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>站外活动</td>
+                                                <td><i>折800</i><i>卷皮</i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="pie-container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="border-bottom-row">
+                                        <h4><span class="ico-font">&#xe64c;</span>30天价格走势</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row padding-row">
                                 <div class="col-xs-12">
                                     <div class="btn-group">
                                       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -855,6 +835,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
          </div>
       </div>
