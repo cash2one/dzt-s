@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/dzt.css">
+</head>
+<style>
+    .time-line{width: 100%;height: 7px;background-color: #e7e7e7;border-radius: 6px;display:flex;margin-top: 51px;}
+    .time-line span{width: 3.3%;text-align: center;margin-top:-5px;position: relative;}
+    .time-line i{font-style: normal;border:2px solid #fff;width: 18px;height: 18px;border-radius: 50%; display: inline-block; text-align: center;background-color:#f35a4a;cursor: pointer;-webkit-transition: all 0.15s ease-out 0s;-moz-transition: all 0.15s ease-out 0s;transition: all 0.15s ease-out 0s;visibility:hidden;position: relative;}
+    .time-line i.edit::before{content: '\e64f';font-size: 12px;color: #fff;vertical-align:top;line-height: 13px;margin-left: 2px;}
+    .time-line i.edit{visibility: visible;}
+    .time-line i.active,.time-line span:hover i{transform: scale(1.8,1.8);z-index: 99;}
+    .time-line span:hover i{z-index: 999;}
+    .time-line span:hover i.edit+.tooltip{opacity: 1;}
+
+    .time-line i.edit+.tooltip{width: 70px;left: 50%;margin-left: -35px;opacity: 0.7;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;cursor: pointer;}
+    .time-line i.edit+.tooltip.top{top: -35px;}
+    .time-line i.edit+.tooltip.top .tooltip-arrow{border-top-color: #36ae48;}
+    .time-line i.edit+.tooltip.bottom .tooltip-arrow{border-bottom-color: #36ae48;}
+    .time-line i.edit+.tooltip .tooltip-inner{background-color: #36ae48; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
+
+    .time-line i.active+.tooltip{opacity: 1;}
+    .time-line i.active+.tooltip.top .tooltip-arrow{border-top-color: #f35a4a;}
+    .time-line i.active+.tooltip.bottom .tooltip-arrow{border-bottom-color: #f35a4a;}
+    .time-line i.active+.tooltip .tooltip-inner{background-color: #f35a4a;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
+    /*=======================*/
+    .timeline{display: table;width: 100%;margin-top: 51px;}
+    .timeline .line{display: table-row;height: 7px;background: #e7e7e7;}
+    .timeline .line .po{display: table-cell;text-align: center;position: relative;}
+
+    .timeline .line .po span{display: inline-block;position: absolute;margin-top:-4px;}
+    .timeline .line .po i{display:block;width: 12px;height: 12px;background-color: #f35a4a;border-radius: 50%;font-style: normal;border:2px solid #fff;cursor: pointer;-webkit-transition: all 0.15s ease-out 0s;-moz-transition: all 0.15s ease-out 0s;transition: all 0.15s ease-out 0s;visibility:hidden;}
+
+    .timeline .line .po i.edit::before{content: '\e64f';font-size: 12px;color: #fff;vertical-align:top;line-height: 10px;margin-left: 1px;}
+    .timeline .line .po i.edit{visibility: visible;}
+    .timeline .line .po i.active,.timeline .line .po span:hover i{transform: scale(1.8,1.8);z-index: 99;}
+</style>
+
+<body>
+    <div class="timeline">
+        <div class="line">
+            <div class="po"><span><i class="ico-before edit active"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before edit"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+            <div class="po"><span><i class="ico-before"></i></span></div>
+        </div>
+    </div>
+</body>
+
+</html>
