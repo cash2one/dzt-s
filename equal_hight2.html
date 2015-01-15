@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .wrapper {
+            width: 960px;
+            margin: 0 auto;
+        }
+        .container {
+            position: relative;
+            overflow: hidden;
+            zoom: 1;
+        }
+        /* zoom fix for ie6 */
+        .col1 {
+            float: left;
+            width: 728px;
+            padding-bottom: 32767px;
+            margin-bottom: -32767px;
+            border: #f36 1px solid;
+            background: #AFAFAF;
+        }
+        .col2 {
+            float: right;
+            width: 208px;
+            padding-bottom: 32767px;
+            margin-bottom: -32767px;
+            border: #f36 1px solid;
+            background: #6F6F6F;
+        }
+        .colBottom1 {
+            position: absolute;
+            /*相对于div.container*/
+            bottom: 0;
+            left: 0px;
+            /*如果第一列左浮动就设置left:0;*/
+            height: 1px;
+            /*当前列的边框宽度*/
+            width: 730px;
+            /*当前列宽度+边框宽度*2 */
+            background: #f36;
+            /*当前列的边框颜色*/
+        }
+        .colBottom2 {
+            position: absolute;
+            /*相对于div.container*/
+            bottom: 0;
+            right: 0px;
+            /*如果第二列右浮动就设置left:0;*/
+            height: 1px;
+            /*当前列的边框宽度*/
+            width: 210px;
+            /*当前列宽度+边框宽度*2 */
+            background: #f36;
+            /*当前列的边框颜色*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="col1">
+               ....................
+               <h4>ddddddddddddddddd</h4>
+                <div class="colBottom1">
+                    <!-- ie needs this comment for small div heights -->
+                </div>
+            </div>
+            <div class="col2">
+               ......................
+                <div class="colBottom2">
+                    <!-- ie needs this comment for small div heights -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

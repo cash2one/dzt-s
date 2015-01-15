@@ -19,6 +19,7 @@
     <style type="text/css">
         .padding-box{padding-left: 15px;padding-right: 15px;}
         .padding-row{padding-bottom: 17px;padding-top: 17px;}
+        .margin-top-row{margin-top: 34px;}
         .border-bottom-row{border-bottom: 1px solid #e7e7e7;}
         .border-box{border: 1px solid #e7e7e7;}
         .shadow-row{border: 2px solid #f9f9f9;}
@@ -146,11 +147,12 @@
         .btn-goback .ico-font{font-size:16px;}
 
 
-        .pie-container{padding-top: 17px;padding-bottom: 17px;}
+        .pie-container{padding-top: 17px;padding-bottom: 17px;}/*促销分析也有使用该类*/
         .pie-container .pie-box{margin:20px auto;}
         .pie-container h4{margin-top: 0px;}
         .pie-container h4 .ico-font{font-size: 20px;margin-right: 7px;color: #f35a4a;}
         .pie-container .legend{margin: 20px;}
+        .pie-container .legend .ico-font{font-size: 16px;}
         .pie-container .legend>li{margin-bottom: 20px;}
         /*.pie-box{position: relative;}
         .pie-box .hover-box{position: absolute;width: 80px;height: 80px;margin:50px 50px 50px -40px;background: #fff;left: 50%;border-radius: 100%;top: 0px;text-align: center;line-height: 80px;font-size: 16px;}该类可将饼形图变成环形图，放在饼形图div后面*/
@@ -159,10 +161,21 @@
         #product-day-trade-data-chart{height: 280px;}/*成交走势*/
         #product-week-trade-data-chart{height: 280px;}/*按星期成交趋势*/
         #buyer-level-chart{height: 220px;}/*买家等级分布，如需修改高度，需要配合旁边的div修改，否则会出现高度不一致的情况*/
+        #product-price-trend{height: 232px;}
 
 /*        饼形图提示样式*/
         .jqtooltip-class{margin-right: 10px;margin-bottom: 12px;}
         #jqstooltip{background-color:rgba(255,255,255,0.95);border: 1px solid #e7e7e7;border-radius: 2px;color: #777;}
+
+/*        促销分析*/
+        .price-promotion-container ul{padding: 20px 0px 0px 25px;}
+        .price-promotion-container ul li{margin-bottom: 20px;font-size: 16px;}
+        .price-promotion-table{font-size: 15px;margin-bottom: 0px;}
+        .price-promotion-table>tbody>tr>td{border-top: none;padding:13px 13px 13px 40px;}
+/*        .price-promotion-table>tbody>tr:first-child>td{border-top:none;}*/
+        .price-promotion-table>tbody>tr>td:first-child{text-align: right;width: 100px;background-color: #fafafa;border-top: 5px solid #fff;padding-left: 13px;}
+        .price-promotion-table>tbody>tr>td:first-child::before{}
+        .price-promotion-table .price-label{font-size: 12px;padding: 3px 8px;background-color: #f35a4a;color: #fff;letter-spacing: 1px;}
     </style>
   </head>
   <body>
@@ -341,8 +354,8 @@
                     <div class="col-xs-12 p0">
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation"><a href="#"><span class="ico-font">&#xe648;</span>销售情况</a></li>
-                            <li role="presentation" class="active"><a href="#"><span class="ico-font">&#xe601;</span>成交特征<span></span></a></li>
-                            <li role="presentation"><a href="#"><span class="ico-font">&#xe646;</span>促销分析</a></li>
+                            <li role="presentation"><a href="#"><span class="ico-font">&#xe601;</span>成交特征<span></span></a></li>
+                            <li role="presentation" class="active"><a href="#"><span class="ico-font">&#xe646;</span>促销分析</a></li>
                             <li role="presentation"><a href="#"><span class="ico-font">&#xe63e;</span>变动跟踪</a></li>
                         </ul>
                     </div>
@@ -547,7 +560,7 @@
                 </div>
                 </div>
                 <!--      成交特征-按星期成交趋势   去除下面第一层div-->
-                <div class="" title="成交特征-按星期成交趋势">
+                <div class="hide" title="成交特征-按星期成交趋势">
                 <div class="row padding-row nav-tabs-child hide">
                     <div class="col-xs-12">
                         <ul class="nav nav-pills" role="tablist">
@@ -556,7 +569,7 @@
                           <li role="presentation"><a href="#">买家等级分布</a></li>
                         </ul>
                     </div>
-                </div>
+                </div><!-- 未用上 -->
                 <div class="row padding-row border-bottom-row">
                     <div id="data-des" class="col-xs-3" style="line-height:28px;">
                         最近7天按星期成交趋势
@@ -709,7 +722,139 @@
                     </div>
                 </div>
                 </div>
+                <!--      促销分析     -->
 
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="pie-container price-promotion-container">
+                            <div class="row ">
+                                <div class="col-xs-12 border-bottom-row">
+                                    <h4><span class="ico-font">&#xe646;</span>当前价格促销</h4>
+                                </div>
+                            </div>
+                            <div class="row padding-row">
+                                <div class="col-xs-12">
+                                    <table class="table price-promotion-table">
+                                        <tbody>
+                                            <tr>
+                                                <td>折扣促销</td>
+                                                <td><i class="ico-font text-success">&#xe62d;</i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>折扣力度</td>
+                                                <td><span class="text-danger">5.5</span>折</td>
+                                            </tr>
+                                            <tr>
+                                                <td>促销标签</td>
+                                                <td><span class="price-label font-simsun">即将涨价</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>店铺红包</td>
+                                                <td>抵<span class="rmb-before text-danger">4.94</span>元</td>
+                                            </tr>
+                                            <tr>
+                                                <td>淘金币</td>
+                                                <td>抵<span class="rmb-before  text-danger">4.94</span>元</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="pie-container">
+                            <div class="row border-bottom-row">
+                                <div class="col-xs-12">
+                                    <h4><span class="ico-font">&#xe64c;</span>30天价格走势</h4>
+                                </div>
+                            </div>
+
+                            <div class="row padding-row">
+                                <div class="col-xs-12">
+                                    <div class="btn-group">
+                                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        款式A <span class="caret"></span>
+                                      </button>
+                                      <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">款式A</a></li>
+                                        <li><a href="#">款式B</a></li>
+                                        <li><a href="#">款式C</a></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div id="product-price-trend">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margin-top-row">
+                    <div class="col-sm-12 col-md-6 border-box">
+                        <div class="pie-container price-promotion-container">
+                            <h4><span class="ico-font">&#xe646;</span>营销活动</h4>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <table class="table price-promotion-table">
+                                        <tbody>
+                                            <tr>
+                                                <td>折扣促销</td>
+                                                <td><i class="ico-font text-success">&#xe62d;</i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>折扣力度</td>
+                                                <td><span class="text-danger">5.5</span>折</td>
+                                            </tr>
+                                            <tr>
+                                                <td>促销标签</td>
+                                                <td><span class="price-label font-simsun">即将涨价</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>店铺红包</td>
+                                                <td>抵<span class="rmb-before text-danger">4.94</span>元</td>
+                                            </tr>
+                                            <tr>
+                                                <td>淘金币</td>
+                                                <td>抵<span class="rmb-before  text-danger">4.94</span>元</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 border-box">
+                        <div class="pie-container">
+                            <h4><span class="ico-font">&#xe64c;</span>30天价格走势</h4>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="btn-group">
+                                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        款式A <span class="caret"></span>
+                                      </button>
+                                      <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">款式A</a></li>
+                                        <li><a href="#">款式B</a></li>
+                                        <li><a href="#">款式C</a></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div id="product-price-trend">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
          </div>
       </div>
@@ -751,7 +896,7 @@
 
         //图表配置
         var g_data_chart;
-        var g_buyer_level_bar
+        var g_buyer_level_bar;
         require.config({
             paths:{
                 echarts:'js/dist'
@@ -899,6 +1044,111 @@
                 g_data_chart.setOption(option);
             }
         );
+//        价格走势
+        var g_product_price_trend;
+        require(
+            [
+                'echarts',
+                'echarts/chart/line'
+            ],
+            function(ec){
+                g_product_price_trend = ec.init(document.getElementById('product-price-trend'));
+                var option = {
+                    animationDuration:500,
+                    animationEasing:'CircularInOut',
+                    color : ['#777','#f35a4a','#4184f3'],
+                    grid : {
+                        x : 70,
+                        y : 30,
+                        x2 : 30,
+                        y2 :70,
+                        borderWidth : 0
+                    },
+                    tooltip : {
+                        trigger: 'axis',
+                        showDelay:0,
+                        hideDely:100,
+                        transitionDuration:0,
+                        backgroundColor:'rgba(255,255,255,0.9)',
+                        borderColor:'#e7e7e7',
+                        borderRadius:2,
+                        borderWidth:1,
+                        textStyle:{ color:'#777'},
+                        formatter:function(params,ticket,callback){
+                            var res = "日期：" + params[0].name;
+                            res += '<br/>' + params[0].seriesName + '：' + params[0].value + " 元";
+                            res += '<br/>' + params[1].seriesName + '：' + params[1].value + " 元";
+                            res += '<br/>' + params[2].seriesName + '：' + params[2].value + " 元";
+                            return res;
+                        },
+                        axisPointer:{
+                            type : 'line',
+                            lineStyle : {
+                                color: '#999',
+                                width: 1,
+                                type: 'dotted'
+                            }
+                        }
+                    },
+                    legend: {
+                        data:['原价','促销价','手机专享价'],
+                        orient:'horizontal',
+                        x:'left',
+                        y:'bottom'
+                    },
+                    toolbox: {
+                        show : false
+                    },
+                    calculable : false,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            splitLine:{lineStyle:{type:'dotted'}},
+                            boundaryGap : true,
+                            axisLine:{lineStyle:{color: '#999',width: 1}},//边轴
+                            axisTick:{show:false},
+                            data : ['11-1','11-2','11-3','11-4','11-5','11-6','11-7','11-8','11-9','11-10','11-11','11-12','11-13','11-14','11-15','11-16','11-17','11-18','11-19','11-20','11-21','11-22','11-23','11-24','11-25','11-26','11-27','11-28','11-29','11-30']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            axisLine:{lineStyle:{color: '#999',width: 1}},//边轴
+                            splitNumber:4,
+                            splitLine:{lineStyle:{type:'dotted'}},
+                            axisLabel : {
+                                formatter: function(value){
+                                    return parseInt(value)+' 元';
+                                }
+                            }
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'原价',
+                            type:'line',
+                            symbolSize:1,
+                            data:[198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198,198]
+                        },{
+                            name:'促销价',
+                            type:'line',
+                            symbolSize:1,
+                            data:[78,78,78,78,78,78,78,78,78,78,78,78,78,36,36,78,78,78,78,78,78,78,78,78,78,78,78,78,78,78]
+                        },{
+                            name:'手机专享价',
+                            type:'line',
+                            symbolSize:1,
+                            data:[60,60,60,60,60,60,60,60,60,60,60,60,60,36,36,60,60,60,60,60,48,60,60,60,60,60,60,60,60,60]
+                        }
+                    ]
+                };
+                g_product_price_trend.setOption(option);
+            }
+        );
+
+
+
+
 //买家等级占比
         require(
             ['echarts','echarts/chart/bar'],
@@ -1085,8 +1335,9 @@
 
 ;
             $(".content-body").resize(function(){
-               g_data_chart.resize();//navside变化时需要重置图表
+               g_data_chart.resize();//contentside变化时需要重置图表
                g_buyer_level_bar.resize();
+               g_product_price_trend.resize();
             });
         })
 
