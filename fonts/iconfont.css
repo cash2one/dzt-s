@@ -94,6 +94,8 @@
 
 .icon-attention:before { content: "\e60b"; }
 
+.icon-pc:before { content: "\e654"; }
+
 .icon-attentionfill:before { content: "\e60c"; }
 
 .icon-redpacket:before { content: "\e60d"; }
