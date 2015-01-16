@@ -20,6 +20,8 @@
 
 .icon-tianmao:before { content: "\e61f"; }
 
+.icon-zhuanwan:before { content: "\e653"; }
+
 .icon-tianmaoxingxiang2:before { content: "\e61c"; }
 
 .icon-chiping:before { content: "\e640"; }
@@ -33,6 +35,8 @@
 .icon-spam:before { content: "\e633"; }
 
 .icon-qushi:before { content: "\e643"; }
+
+.icon-jiantou2:before { content: "\e655"; }
 
 .icon-icon:before { content: "\e628"; }
 
@@ -179,6 +183,8 @@
 .icon-icondown2:before { content: "\e622"; }
 
 .icon-iconup2:before { content: "\e623"; }
+
+.icon-fanhuishangyijijiantou:before { content: "\e656"; }
 
 .icon-orderasc:before { content: "\e624"; }
 
