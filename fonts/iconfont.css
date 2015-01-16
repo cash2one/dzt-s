@@ -102,6 +102,10 @@
 
 .icon-iconfontfanhui:before { content: "\e647"; }
 
+.icon-arrow:before { content: "\e64d"; }
+
+.icon-arrowdetail:before { content: "\e64e"; }
+
 .icon-icon1:before { content: "\e644"; }
 
 .icon-yuandian:before { content: "\e61b"; }
@@ -136,9 +140,13 @@
 
 .icon-service:before { content: "\e617"; }
 
+.icon-youjiantou:before { content: "\e651"; }
+
 .icon-you:before { content: "\e636"; }
 
 .icon-you1:before { content: "\e637"; }
+
+.icon-youjiantou1:before { content: "\e652"; }
 
 .icon-mao:before { content: "\e61e"; }
 

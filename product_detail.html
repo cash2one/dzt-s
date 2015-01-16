@@ -17,50 +17,15 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        .padding-box{padding-left: 15px;padding-right: 15px;}
-        .padding-row{padding-bottom: 17px;padding-top: 17px;}
-        .margin-top-row{margin-top: 34px;}
-        .border-bottom-row{border-bottom: 1px solid #e7e7e7;}
-        .border-box{border: 1px solid #e7e7e7;}
-        .shadow-row{border: 2px solid #f9f9f9;}
-
-        .switch-shop-menu>h4{cursor: pointer;color: #f35a4a;margin:0px;}
-        .switch-shop-menu>h4>.caret{color: #777777;}
-        .switch-shop-menu>h4:hover{color: #e75042;}
-        .switch-shop-menu.open>h4{color: #777;}
-        .switch-shop-menu .dropdown-menu>li>a{padding:8px 20px;font-size: 14px;}
-        .switch-shop-menu.open .dropdown-menu>li>a:hover{color:#f35a4a;}
-        .switch-shop-row .last-update{margin-left: 25px;margin-top: 3px;color: #777;}
-
-        .switch-date-btn-group .btn{color: #777;padding:4px 18px;letter-spacing:2px;}
-        .switch-date-btn-group .btn.active{position: relative;color:#222;background-color: #efefef;background-image: linear-gradient(to bottom,#efefef, #fff);}
-        .switch-date-btn-group .btn.active:hover{box-shadow: none;}
-        .switch-date-btn-group .btn.active span{width: 100%;height: 100%; border-bottom: 2px solid #4184f3;position: absolute;left: 0px;bottom: 0px;}
-        #data-des{color: #777;}
-        .data-title{font-size: 18px;color: #222;margin: 0px;}
-        .data-title>.ico-font{font-size: 16px;margin-left: 10px;}
-
-        .data-table .flat::before,.data-table .down::before,.data-table .up::before,.btn-export::before,.data-tab-box .tab .data-ratio span::before{font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
 
 
-/*        .shadow-row .btn-more{position: absolute;left: 50%;width: 50px;height: 12px;top: -3px;line-height: 0px;}*/
         .data-tab-box .tab{background: url(images/data_tab_bg.gif) repeat-x left bottom;background-image:-webkit-linear-gradient(to top, #f7f7f7, #fff);background-image:linear-gradient(to top,#f7f7f7, #fff);border-left: 1px solid #e7e7e7;padding-top: 7px;padding-bottom: 7px;}
         .data-tab-box .tab:hover{cursor: pointer;background-image:-webkit-linear-gradient(to top, #f0f0f0, #fff);background-image:linear-gradient(to top,#f0f0f0, #fff);}
         .data-tab-box .tab:first-child{border-left:none;}
-
         .data-tab-box .tab .data-type{color:#777;}
         .data-tab-box .tab .data-type .help{font-size: 16px;float: right;}
-
-
         .data-tab-box .tab .data-volume{color:#888;font-size: 24px;font-weight: 700;font-family: tahoma,Arial; }
         .data-tab-box .tab .data-ratio{color:#999;font-size: 12px;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
-        .data-tab-box .tab .data-ratio .up{color: #f35a4a;}
-        .data-tab-box .tab .data-ratio .down{color: #5cae50;}
-        .data-tab-box .tab .data-ratio .flat{color: #777;}
-        .data-tab-box .tab .data-ratio .up::before{content:'\e623';color: #f35a4a;}
-        .data-tab-box .tab .data-ratio .down::before{content:'\e622';color: #5cae50;}
-        .data-tab-box .tab .data-ratio .flat::before{content:'\e640';color: #777;}
-
         .data-tab-box .tab.checked{background: none;position: relative;}
         .data-tab-box .tab.checked .data-type{color:#222;}
         .data-tab-box .tab.checked .data-volume{color:#222;}
@@ -89,12 +54,6 @@
         .data-table img{border: 1px solid #CCC;}
         .data-table .img-box{float: left;}
         .data-table .title-box{padding-left:10px;height: 38px;line-height: 18px;overflow: hidden;text-overflow: ellipsis;}
-        .data-table .down,.data-table .down::before{color: #5cae50;}
-        .data-table .up,.data-table .up::before{color: #f35a4a;}
-        .data-table .flat,.data-table .flat::before{color: #777;}
-        .data-table .down::before{content: "\e622";}
-        .data-table .up::before{content: "\e623";}
-        .data-table .flat::before{content: "\e640";}
 
         #product-list-table tr>td:first-child{text-align: left;}
         #product-list-table td{line-height: 40px;}
@@ -104,11 +63,6 @@
         .page-info{vertical-align:middle;color:#777;}
         .btn-export::before{content: '\e63a';font-size: 12px;color: #777;}
 
-        /*日期选择*/
-        .datepicker-box{display:inline;vertical-align: middle;}
-        .datepicker-box .btn{margin-left: 10px;}
-        .datepicker-box .input-group input{width: 100px;}
-        .datepicker-box .input-daterange .input-group-addon{line-height: 1;}
 
         /*nav-tab通用*/
         .nav-tabs{padding-left: 15px;}
@@ -172,13 +126,47 @@
         .price-promotion-container ul li{margin-bottom: 20px;font-size: 16px;}
         .price-promotion-table{font-size: 15px;margin-bottom: 0px;}
         .price-promotion-table>tbody>tr>td{border-top: none;padding:13px 13px 13px 40px;}
-/*        .price-promotion-table>tbody>tr:first-child>td{border-top:none;}*/
         .price-promotion-table>tbody>tr>td:first-child{text-align: right;width: 100px;background-color: #fafafa;border-top: 5px solid #fff;padding-left: 13px;}
-/*        .price-promotion-table>tbody>tr>td:first-child::before{}*/
         .price-promotion-table .price-label{font-size: 12px;padding: 3px 8px;background-color: #f35a4a;color: #fff;letter-spacing: 1px;}
 
         .marking-table i{font-style: normal;margin-right: 10px;font-size: 14px;}
         .service-table i{font-style: normal;margin-right: 15px;}
+/*        操作跟踪*/
+        .trace-operate-title .data-title{margin-top:9px;margin-bottom: 9px;}
+        .trace-operate-title .help-tip{line-height: 28px;margin-right: 10px;}
+        .trace-operate-title .help-tip .help{font-size: 12px;}
+        .trace-operate-title .help-tip .help+.tooltip .tooltip-inner{text-align: left;}
+        .timeline{display: table;width: 100%;margin-top: 72px;}
+        .timeline .line{display: table-row;height: 8px;background: #e7e7e7;}
+        .timeline .line .po{display: table-cell;text-align: center;position: relative;}
+
+        .timeline .line .po span{display: inline-block;position: absolute;margin-top:-4px;}
+        .timeline .line .po i{display:block;width: 18px;height: 18px;background-color: #f35a4a;border-radius: 50%;font-style: normal;border:2px solid #fff;position: relative;cursor: pointer;-webkit-transition: all 0.15s ease-out 0s;-moz-transition: all 0.15s ease-out 0s;transition: all 0.15s ease-out 0s;visibility:hidden;}
+
+        .timeline .line .po i.edit::before{content: '\e64f';font-size: 12px;color: #fff;vertical-align:top;line-height: 13px;margin-left: 2px;}
+        .timeline .line .po i.edit{visibility: visible;}
+        .timeline .line .po i.active,.timeline .line .po span:hover i{-webkit-transform: scale(1.8,1.8);-moz-transform: scale(1.8,1.8);-o-transform: scale(1.8,1.8);transform: scale(1.8,1.8);z-index: 99;}
+
+        .timeline .line .po span:hover i{z-index: 999;}
+        .timeline .line .po span:hover i.edit+.tooltip{opacity: 1;}
+
+        .timeline .line .po i.edit+.tooltip{width: 70px;left: 50%;margin-left: -35px;opacity: 0.7;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;cursor: pointer;z-index: 9;}
+        .timeline .line .po i.edit+.tooltip.top{top: -38px;}
+        .timeline .line .po i.edit+.tooltip.bottom{top: 23px;}
+        .timeline .line .po i.edit+.tooltip.top .tooltip-arrow{border-top-color: #36ae48;}
+        .timeline .line .po i.edit+.tooltip.bottom .tooltip-arrow{border-bottom-color: #36ae48;}
+        .timeline .line .po i.edit+.tooltip .tooltip-inner{background-color: #36ae48; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
+
+        .timeline .line .po i.active+.tooltip{opacity: 1;}
+        .timeline .line .po i.active+.tooltip.top .tooltip-arrow{border-top-color: #f35a4a;}
+        .timeline .line .po i.active+.tooltip.bottom .tooltip-arrow{border-bottom-color: #f35a4a;}
+        .timeline .line .po i.active+.tooltip .tooltip-inner{background-color: #f35a4a;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
+
+        #operate-list-table{letter-spacing: 0.5px;}
+        #operate-list-table tr td:nth-child(2){color: #777;}
+        #operate-list-table tr td:nth-child(4){color: #222;}
+        #operate-list-table .change-to-ico::before{font-size: 16px;content: "\e652";color: #f35a4a;}
+        #operate-list-table tr td:nth-child(4) .rmb-before{font-size: 16px;color:#f35a4a;}
     </style>
   </head>
   <body>
@@ -306,7 +294,7 @@
                 <div class="row padding-row border-bottom-row">
                     <div class="col-xs-6">
                         <button class="btn btn-default btn-goback"><span class="ico-font" title="返回">&#xe647;</span> 返回</button>
-                        <span class="data-title">宝贝详情</span>
+                        <h4 class="data-title">宝贝详情</h4>
                     </div>
                 </div>
                 <div class="row padding-row" id="product-info-row">
@@ -384,7 +372,7 @@
                             <li role="presentation"><a href="#"><span class="ico-font">&#xe648;</span>销售情况</a></li>
                             <li role="presentation"><a href="#"><span class="ico-font">&#xe601;</span>成交特征<span></span></a></li>
                             <li role="presentation" class="active"><a href="#"><span class="ico-font">&#xe646;</span>促销分析</a></li>
-                            <li role="presentation"><a href="#"><span class="ico-font">&#xe63e;</span>变动跟踪</a></li>
+                            <li role="presentation"><a href="#"><span class="ico-font">&#xe63e;</span>操作跟踪</a></li>
                         </ul>
                     </div>
                 </div>
@@ -867,88 +855,21 @@
                     </div>
                 </div>
                 <!--      变动跟踪     -->
-                <style>
-
-
-                /*=======================*/
-                .timeline{display: table;width: 100%;margin-top: 55px;}
-                .timeline .line{display: table-row;height: 8px;background: #e7e7e7;}
-                .timeline .line .po{display: table-cell;text-align: center;position: relative;}
-
-                .timeline .line .po span{display: inline-block;position: absolute;margin-top:-4px;}
-                .timeline .line .po i{display:block;width: 18px;height: 18px;background-color: #f35a4a;border-radius: 50%;font-style: normal;border:2px solid #fff;position: relative;cursor: pointer;-webkit-transition: all 0.15s ease-out 0s;-moz-transition: all 0.15s ease-out 0s;transition: all 0.15s ease-out 0s;visibility:hidden;}
-
-                .timeline .line .po i.edit::before{content: '\e64f';font-size: 12px;color: #fff;vertical-align:top;line-height: 13px;margin-left: 2px;}
-                .timeline .line .po i.edit{visibility: visible;}
-                .timeline .line .po i.active,.timeline .line .po span:hover i{-webkit-transform: scale(1.8,1.8);-moz-transform: scale(1.8,1.8);-o-transform: scale(1.8,1.8);transform: scale(1.8,1.8);z-index: 99;}
-
-                .timeline .line .po span:hover i{z-index: 999;}
-                .timeline .line .po span:hover i.edit+.tooltip{opacity: 1;}
-
-                .timeline .line .po i.edit+.tooltip{width: 70px;left: 50%;margin-left: -35px;opacity: 0.7;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;cursor: pointer;}
-                .timeline .line .po i.edit+.tooltip.top{top: -38px;}
-                .timeline .line .po i.edit+.tooltip.bottom{top: 23px;}
-                .timeline .line .po i.edit+.tooltip.top .tooltip-arrow{border-top-color: #36ae48;}
-                .timeline .line .po i.edit+.tooltip.bottom .tooltip-arrow{border-bottom-color: #36ae48;}
-                .timeline .line .po i.edit+.tooltip .tooltip-inner{background-color: #36ae48; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
-
-                .timeline .line .po i.active+.tooltip{opacity: 1;}
-                .timeline .line .po i.active+.tooltip.top .tooltip-arrow{border-top-color: #f35a4a;}
-                .timeline .line .po i.active+.tooltip.bottom .tooltip-arrow{border-bottom-color: #f35a4a;}
-                .timeline .line .po i.active+.tooltip .tooltip-inner{background-color: #f35a4a;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
-                </style>
                 <div class="row padding-row">
                     <div class="col-xs-12">
                         <div class="border-bottom-row clearfix trace-operate-title">
-                            <h4 class="l title17"><span class="before-icon ico-font text-danger">&#xe63e;</span>操作变动跟踪 <small>-12月</small></h4>
-                            <div class="r font-simsun help-tip">
-                                <a href="#">我们监控哪些变动？</a>
-                            </div>
+                            <h4 class="l data-title"><span class="before-icon ico-font">&#xe63e;</span>操作变更跟踪</h4>
                             <div class="btn-group r">
                               <button id="month-for-timeline" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                 2014年5月 <span class="caret"></span>
                               </button>
                             </div>
+                            <div class="r font-simsun help-tip">
+                                <span class="help" title="当前监控：<br/>○ 主图<br/>○ 主/副标题<br/>○ 价格<br/>○ 上下架时间<br/>○ 宝贝促销"><span class="ico-font">&#xe607;</span> 监控哪些变动？</span>
+                            </div>
                         </div>
                     </div>
-<!--
-                    <div class="col-xs-12">
-                        <div class="time-line">
-                            <span><i class="d-1 ico-before" title="12月1日"></i></span>
-                            <span><i class="d-2 ico-before" title="12月2日"></i></span>
-                            <span><i class="d-3 ico-before" title="12月3日"></i></span>
-                            <span><i class="d-4 ico-before" title="12月4日"></i></span>
-                            <span><i class="d-5 ico-before edit" title="12月5日"></i></span>
-                            <span><i class="d-6 ico-before edit" title="12月6日"></i></span>
-                            <span><i class="d-7 ico-before" title="12月7日"></i></span>
-                            <span><i class="d-8 ico-before" title="12月8日"></i></span>
-                            <span><i class="d-9 ico-before" title="12月9日"></i></span>
-                            <span><i class="d-10 ico-before" title="12月10日"></i></span>
-                            <span><i class="d-11 ico-before" title="12月11日"></i></span>
-                            <span><i class="d-12 ico-before edit active" title="12月12日"></i></span>
-                            <span><i class="d-13 ico-before" title="12月13日"></i></span>
-                            <span><i class="d-14 ico-before" title="12月14日"></i></span>
-                            <span><i class="d-15 ico-before" title="12月15日"></i></span>
-                            <span><i class="d-16 ico-before edit" title="12月16日"></i></span>
-                            <span><i class="d-17 ico-before" title="12月17日"></i></span>
-                            <span><i class="d-18 ico-before" title="12月18日"></i></span>
-                            <span><i class="d-19 ico-before edit" title="12月19日"></i></span>
-                            <span><i class="d-20 ico-before" title="12月20日"></i></span>
-                            <span><i class="d-21 ico-before" title="12月21日"></i></span>
-                            <span><i class="d-22 ico-before" title="12月22日"></i></span>
-                            <span><i class="d-23 ico-before" title="12月23日"></i></span>
-                            <span><i class="d-24 ico-before edit" title="12月24日"></i></span>
-                            <span><i class="d-25 ico-before" title="12月25日"></i></span>
-                            <span><i class="d-26 ico-before" title="12月26日"></i></span>
-                            <span><i class="d-27 ico-before" title="12月27日"></i></span>
-                            <span><i class="d-28 ico-before" title="12月28日"></i></span>
-                            <span><i class="d-29 ico-before" title="12月29日"></i></span>
-                            <span><i class="d-30 ico-before" title="12月30日"></i></span>
-                            <span><i class="d-31 ico-before edit" title="12月31日"></i></span>
-                        </div>
-                    </div>
--->
-                    <div class="col-xs-12 margin-top-row">
+                    <div class="col-xs-12 margin-top-row hide">
                         <div class="alert alert-warning">自监控起，此宝贝12月没有操作变动。</div>
                     </div>
                     <div class="col-xs-12">
@@ -987,6 +908,59 @@
                                 <div class="po"><span><i class="ico-before" title="12月31日"></i></span></div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-xs-12 padding-row" style="margin-top:75px;">
+                        <h4>12月17日</h4>
+                    </div>
+                    <div class="col-xs-12">
+                        <table id="operate-list-table" class="table gtable font-simsun">
+                            <thead>
+                                <tr>
+                                    <th width="130">变更项目</th>
+                                    <th>变更前</th>
+                                    <th width="60"></th>
+                                    <th>变更后</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>主图</td>
+                                    <td><img class="img-thumbnail" src="images/none_pic120.gif" alt=""></td>
+                                    <td><span class="ico-font change-to-ico"></span></td>
+                                    <td><img class="img-thumbnail" src="images/none_pic120.gif" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td>主标题</td>
+                                    <td>学院风帆布双肩包韩版大学生包书包潮背包欧美时尚女生旅游包</td>
+                                    <td><span class="ico-before change-to-ico"></span></td>
+                                    <td>学院风帆布双肩包韩版大学生包书包潮男士背包欧美时尚女生旅游包</td>
+                                </tr>
+                                <tr>
+                                    <td>副标题</td>
+                                    <td>欧美时尚女生旅游包</td>
+                                    <td><span class="ico-before change-to-ico"></span></td>
+                                    <td>学院风帆布双肩包韩版</td>
+                                </tr>
+                                <tr>
+                                    <td>价格</td>
+                                    <td><span class="rmb-before">129.56</span></td>
+                                    <td><span class="ico-before change-to-ico"></span></td>
+                                    <td><span class="rmb-before">129.56</span></td>
+                                </tr>
+                                <tr>
+                                    <td>上下架时间</td>
+                                    <td>星期五 20:30:00</td>
+                                    <td><span class="ico-before change-to-ico"></span></td>
+                                    <td>星期五 22:15:00</td>
+                                </tr>
+                                <tr>
+                                    <td>促销</td>
+                                    <td>未参与淘金币</td>
+                                    <td><span class="ico-before change-to-ico"></span></td>
+                                    <td>参与<span class="text-danger">淘金币</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -1049,7 +1023,7 @@
 //
 //        帮助tooltip
         $('.help').tooltip({
-            placement:'bottom',
+            html:true,
             trigger:'hover'
         });
         //显示宝贝服务及支付信息

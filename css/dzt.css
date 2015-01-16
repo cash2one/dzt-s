@@ -23,9 +23,7 @@ a:focus{outline:none;-moz-outline:none;}
 
 /*链接颜色*/
 a,a:hover{color: #4184f3;}
-/*title18*/
-h4.title17{font-size: 17px;}
-h4.title17 .before-icon{font-size: 16px;margin-right: 8px;}
+
 
 /*gtable*/
 /*        .gtable{margin: 0;padding: 0;}*/
@@ -126,10 +124,6 @@ body.hide-nav .content-bg .content-body{margin-left: 0;}
 .content-body{margin-left: 216px;}
 
 /*      footer*/
-/*
-.footer-bottom{position: relative;z-index: 10;}
-.footer{position: absolute;left: 0;bottom: 0;}
-*/
 .footer{background-color: #f6f6f6;padding: 40px 15px;width: 100%;}
 .footer-links{margin: 0px auto 10px;text-align: center;}
 .footer-links li{margin-left: 20px;display: inline-block;}
@@ -141,3 +135,40 @@ body.hide-nav .content-bg .content-body{margin-left: 0;}
 .input-label{display: none;}
 .input-label{_display: block;display: block\9;}/*ie7,8,9,10可见*/
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {.input-label{display: none;}}/*仅ie10可见*/
+
+/*后台-间距控制*/
+.padding-box{padding-left: 15px;padding-right: 15px;}
+.padding-row{padding-bottom: 17px;padding-top: 17px;}
+.margin-top-row{margin-top: 34px;}
+.border-bottom-row{border-bottom: 1px solid #e7e7e7;}
+.border-box{border: 1px solid #e7e7e7;}
+.shadow-row{border: 2px solid #f9f9f9;}
+
+/*后台-店铺切换*/
+.switch-shop-menu>h4{cursor: pointer;color: #f35a4a;margin:0px;}
+.switch-shop-menu>h4>.caret{color: #777777;}
+.switch-shop-menu>h4:hover{color: #e75042;}
+.switch-shop-menu.open>h4{color: #777;}
+.switch-shop-menu .dropdown-menu>li>a{padding:8px 20px;font-size: 14px;}
+.switch-shop-menu.open .dropdown-menu>li>a:hover{color:#f35a4a;}
+.switch-shop-row .last-update{margin-left: 25px;margin-top: 3px;color: #777;}
+
+/*后台-日期描述*/
+.date-des{color: #777;line-height: 28px;}
+
+/*后台-日期选择按钮组*/
+.switch-date-btn-group .btn{color: #777;padding:4px 18px;letter-spacing:2px;}
+.switch-date-btn-group .btn.active{position: relative;color:#222;background-color: #efefef;background-image: linear-gradient(to bottom,#efefef, #fff);}
+.switch-date-btn-group .btn.active:hover{box-shadow: none;}
+.switch-date-btn-group .btn.active span{width: 100%;height: 100%; border-bottom: 2px solid #4184f3;position: absolute;left: 0px;bottom: 0px;}
+
+/*后台-日期范围选择*/
+.datepicker-box{display:inline;vertical-align: middle;}
+.datepicker-box .btn{margin-left: 10px;}
+.datepicker-box .input-group input{width: 100px;}
+.datepicker-box .input-daterange .input-group-addon{line-height: 1;}
+
+/*后台-数据描述大标题*/
+.data-title{color: #222;margin: 0px;display: inline-block;}
+.data-title>.ico-font{font-size: 16px;margin-left: 10px;}
+.data-title .before-icon{font-size: 16px;margin-right: 8px;color: #f35a4a;}

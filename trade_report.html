@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <title>店侦探</title>
+    <title>交易分析-概况报告</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,47 +17,13 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        .padding-box{padding-left: 15px;padding-right: 15px;}
-        .padding-row{padding-bottom: 17px;padding-top: 17px;}
-        .border-bottom-row{border-bottom: 1px solid #e7e7e7;}
-
-        .switch-shop-menu>h4{cursor: pointer;color: #f35a4a;margin:0px;}
-        .switch-shop-menu>h4>.caret{color: #777777;}
-        .switch-shop-menu>h4:hover{color: #e75042;}
-        .switch-shop-menu.open>h4{color: #777;}
-        .switch-shop-menu .dropdown-menu>li>a{padding:8px 20px;font-size: 14px;}
-        .switch-shop-menu.open .dropdown-menu>li>a:hover{color:#f35a4a;}
-        .switch-shop-row .last-update{margin-left: 25px;margin-top: 3px;color: #777;}
-
-        .switch-date-btn-group .btn{color: #777;padding:4px 18px;letter-spacing:2px;}
-        .switch-date-btn-group .btn.active{position: relative;color:#222;background-color: #efefef;background-image: linear-gradient(to bottom,#efefef, #fff);}
-        .switch-date-btn-group .btn.active:hover{box-shadow: none;}
-        .switch-date-btn-group .btn.active span{width: 100%;height: 100%; border-bottom: 2px solid #4184f3;position: absolute;left: 0px;bottom: 0px;}
-        #data-des{color: #777;}
-        .data-title{font-size: 18px;color: #222;margin: 0px;}
-        .data-title>.ico-font{font-size: 16px;margin-left: 10px;}
-
-        .data-table .flat::before,.data-table .down::before,.data-table .up::before,.btn-export::before,.data-tab-box .tab .data-ratio span::before{font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
-
-        .border-box{border: 1px solid #e7e7e7;}
-        .shadow-row{border: 2px solid #f9f9f9;}
         .data-tab-box .tab{background: url(images/data_tab_bg.gif) repeat-x left bottom;background-image:-webkit-linear-gradient(to top, #f7f7f7, #fff);background-image:linear-gradient(to top,#f7f7f7, #fff);border-left: 1px solid #e7e7e7;padding-top: 7px;padding-bottom: 7px;}
         .data-tab-box .tab:hover{cursor: pointer;background-image:-webkit-linear-gradient(to top, #f0f0f0, #fff);background-image:linear-gradient(to top,#f0f0f0, #fff);}
         .data-tab-box .tab:first-child{border-left:none;}
-
         .data-tab-box .tab .data-type{color:#777;}
         .data-tab-box .tab .data-type .help{font-size: 16px;float: right;}
-
-
         .data-tab-box .tab .data-volume{color:#888;font-size: 24px;font-weight: 700;font-family: tahoma,Arial; }
         .data-tab-box .tab .data-ratio{color:#999;font-size: 12px;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
-        .data-tab-box .tab .data-ratio .up{color: #f35a4a;}
-        .data-tab-box .tab .data-ratio .down{color: #5cae50;}
-        .data-tab-box .tab .data-ratio .flat{color: #777;}
-        .data-tab-box .tab .data-ratio .up::before{content:'\e623';color: #f35a4a;}
-        .data-tab-box .tab .data-ratio .down::before{content:'\e622';color: #5cae50;}
-        .data-tab-box .tab .data-ratio .flat::before{content:'\e640';color: #777;}
-
         .data-tab-box .tab.checked{background: none;position: relative;}
         .data-tab-box .tab.checked .data-type{color:#222;}
         .data-tab-box .tab.checked .data-volume{color:#222;}
@@ -84,12 +50,6 @@
         .data-table img{border: 1px solid #CCC;}
         .data-table .img-box{float: left;}
         .data-table .title-box{padding-left:10px;height: 38px;line-height: 18px;overflow: hidden;text-overflow: ellipsis;}
-        .data-table .down,.data-table .down::before{color: #5cae50;}
-        .data-table .up,.data-table .up::before{color: #f35a4a;}
-        .data-table .flat,.data-table .flat::before{color: #777;}
-        .data-table .down::before{content: "\e622";}
-        .data-table .up::before{content: "\e623";}
-        .data-table .flat::before{content: "\e640";}
 
         #product-list-table tr>td:first-child{text-align: left;}
         #product-list-table td{line-height: 40px;}
@@ -97,14 +57,9 @@
         .btn-left{border-top-left-radius: 5px;border-bottom-left-radius: 5px;}
         .btn-right{border-top-right-radius: 5px;border-bottom-right-radius: 5px;}
         .page-info{vertical-align:middle;color:#777;}
-        .btn-export::before{content: '\e63a';font-size: 12px;color: #777;}
+        .btn-export::before{content: '\e63a';color: #777;}
 
 
-        /*日期选择*/
-        .datepicker-box{display:inline;vertical-align: middle;}
-        .datepicker-box .btn{margin-left: 10px;}
-        .datepicker-box .input-group input{width: 100px;}
-        .datepicker-box .input-daterange .input-group-addon{line-height: 1;}
     </style>
   </head>
   <body>
@@ -230,10 +185,9 @@
                     </div>
                 </div>
                 <div class="row padding-row border-bottom-row">
-                    <div id="data-des" class="col-xs-3" style="line-height:28px;">
-                        最近七天概况
+                    <div class="col-xs-3">
+                        <span id="date-des" class="date-des">最近七天概况</span>
                     </div>
-
                     <div class="col-xs-6 col-xs-offset-3 text-right">
                         <div class="btn-group switch-date-btn-group">
                             <button type="button" class="btn btn-default" day-length="1">昨天<span></span></button>
@@ -245,10 +199,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row padding-row">
                     <div class="col-xs-6">
-                        <a class="data-title" href="#">交易报告<span class="ico-font">&#xe635;</span></a>
+                        <h4 class="data-title">交易报告</h4>
                     </div>
                     <div class="col-xs-6 clearfix">
                         <div class="datepicker-box" style="display:none;">
@@ -270,7 +223,7 @@
                                     <ul>
                                         <li class="data-type">7天销量<span class="ico-font help" data-toggle="tooltip" title="最近7天该店所有商品的销售总量">&#xe607;</span></li>
                                         <li class="data-volume">353</li>
-                                        <li class="data-ratio">较上7天<span class="up">3%</span></li>
+                                        <li class="data-ratio">较上7天<span class="ico-before up">3%</span></li>
                                         <li class="arrow"></li>
                                     </ul>
                                 </div>
@@ -278,7 +231,7 @@
                                     <ul>
                                         <li class="data-type">7天销售额<span class="ico-font help" data-toggle="tooltip" title="最近7天该店的销售金额（注：手动改价无法统计到）">&#xe607;</span></li>
                                         <li class="data-volume">￥3,531.00</li>
-                                        <li class="data-ratio">较上7天<span class="down">3%</span></li>
+                                        <li class="data-ratio">较上7天<span class="ico-before down">3%</span></li>
                                         <li class="arrow"></li>
                                     </ul>
                                 </div>
@@ -286,7 +239,7 @@
                                     <ul>
                                         <li class="data-type">7天销售商品数<span class="ico-font help" data-toggle="tooltip" title="最近7天该店销售的商品数量（例：1个链接销售10件商品，算1个）">&#xe607;</span></li>
                                         <li class="data-volume">13</li>
-                                        <li class="data-ratio">较上7天<span class="down">3%</span></li>
+                                        <li class="data-ratio">较上7天<span class="ico-before flat">0%</span></li>
                                         <li class="arrow"></li>
                                     </ul>
                                 </div>
@@ -303,20 +256,13 @@
                 </div>
                 <div class="row shadow-row">
                 </div>
-<!--
-                <div class="row">
-                    <div class="col-xs-12 p0">
-                        <button class="btn btn-default btn-lg" style="margin-top:15px;">导出数据</button>&nbsp;&nbsp;
-                        <button class="btn btn-primary btn-lg" style="margin-top:15px;">深入交易分析</button>
-                    </div>
-                </div>
--->
+
                 <div class="row table-row">
                     <div class="col-xs-12 table-col">
                         <div class="tb-head-bar">
                             <div class="row">
                                 <div class="col-xs-4">
-                                    <a href="#" class="btn btn-default btn-export"> 导出</a>
+                                    <button href="#" class="btn btn-default btn-export ico-before"> 导出</button>
                                     <button type="button" class="btn btn-primary">深入分析交易</button>
                                 </div>
                                 <div class="col-xs-8 text-right">
