@@ -17,68 +17,7 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-
-
-        .data-tab-box .tab{background: url(images/data_tab_bg.gif) repeat-x left bottom;background-image:-webkit-linear-gradient(to top, #f7f7f7, #fff);background-image:linear-gradient(to top,#f7f7f7, #fff);border-left: 1px solid #e7e7e7;padding-top: 7px;padding-bottom: 7px;}
-        .data-tab-box .tab:hover{cursor: pointer;background-image:-webkit-linear-gradient(to top, #f0f0f0, #fff);background-image:linear-gradient(to top,#f0f0f0, #fff);}
-        .data-tab-box .tab:first-child{border-left:none;}
-        .data-tab-box .tab .data-type{color:#777;}
-        .data-tab-box .tab .data-type .help{font-size: 16px;float: right;}
-        .data-tab-box .tab .data-volume{color:#888;font-size: 24px;font-weight: 700;font-family: tahoma,Arial; }
-        .data-tab-box .tab .data-ratio{color:#999;font-size: 12px;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
-        .data-tab-box .tab.checked{background: none;position: relative;}
-        .data-tab-box .tab.checked .data-type{color:#222;}
-        .data-tab-box .tab.checked .data-volume{color:#222;}
-        .data-tab-box .tab.checked .data-ratio{}
-        .data-tab-box .tab.checked .arrow{width: 13px;height: 13px;background: url(images/sprites.png) no-repeat 0 0;position: absolute;left: 50%;margin-left: -13px;}
-
-        .data-chart{padding:10px 0px;position: relative;}
-        .data-chart .btn-more{position: absolute;right: 0px;bottom: 10px;}/****************************/
-
-        #tab-data-chart{height: 500px;}/*交易报告下面的图表*/
-        #analyse-chart{height:300px;}/*交易-深入分析 图表*/
-
-        .table-row{margin-top: 22px;}
-        .table-col{padding-left: 0;padding-right: 0;}
-        .tb-head-bar,.tb-footer-bar{background-color: #f5f5f5;width: 100%;height: 48px;border: 1px solid #e7e7e7;padding: 8px 15px; }
-        .tb-head-bar{border-top-left-radius: 4px;border-top-right-radius: 4px;border-bottom-width: 2px;}
-        .tb-footer-bar{border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;border-top-width: 1px;}
-        .data-table{margin-bottom: 0;letter-spacing:0.2px;}
-        .data-table > thead > tr > th{border-bottom: none;}
-        .data-table th:first-child{border-left: 1px solid #e7e7e7;}
-        .data-table th:last-child{border-right:1px solid #e7e7e7;}
-        .data-table td{border: 1px solid #e7e7e7;}
-        .data-table>thead>tr>th,.data-table>tbody>tr>td{padding:13px 8px;font-size: 13px;}
-        .data-table tr>td:first-child{text-align: right;}
-        /* 产品列表表格*/
-        .data-table img{border: 1px solid #CCC;}
-        .data-table .img-box{float: left;}
-        .data-table .title-box{padding-left:10px;height: 38px;line-height: 18px;overflow: hidden;text-overflow: ellipsis;}
-
-        #product-list-table tr>td:first-child{text-align: left;}
-        #product-list-table td{line-height: 40px;}
-
-        .btn-left{border-top-left-radius: 5px;border-bottom-left-radius: 5px;}
-        .btn-right{border-top-right-radius: 5px;border-bottom-right-radius: 5px;}
-        .page-info{vertical-align:middle;color:#777;}
-        .btn-export::before{content: '\e63a';font-size: 12px;color: #777;}
-
-
-        /*nav-tab通用*/
-        .nav-tabs{padding-left: 15px;}
-        .nav-tabs .active{position: relative;}
-        .nav-tabs .active span{/*display: block;width: 100%; height: 0px;border: 1px solid #4184f3;border-top-left-radius: 4px;border-top-right-radius: 4px; position: absolute;top: 0px;left: 0px;*/}
-        .nav-tabs>li span.ico-font{font-size:14px;margin-right:3px;}
-        .nav-tabs>li>a{font-size: 14px;padding: 8px 13px;margin-right: 5px;}
-        .nav-tabs>li.active>a{color: #222;background-color:#f5f5f5;border-bottom: 1px solid #f5f5f5;border-top-left-radius: 4px;border-top-right-radius:4px;font-weight: 700;}
-        .nav-tabs>li.active>a:hover{background-color: #f5f5f5;color: #222;}
-        /*nav-pills通用*/
-        .nav-tabs-child{background-color:#f5f5f5;border-bottom:1px solid #e5e5e5;}
-        .nav-pills>li>a{font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;padding: 5px 10px;color: #777;margin-right: 5px;}
-        .nav-pills>li.active>a{font-weight: 700;box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);}
-        .nav-pills>li>a:hover{color: #222;}
-        .nav-pills>li:not(.active)>a:hover{background-color: #ccc;}
-
+/*        宝贝信息*/
         #product-info-row .product-img{}
         #product-info-row .product-img img{border: 1px solid #CCC;}
         #product-info-row .product-info{padding-left: 152px;}
@@ -86,7 +25,6 @@
         #product-info-row .product-info .pro-title{font-size: 16px;color: #222;}
         #product-info-row .product-info .pro-title a{margin-left: 15px;font-size: 12px;}
         #product-info-row .product-info .pro-title a:hover::after{text-decoration: none;}
-
         #product-info-row .pro-other-info i,#product-info-row .pro-price i{font-style: normal;color: #777;margin-right: 36px;}
         #product-info-row .pro-price .price{font-size: 18px;color: #f35a4a;}
         #product-info-row .pro-price .price::before{content:'￥';font-size: 18px;color: #777;}
@@ -100,7 +38,7 @@
         .btn-goback{padding: 0 10px;margin-top:-5px;margin-right: 10px;}
         .btn-goback .ico-font{font-size:16px;}
 
-
+/*        饼形图*/
         .pie-container{padding-top: 17px;padding-bottom: 17px;}/*促销分析也有使用该类*/
         .pie-container .pie-box{margin:20px auto;}
         .pie-container h4{margin-top: 0px;}
@@ -139,28 +77,23 @@
         .timeline{display: table;width: 100%;margin-top: 72px;}
         .timeline .line{display: table-row;height: 8px;background: #e7e7e7;}
         .timeline .line .po{display: table-cell;text-align: center;position: relative;}
-
         .timeline .line .po span{display: inline-block;position: absolute;margin-top:-4px;}
         .timeline .line .po i{display:block;width: 18px;height: 18px;background-color: #f35a4a;border-radius: 50%;font-style: normal;border:2px solid #fff;position: relative;cursor: pointer;-webkit-transition: all 0.15s ease-out 0s;-moz-transition: all 0.15s ease-out 0s;transition: all 0.15s ease-out 0s;visibility:hidden;}
-
         .timeline .line .po i.edit::before{content: '\e64f';font-size: 12px;color: #fff;vertical-align:top;line-height: 13px;margin-left: 2px;}
         .timeline .line .po i.edit{visibility: visible;}
         .timeline .line .po i.active,.timeline .line .po span:hover i{-webkit-transform: scale(1.8,1.8);-moz-transform: scale(1.8,1.8);-o-transform: scale(1.8,1.8);transform: scale(1.8,1.8);z-index: 99;}
-
         .timeline .line .po span:hover i{z-index: 999;}
         .timeline .line .po span:hover i.edit+.tooltip{opacity: 1;}
-
         .timeline .line .po i.edit+.tooltip{width: 70px;left: 50%;margin-left: -35px;opacity: 0.7;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;cursor: pointer;z-index: 9;}
         .timeline .line .po i.edit+.tooltip.top{top: -38px;}
         .timeline .line .po i.edit+.tooltip.bottom{top: 23px;}
         .timeline .line .po i.edit+.tooltip.top .tooltip-arrow{border-top-color: #36ae48;}
         .timeline .line .po i.edit+.tooltip.bottom .tooltip-arrow{border-bottom-color: #36ae48;}
-        .timeline .line .po i.edit+.tooltip .tooltip-inner{background-color: #36ae48; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
-
+        .timeline .line .po i.edit+.tooltip .tooltip-inner{background-color: #36ae48;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
         .timeline .line .po i.active+.tooltip{opacity: 1;}
         .timeline .line .po i.active+.tooltip.top .tooltip-arrow{border-top-color: #f35a4a;}
         .timeline .line .po i.active+.tooltip.bottom .tooltip-arrow{border-bottom-color: #f35a4a;}
-        .timeline .line .po i.active+.tooltip .tooltip-inner{background-color: #f35a4a;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
+        .timeline .line .po i.active+.tooltip .tooltip-inner{background-color: #f35a4a;}
 
         #operate-list-table{letter-spacing: 0.5px;}
         #operate-list-table tr td:nth-child(2){color: #777;}
@@ -436,7 +369,7 @@
                         <div class="tb-head-bar">
                             <div class="row">
                                 <div class="col-xs-4">
-                                    <button class="btn btn-default btn-export"> 导出</button>
+                                    <button class="btn btn-default btn-export ico-before"> 导出</button>
                                 </div>
                                 <div class="col-xs-8 text-right">
                                    <span class="page-info">第1页（共3页）</span>
@@ -739,7 +672,7 @@
                 </div>
                 </div>
                 <!--      促销分析     -->
-                <div class="row margin-top-row hide">
+                <div class="row margin-top-row ">
                     <div class="col-sm-12 col-md-4">
                         <div class="pie-container price-promotion-container">
                             <div class="row">
@@ -855,7 +788,7 @@
                     </div>
                 </div>
                 <!--      变动跟踪     -->
-                <div class="row padding-row">
+                <div class="row padding-row hide">
                     <div class="col-xs-12">
                         <div class="border-bottom-row clearfix trace-operate-title">
                             <h4 class="l data-title"><span class="before-icon ico-font">&#xe63e;</span>操作变更跟踪</h4>
