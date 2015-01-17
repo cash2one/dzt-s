@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <title>引流分析-概况报告</title>
+    <title>引流分析-深入分析</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,6 +30,10 @@
         .product-table-inside .title-box{margin: 10px 0px;text-align: left;}
         .product-table-inside .title-box li{margin-top: 13px;margin-bottom: 0px;}
         .word-rank{height: 200px;}
+
+        .word-table-col .btn-export{margin:0px 13px;}
+        .word-table-col .tb-head-bar .nav-pills{}
+
     </style>
   </head>
   <body>
@@ -171,7 +175,7 @@
                 </div>
                 <div class="row padding-row">
                     <div class="col-xs-6">
-                        <h4 class="data-title">引流报告</h4>
+                        <h4 class="data-title">深入分析引流</h4>
                     </div>
                     <div class="col-xs-6 clearfix">
                         <div class="datepicker-box" style="display:none;">
@@ -193,7 +197,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row padding-row nav-tabs-child">
+                <div class="row padding-row nav-tabs-child nav-bg">
                     <div class="col-xs-12">
                         <ul class="nav nav-pills" role="tablist">
                           <li role="presentation" class="active"><a href="#">淘 宝</a></li>
@@ -203,7 +207,7 @@
                 </div>
                 <div class="row data-tab-box">
                     <div class="col-xs-12">
-                        <div class="row border-box" style="border-top:none;">
+                        <div class="row border-box">
                             <div class="col-xs-12">
                                 <div id="tab-data-chart" class="data-chart">
 
@@ -212,27 +216,19 @@
                         </div>
                         <div class="row border-box" style="border-top:none;">
                             <div class="tab-box tab-top tab-line clearfix">
-                                <div class="col-xs-2 tab checked">
-                                    <ul>
-                                        <li class="data-type">引流关键词<span class="ico-font help" data-toggle="tooltip" title="热门关键词搜索结果前5页，其中包含此店铺宝贝的词">&#xe607;</span></li>
-                                        <li class="data-volume">3</li>
-                                        <li class="data-ratio">较上7天<span class="ico-before up">3%</span></li>
-                                        <li class="arrow"></li>
-                                    </ul>
-                                </div>
                                 <div class="col-xs-2 tab">
                                     <ul>
                                         <li class="data-type">主引流宝贝<span class="ico-font help" data-toggle="tooltip" title="热门关键词搜索结果排名前5页的宝贝总数（不重复）">&#xe607;</span></li>
                                         <li class="data-volume">156</li>
-                                        <li class="data-ratio">较上7天<span class="ico-before down">3%</span></li>
+                                        <li class="data-ratio">较上7天<span class="ico-before down">3个</span></li>
                                         <li class="arrow"></li>
                                     </ul>
                                 </div>
-                                <div class="col-xs-2 tab">
+                                <div class="col-xs-2 tab checked">
                                     <ul>
-                                        <li class="data-type">豆腐块词<span class="ico-font help" data-toggle="tooltip" title="搜索排名前三的热门关键词总数">&#xe607;</span></li>
-                                        <li class="data-volume">13</li>
-                                        <li class="data-ratio">较上7天<span class="ico-before flat">0%</span></li>
+                                        <li class="data-type">引流关键词<span class="ico-font help" data-toggle="tooltip" title="热门关键词搜索结果前5页，其中包含此店铺宝贝的词">&#xe607;</span></li>
+                                        <li class="data-volume">3</li>
+                                        <li class="data-ratio">较上7天<span class="ico-before up">3个</span></li>
                                         <li class="arrow"></li>
                                     </ul>
                                 </div>
@@ -240,15 +236,15 @@
                                     <ul>
                                         <li class="data-type">豆腐块宝贝<span class="ico-font help" data-toggle="tooltip" title="热门关键词搜索结果排名前三的宝贝总数（不重复）">&#xe607;</span></li>
                                         <li class="data-volume">3</li>
-                                        <li class="data-ratio">较上7天<span class="ico-before up">3%</span></li>
+                                        <li class="data-ratio">较上7天<span class="ico-before up">3个</span></li>
                                         <li class="arrow"></li>
                                     </ul>
                                 </div>
                                 <div class="col-xs-2 tab">
                                     <ul>
-                                        <li class="data-type">直通车词<span class="ico-font help" data-toggle="tooltip" title="热门关键词搜索结果排名前五页的直通车词">&#xe607;</span></li>
+                                        <li class="data-type">豆腐块词<span class="ico-font help" data-toggle="tooltip" title="搜索排名前三的热门关键词总数">&#xe607;</span></li>
                                         <li class="data-volume">13</li>
-                                        <li class="data-ratio">较上7天<span class="ico-before flat">0%</span></li>
+                                        <li class="data-ratio">较上7天<span class="ico-before flat">持平</span></li>
                                         <li class="arrow"></li>
                                     </ul>
                                 </div>
@@ -256,7 +252,15 @@
                                     <ul>
                                         <li class="data-type">直通车宝贝<span class="ico-font help" data-toggle="tooltip" title="直通车词排名前五的宝贝数（不重复）">&#xe607;</span></li>
                                         <li class="data-volume">3</li>
-                                        <li class="data-ratio">较上7天<span class="ico-before up">3%</span></li>
+                                        <li class="data-ratio">较上7天<span class="ico-before up">3个</span></li>
+                                        <li class="arrow"></li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-2 tab">
+                                    <ul>
+                                        <li class="data-type">直通车词<span class="ico-font help" data-toggle="tooltip" title="热门关键词搜索结果排名前五页的直通车词">&#xe607;</span></li>
+                                        <li class="data-volume">13</li>
+                                        <li class="data-ratio">较上7天<span class="ico-before flat">持平</span></li>
                                         <li class="arrow"></li>
                                     </ul>
                                 </div>
@@ -265,8 +269,7 @@
 
                     </div>
                 </div>
-                <div class="row shadow-row">
-                </div>
+                <div class="row shadow-row"></div>
 
                 <div class="row table-row hide">
                     <div class="col-xs-12 table-col">
@@ -326,13 +329,18 @@
                 </div>
 
                 <div class="row table-row">
-                    <div class="col-xs-12 table-col">
+                    <div class="col-xs-12 table-col word-table-col">
                         <div class="tb-head-bar">
                             <div class="row">
-                                <div class="col-xs-4">
-                                    <button href="#" class="btn btn-default btn-export ico-before"> 导出</button>
+                                <div class="col-xs-6">
+
+                                    <ul class="nav nav-pills l" role="tablist">
+                                      <li role="presentation" class="active"><a href="#">全部</a></li>
+                                      <li role="presentation"><a href="#">增加的</a></li>
+                                    </ul>
                                 </div>
-                                <div class="col-xs-8 text-right">
+                                <div class="col-xs-6 text-right">
+                                   <button href="#" class="btn btn-default btn-export ico-before"> 导出</button>
                                    <span class="page-info">第1页（共3页）</span>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-default btn-left"><span class="ico-font">&#xe637;</span></button>
@@ -357,6 +365,7 @@
                                         <td>2</td>
                                         <td><button class="btn btn-primary btn-xs">相关宝贝的排名趋势</button></td>
                                     </tr>
+<!--
                                     <tr class="child-tr">
                                         <td colspan="4">
                                             <div>
@@ -415,6 +424,7 @@
                                             </div>
                                         </td>
                                     </tr>
+-->
                                     <tr>
                                         <td>2.</td>
                                         <td>双肩包 男</td>
@@ -619,7 +629,7 @@
 
                                 }
                             },
-                            data:[11,11,15,13,12,13,20,25,23,'-',29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                            data:[11,11,15,13,12,13,20,25,23,25,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
                         }
                     ]
                 };
