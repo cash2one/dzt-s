@@ -225,6 +225,29 @@ body.hide-nav .content-bg .content-body{margin-left: 0;}
 .nav-pills>li>a:hover{color: #222;}
 .nav-pills>li:not(.active)>a:hover{background-color: #ccc;}
 
-/*        饼形图提示样式*/
+/*饼形图提示样式*/
 .jqtooltip-class{margin-right: 10px;margin-bottom: 12px;}
 #jqstooltip{background-color:rgba(255,255,255,0.95);border: 1px solid #e7e7e7;border-radius: 2px;color: #777;}
+
+
+/*loading*/
+#loading-point{margin: 0px auto;width: 150px;text-align: center;}
+#loading-point div{width: 6px;height: 6px;display: inline-block;margin-right: 4px;background-color: #f35a4a;border-radius: 100%;-webkit-animation: bouncedelay 0.8s infinite ease-out;-moz-animation:bouncedelay 0.8s infinite ease-out;-o-animation:bouncedelay 0.8s infinite ease-out;animation: bouncedelay 0.8s infinite ease-out;-webkit-animation-fill-mode: both;animation-fill-mode: both;}
+#loading-point .bounce1 {-webkit-animation-delay: -0.4s;animation-delay: -0.4s;}
+#loading-point .bounce2 {-webkit-animation-delay: -0.2s;animation-delay: -0.2s;}
+@keyframes bouncedelay {
+    0%, 50%, 100% {transform: scale(0.7);-webkit-transform: scale(0.7);opacity:0.7;}
+    20% {transform: scale(1);-webkit-transform: scale(1);opacity:1;}
+}
+@-webkit-keyframes bouncedelay {
+  0%, 50%, 100% { -webkit-transform: scale(0.7);opacity:0.7;}
+  20% { -webkit-transform: scale(1);opacity:1;}
+}
+@-moz-keyframes bouncedelay{
+    0%, 50%, 100% {transform: scale(0.7);opacity:0.7;}
+    20% {transform: scale(1);opacity:1;}
+}
+@-o-keyframes bouncedelay{
+    0%, 50%, 100% {transform: scale(0.7);opacity:0.7;}
+    20% {transform: scale(1);opacity:1;}
+}

@@ -30,7 +30,8 @@
         .data-table .img-box{float: left;}
         .pv-table.data-table tbody td:not(:first-child):hover{background-color:#f5f9fe;}
         .data-table .title-box{padding-left:10px;height: 38px;line-height: 18px;overflow: hidden;}
-        .data-table tbody .bg{box-shadow: inset 1px 1px 6px rgba(0,0,0,0.15);background-color: #f5f9fe;}
+        .data-table>tbody>tr>td.bg,.data-table>tbody>tr.bg{background-color: #f5f9fe;}
+        .pv-table.data-table tbody .bg{box-shadow: inset 1px 1px 6px rgba(0,0,0,0.15);}
         .data-table .relative{position: relative;}
         .data-table .bg .relative .arrow{display: block;width: 8px;height: 13px;background: url(images/sprites.png) left -22px no-repeat;position: absolute;top: 50%;right: 0px;margin-right: -8px;margin-top: -6px;}
 
@@ -41,10 +42,13 @@
         #jqstooltip .jqtooltip-class{margin: 0px;}
 
 /*      词排名走势  */
-        .word-trend-dialo .img-box{float: left;}
-        .word-trend-dialo .title-box{float: left;margin-left: 10px;line-height: 40px;}
-        #word-trend-chart{height: 180px;}
+        .word-trend-dialog .img-box{float: left;}
+        .word-trend-dialog .title-box{float: left;margin-left: 10px;line-height: 40px;}
+        #word-trend-chart{height: 180px;line-height: 180px;}
 
+/*       模态框里面的日期选择*/
+        .datepicker-box-for-word-trend .input-daterange input{padding: 0px;height: 24px;}
+        .datepicker-box-for-word-trend .input-daterange{margin-left: 7px;}
     </style>
   </head>
   <body>
@@ -352,39 +356,39 @@
                             <tbody>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend" data-toggle="modal" data-target="#word-trend-dialog">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -406,7 +410,7 @@
          </div>
       </div>
   </div>
-<div class="modal fade word-trend-dialo" id="word-trend-dialog" tabindex="-1" role="dialog" aria-labelledby="wordTrendLabel" aria-hidden="true">
+<div class="modal fade word-trend-dialog" id="word-trend-dialog" tabindex="-1" role="dialog" aria-labelledby="wordTrendLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -425,14 +429,24 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-6">
+            <div class="col-xs-3">
                 <span id="date-des" class="date-des">11月1日 - 11月7日</span>
             </div>
-            <div class="col-xs-6 text-right">
+            <div class="col-xs-9 text-right">
                 <div class="btn-group switch-date-btn-group btn-xs-group">
                     <button type="button" class="btn btn-default">7天<span></span></button>
                     <button type="button" class="btn btn-default">14天<span></span></button>
                     <button type="button" class="btn btn-default">30天<span></span></button>
+                    <button type="button" class="btn btn-default ico-font dropdown-toggle" data-toggle="dropdown" id="date-for-word-trend-btn" style="font-size:13px;">&#xe638;<span></span></button>
+                </div>
+                <div class="datepicker-box datepicker-box-for-word-trend">
+                    <button class="btn btn-default btn-xs r" id="cancle-picker">取消</button>
+                    <button class="btn btn-primary btn-xs r" id="submit-picker">确定</button>
+                    <div class="input-daterange input-group r">
+                        <input type="text" class="form-control text-center" id="fromDate" placeholder="开始" name="start"/>
+                        <div class="input-group-addon">~</div>
+                        <input type="text" class="form-control text-center" id="toDate" placeholder="结束" name="end" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -441,8 +455,7 @@
         </div>
       </div>
       <div class="modal-footer">
-<!--        <button type="button" class="btn btn-danger">确认</button>-->
-        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="btn-close-word-trend-dialog">关闭</button>
       </div>
     </div>
   </div>
@@ -456,104 +469,17 @@
     <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script src="js/echarts.js"></script>
     <script type="text/javascript">
-        var g_word_trend_chart;
+        var word_trend_chart;
         var option;
         require.config({
             paths:{
                 echarts:'js/dist'
             }
         });
-        require(
-            [
-                'echarts',
-                'echarts/chart/line'
-            ],
-            function(ec){
-                g_word_trend_chart = ec.init(document.getElementById('word-trend-chart'));
-                option = {
-                    animationDuration:500,
-                    animationEasing:'CircularInOut',
-                    color : ['#4184f3','#FF6B6B'],
-                    grid : {
-                        x : 60,
-                        y : 20,
-                        x2 : 30,
-                        y2 : 30,
-                        width:'100%',
-                        height:'100%',
-                        borderWidth : 0
-                    },
-                    tooltip : {
-                        trigger: 'axis',
-                        showDelay:0,
-                        hideDely:100,
-                        transitionDuration:0,
-                        backgroundColor:'rgba(255,255,255,0.9)',
-                        borderColor:'#e7e7e7',
-                        borderRadius:2,
-                        borderWidth:1,
-                        textStyle:{ color:'#777'},
-                        axisPointer:{
-                            type : 'line',
-                            lineStyle : {
-                                color: '#999',
-                                width: 1,
-                                type: 'dotted'
-                            }
-                        }
-                    },
-                    toolbox: {
-                        show : false
-                    },
-                    calculable : false,
-                    xAxis : [
-                        {
-                            type : 'category',
-                            splitLine:{show : false},
-                            boundaryGap : true,
-                            axisLine:{show:false},//边轴
-                            axisTick:{show:false},
-                            data : ['11-10','11-11','11-12','11-13','11-14','11-15','11-16','11-17','11-18','11-19','11-20','11-21','11-22','11-23','11-24','11-25','11-26','11-27','11-28','11-29','11-30','12-1','12-2','12-3','12-4','12-5','12-6','12-7','12-8','12-9']
-                        }
-                    ],
-                    yAxis : [
-                        {
-                            type : 'value',
-                            axisLine:{show:false},//边轴
-                            splitNumber:4,
-                            splitLine:{lineStyle:{type:'dotted'}},
-                            axisLabel : {
-                                formatter: function(value){
-                                    return parseInt(value)+' 名';
-                                }
-                            }
-                        }
-                    ],
-                    series : [
-                        {
-                            name:'排名',
-                            type:'line',
-                            symbolSize:3,
-                            itemStyle:{
-                                normal: {
-                                    label : {
-                                        show: true,
-                                        position: 'top',
-                                        textStyle:{
-                                            fontSize:12
-                                        },
-                                    }
-                                }
-                            },
-                            data:[11,11,15,13,12,13,20,25,23,25,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
-                        }
-                    ]
-                };
-//                g_data_chart.setOption(option);
-            }
-        );
+
 
         $(function(){
+
             $('#date-for-pv-button').datepicker({
                 language: "zh-CN",
                 orientation: "auto right",
@@ -561,11 +487,24 @@
                 format:'yyyy-m-d'
             }).on('changeDate', function(e){
                 alert("选中日期" + e.format(0,'yyyy-m-d'));
-//                $('#date-for-marking').html(e.format(0,'yyyy-m-d') + ' <span class="caret"></span>')
             });
+
+            //显示后加载数据
+            $('#word-trend-dialog').on('shown.bs.modal', function (e) {
+                loadingPointer('word-trend-chart');
+                setTimeout(function(){updateWordTrendChart();},1000);
+            });
+            //关闭模态框时清理图表
+            $("#btn-close-word-trend-dialog").click(function(){
+                word_trend_chart.clear();
+            });
+            //查看关键词排名趋势
             $(".words-list-table .btn-show-trend").click(function(){
-                g_word_trend_chart.setOption(option);
+                var keyword = $(this).parent().prev().text();
+                var pid = $(this).attr("pid");
+                $('#word-trend-dialog').modal();
             });
+
             $('.pv-table .trend').sparkline('html',{
                 type:'bar',
                 barWidth:3,
@@ -588,10 +527,100 @@
                 $("#jqstooltip .jqtooltip-class").html(d.getMonth() + '月' + d.getDate() + '日 : ' + sparkline.values[sparkline.currentRegion] + '个');
 //                d.getDate() + sparkline.currentRegion
             }).bind('mouseleave', function() {
-                console.log('mouseleave');
                 $("#jqstooltip").detach();
             });
-        })
+        });
+
+        function updateWordTrendChart(){
+                require(
+                    [
+                        'echarts',
+                        'echarts/chart/line'
+                    ],
+                    function(ec){
+                        word_trend_chart = ec.init(document.getElementById('word-trend-chart'));
+                        option = {
+                            animationDuration:500,
+                            animationEasing:'CircularInOut',
+                            color : ['#4184f3','#FF6B6B'],
+                            grid : {
+                                x : 60,
+                                y : 20,
+                                x2 : 30,
+                                y2 : 30,
+                                borderWidth : 0
+                            },
+                            tooltip : {
+                                trigger: 'axis',
+                                showDelay:0,
+                                hideDely:100,
+                                transitionDuration:0,
+                                backgroundColor:'rgba(255,255,255,0.9)',
+                                borderColor:'#e7e7e7',
+                                borderRadius:2,
+                                borderWidth:1,
+                                textStyle:{ color:'#777'},
+                                axisPointer:{
+                                    type : 'line',
+                                    lineStyle : {
+                                        color: '#999',
+                                        width: 1,
+                                        type: 'dotted'
+                                    }
+                                }
+                            },
+                            toolbox: {
+                                show : false
+                            },
+                            calculable : false,
+                            xAxis : [
+                                {
+                                    type : 'category',
+                                    splitLine:{show : false},
+                                    boundaryGap : true,
+                                    axisLine:{show:false},//边轴
+                                    axisTick:{show:false},
+                                    data : ['11-10','11-11','11-12','11-13','11-14','11-15','11-16','11-17','11-18','11-19','11-20','11-21','11-22','11-23','11-24','11-25','11-26','11-27','11-28','11-29','11-30','12-1','12-2','12-3','12-4','12-5','12-6','12-7','12-8','12-9']
+                                }
+                            ],
+                            yAxis : [
+                                {
+                                    type : 'value',
+                                    axisLine:{show:false},//边轴
+                                    splitNumber:4,
+                                    splitLine:{lineStyle:{type:'dotted'}},
+                                    axisLabel : {
+                                        formatter: function(value){
+                                            return parseInt(value)+' 名';
+                                        }
+                                    }
+                                }
+                            ],
+                            series : [
+                                {
+                                    name:'排名',
+                                    type:'line',
+                                    symbolSize:3,
+                                    itemStyle:{
+                                        normal: {
+                                            label : {
+                                                show: true,
+                                                position: 'top',
+                                                textStyle:{
+                                                    fontSize:12
+                                                },
+                                            }
+                                        }
+                                    },
+                                    data:[11,11,15,13,12,13,20,25,23,25,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                                }
+                            ]
+                        };
+                        word_trend_chart.setOption(option);
+                    }
+                );
+        }
+
     </script>
   </body>
 </html>
