@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <title>店侦探</title>
+    <title>引流分析</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,21 +17,28 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        .pv-table>tbody>tr>td[rowspan='2']{text-align: center;}
-        .pv-table>tbody>tr>td[rowspan='2'] .ico-font{font-size: 32px;}
+        .pv-table>tbody>tr>td.ico-flag{text-align: center;}
+        .pv-table>tbody>tr>td.ico-flag .ico-font{font-size: 32px;}
+        .pv-table>tbody>tr>td{vertical-align: middle;}
         .pv-table td i{font-style: normal;font-size: 18px;}
         .pv-table td i a:hover{text-decoration: underline;}
         .pv-table td i::after{content: "个";font-size: 12px;margin-left: 7px;color: #777;}
         .pv-table td .trend{display: inline-block;margin-right: 7px;}
+        .pv-table.data-table tbody td:not(.nohover):hover{background-color:#f5f9fe;}
 
         .nav-tabs>.date-switch-li{float: right;}
-
         /* 产品列表表格*/
-        .data-table .img-box{float: left;}
-        .pv-table.data-table tbody td:not(.nohover):hover{background-color:#f5f9fe;}
-        .data-table>tbody>tr>td>.title-box{padding-left:10px;height: 38px;line-height: 18px;overflow: hidden;}
+        .data-table .product-table{max-width: 600px;}
+        .data-table>tbody>tr>td.imgtext{text-align: left;}
+
+/*
+        .data-table>tbody>tr>td>.img-box{display: inline-block;}
+        .data-table>tbody>tr>td>.title-box{padding-left:10px;height: 50px;font-size:0;text-align: left;}
+        .data-table>tbody>tr>td>.title-box:before{content: '.';display: inline-block;vertical-align: middle;height: 100%;}
+        .data-table>tbody>tr>td>.title-box a{display: inline-block;text-align: left;font-size:13px;}
+*/
+
         .data-table>tbody>tr>td.bg,.data-table>tbody>tr.bg{background-color: #f5f9fe;}
-        .pv-table.data-table tbody .bg{box-shadow: inset 1px 1px 6px rgba(0,0,0,0.15);}
         .data-table .relative{position: relative;}
         .data-table .bg .relative .arrow{display: block;width: 8px;height: 13px;background: url(images/sprites.png) left -22px no-repeat;position: absolute;top: 50%;right: 0px;margin-right: -8px;margin-top: -6px;}
 
@@ -60,7 +67,7 @@
         .toggle-btn-group.open>.btn>span::after{content: " 收起";}
         .toggle-btn-group.open>.btn>.ico-before::before{content: "\e653";}
 
-        .words-table .child-tr>td{padding:15px 0px 100px 75px;background-color:#fefefe;}
+        .words-table .child-tr>td{padding:15px 0px 100px 75px;background-color:#fafafa;}
         .words-table tr.checked td{background-color:#f5f9fe;}
         .product-table-inside .arrow-th{position: relative;}
         .product-table-inside .arrow{width: 13px;height: 8px;background: url(images/sprites.png) no-repeat 0 -40px;position: absolute;left: 50%;margin-left: -13px;top:-8px;}
@@ -196,7 +203,7 @@
                 </div>
                 <div class="row padding-row border-bottom-row">
                     <div class="col-xs-6">
-                        <h4 class="data-title">引流概况 </h4>
+                        <h4 class="data-title">引流分析</h4>
                     </div>
                 </div>
                 <div class="row margin-top-row border">
@@ -214,6 +221,14 @@
                                     <button type="button" class="btn btn-default ico-font dropdown-toggle" data-toggle="dropdown" id="date-for-pv-button" style="font-size:13px;">&#xe638;<span></span></button>
                                 </div>
                             </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row padding-row nav-tabs-child nav-bg">
+                    <div class="col-xs-12">
+                        <ul class="nav nav-pills" role="tablist">
+                          <li role="presentation"><a href="#">宝贝维度</a></li>
+                          <li role="presentation" class="active"><a href="#">关键词维度</a></li>
                         </ul>
                     </div>
                 </div>
@@ -237,19 +252,12 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td rowspan="2" class="nohover"><div class="ico-font text-danger">&#xe654;</div><h5>PC端</h5></td>
-                                    <td class="text-right nohover">主引流宝贝</td>
+                                    <td class="ico-flag nohover"><div class="ico-font text-danger">&#xe654;</div><h5>PC端</h5></td>
+                                    <td class="text-right nohover">引流关键词数</td>
                                     <td class="bg"><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">12</a></i></td>
                                     <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">3</a></i></td>
                                     <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">20</a></i></td>
                                     <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">5</a></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="nohover">引流搜索词</td>
-                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">25</a></i></td>
-                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">12</a></i></td>
-                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">13</a></i></td>
-                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">18</a></i></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -287,7 +295,7 @@
                     </div>
                 </div>
 
-                <div class="row padding-row">
+                <div class="row padding-row hide">
                     <div class="col-xs-6">
                         <div class="margin-bottom17-row"><span class="date-des border3-left">引流宝贝</span></div>
                         <div class="tb-head-bar">
@@ -423,7 +431,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row padding-row">
+                <div class="row padding-row hide">
                     <div class="col-xs-6">
                         <div class="margin-bottom17-row">
                             <span class="date-des border3-left">全店引流关键词</span>
@@ -605,7 +613,29 @@
                                     </tr>
                                     <tr class="child-tr">
                                         <td colspan="4">
-                                            <div>
+                                            <div style="text-align:left;">
+                                                <table class="table data-table product-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="50%">宝贝</th>
+                                                            <th width="10%">价格</th>
+                                                            <th width="10%">销量</th>
+                                                            <th width="10%">操作</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="imgtext">
+                                                                <img class="img-thumbnail" src="images/none-pic.gif" alt="">
+                                                                <div class="title-box"><a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a></div>
+                                                            </td>
+                                                            <td><span class="rmb-before">123.00</span></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+<!--
                                                 <table class="data-table table product-table product-table-inside">
                                                     <thead>
                                                         <tr>
@@ -675,6 +705,7 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
+-->
                                             </div>
                                         </td>
                                     </tr>
@@ -853,7 +884,7 @@
             //生成每个栏目的小图表
             $('.pv-table .trend').sparkline('html',{
                 type:'bar',
-                barWidth:3,
+                barWidth:4,
                 barSpacing:2,
                 barColor:'#ccc',
                 chartRangeMin:'0',
