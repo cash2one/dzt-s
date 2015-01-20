@@ -116,7 +116,7 @@ $(function(){
     });
 })
 function loadingPointer(div_id,des){
-    html = '<div id="loading-point"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>';
+    html = '<div class="loading-point"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>';
     if(des!=null & des!="" & des != undefined){
         html += '<div class="text-danger">' + des + '</div>';
     }
