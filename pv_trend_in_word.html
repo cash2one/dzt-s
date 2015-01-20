@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <title>引流分析</title>
+    <title>引流分析-PC端-关键词维度</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +17,10 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
+         /*日期选择*/
+        .nav-tabs>.date-switch-li{float: right;}
+
+        /*引流数据表格*/
         .pv-table>tbody>tr>td.ico-flag{text-align: center;}
         .pv-table>tbody>tr>td.ico-flag .ico-font{font-size: 32px;}
         .pv-table>tbody>tr>td{vertical-align: middle;}
@@ -26,10 +30,32 @@
         .pv-table td .trend{display: inline-block;margin-right: 7px;}
         .pv-table.data-table tbody td:not(.nohover):hover{background-color:#f5f9fe;}
 
-        .nav-tabs>.date-switch-li{float: right;}
-        /* 产品列表表格*/
-        .data-table .product-table{max-width: 600px;}
-        .data-table>tbody>tr>td.imgtext{text-align: left;}
+        /*table内的小图表提示样式  */
+        #jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;font-size: 12px; text-align: left;white-space: nowrap;padding: 5px;z-index: 10000;color: #fff;background-color:#f35a4a;border-radius: 2px;border: none;}
+        #jqstooltip .jqtooltip-class{margin: 0px;}
+
+        /*关键词列表表格*/
+        .words-table>tbody>.child-tr>td{background-color:#fafafa;}
+        .words-table>tbody>tr.checked>td{background-color:#f5f9fe;}
+
+
+        /* 关键词表格内的产品列表表格*/
+        .data-table.words-table .arrow-th{position: relative;}
+        .data-table.words-table .arrow{width: 13px;height: 8px;background: url(images/sprites.png) no-repeat 0 0px;position: absolute;left: 50%;margin-left: -13px;top:-8px;}
+
+        .data-table.words-table .product-table{max-width: 1200px;min-width: 600px;margin:15px 0px 100px 75px;}
+        .data-table.words-table .product-table>tbody>tr>td.imgtext{text-align: left;}
+        .data-table.words-table .product-table>tbody>tr>td{vertical-align: middle;}
+        .data-table.words-table .product-table>tbody>tr> td:first-child {text-align: left;}
+        .data-table.words-table .product-table>tbody>tr>td>.title-box{display: table;height: 50px;margin-left: 60px;}
+        .data-table.words-table .product-table>tbody>tr>td>.title-box .title-wapper{display: table-cell;vertical-align: middle;}
+
+        .data-table.words-table .product-table>tbody>tr.checked>td{border-top: 1px solid #a0c1f9;}
+        .data-table.words-table .product-table>tbody>tr.checked>td:first-child{border-left: 1px solid #a0c1f9;}
+        .data-table.words-table .product-table>tbody>tr.checked>td:last-child{border-right: 1px solid #a0c1f9;}
+        .data-table.words-table .product-table>tbody>tr.checked + tr.chart-for-prev-tr>td{border: 1px solid #a0c1f9;border-top: none;}
+
+        .data-table.words-table .product-table>tbody>tr.chart-for-prev-tr td{padding:25px 25px 50px;}
 
 /*
         .data-table>tbody>tr>td>.img-box{display: inline-block;}
@@ -39,16 +65,12 @@
 */
 
         .data-table>tbody>tr>td.bg,.data-table>tbody>tr.bg{background-color: #f5f9fe;}
-        .data-table .relative{position: relative;}
         .data-table .bg .relative .arrow{display: block;width: 8px;height: 13px;background: url(images/sprites.png) left -22px no-repeat;position: absolute;top: 50%;right: 0px;margin-right: -8px;margin-top: -6px;}
 
         .words-list-table.data-table > tbody > tr > td:first-child {text-align: left;}
 
-/*      table内的小图表提示样式  */
-        #jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;font-size: 12px; text-align: left;white-space: nowrap;padding: 5px;z-index: 10000;color: #fff;background-color:#f35a4a;border-radius: 2px;border: none;}
-        #jqstooltip .jqtooltip-class{margin: 0px;}
 
-/*      词排名走势  */
+/*      词排名走势模态框  */
         .word-trend-dialog .img-box{float: left;}
         .word-trend-dialog .title-box{float: left;margin-left: 10px;line-height: 40px;}
         .word-trend-dialog h4 .prev{margin-right: 20px;}
@@ -67,14 +89,16 @@
         .toggle-btn-group.open>.btn>span::after{content: " 收起";}
         .toggle-btn-group.open>.btn>.ico-before::before{content: "\e653";}
 
-        .words-table .child-tr>td{padding:15px 0px 100px 75px;background-color:#fafafa;}
-        .words-table tr.checked td{background-color:#f5f9fe;}
+
+
+/*
         .product-table-inside .arrow-th{position: relative;}
         .product-table-inside .arrow{width: 13px;height: 8px;background: url(images/sprites.png) no-repeat 0 -40px;position: absolute;left: 50%;margin-left: -13px;top:-8px;}
         .product-table-inside{max-width:900px;box-shadow: 0px 0px 1px rgba(0,0,0,0.1)}
         .product-table-inside>thead>tr>th{background-color: #f7f7f7;}
         .product-table-inside .title-box{margin: 10px 0px;text-align: left;}
         .product-table-inside .title-box li{margin-top: 13px;margin-bottom: 0px;}
+*/
         .word-rank{height: 200px;}
         .word-table-col .btn-export{margin:0px 13px;}
     </style>
@@ -609,63 +633,49 @@
                                         <td>1.</td>
                                         <td>双肩包</td>
                                         <td>2</td>
-                                        <td><div class="btn-group toggle-btn-group"><button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown"><span class="ico-before"></span></button></div></td>
+                                        <td><div class="btn-group toggle-btn-group"><button type="button" class="btn btn-primary btn-xs dropdown-toggle toggle-word-in-product-list" data-toggle="dropdown"><span class="ico-before"></span></button></div></td>
                                     </tr>
                                     <tr class="child-tr">
                                         <td colspan="4">
                                             <div style="text-align:left;">
-                                                <table class="table data-table product-table">
+                                                <table class="table data-table product-table" data-table-for-word="双肩包">
                                                     <thead>
                                                         <tr>
-                                                            <th width="50%">宝贝</th>
-                                                            <th width="10%">价格</th>
-                                                            <th width="10%">销量</th>
-                                                            <th width="10%">操作</th>
+                                                            <th width="44%" class="arrow-th"><span class="arrow"></span>引流宝贝</th>
+                                                            <th width="12%">价格</th>
+                                                            <th width="12%">销量</th>
+                                                            <th width="12%">操作</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
+                                                        <tr class="checked">
                                                             <td class="imgtext">
-                                                                <img class="img-thumbnail" src="images/none-pic.gif" alt="">
-                                                                <div class="title-box"><a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a></div>
-                                                            </td>
-                                                            <td><span class="rmb-before">123.00</span></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-<!--
-                                                <table class="data-table table product-table product-table-inside">
-                                                    <thead>
-                                                        <tr>
-                                                            <th width="25%" class="arrow-th"><span class="arrow"></span>引流宝贝</th>
-                                                            <th width="75%">排名走势</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="clearfix">
-                                                                    <div class="title-box">
-                                                                        <ul>
-                                                                            <li class="text-center"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></li>
-                                                                            <li><a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a></li>
-                                                                            <li>价格：<span class="rmb-before">983.10</span></li>
-                                                                            <li>销量：15210</li>
-                                                                            <li><button class="btn btn-primary btn-xs">宝贝详情</button></li>
-                                                                        </ul>
+                                                                <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                                                                <div class="title-box">
+                                                                    <div class="title-wapper">
+                                                                        <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                            <td style="padding:10px 25px 10px;">
+                                                            <td><span class="rmb-before">123.00</span></td>
+                                                            <td>12345</td>
+                                                            <td>
+                                                                <div class="btn-group toggle-btn-group">
+                                                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle toggle-word-rank-chart" data-toggle="dropdown">
+                                                                        <span class="ico-before"></span>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="chart-for-prev-tr">
+                                                            <td colspan="4">
                                                                 <div class="row">
                                                                     <div class="col-xs-3">
                                                                         <span id="date-des" class="date-des">11月1日 - 11月7日</span>
                                                                     </div>
                                                                     <div class="col-xs-9 text-right">
                                                                         <div class="btn-group switch-date-btn-group btn-xs-group">
-                                                                            <button type="button" class="btn btn-default">7天<span></span></button>
+                                                                            <button type="button" class="btn btn-default active">7天<span></span></button>
                                                                             <button type="button" class="btn btn-default">14天<span></span></button>
                                                                             <button type="button" class="btn btn-default">30天<span></span></button>
                                                                         </div>
@@ -683,29 +693,26 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td>
-                                                                <div class="clearfix">
-                                                                    <div class="title-box">
-                                                                        <ul>
-                                                                            <li class="text-center"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></li>
-                                                                            <li><a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a></li>
-                                                                            <li>价格：<span class="rmb-before">983.10</span></li>
-                                                                            <li>销量：15210</li>
-                                                                            <li><button class="btn btn-primary btn-xs">宝贝详情</button></li>
-                                                                        </ul>
+                                                            <td class="imgtext">
+                                                                <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                                                                <div class="title-box">
+                                                                    <div class="title-wapper">
+                                                                        <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
                                                                     </div>
                                                                 </div>
-                                                                <div class="pro-info">
-
-                                                                </div>
                                                             </td>
-                                                            <td style="padding:10px 25px 15px;">
-                                                                <div id="word-rank2" class="word-rank"></div>
+                                                            <td><span class="rmb-before">123.00</span></td>
+                                                            <td>12345</td>
+                                                            <td>
+                                                                <div class="btn-group toggle-btn-group">
+                                                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle toggle-word-rank-chart" data-toggle="dropdown">
+                                                                        <span class="ico-before"></span>
+                                                                    </button>
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
--->
                                             </div>
                                         </td>
                                     </tr>
@@ -713,25 +720,13 @@
                                         <td>2.</td>
                                         <td>双肩包 男</td>
                                         <td>1</td>
-                                        <td><button class="btn btn-danger btn-xs"> + 展开</button></td>
+                                        <td><div class="btn-group toggle-btn-group"><button type="button" class="btn btn-primary btn-xs dropdown-toggle toggle-word-in-product-list" data-toggle="dropdown"><span class="ico-before"></span></button></div></td>
                                     </tr>
                                     <tr>
                                         <td>3.</td>
                                         <td>双肩包 男</td>
                                         <td>1</td>
-                                        <td><button class="btn btn-danger btn-xs"> + 展开</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4.</td>
-                                        <td>双肩包 男</td>
-                                        <td>1</td>
-                                        <td><button class="btn btn-danger btn-xs"> + 展开</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>5.</td>
-                                        <td>双肩包 男</td>
-                                        <td>1</td>
-                                        <td><button class="btn btn-danger btn-xs"> + 展开</button></td>
+                                        <td><div class="btn-group toggle-btn-group"><button type="button" class="btn btn-primary btn-xs dropdown-toggle toggle-word-in-product-list" data-toggle="dropdown"><span class="ico-before"></span></button></div></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -828,17 +823,10 @@
                 g_word_rank_chart.setOption(getWordTrendChartOption());
             }
         );
-        var g_word_rank_chart2;
-        require(
-            ['echarts','echarts/chart/line'],
-            function(ec){
-                g_word_rank_chart2 = ec.init(document.getElementById('word-rank2'));
-                g_word_rank_chart2.setOption(getWordTrendChartOption());
-            }
-        );
+
 
         $(function(){
-
+            //总日期切换
             $('#date-for-pv-button').datepicker({
                 language: "zh-CN",
                 orientation: "auto right",
@@ -847,6 +835,19 @@
             }).on('changeDate', function(e){
                 alert("选中日期" + e.format(0,'yyyy-m-d'));
             });
+
+            $(".toggle-word-in-product-list").click(function(e){
+                var tr = $(this).parents("tr");
+                var next_tr = tr.next();
+                if(tr.is(".checked")){
+                    tr.removeClass("checked");
+                    $(this).parents("tr").next().hide();
+                }else{
+                    tr.addClass("checked");
+                    $(this).parents("tr").next().show();
+                }
+
+            })
             //模态框里面的日期选择
             $("#date-for-word-trend-btn").click(function(e){
                 if($("#datepicker-box-for-word-trend").is(":visible")){
@@ -920,7 +921,7 @@
                         option = {
                             animationDuration:500,
                             animationEasing:'CircularInOut',
-                            color : ['#4184f3','#FF6B6B'],
+                            color : ['#4184f3','#f35a4a'],
                             grid : {
                                 x : 60,
                                 y : 20,

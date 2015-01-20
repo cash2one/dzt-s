@@ -20,6 +20,7 @@ a:focus{outline:none;-moz-outline:none;}
 .f18{font-size: 18px;}
 .font-simsun{font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
 .rmb-before:before{content:'￥';font-size: 14px;};
+.relative{position: relative;}
 
 
 /*链接颜色*/

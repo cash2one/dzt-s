@@ -46,6 +46,8 @@
 
 .icon-key:before { content: "\e61d"; }
 
+.icon-jiantouyou:before { content: "\e655"; }
+
 .icon-date:before { content: "\e638"; }
 
 .icon-iconfontdui:before { content: "\e634"; }
@@ -163,6 +165,8 @@
 .icon-rankfill:before { content: "\e649"; }
 
 .icon-rank:before { content: "\e64a"; }
+
+.icon-youjiantou:before { content: "\e656"; }
 
 .icon-folds:before { content: "\e612"; }
 
