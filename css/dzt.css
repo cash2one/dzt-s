@@ -235,7 +235,7 @@ body.hide-nav .content-bg .content-body{margin-left: 0;}
 
 /*loading*/
 #loading-point{margin: 0px auto;width: 150px;text-align: center;}
-#loading-point div{width: 6px;height: 6px;display: inline-block;margin-right: 4px;background-color: #f35a4a;border-radius: 100%;-webkit-animation: bouncedelay 0.8s infinite ease-out;-moz-animation:bouncedelay 0.8s infinite ease-out;-o-animation:bouncedelay 0.8s infinite ease-out;animation: bouncedelay 0.8s infinite ease-out;-webkit-animation-fill-mode: both;animation-fill-mode: both;}
+#loading-point .bounce1,#loading-point .bounce2,#loading-point .bounce3{width: 6px;height: 6px;display: inline-block;margin-right: 4px;background-color: #f35a4a;border-radius: 100%;-webkit-animation: bouncedelay 0.8s infinite ease-out;-moz-animation:bouncedelay 0.8s infinite ease-out;-o-animation:bouncedelay 0.8s infinite ease-out;animation: bouncedelay 0.8s infinite ease-out;-webkit-animation-fill-mode: both;animation-fill-mode: both;}
 #loading-point .bounce1 {-webkit-animation-delay: -0.4s;animation-delay: -0.4s;}
 #loading-point .bounce2 {-webkit-animation-delay: -0.2s;animation-delay: -0.2s;}
 @keyframes bouncedelay {

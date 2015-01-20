@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>引流分析-PC端-关键词维度</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dzt.css">
+    <link rel="stylesheet" href="css/datepicker3.standalone.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+         /*日期选择*/
+        .nav-tabs>.date-switch-li{float: right;}
+
+        /*引流数据表格*/
+        .pv-table>tbody>tr>td.ico-flag{text-align: center;}
+        .pv-table>tbody>tr>td.ico-flag .ico-font{font-size: 32px;}
+        .pv-table>tbody>tr>td{vertical-align: middle;}
+        .pv-table td i{font-style: normal;font-size: 18px;}
+        .pv-table td i a:hover{text-decoration: underline;}
+        .pv-table td i::after{content: "个";font-size: 12px;margin-left: 7px;color: #777;}
+        .pv-table td .trend{display: inline-block;margin-right: 7px;}
+        .pv-table.data-table tbody td:not(.nohover):hover{background-color:#f5f9fe;}
+
+        /*table内的小图表提示样式  */
+        #jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;font-size: 12px; text-align: left;white-space: nowrap;padding: 5px;z-index: 10000;color: #fff;background-color:#f35a4a;border-radius: 2px;border: none;}
+        #jqstooltip .jqtooltip-class{margin: 0px;}
+
+        /*关键词列表表格*/
+        .words-table>tbody>.child-tr>td{background-color:#fafafa;}
+        .words-table>tbody>tr.checked>td{background-color:#f5f9fe;}
+
+
+        /* 关键词表格内的产品列表表格*/
+        .data-table.words-table .arrow-th{position: relative;}
+        .data-table.words-table .arrow{width: 13px;height: 8px;background: url(images/sprites.png) no-repeat 0 0px;position: absolute;left: 50%;margin-left: -13px;top:-8px;}
+        .data-table.words-table .product-table{max-width: 1200px;min-width: 600px;margin:15px 0px 100px 75px;}
+        .data-table.words-table .product-table>tbody>tr>td{vertical-align: middle;text-align: left;}
+        .data-table.words-table .product-table>tbody>tr>td:first-child{text-align: left;}
+        .data-table.words-table .product-table>tbody>tr>td>.title-box{display: table;height: 50px;margin-left: 60px;}
+        .data-table.words-table .product-table>tbody>tr>td>.title-box .title-wapper{display: table-cell;vertical-align: middle;}
+        .data-table.words-table .product-table>tbody>tr.checked>td:first-child{border-left: 4px solid #4184f3;}
+        .data-table.words-table .product-table>tbody>tr.checked + tr.chart-for-prev-tr>td{border-left: 4px solid #4184f3;}
+        .data-table.words-table .product-table>tbody>tr.chart-for-prev-tr td{padding:25px 25px 50px;}
+        /* 关键词表格内的产品列表表格-日期选择*/
+        .data-table.words-table .product-table .input-daterange input{padding: 0px;height: 24px;width: 80px;}
+        .data-table.words-table .product-table .input-daterange{margin-left: 7px;}
+
+        tr .toggle-btn-group>.btn>span::after{content: " 展开";}
+        tr .toggle-btn-group>.btn>span::before{content: "\e652";}
+
+        tr.checked .toggle-btn-group>.btn>span::after{content: " 收起";}
+        tr.checked .toggle-btn-group>.btn>span::before{content: "\e653";}
+
+
+        .word-rank{height: 200px;}
+        .btn-export{margin:0px 13px 0 0;}
+    </style>
+  </head>
+  <body>
+   <div class="container-fluid header-wrapper">
+       <div class="row">
+           <div class="col-xs-6 col-logo">
+               <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+               <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+           </div>
+           <div class="col-xs-6 header-right-side">
+               <ul class="clearfix">
+                  <li class="user">
+                      <a id="user-button" href="#"><span class="account">102700317@qq.com</span><span class="ico-font">&#xe604;</span></a>
+                  </li>
+                  <li class="pay-text"><a href="#">续费升级</a></li>
+               </ul>
+           </div>
+       </div>
+  </div>
+  <div class="content-bg">
+      <div class="contain-body clearfix">
+         <div class="nav-side l">
+             <div class="ver-box">专业版</div>
+             <div class="nav-tree-box">
+                 <dl class="nav-tree">
+                     <dt class="nav-tree-node">
+                         <a href="#"><span>监控店铺</span></a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <a href="#">管理</a>
+                             </dt>
+                             <dd></dd>
+                         </dl>
+                     </dd>
+                     <dt class="nav-tree-node">
+                         <a href="#">整店分析</a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">交易分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">引流分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">营销分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">商品分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                         </dl>
+                     </dd>
+                 </dl>
+             </div>
+             <div class="help-box">
+                 <ul>
+                     <li class="help-service"><a href="#"><span class="ico-font">&#xe61a;</span>客服</a><a href="#"><span class="ico-font">&#xe618;</span>客服</a></li>
+                 </ul>
+             </div>
+         </div>
+         <div class="pack-toggle text-center">
+             <span id="pack-toggle-trigger" class="pack-toggle-trigger ico-font center-block"></span>
+         </div>
+         <div class="content-side l padding-box">
+            <div class="content-body container-fluid">
+                <div class="row padding-row switch-shop-row border-bottom-row">
+                    <div class="col-xs-12 clearfix">
+                        <div class="dropdown switch-shop-menu l">
+                            <h4 class="dropdown-toggle" id="switch-shop-title" data-toggle="dropdown">
+                            几度家居旗舰店
+                            <span class="caret"></span>
+                            </h4>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">几度家居旗舰店</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">几度家居旗舰店</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">几度家居旗舰店</a></li>
+                            </ul>
+                        </div>
+                        <div class="last-update l">最后更新：2015-5-1</div>
+                    </div>
+                </div>
+                <div class="row padding-row border-bottom-row">
+                    <div class="col-xs-6">
+                        <h4 class="data-title">引流分析</h4>
+                    </div>
+                </div>
+                <div class="row margin-top-row border">
+                    <div class="col-xs-12 p0">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#"><span class="ico-font">&#xe654;</span>PC端</a></li>
+                            <li role="presentation"><a href="#"><span class="ico-font">&#xe63c;</span>移动端<span></span></a></li>
+                            <li class="date-switch-li">
+                                <div class="btn-group switch-date-btn-group">
+                                    <button class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                                    <button type="button" class="btn btn-default">昨天<span></span></button>
+                                    <button type="button" class="btn btn-default">前天<span></span></button>
+                                    <button type="button" class="btn btn-default active">大前天<span></span></button>
+                                    <button class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                                    <button type="button" class="btn btn-default ico-font dropdown-toggle" data-toggle="dropdown" id="date-for-pv-button" style="font-size:13px;">&#xe638;<span></span></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row padding-row nav-tabs-child nav-bg">
+                    <div class="col-xs-12">
+                        <ul class="nav nav-pills" role="tablist">
+                          <li role="presentation"><a href="#">宝贝维度</a></li>
+                          <li role="presentation" class="active"><a href="#">关键词维度</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row margin-top17-row">
+                    <div class="col-xs-12">
+                        <span class="date-des"><span class="text-danger">2015-5-12</span> 引流数据</span>
+                    </div>
+                </div>
+                <div class="row padding-row">
+                    <div class="col-xs-12">
+                        <table class="table data-table pv-table grayth">
+                            <thead>
+                                <tr>
+                                    <th width="8%"></th>
+                                    <th width="10%"></th>
+                                    <th width="18%">淘宝搜索</th>
+                                    <th width="18%">淘宝直通车</th>
+                                    <th width="18%">天猫搜索</th>
+                                    <th width="18%">天猫直通车</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ico-flag nohover"><div class="ico-font text-danger">&#xe654;</div><h5>PC端</h5></td>
+                                    <td class="text-right nohover">引流关键词数</td>
+                                    <td class="bg"><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">12</a></i></td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">3</a></i></td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">20</a></i></td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">5</a></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-xs-12 hide">
+                        <table class="table data-table pv-table grayth">
+                            <thead>
+                                <tr>
+                                    <th width="8%"></th>
+                                    <th width="10%"></th>
+                                    <th width="18%">淘宝搜索</th>
+                                    <th width="18%">淘宝直通车</th>
+                                    <th width="18%">天猫搜索</th>
+                                    <th width="18%">天猫直通车</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2"><div class="ico-font text-danger">&#xe63c;</div><h5>移动端</h5></td>
+                                    <td class="text-right">主引流宝贝</td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">12</a></i></td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">3</a></i></td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">3</a></i></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>引流搜索词</td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">25</a></i></td>
+                                    <td><span class="trend" date-start="2015-7-30">4,4,4,7,5,9,10</span><i><a href="#">12</a></i></td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">12</a></i></td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row table-row">
+                    <div class="col-xs-12 word-table-col">
+                        <div class="tb-head-bar">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button class="btn btn-default btn-export ico-before"> 导出</button>
+                                    <form class="form-inline" role="form" style="display:inline">
+                                      <div class="form-group">
+                                        <label class="sr-only" for="keyword-filter-input">关键词</label>
+                                        <input type="text" class="form-control" id="keyword-filter-input" placeholder="关键词">
+                                      </div>
+                                      <button type="submit" class="btn btn-default">过滤</button>
+                                    </form>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                   <span class="page-info">第1页（共3页）</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-left"><span class="ico-font">&#xe637;</span></button>
+                                        <button type="button" class="btn btn-default btn-right"><span class="ico-font">&#xe636;</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="data-table table words-table search-words-table">
+                                <thead>
+                                    <tr>
+                                        <th width="6%"></th>
+                                        <th width="72%">关键词</th>
+                                        <th width="12%">相关宝贝数</th>
+                                        <th width="10%">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td class="keyword">双肩包</td>
+                                        <td>2</td>
+                                        <td><div class="btn-group toggle-btn-group"><button type="button" class="btn btn-primary btn-xs dropdown-toggle toggle-word-in-product-list" data-toggle="dropdown"><span class="ico-before"></span></button></div></td>
+                                    </tr>
+<!--
+                                    <tr class="child-tr">
+                                        <td colspan="4">
+
+                                        </td>
+                                    </tr>
+-->
+                                    <tr>
+                                        <td>2.</td>
+                                        <td>双肩包 男</td>
+                                        <td>1</td>
+                                        <td><div class="btn-group toggle-btn-group"><button type="button" class="btn btn-primary btn-xs dropdown-toggle toggle-word-in-product-list" data-toggle="dropdown"><span class="ico-before"></span></button></div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3.</td>
+                                        <td>双肩包 男</td>
+                                        <td>1</td>
+                                        <td><div class="btn-group toggle-btn-group"><button type="button" class="btn btn-primary btn-xs dropdown-toggle toggle-word-in-product-list" data-toggle="dropdown"><span class="ico-before"></span></button></div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        <div class="tb-footer-bar">
+                            <div class="row">
+                                <div class="col-xs-8 col-xs-offset-4 text-right">
+                                    <span class="page-info">第1页（共3页）</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-left"><span class="ico-font">&#xe637;</span></button>
+                                        <button type="button" class="btn btn-default btn-right"><span class="ico-font">&#xe636;</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+  </div>
+
+   <div id="child-tr-table" style="display:none;">
+       <table class="table data-table product-table" data-table-for-word="双肩包">
+            <thead>
+                <tr>
+                    <th width="44%" class="arrow-th"><span class="arrow"></span>引流宝贝</th>
+                    <th width="12%">价格</th>
+                    <th width="12%">销量</th>
+                    <th width="12%">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="imgtext">
+                        <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                        <div class="title-box">
+                            <div class="title-wapper">
+                                <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="rmb-before">123.00</span></td>
+                    <td>12345</td>
+                    <td>
+                        <div class="btn-group toggle-btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle toggle-word-rank-chart" data-toggle="dropdown">
+                                <span class="ico-before"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="chart-for-prev-tr" style="display:none">
+                    <td colspan="4">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <span id="date-des" class="date-des">11月1日 - 11月7日</span>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="btn-group switch-date-btn-group btn-xs-group">
+                                    <button type="button" class="btn btn-default active">7天<span></span></button>
+                                    <button type="button" class="btn btn-default">14天<span></span></button>
+                                    <button type="button" class="btn btn-default">30天<span></span></button>
+                                </div>
+                                <div class="datepicker-box" id="datepicker-box-for-word-trend">
+                                    <button class="btn btn-default btn-xs r btn-submit-picker">刷新</button>
+                                    <div class="input-daterange input-group r">
+                                        <input type="text" class="form-control text-center" id="fromDate" placeholder="开始" name="start"/>
+                                        <div class="input-group-addon">~</div>
+                                        <input type="text" class="form-control text-center" id="toDate" placeholder="结束" name="end" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="word-rank" class="word-rank"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="imgtext">
+                        <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                        <div class="title-box">
+                            <div class="title-wapper">
+                                <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="rmb-before">123.00</span></td>
+                    <td>12345</td>
+                    <td>
+                        <div class="btn-group toggle-btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle toggle-word-rank-chart" data-toggle="dropdown">
+                                <span class="ico-before"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+   </div>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dzt_bg.js"></script>
+    <script src="js/jquery.sparkline.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script src="js/echarts.js"></script>
+    <script type="text/javascript">
+        var word_trend_chart;
+        var option;
+        require.config({
+            paths:{
+                echarts:'js/dist'
+            }
+        });
+
+        //关键词排名走势
+        var g_word_rank_chart;
+        require(
+            ['echarts','echarts/chart/line'],
+            function(ec){
+                g_word_rank_chart = ec.init(document.getElementById('word-rank'));
+                g_word_rank_chart.setOption(getWordTrendChartOption());
+            }
+        );
+
+
+        $(function(){
+            //总日期切换
+            $('#date-for-pv-button').datepicker({
+                language: "zh-CN",
+                orientation: "auto right",
+                autoclose: true,
+                format:'yyyy-m-d'
+            }).on('changeDate', function(e){
+                alert("选中日期" + e.format(0,'yyyy-m-d'));
+            });
+
+            $(".toggle-word-in-product-list").click(function(e){
+                var tr =$($(this).parents("tr")[0]);
+                if(tr.is(".checked")){
+                    var next_tr = tr.next();
+                    tr.removeClass("checked");
+                    if(next_tr.is(".child-tr")){
+                        //还需要清理图表
+                        next_tr.detach();
+                    }
+                }else{
+
+                    tr.addClass("checked");
+                    $('<tr class="child-tr"><td colspan="4"><div class="text-center" id="product-list-for-word"></div></td></tr>').insertAfter(tr);
+                    loadingPointer("product-list-for-word");
+
+                    var keyword = tr.find('.keyword').text();
+                    //此处加载宝贝列表
+                    $("#product-list-for-word").html($("#child-tr-table").html());
+                    $("#child-tr-table").show();
+                }
+
+            });
+            $(".toggle-word-rank-chart").click(function(e){
+                var tr = $($(this).parents("tr")[0]);
+                var next_tr = tr.next();
+                if(tr.is(".checked")){
+                    tr.removeClass("checked");
+                    next_tr.hide();
+                }else{
+                    tr.addClass("checked");
+                    next_tr.show();
+                }
+
+            });
+            //生成每个栏目的小图表
+            $('.pv-table .trend').sparkline('html',{
+                type:'bar',
+                barWidth:4,
+                barSpacing:2,
+                barColor:'#ccc',
+                chartRangeMin:'0',
+                highlightColor:'#f35a4a',
+                disableTooltips:true
+            });
+            //为图表绑定事件
+            $('.pv-table .trend').bind('sparklineRegionChange', function(ev) {
+                var sparkline = ev.sparklines[0],
+                    region = sparkline.getCurrentRegionFields();
+                var offset = $(this).offset();
+                if($("#jqstooltip").length == 0 ){
+                    $('<div id="jqstooltip" class="jqstooltip" style="width: auto; height: 26px; visibility: visible;"><div class="jqtooltip-class"></div></div>').appendTo("body");
+                    $("#jqstooltip").css("left",parseInt(offset.left - 5)+"px").css("top",parseInt(offset.top - 32) + "px");
+                }
+                var d_arr = $(this).attr("date-start").split("-");
+                var d = new Date(d_arr[0],d_arr[1],(parseInt(d_arr[2])+sparkline.currentRegion).toString());
+                $("#jqstooltip .jqtooltip-class").html(d.getMonth() + '月' + d.getDate() + '日 : ' + sparkline.values[sparkline.currentRegion] + '个');
+//                d.getDate() + sparkline.currentRegion
+            }).bind('mouseleave', function() {
+                $("#jqstooltip").detach();
+            });
+        });
+
+        function getWordTrendChartOption(){
+            var option = {
+                    animation:false,
+                    color : ['#4184f3','#FF6B6B'],
+                    grid : {
+                        x : 60,
+                        y : 30,
+                        x2 : 10,
+                        y2 : 30,
+                        borderWidth : 0
+                    },
+                    tooltip : {
+                        trigger: 'axis',
+                        showDelay:0,
+                        hideDely:0,
+                        transitionDuration:0,
+                        backgroundColor:'rgba(255,255,255,1)',
+                        borderColor:'#e7e7e7',
+                        borderRadius:2,
+                        borderWidth:1,
+                        textStyle:{ color:'#777'},
+                        formatter:function(params,ticket,callback){
+                            var value;
+                            value = params[0].value =='-'?'<span class="text-danger">240名以外</span>':'<span class="text-success">' + params[0].value + ' 名</span>';
+                            return "<div class='text-left'>" + params[0].name + "<br/>" + params[0].seriesName + ' : ' + value + "</div>";
+                        },
+                        axisPointer:{
+                            type : 'line',
+                            lineStyle : {
+                                color: '#999',
+                                width: 1,
+                                type: 'dotted'
+                            }
+                        }
+                    },
+                    toolbox: {show : false},
+                    calculable : false,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            splitLine:{show : false},
+                            boundaryGap : true,
+                            axisLine:{show:false},//边轴
+                            axisTick:{show:false},
+                            data : ['11-10','11-11','11-12','11-13','11-14','11-15','11-16','11-17','11-18','11-19','11-20','11-21','11-22','11-23','11-24','11-25','11-26','11-27','11-28','11-29','11-30','12-1','12-2','12-3','12-4','12-5','12-6','12-7','12-8','12-9']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            axisLine:{show:false},//边轴
+                            splitNumber:3,
+                            splitLine:{lineStyle:{type:'dotted'}},
+                            axisLabel : {
+                                formatter: function(value){
+                                    return parseInt(value)+' 名';
+                                }
+                            }
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'排名',
+                            type:'line',
+                            clickable:false,
+                            symbolSize:3,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: true,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12
+                                        },
+                                    },
+                                    lineStyle: {
+                                        width:2,
+                                    }
+                                }
+                            },
+                            data:[46,28,27,32,31,40,20,25,23,'-',29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                        }
+                    ]
+                };
+            return option;
+        }
+    </script>
+  </body>
+</html>

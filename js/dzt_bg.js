@@ -115,6 +115,11 @@ $(function(){
         $("body").toggleClass("hide-nav");
     });
 })
-function loadingPointer(div_id){
-    $("#"+div_id).html('<div id="loading-point"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>');
+function loadingPointer(div_id,des){
+    html = '<div id="loading-point"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>';
+    if(des!=null & des!="" & des != undefined){
+        html += '<div class="text-danger">' + des + '</div>';
+    }
+    html += '</div>';
+    $("#"+div_id).html(html);
 }
