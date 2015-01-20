@@ -20,8 +20,6 @@
 
 .icon-tianmao:before { content: "\e61f"; }
 
-.icon-zhuanwan:before { content: "\e653"; }
-
 .icon-tianmaoxingxiang2:before { content: "\e61c"; }
 
 .icon-chiping:before { content: "\e640"; }
@@ -35,8 +33,6 @@
 .icon-spam:before { content: "\e633"; }
 
 .icon-qushi:before { content: "\e643"; }
-
-.icon-jiantou2:before { content: "\e655"; }
 
 .icon-icon:before { content: "\e628"; }
 
@@ -104,13 +100,13 @@
 
 .icon-redpacket:before { content: "\e60d"; }
 
+.icon-xiayige:before { content: "\e64e"; }
+
 .icon-daochuexport:before { content: "\e639"; }
 
 .icon-iconfontfanhui:before { content: "\e647"; }
 
 .icon-arrow:before { content: "\e64d"; }
-
-.icon-arrowdetail:before { content: "\e64e"; }
 
 .icon-icon1:before { content: "\e644"; }
 
@@ -146,13 +142,9 @@
 
 .icon-service:before { content: "\e617"; }
 
-.icon-youjiantou:before { content: "\e651"; }
-
 .icon-you:before { content: "\e636"; }
 
 .icon-you1:before { content: "\e637"; }
-
-.icon-youjiantou1:before { content: "\e652"; }
 
 .icon-mao:before { content: "\e61e"; }
 
@@ -184,9 +176,9 @@
 
 .icon-iconup2:before { content: "\e623"; }
 
-.icon-fanhuishangyijijiantou:before { content: "\e656"; }
-
 .icon-orderasc:before { content: "\e624"; }
 
 .icon-orderdesc:before { content: "\e625"; }
+
+.icon-icon120:before { content: "\e651"; }
 

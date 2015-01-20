@@ -28,7 +28,7 @@
 
         /* 产品列表表格*/
         .data-table .img-box{float: left;}
-        .pv-table.data-table tbody td:not(:first-child):hover{background-color:#f5f9fe;}
+        .pv-table.data-table tbody td:not(.nohover):hover{background-color:#f5f9fe;}
         .data-table .title-box{padding-left:10px;height: 38px;line-height: 18px;overflow: hidden;}
         .data-table>tbody>tr>td.bg,.data-table>tbody>tr.bg{background-color: #f5f9fe;}
         .pv-table.data-table tbody .bg{box-shadow: inset 1px 1px 6px rgba(0,0,0,0.15);}
@@ -44,11 +44,16 @@
 /*      词排名走势  */
         .word-trend-dialog .img-box{float: left;}
         .word-trend-dialog .title-box{float: left;margin-left: 10px;line-height: 40px;}
+        .word-trend-dialog h4 .prev{margin-right: 20px;}
+        .word-trend-dialog h4 .next{margin-left: 20px;}
+        .word-trend-dialog h4 .prev,.word-trend-dialog h4 .next{font-size: 12px;color: #777;}
+        .word-trend-dialog h4 .prev:hover,.word-trend-dialog h4 .next:hover{color: #222;}
         #word-trend-chart{height: 180px;line-height: 180px;}
 
 /*       模态框里面的日期选择*/
-        .datepicker-box-for-word-trend .input-daterange input{padding: 0px;height: 24px;}
-        .datepicker-box-for-word-trend .input-daterange{margin-left: 7px;}
+        #datepicker-box-for-word-trend .input-daterange input{padding: 0px;height: 24px;}
+        #datepicker-box-for-word-trend .input-daterange{margin-left: 7px;}
+
     </style>
   </head>
   <body>
@@ -216,15 +221,15 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td rowspan="2"><div class="ico-font text-danger">&#xe654;</div><h5>PC端</h5></td>
-                                    <td class="text-right">主引流宝贝</td>
+                                    <td rowspan="2" class="nohover"><div class="ico-font text-danger">&#xe654;</div><h5>PC端</h5></td>
+                                    <td class="text-right nohover">主引流宝贝</td>
                                     <td class="bg"><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">12</a></i></td>
-                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="">3</a></i></td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">3</a></i></td>
                                     <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">20</a></i></td>
                                     <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">5</a></i></td>
                                 </tr>
                                 <tr>
-                                    <td>引流搜索词</td>
+                                    <td class="nohover">引流搜索词</td>
                                     <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">25</a></i></td>
                                     <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">12</a></i></td>
                                     <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">13</a></i></td>
@@ -292,11 +297,11 @@
                         <table class="data-table table table-hover">
                             <thead>
                                 <tr>
-                                    <th width="4%"></th>
-                                    <th width="26%">宝贝名称</th>
-                                    <th width="9%">价格</th>
-                                    <th width="9%">30天销量</th>
-                                    <th width="9%">操作</th>
+                                    <th width="8%"></th>
+                                    <th width="50%">宝贝名称</th>
+                                    <th width="14%">价格</th>
+                                    <th width="14%">30天销量</th>
+                                    <th width="14%">操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -356,39 +361,39 @@
                             <tbody>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">排名趋势</button></td>
                                 </tr>
                                 <tr>
                                     <td>关键词 关键词 关键词</td>
-                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">查看排名趋势</button></td>
+                                    <td><button class="btn btn-primary btn-xs btn-show-trend" pid="123123">排名趋势</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -415,7 +420,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title text-danger" id="wordTrendLabel">双肩包 <small>排名趋势</small></h4>
+        <h4 class="modal-title text-danger text-center" id="wordTrendLabel"><a href="#" class="ico-font prev">&#xe651;</a> 双肩包 <small>排名趋势</small> <a href="#" class="ico-font next">&#xe64e;</a></h4>
       </div>
       <div class="modal-body">
         <div class="row">
@@ -439,9 +444,9 @@
                     <button type="button" class="btn btn-default">30天<span></span></button>
                     <button type="button" class="btn btn-default ico-font dropdown-toggle" data-toggle="dropdown" id="date-for-word-trend-btn" style="font-size:13px;">&#xe638;<span></span></button>
                 </div>
-                <div class="datepicker-box datepicker-box-for-word-trend">
-                    <button class="btn btn-default btn-xs r" id="cancle-picker">取消</button>
-                    <button class="btn btn-primary btn-xs r" id="submit-picker">确定</button>
+                <div class="datepicker-box" id="datepicker-box-for-word-trend" style="display:none;">
+                    <button class="btn btn-default btn-xs r btn-cancle-picker">取消</button>
+                    <button class="btn btn-primary btn-xs r btn-submit-picker">确定</button>
                     <div class="input-daterange input-group r">
                         <input type="text" class="form-control text-center" id="fromDate" placeholder="开始" name="start"/>
                         <div class="input-group-addon">~</div>
@@ -450,7 +455,7 @@
                 </div>
             </div>
         </div>
-        <div id="word-trend-chart">
+        <div id="word-trend-chart" class="padding-row">
 
         </div>
       </div>
@@ -488,6 +493,23 @@
             }).on('changeDate', function(e){
                 alert("选中日期" + e.format(0,'yyyy-m-d'));
             });
+            //模态框里面的日期选择
+            $("#date-for-word-trend-btn").click(function(e){
+                if($("#datepicker-box-for-word-trend").is(":visible")){
+                    $("#datepicker-box-for-word-trend").hide();
+                }else{
+                    $("#datepicker-box-for-word-trend").show();
+                }
+            });
+            $("#datepicker-box-for-word-trend .btn-cancle-picker").click(function(e){
+                $("#datepicker-box-for-word-trend").hide();
+            });
+            $('#datepicker-box-for-word-trend .input-daterange').datepicker({
+                language: "zh-CN",
+                orientation: "auto right",
+                autoclose: true,
+                format:'yyyy-m-d'
+            });
 
             //显示后加载数据
             $('#word-trend-dialog').on('shown.bs.modal', function (e) {
@@ -496,7 +518,8 @@
             });
             //关闭模态框时清理图表
             $("#btn-close-word-trend-dialog").click(function(){
-                word_trend_chart.clear();
+                word_trend_chart.dispose();
+                $("#datepicker-box-for-word-trend").hide();
             });
             //查看关键词排名趋势
             $(".words-list-table .btn-show-trend").click(function(){
@@ -504,7 +527,7 @@
                 var pid = $(this).attr("pid");
                 $('#word-trend-dialog').modal();
             });
-
+            //生成每个栏目的小图表
             $('.pv-table .trend').sparkline('html',{
                 type:'bar',
                 barWidth:3,
@@ -514,6 +537,7 @@
                 highlightColor:'#f35a4a',
                 disableTooltips:true
             });
+            //为图表绑定事件
             $('.pv-table .trend').bind('sparklineRegionChange', function(ev) {
                 var sparkline = ev.sparklines[0],
                     region = sparkline.getCurrentRegionFields();
