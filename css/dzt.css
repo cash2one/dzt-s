@@ -18,6 +18,8 @@ a:focus{outline:none;-moz-outline:none;}
 .r{float: right;}
 .p0{padding: 0px;}
 .f18{font-size: 18px;}
+.minW750{min-width: 750px;}
+.maxW1200{max-width: 1200px;}
 .font-simsun{font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
 .rmb-before:before{content:'￥';font-size: 14px;};
 .relative{position: relative;}
@@ -26,6 +28,9 @@ a:focus{outline:none;-moz-outline:none;}
 /*链接颜色*/
 a,a:hover{color: #4184f3;}
 
+/*自定义按钮*/
+.btn-goback{padding: 0 10px;margin-top:-5px;margin-right: 10px;}
+.btn-goback .ico-font{font-size:16px;}
 
 /*gtable*/
 /*        .gtable{margin: 0;padding: 0;}*/

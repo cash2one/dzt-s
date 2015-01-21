@@ -35,9 +35,6 @@
         #product-info-row .info-item li{font-size: 17px;color: #222;/*text-align: center;*/}
         #product-info-row .info-item li:first-child{font-size: 13px;color: #777;margin-bottom: 13px;font-weight: 700;}
         #product-info-row .info-item li .ico-before{font-size: 10px;margin-left: 3px;position: absolute;right: 7px}
-        .btn-goback{padding: 0 10px;margin-top:-5px;margin-right: 10px;}
-        .btn-goback .ico-font{font-size:16px;}
-
 /*        饼形图*/
         .pie-container{padding-top: 17px;padding-bottom: 17px;}/*促销分析也有使用该类*/
         .pie-container .pie-box{margin:20px auto;}
@@ -98,6 +95,8 @@
         #operate-list-table tr td:nth-child(4){color: #222;}
         #operate-list-table .change-to-ico::before{font-size: 16px;content: "\e656";color: #f35a4a;}
         #operate-list-table tr td:nth-child(4) .rmb-before{font-size: 16px;color:#f35a4a;}
+
+/*      流量分析  */
     </style>
   </head>
   <body>
@@ -297,12 +296,13 @@
                 </div>
 
                 <!--            tab    -->
-                <div class="row" style="margin-top:17px;">
+                <div class="row margin-top17-row">
                     <div class="col-xs-12 p0">
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation"><a href="#"><span class="ico-font">&#xe648;</span>销售情况</a></li>
                             <li role="presentation"><a href="#"><span class="ico-font">&#xe601;</span>成交特征<span></span></a></li>
-                            <li role="presentation" class="active"><a href="#"><span class="ico-font">&#xe646;</span>促销分析</a></li>
+                            <li role="presentation" class="active"><a href="#"><span class="ico-font">&#xe643;</span>引流分析</a></li>
+                            <li role="presentation"><a href="#"><span class="ico-font">&#xe646;</span>促销分析</a></li>
                             <li role="presentation"><a href="#"><span class="ico-font">&#xe63e;</span>操作跟踪</a></li>
                         </ul>
                     </div>
@@ -310,8 +310,8 @@
                 <!--      销售情况    去除下面第一层div -->
                 <div class="hide">
                 <div class="row padding-row border-bottom-row">
-                    <div id="data-des" class="col-xs-3" style="line-height:28px;">
-                        7天销售趋势
+                    <div class="col-xs-3">
+                        <span id="date-des" class="date-des">最近七天概况</span>
                     </div>
                     <div class="col-xs-9 text-right">
                         <div class="btn-group">
@@ -508,15 +508,6 @@
                 </div>
                 <!--      成交特征-按星期成交趋势   去除下面第一层div-->
                 <div class="hide" title="成交特征-按星期成交趋势">
-                <div class="row padding-row nav-tabs-child hide">
-                    <div class="col-xs-12">
-                        <ul class="nav nav-pills" role="tablist">
-                          <li role="presentation" class="active"><a href="#">按星期成交趋势</a></li>
-                          <li role="presentation"><a href="#">促销价成交比例</a></li>
-                          <li role="presentation"><a href="#">买家等级分布</a></li>
-                        </ul>
-                    </div>
-                </div><!-- 未用上 -->
                 <div class="row padding-row border-bottom-row">
                     <div id="data-des" class="col-xs-3" style="line-height:28px;">
                         最近7天按星期成交趋势
@@ -670,7 +661,7 @@
                 </div>
                 </div>
                 <!--      促销分析     -->
-                <div class="row margin-top-row">
+                <div class="row margin-top-row hide">
                     <div class="col-sm-12 col-md-4">
                         <div class="pie-container price-promotion-container">
                             <div class="row">
@@ -892,6 +883,60 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                </div>
+
+                <!--      流量分析     -->
+                <div class="row padding-row nav-bg nav-tabs-child">
+                    <div class="col-xs-12">
+                        <ul class="nav nav-pills" role="tablist">
+                          <li role="presentation" class="active"><a href="#">淘宝综合搜索</a></li>
+                          <li role="presentation"><a href="#">淘宝直通车</a></li>
+                          <li role="presentation"><a href="#">天猫搜索</a></li>
+                          <li role="presentation"><a href="#">天猫直通车</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row padding-row">
+                    <div class="col-xs-12">
+                        <div class="row padding-row border-bottom-row">
+                            <div class="col-xs-6">
+                                <h4>淘宝综合搜索 <small>2014/12/3 ~ 2014/11/12</small></h4>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div class="btn-group">
+                                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="padding:4px 18px;letter-spacing:1px;">
+                                    PC端 <span class="caret"></span>
+                                  </button>&nbsp;&nbsp;
+                                  <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">PC端</a></li>
+                                    <li><a href="#">移动端</a></li>
+                                  </ul>
+                                </div>
+                                <div class="btn-group switch-date-btn-group">
+                                    <button type="button" class="btn btn-default" day-length="1">昨天<span></span></button>
+                                    <button type="button" class="btn btn-default" day-length="3">3天<span></span></button>
+                                    <button type="button" class="btn btn-default active" day-length="7">7天<span></span></button>
+                                    <button type="button" class="btn btn-default" day-length="14">14天<span></span></button>
+                                    <button type="button" class="btn btn-default" day-length="30">30天<span></span></button>
+                                    <button type="button" class="btn btn-default ico-font" id="date-select-button" day-length="0" style="font-size:13px;">&#xe638;<span></span></button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row padding-row datepicker-row border-bottom-row" style="display:none">
+                            <div class="col-xs-12">
+                                <div class="datepicker-box">
+                                    <button class="btn btn-default r" id="cancle-picker" onclick="$('.datepicker-row').hide();$('#date-select-button').removeClass('active')">取消</button>
+                                    <button class="btn btn-primary r" id="submit-picker">确定</button>
+                                    <div class="input-daterange input-group r">
+                                        <input type="text" class="form-control text-center" id="fromDate" placeholder="开始时间" name="start"/>
+                                        <div class="input-group-addon">~</div>
+                                        <input type="text" class="form-control text-center" id="toDate" placeholder="结束时间" name="end" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

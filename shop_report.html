@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>店侦探</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dzt.css">
+    <link rel="stylesheet" href="css/datepicker3.standalone.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .data-des{color: #222;line-height: 48px;border-left: 3px solid #4184f3;padding-left: 5px;letter-spacing: 0.5px;font-size: 16px;}
+        .nth1-right-td-table>tbody>tr>td:first-child{text-align: right;}
+        .pro-table>tbody>tr>td{vertical-align: middle;}
+        .pro-table>tbody>tr>td>.title-box{display: table;height: 50px;margin-left: 60px;}
+        .pro-table>tbody>tr>td>.title-box .title-wapper{display: table-cell;vertical-align: middle;}
+    </style>
+  </head>
+  <body>
+   <div class="container-fluid header-wrapper">
+       <div class="row">
+           <div class="col-xs-6 col-logo">
+               <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+               <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+           </div>
+           <div class="col-xs-6 header-right-side">
+               <ul class="clearfix">
+                  <li class="user">
+                      <a id="user-button" href="#"><span class="account">102700317@qq.com</span><span class="ico-font">&#xe604;</span></a>
+                  </li>
+                  <li class="pay-text"><a href="#">续费升级</a></li>
+               </ul>
+           </div>
+       </div>
+  </div>
+  <div class="content-bg">
+      <div class="contain-body clearfix">
+         <div class="nav-side l">
+             <div class="ver-box">专业版</div>
+             <div class="nav-tree-box">
+                 <dl class="nav-tree">
+                     <dt class="nav-tree-node">
+                         <a href="#"><span>监控店铺</span></a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <a href="#">管理</a>
+                             </dt>
+                             <dd></dd>
+                         </dl>
+                     </dd>
+                     <dt class="nav-tree-node">
+                         <a href="#">整店分析</a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">交易分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">引流分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">营销分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">商品分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                         </dl>
+                     </dd>
+                 </dl>
+             </div>
+             <div class="help-box">
+                 <ul>
+                     <li class="help-service"><a href="#"><span class="ico-font">&#xe61a;</span>客服</a><a href="#"><span class="ico-font">&#xe618;</span>客服</a></li>
+                 </ul>
+             </div>
+         </div>
+         <div class="pack-toggle text-center">
+             <span id="pack-toggle-trigger" class="pack-toggle-trigger ico-font center-block"></span>
+         </div>
+         <div class="content-side l padding-box">
+            <div class="content-body container-fluid">
+                <div class="row padding-row switch-shop-row border-bottom-row">
+                    <div class="col-xs-12 clearfix">
+                        <div class="dropdown switch-shop-menu l">
+                            <h4 class="dropdown-toggle" id="switch-shop-title" data-toggle="dropdown">
+                            几度家居旗舰店
+                            <span class="caret"></span>
+                            </h4>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">几度家居旗舰店</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">几度家居旗舰店</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">几度家居旗舰店</a></li>
+                            </ul>
+                        </div>
+                        <div class="last-update l">最后更新：2015-5-1</div>
+                    </div>
+                </div>
+                <div class="row padding-row border-bottom-row">
+                    <div class="col-xs-6">
+                        <h4 class="data-title">整店报告 <small>2015-1-21</small></h4>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <div class="btn-group switch-date-btn-group">
+                            <button class="btn btn-default disabled"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                            <button type="button" class="btn btn-default">昨天<span></span></button>
+                            <button type="button" class="btn btn-default">前天<span></span></button>
+                            <button type="button" class="btn btn-default active">大前天<span></span></button>
+                            <button class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                            <button type="button" class="btn btn-default ico-font dropdown-toggle" data-toggle="dropdown" id="date-for-shop-report-btn" style="font-size:13px;">&#xe638;<span></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margin-top17-row border hide">
+                    <div class="col-xs-12 p0">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#">销量TOP3</a></li>
+                            <li role="presentation"><a href="#">引流宝贝<span></span></a></li>
+                            <li role="presentation"><a href="#">营销手段<span></span></a></li>
+                            <li role="presentation"><a href="#">宝贝简报<span></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row padding-row">
+                    <div class="col-xs-6">
+                        <div class=""><span class="data-des">全店销售数据</span></div>
+
+                    </div>
+                    <div class="col-xs-6">
+                        <div class=""><span class="data-des">销售量TOP3</span></div>
+                        <table class="table gtable pro-table nth1-right-td-table margin-top17-row">
+                            <thead>
+                                <tr>
+                                    <th width="4%"></th>
+                                    <th width="20%"></th>
+                                    <th width="30%">销售量 / 较上一天</th>
+                                    <th width="30%">销售额 / 较上一天</th>
+                                    <th width="26%">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td>
+                                        <img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题">
+                                    </td>
+                                    <td>123 <span class="ico-before up">25%</span></td>
+                                    <td><span class="rmb-before">123</span> <span class="ico-before down">5%</span></td>
+                                    <td><button class="btn btn-default">宝贝详情</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td>
+                                        <img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题">
+                                    </td>
+                                    <td>123 <span class="ico-before up">25%</span></td>
+                                    <td><span class="rmb-before">123</span> <span class="ico-before down">5%</span></td>
+                                    <td><button class="btn btn-default">宝贝详情</button></td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td>
+                                        <img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题">
+                                    </td>
+                                    <td>123 <span class="ico-before up">25%</span></td>
+                                    <td><span class="rmb-before">123</span> <span class="ico-before down">5%</span></td>
+                                    <td><button class="btn btn-default">宝贝详情</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-xs-6">
+                        <span class="data-des">引流宝贝TOP3</span>
+                    </div>
+                    <div class="col-xs-6">
+                        <span class="data-des">上新情况</span>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+  </div>
+
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dzt_bg.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#date-for-shop-report-btn').datepicker({
+                language: "zh-CN",
+                orientation: "auto right",
+                autoclose: true,
+                format:'yyyy-m-d'
+            }).on('changeDate', function(e){
+                alert("选中日期" + e.format(0,'yyyy-m-d'));
+            });
+        })
+    </script>
+  </body>
+</html>
