@@ -155,7 +155,7 @@
                         <div class="btn-group switch-date-btn-group">
                             <button class="btn btn-default disabled"><span class="glyphicon glyphicon-chevron-left"></span>上7天</button>
                             <button class="btn btn-default">下7天<span class="glyphicon glyphicon-chevron-right"></span></button>
-                            <button type="button" class="btn btn-default ico-font dropdown-toggle" data-toggle="dropdown" id="date-for-marketing-btn" style="font-size:13px;">&#xe638;<span></span></button>
+                            <button type="button" class="btn btn-default ico-font dropdown-toggle" data-toggle="dropdown" id="date-for-marketing-btn" style="font-size:13px;" start-date="2014-01-10">&#xe638;<span></span></button>
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,19 @@
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script type="text/javascript">
+        function build7Days(date){
+            var sevenDays = new Array();
+            for(var i=0;i<7;i++){
+                sevenDays.push(new Date(date.getYear(),date.getMonth(),date.getDay()+i));
+            }
+            return sevenDays;
+        }
+        var g_start_date;
+        var g_sevenDays;
         $(function(){
+            g_start_date = new Date(2014,5-1,10);//此处定义当前页面显示的第一天,
+            g_sevenDays = build7Days(g_start_date);
+
             $('#date-for-marketing-btn').datepicker({
                 language: "zh-CN",
                 orientation: "auto right",
@@ -185,41 +197,38 @@
 //                        var m = parseInt(ymd_array[1]) - 1;
 //                        var d = parseInt(ymd_array[2]);
 //                        var start_date = new Date(y,m,d);
-//
 //                        var sevenDayArray = new Array();
 //                        for(var i=0;i<7;i++){
 //                            sevenDayArray.push(new Date(y,m,d+i));
-//
 //                        }
-//                        var sign_start = false;
-//                        var sign_day = false;
-//                        for(var j in sevenDayArray){
-//                            if(date.toDateString() == sevenDayArray[j].toDateString()){
-//                                sign_day = true;
-//                                if(j == 0){
-//                                    sign_start = true;
-//                                    console.log('d')
-//                                }
-//                                break;
-//                            }
-//                        }
-//
-//                        if(sign_day){
-//                            if(!sign_start){
-//                                return 'day range';
-//                            }else{
-//                                return 'day selected';
-//                            }
-//                        }
+                        var sign_start = false;
+                        var sign_day = false;
+                        for(var j in g_sevenDays){
+                            if(date.toDateString() == g_sevenDays[j].toDateString()){
+                                console.log(g_sevenDays[j].toDateString());
+                                sign_day = true;
+                                if(j == 0){
+                                    sign_start = true;
+                                }
+                                break;
+                            }
+                        }
+
+                        if(sign_day){
+                            if(!sign_start){
+                                return 'day range';
+                            }else{
+                                return 'day active';
+                            }
+                        }
 //                    }
                 }
 
             }).on('changeDate', function(e){
-                $('#date-for-marketing-btn').attr("start-date",e.format(0,'yyyy-mm-dd'));
-                console.log("changeDate!!");
+//                $('#date-for-marketing-btn').attr("start-date",e.format(0,'yyyy-mm-dd'));
             });
 
-
+            $('#date-for-marketing-btn').datepicker('setDate', g_start_date);
         });
     </script>
   </body>
