@@ -17,15 +17,25 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        .data-des{color: #222;line-height: 48px;letter-spacing: 0.5px;font-size: 18px;border-left: 3px solid #4184f3;padding-left: 7px;}
+        .col-xs-12.title-wrapper{background-color: #fcfcfc;}
+        .report-title{color: #222;line-height: 48px;letter-spacing: 0.5px;font-size: 18px;border-left: 3px solid #4184f3;padding-left: 7px;}
+        .data-des{color: #222;line-height: 48px;letter-spacing: 0.5px;font-size: 16px;}
+        .data-des + small{color: #ccc;}
+/*        .hover-row{border-left: 3px solid #fff;}border-left: 3px solid #4184f3;*/
+        .hover-row:hover{}
         .nth1-right-td-table>tbody>tr>td:first-child{text-align: right;}
         .pro-table>tbody>tr>td{vertical-align: middle;}
+        .pro-table>tbody>tr>td>.img-linker{float: left;}
         .pro-table>tbody>tr>td>.title-box{display: table;height: 50px;margin-left: 60px;}
-        .pro-table>tbody>tr>td>.title-box .title-wapper{display: table-cell;vertical-align: middle;}
+        .pro-table>tbody>tr>td>.title-box .title-wrapper{display: table-cell;vertical-align: middle;color: #ccc;letter-spacing: 1px;max-width: 250px}
+        .pro-table>tbody>tr>td>.title-box .title-wrapper a:hover{text-decoration: underline;}
+        .pro-table-hover>tbody>tr:hover>td{background-color: #fcfcfc;}
+/*        .pro-table-hover>tbody>tr:hover>td>.title-box .title-wrapper{color: #222;}*/
 
-        .trade_report dt{font-size: 16px;color: #777;}
-        .trade_report dd .volume{font-size: 24px;margin-top: 17px;font-weight: 700;}
-        .trade_report dd .rate{margin-top: 10px;font-size: 12px;color: #777;}
+        .data_report dt{font-size: 16px;color: #777;}
+        .data_report dd .volume{font-size: 24px;margin-top: 17px;font-weight: 700;}
+        .data_report dd .volume small{font-size: 14px;font-weight: 200;}
+        .data_report dd .rate{margin-top: 10px;font-size: 12px;color: #777;}
     </style>
   </head>
   <body>
@@ -152,7 +162,7 @@
                 </div>
                 <div class="row padding-row border-bottom-row">
                     <div class="col-xs-6">
-                        <h4 class="data-title">整店报告 <small>2015-1-21</small></h4>
+                        <h4 class="data-title"><span class="text-danger">2015-1-21</span> 整店报告</h4>
                     </div>
                     <div class="col-xs-6 text-right">
                         <div class="btn-group switch-date-btn-group">
@@ -174,14 +184,14 @@
                             <li role="presentation"><a href="#">宝贝简报<span></span></a></li>
                         </ul>
                     </div>
-                </div>
-                <div class="row padding-row">
+                </div><!--未用-->
+                <div class="row hover-row padding-row margin-bottom17-row">
                     <div class="col-xs-12">
                         <div class="row border-bottom-row">
-                            <div class="col-xs-12"><span class="data-des">全店销售数据</span></div>
+                            <div class="col-xs-12 title-wrapper"><span class="report-title">销售报告</span></div>
                         </div>
-                        <div class="row padding-row trade_report">
-                            <div class="col-xs-4">
+                        <div class="row padding-row data_report">
+                            <div class="col-xs-3">
                                 <dl>
                                     <dt>销售量</dt>
                                     <dd>
@@ -190,7 +200,7 @@
                                     </dd>
                                 </dl>
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-3">
                                 <dl>
                                     <dt>销售额</dt>
                                     <dd>
@@ -199,11 +209,20 @@
                                     </dd>
                                 </dl>
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-3">
                                 <dl>
                                     <dt>销售商品数</dt>
                                     <dd>
                                         <div class="volume">123</div>
+                                        <div class="rate">较上一天<span class="ico-before flat">0%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-3">
+                                <dl>
+                                    <dt>滞销率</dt>
+                                    <dd>
+                                        <div class="volume">30.00%</div>
                                         <div class="rate">较上一天<span class="ico-before flat">0%</span></div>
                                     </dd>
                                 </dl>
@@ -216,13 +235,13 @@
                         </div>
                         <div class="row margin-top17-row">
                             <div class="col-xs-12">
-                                <table class="table gtable pro-table nth1-right-td-table margin-top17-row">
+                                <table class="table gtable pro-table-hover pro-table nth1-right-td-table margin-top17-row">
                                     <thead>
                                         <tr>
                                             <th width="4%"></th>
-                                            <th width="20%"></th>
-                                            <th width="30%">销售量 / 较上一天</th>
-                                            <th width="30%">销售额 / 较上一天</th>
+                                            <th width="32%"></th>
+                                            <th width="24%">销售量 / 较上一天</th>
+                                            <th width="24%">销售额 / 较上一天</th>
                                             <th width="26%">操作</th>
                                         </tr>
                                     </thead>
@@ -230,7 +249,12 @@
                                         <tr>
                                             <td>1.</td>
                                             <td>
-                                                <img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题">
+                                                <a href="#" class="img-linker"><img class="img-thumbnail" src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题"></a>
+                                                <div class="title-box">
+                                                    <div class="title-wrapper">
+                                                        <a href="#">学院风帆布双肩包韩版大学生包书包潮男士背包欧美时尚女生旅游包</a>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td>123 <span class="ico-before up">25%</span></td>
                                             <td><span class="rmb-before">123</span> <span class="ico-before down">5%</span></td>
@@ -239,7 +263,12 @@
                                         <tr>
                                             <td>2.</td>
                                             <td>
-                                                <img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题">
+                                                <a href="#" class="img-linker"><img class="img-thumbnail" src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题"></a>
+                                                <div class="title-box">
+                                                    <div class="title-wrapper">
+                                                        <a href="#">男士纯色电脑包双肩包 简约帆布潮男背包 中学生书包男生旅游包</a>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td>123 <span class="ico-before up">25%</span></td>
                                             <td><span class="rmb-before">123</span> <span class="ico-before down">5%</span></td>
@@ -248,7 +277,12 @@
                                         <tr>
                                             <td>3.</td>
                                             <td>
-                                                <img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题">
+                                                <a href="#" class="img-linker"><img class="img-thumbnail" src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题"></a>
+                                                <div class="title-box">
+                                                    <div class="title-wrapper">
+                                                        <a href="#">2014学院风潮男女生小双肩包休闲韩版中学生纯色书包欧美时尚背包</a>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td>123 <span class="ico-before up">25%</span></td>
                                             <td><span class="rmb-before">123</span> <span class="ico-before down">5%</span></td>
@@ -260,13 +294,74 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-default">查看Top10</button>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">交易分析</button>
+                                <button class="btn btn-danger">交易分析</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row hover-row padding-row margin-bottom17-row">
+                    <div class="col-xs-6">
+                        <div class="row border-bottom-row">
+                            <div class="col-xs-12 title-wrapper"><span class="report-title">自然引流</span></div>
+                        </div>
+                        <div class="row padding-row data_report">
+                            <div class="col-xs-4">
+                                <dl>
+                                    <dt>主引流宝贝数</dt>
+                                    <dd>
+                                        <div class="volume">123</div>
+                                        <div class="rate">较上一天<span class="ico-before up">25%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-4">
+                                <dl>
+                                    <dt>关键词数</dt>
+                                    <dd>
+                                        <div class="volume">123</div>
+                                        <div class="rate">较上一天<span class="ico-before down">25%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-4">
+                                <dl>
+                                    <dt>豆腐块词数</dt>
+                                    <dd>
+                                        <div class="volume">123</div>
+                                        <div class="rate">较上一天<span class="ico-before flat">0%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="row border-bottom-row">
+                            <div class="col-xs-12 title-wrapper"><span class="report-title">直通车引流</span></div>
+                        </div>
+                        <div class="row padding-row data_report">
+                            <div class="col-xs-6">
+                                <dl>
+                                    <dt>推广宝贝数</dt>
+                                    <dd>
+                                        <div class="volume">123</div>
+                                        <div class="rate">较上一天<span class="ico-before up">25%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-6">
+                                <dl>
+                                    <dt>关键词数</dt>
+                                    <dd>
+                                        <div class="volume">1235</div>
+                                        <div class="rate">较上一天<span class="ico-before down">25%</span></div>
+                                    </dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-6 margin-top-row">
                         <div class="row border-bottom-row">
-                            <div class="col-xs-12"><span class="data-des">自然引流宝贝Top3</span></div>
+                            <div class="col-xs-12"><span class="data-des">自然引流宝贝Top3</span> <small>综合搜索</small></div>
                         </div>
                         <div class="row margin-top17-row">
                             <div class="col-xs-12">
@@ -284,28 +379,28 @@
                                         <tr>
                                             <td>1.</td>
                                             <td>
-                                                <img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题">
+                                                <a href="#" title="宝贝标题宝贝标题宝贝标题"><img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题"></a>
                                             </td>
                                             <td>123 <span class="ico-before up">25%</span></td>
-                                            <td><span class="rmb-before">123</span> <span class="ico-before down">5%</span></td>
+                                            <td>123 <span class="ico-before down">5%</span></td>
                                             <td><button class="btn btn-default">宝贝详情</button></td>
                                         </tr>
                                         <tr>
                                             <td>2.</td>
                                             <td>
-                                                <img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题">
+                                                <a href="#" title="宝贝标题宝贝标题宝贝标题"><img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题"></a>
                                             </td>
                                             <td>123 <span class="ico-before up">25%</span></td>
-                                            <td><span class="rmb-before">123</span> <span class="ico-before down">5%</span></td>
+                                            <td>123 <span class="ico-before down">5%</span></td>
                                             <td><button class="btn btn-default">宝贝详情</button></td>
                                         </tr>
                                         <tr>
                                             <td>3.</td>
                                             <td>
-                                                <img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题宝贝标题">
+                                                <a href="#" title="宝贝标题宝贝标题宝贝标题"><img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题"></a>
                                             </td>
                                             <td>123 <span class="ico-before up">25%</span></td>
-                                            <td><span class="rmb-before">123</span> <span class="ico-before down">5%</span></td>
+                                            <td>123 <span class="ico-before down">5%</span></td>
                                             <td><button class="btn btn-default">宝贝详情</button></td>
                                         </tr>
                                     </tbody>
@@ -314,13 +409,158 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-default">查看Top10</button>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">引流分析</button>
+                                <button class="btn btn-danger">引流分析</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-6 margin-top-row">
                         <div class="row border-bottom-row">
-                            <div class="col-xs-12"><span class="data-des">直通车引流宝贝</span></div>
+                            <div class="col-xs-12"><span class="data-des">直通车引流宝贝Top3</span></div>
+                        </div>
+                        <div class="row margin-top17-row">
+                            <div class="col-xs-12">
+                                <table class="table gtable pro-table nth1-right-td-table margin-top17-row">
+                                    <thead>
+                                        <tr>
+                                            <th width="4%"></th>
+                                            <th width="35%"></th>
+                                            <th width="45%">推广关键词数 / 较上一天</th>
+                                            <th width="26%">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>
+                                                <a href="#" title="宝贝标题宝贝标题宝贝标题"><img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题"></a>
+                                            </td>
+                                            <td>123 <span class="ico-before up">25%</span></td>
+                                            <td><button class="btn btn-default">宝贝详情</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>
+                                                <a href="#" title="宝贝标题宝贝标题宝贝标题"><img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题"></a>
+                                            </td>
+                                            <td>123 <span class="ico-before up">25%</span></td>
+                                            <td><button class="btn btn-default">宝贝详情</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td>
+                                                <a href="#" title="宝贝标题宝贝标题宝贝标题"><img class="img-thumbnail " src="images/none-pic.gif" alt="宝贝标题宝贝标题宝贝标题"></a>
+                                            </td>
+                                            <td>123 <span class="ico-before up">25%</span></td>
+                                            <td><button class="btn btn-default">宝贝详情</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row hover-row padding-row margin-bottom17-row">
+                    <div class="col-xs-12">
+                        <div class="row border-bottom-row">
+                            <div class="col-xs-12 title-wrapper"><span class="report-title">营销报告</span></div>
+                        </div>
+                        <div class="row padding-row data_report">
+                            <div class="col-xs-3">
+                                <dl>
+                                    <dt>店铺促销</dt>
+                                    <dd>
+                                        <div class="volume">1 <small>项</small></div>
+                                        <div class="rate">较上一天<span class="ico-before up">25%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-3">
+                                <dl>
+                                    <dt>店铺推广</dt>
+                                    <dd>
+                                        <div class="volume">2 <small>项</small></div>
+                                        <div class="rate">较上一天<span class="ico-before down">25%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-3">
+                                <dl>
+                                    <dt>站内活动</dt>
+                                    <dd>
+                                        <div class="volume">3 <small>项</small></div>
+                                        <div class="rate">较上一天<span class="ico-before flat">0%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-3">
+                                <dl>
+                                    <dt>站外活动</dt>
+                                    <dd>
+                                        <div class="volume">0 <small>项</small></div>
+                                        <div class="rate">较上一天<span class="ico-before flat">0%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-12 margin-top17-row">
+                                <button class="btn btn-danger">营销分析</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row hover-row padding-row margin-bottom17-row">
+                    <div class="col-xs-12">
+                        <div class="row border-bottom-row">
+                            <div class="col-xs-12 title-wrapper"><span class="report-title">宝贝日常报告</span></div>
+                        </div>
+                        <div class="row padding-row data_report">
+                            <div class="col-xs-2">
+                                <dl>
+                                    <dt>宝贝数</dt>
+                                    <dd>
+                                        <div class="volume">123</div>
+                                        <div class="rate">较上一天<span class="ico-before up">25%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-2">
+                                <dl>
+                                    <dt>上新</dt>
+                                    <dd>
+                                        <div class="volume">1235</div>
+                                        <div class="rate">较上一天<span class="ico-before down">25%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-2">
+                                <dl>
+                                    <dt>下线</dt>
+                                    <dd>
+                                        <div class="volume">1</div>
+                                        <div class="rate">较上一天<span class="ico-before down">25%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-2">
+                                <dl>
+                                    <dt>调价</dt>
+                                    <dd>
+                                        <div class="volume">123</div>
+                                        <div class="rate">较上一天<span class="ico-before flat">0%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-2">
+                                <dl>
+                                    <dt>改标题</dt>
+                                    <dd>
+                                        <div class="volume">123</div>
+                                        <div class="rate">较上一天<span class="ico-before flat">0%</span></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-12 margin-top17-row">
+                                <button class="btn btn-danger">宝贝分析</button>
+                            </div>
                         </div>
                     </div>
                 </div>

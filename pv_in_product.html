@@ -64,7 +64,7 @@
 /*--------------宝贝维度------------*/
         .product-list-table>tbody>tr>td{vertical-align: middle;}
         .product-list-table>tbody>tr>td>.title-box{display: table;height: 50px;margin-left: 60px;}
-        .product-list-table>tbody>tr>td>.title-box .title-wapper{display: table-cell;vertical-align: middle;}
+        .product-list-table>tbody>tr>td>.title-box .title-wrapper{display: table-cell;vertical-align: middle;}
         /*若后续需加入关键词其他数据，则可加大max-width,min-width*/
         .product-list-table .words-table{max-width: 1000px;min-width: 600px;margin:15px 0px 100px 75px;}
 
@@ -72,7 +72,7 @@
 /*--------------关键词维度------------*/
         .data-table.words-table .product-table{max-width: 1200px;min-width: 600px;margin:15px 0px 100px 75px;}
         .data-table.words-table .product-table>tbody>tr>td>.title-box{display: table;height: 50px;margin-left: 60px;}
-        .data-table.words-table .product-table>tbody>tr>td>.title-box .title-wapper{display: table-cell;vertical-align: middle;}
+        .data-table.words-table .product-table>tbody>tr>td>.title-box .title-wrapper{display: table-cell;vertical-align: middle;}
 
 
     </style>
@@ -324,8 +324,9 @@
                                 <thead>
                                     <tr>
                                         <th width="6%"></th>
-                                        <th width="72%">宝贝</th>
+                                        <th width="60%">宝贝</th>
                                         <th width="12%">关键词数</th>
+                                        <th width="12%">豆腐块词数</th>
                                         <th width="10%">操作</th>
                                     </tr>
                                 </thead>
@@ -335,26 +336,29 @@
                                         <td>
                                             <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
                                             <div class="title-box">
-                                                <div class="title-wapper">
+                                                <div class="title-wrapper">
                                                     <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>2</td>
+                                        <td>2</td>
                                         <td><button type="button" class="btn btn-primary btn-xs toggle-btn toggle-product-in-word-list" data-toggle="dropdown"><span class="ico-before"></span></button></td>
                                     </tr>
                                     <tr class="child-tr">
-                                        <td colspan="4">
+                                        <td colspan="5">
                                             <table class="table data-table words-table">
                                                 <thead>
                                                     <tr>
-                                                        <th width="78%" class="arrow-th"><span class="arrow"></span>引流关键词</th>
-                                                        <th width="22%">操作</th>
+                                                        <th width="65%" class="arrow-th"><span class="arrow"></span>引流关键词</th>
+                                                        <th width="20%">豆腐块</th>
+                                                        <th width="15%">操作</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td class="keyword">关键词</td>
+                                                        <td class="keyword">书包 双肩包</td>
+                                                        <td>是</td>
                                                         <td>
                                                             <button type="button" class="btn btn-default btn-xs toggle-btn toggle-word-rank-chart" data-toggle="dropdown" data-productId="123456">
                                                                 <span class="ico-before"></span>
@@ -388,6 +392,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td class="keyword">关键词</td>
+                                                        <td></td>
                                                         <td>
                                                             <button type="button" class="btn btn-default btn-xs toggle-btn toggle-word-rank-chart" data-toggle="dropdown" data-productId="123456">
                                                                 <span class="ico-before"></span>
@@ -397,7 +402,7 @@
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                       <td colspan="2">
+                                                       <td colspan="3">
                                                             <nav>
                                                                 <ul class="pagination">
                                                                 <li class="disabled"><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">上一页</span></a></li>
@@ -418,11 +423,12 @@
                                         <td>
                                             <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
                                             <div class="title-box">
-                                                <div class="title-wapper">
+                                                <div class="title-wrapper">
                                                     <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
                                                 </div>
                                             </div>
                                         </td>
+                                        <td>2</td>
                                         <td>2</td>
                                         <td><button type="button" class="btn btn-primary btn-xs toggle-btn toggle-word-in-product-list" data-toggle="dropdown"><span class="ico-before"></span></button></td>
                                     </tr>
