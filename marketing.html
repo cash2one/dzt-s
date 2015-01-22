@@ -9,6 +9,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/dzt.css">
+    <link rel="stylesheet" href="css/datepicker3.standalone.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -152,9 +153,9 @@
                     </div>
                     <div class="col-xs-6 text-right">
                         <div class="btn-group switch-date-btn-group">
-                            <button class="btn btn-default disabled"><span class="glyphicon glyphicon-chevron-left"></span>上个7天</button>
-                            <button class="btn btn-default">下个7天<span class="glyphicon glyphicon-chevron-right"></span></button>
-                            <button type="button" class="btn btn-default ico-font dropdown-toggle" data-toggle="dropdown" id="date-for-shop-report-btn" style="font-size:13px;">&#xe638;<span></span></button>
+                            <button class="btn btn-default disabled"><span class="glyphicon glyphicon-chevron-left"></span>上7天</button>
+                            <button class="btn btn-default">下7天<span class="glyphicon glyphicon-chevron-right"></span></button>
+                            <button type="button" class="btn btn-default ico-font dropdown-toggle" data-toggle="dropdown" id="date-for-marketing-btn" style="font-size:13px;">&#xe638;<span></span></button>
                         </div>
                     </div>
                 </div>
@@ -167,8 +168,59 @@
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/dzt_bg.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script type="text/javascript">
+        $(function(){
+            $('#date-for-marketing-btn').datepicker({
+                language: "zh-CN",
+                orientation: "auto right",
+                autoclose: true,
+                format:'yyyy-m-d',
+                beforeShowDay: function (date){
+//                    var start_date_str = $('#date-for-marketing-btn').attr("start-date");
+//                    if(start_date_str != ""){
+//                        var ymd_array = start_date_str.split("-");
+//                        var y = parseInt(ymd_array[0]);
+//                        var m = parseInt(ymd_array[1]) - 1;
+//                        var d = parseInt(ymd_array[2]);
+//                        var start_date = new Date(y,m,d);
+//
+//                        var sevenDayArray = new Array();
+//                        for(var i=0;i<7;i++){
+//                            sevenDayArray.push(new Date(y,m,d+i));
+//
+//                        }
+//                        var sign_start = false;
+//                        var sign_day = false;
+//                        for(var j in sevenDayArray){
+//                            if(date.toDateString() == sevenDayArray[j].toDateString()){
+//                                sign_day = true;
+//                                if(j == 0){
+//                                    sign_start = true;
+//                                    console.log('d')
+//                                }
+//                                break;
+//                            }
+//                        }
+//
+//                        if(sign_day){
+//                            if(!sign_start){
+//                                return 'day range';
+//                            }else{
+//                                return 'day selected';
+//                            }
+//                        }
+//                    }
+                }
 
+            }).on('changeDate', function(e){
+                $('#date-for-marketing-btn').attr("start-date",e.format(0,'yyyy-mm-dd'));
+                console.log("changeDate!!");
+            });
+
+
+        });
     </script>
   </body>
 </html>

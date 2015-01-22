@@ -150,7 +150,7 @@ body.hide-nav .content-bg .content-body{margin-left: 0;}
 .shadow-row{border: 2px solid #f9f9f9;}
 
 /*后台-店铺切换*/
-.switch-shop-menu>h4{cursor: pointer;color: #f35a4a;margin:0px;}
+.switch-shop-menu>h4{cursor: pointer;color: #f35a4a;margin:0px;font-size: 18px;}
 .switch-shop-menu>h4>.caret{color: #777777;}
 .switch-shop-menu>h4:hover{color: #e75042;}
 .switch-shop-menu.open>h4{color: #777;}
