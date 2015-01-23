@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>宝贝分析</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dzt.css">
+    <link rel="stylesheet" href="css/datepicker3.standalone.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        /*日期选择*/
+        .nav-tabs>.date-switch-li{float: right;}
+
+        .product-list-table>tbody>tr>td{vertical-align: middle;}
+        .product-list-table>tbody>tr>td>.title-box{display: table;height: 50px;margin-left: 60px;}
+        .product-list-table>tbody>tr>td>.title-box .title-wrapper{display: table-cell;vertical-align: middle;}
+
+/*        .new-online-product-list>tbody>tr>td>.title-box{max-width: 350px;}*/
+        .d-table{display: table;}
+        .d-table .d-thead{display: table-header-group;}
+        .d-table .d-tr{display: table-row;}
+        .d-table .d-td,.d-table .d-thead .d-th{display: table-cell;}
+
+        .datetime-table{width: 100%;}
+        .datetime-table .d-td{text-align: center;vertical-align: middle;}
+        .datetime-table .d-td.hour{width: 2%;}
+        .datetime-table .header-row .d-td{padding: 10px 0px;color: #777;}
+        .datetime-table .hour-row .d-td{padding: 2px 0px;}
+        .datetime-table .hour-row .d-td span.a,.datetime-table .hour-row .d-td span.b,.datetime-table .hour-row .d-td span.c,.datetime-table .hour-row .d-td span.d,.datetime-table .hour-row .d-td span.e{display: inline-block;width: 20px;height: 20px;border: 1px solid #fff;}
+        .datetime-table .hour-row .d-td span.a:hover,.datetime-table .hour-row .d-td span.b:hover,.datetime-table .hour-row .d-td span.c:hover,.datetime-table .hour-row .d-td span.d:hover,.datetime-table .hour-row .d-td span.e:hover{border: 1px solid #222;cursor: pointer;}
+        .datetime-table .hour-row .d-td .a{background-color: #ccc;}
+        .datetime-table .hour-row .d-td .b{background-color: #ffbb9f;}
+        .datetime-table .hour-row .d-td .c{background-color: #fc7d67;}
+        .datetime-table .hour-row .d-td .d{background-color: #f35a4a;}
+        .datetime-table .hour-row .d-td .e{background-color: #8b231d;}
+
+        .datetime-table .hour-row .d-td.rel{position: relative;}
+        .datetime-table .hour-row .d-td.rel span.a{position: absolute;left: 50%; top: 50%;margin-left: -10px;margin-top: -10px;z-index: 2000;}/*如果更改了小方框的大小，则需要更改此处设置*/
+
+        .datetime-table .hour-row .d-td.rel .popover.bottom{margin-top: -20px;display: block;left: 50%;top: 50%;margin-left: -20px;max-width: 800px;box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);}
+        .datetime-table .hour-row .d-td.rel .popover .popover-content{padding: 28px 14px 9px;}
+    </style>
+  </head>
+  <body>
+   <div class="container-fluid header-wrapper">
+       <div class="row">
+           <div class="col-xs-6 col-logo">
+               <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+               <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+           </div>
+           <div class="col-xs-6 header-right-side">
+               <ul class="clearfix">
+                  <li class="user">
+                      <a id="user-button" href="#"><span class="account">102700317@qq.com</span><span class="ico-font">&#xe604;</span></a>
+                  </li>
+                  <li class="pay-text"><a href="#">续费升级</a></li>
+               </ul>
+           </div>
+       </div>
+  </div>
+  <div class="content-bg">
+      <div class="contain-body clearfix">
+         <div class="nav-side l">
+             <div class="ver-box">专业版</div>
+             <div class="nav-tree-box">
+                 <dl class="nav-tree">
+                     <dt class="nav-tree-node">
+                         <a href="#"><span>监控店铺</span></a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <a href="#">管理</a>
+                             </dt>
+                             <dd></dd>
+                         </dl>
+                     </dd>
+                     <dt class="nav-tree-node">
+                         <a href="#">分析</a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <a href="#">整店报告</a>
+                             </dt>
+                             <dd></dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">交易分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">引流分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">营销分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">宝贝分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                         </dl>
+                     </dd>
+                 </dl>
+             </div>
+             <div class="help-box">
+                 <ul>
+                     <li class="help-service"><a href="#"><span class="ico-font">&#xe61a;</span>客服</a><a href="#"><span class="ico-font">&#xe618;</span>客服</a></li>
+                 </ul>
+             </div>
+         </div>
+         <div class="pack-toggle text-center">
+             <span id="pack-toggle-trigger" class="pack-toggle-trigger ico-font center-block"></span>
+         </div>
+         <div class="content-side l padding-box">
+            <div class="content-body container-fluid">
+                <div class="row padding-row switch-shop-row border-bottom-row">
+                    <div class="col-xs-12 clearfix">
+                        <div class="dropdown switch-shop-menu l">
+                            <h4 class="dropdown-toggle" id="switch-shop-title" data-toggle="dropdown">
+                            几度家居旗舰店
+                            <span class="caret"></span>
+                            </h4>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">a几度家居旗舰店</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">b几度家居旗舰店</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">c几度家居旗舰店</a></li>
+                            </ul>
+                        </div>
+                        <div class="last-update l">最后更新：2015-5-1</div>
+                    </div>
+                </div>
+                <div class="row padding-row border-bottom-row">
+                    <div class="col-xs-12">
+                        <h4 class="data-title">宝贝分析</h4>
+                    </div>
+                </div>
+                <div class="row margin-top-row border">
+                    <div class="col-xs-12 p0">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#"><span class="ico-font">&#xe655;</span>全部宝贝</a></li>
+                            <li role="presentation"><a href="#"><span class="ico-font">&#xe659;</span>上新情况</a></li>
+                            <li role="presentation"><a href="#"><span class="ico-font">&#xe658;</span>下线情况</a></li>
+                            <li role="presentation"><a href="#"><span class="ico-font">&#xe657;</span>上下架分布<span></span></a></li>
+                            <li class="date-switch-li">
+                                <div class="btn-group switch-date-btn-group">
+                                    <button type="button" class="btn btn-default" day-length="1">昨天<span></span></button>
+                                    <button type="button" class="btn btn-default" day-length="3">3天<span></span></button>
+                                    <button type="button" class="btn btn-default active" day-length="7">7天<span></span></button>
+                                    <button type="button" class="btn btn-default" day-length="14">14天<span></span></button>
+                                    <button type="button" class="btn btn-default" day-length="30">30天<span></span></button>
+                                    <button type="button" class="btn btn-default ico-font" id="date-select-button" day-length="0" style="font-size:13px;">&#xe638;<span></span></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row padding-row datepicker-row border-bottom-row" style="display:none">
+                    <div class="col-xs-12">
+                        <div class="datepicker-box">
+                            <button class="btn btn-default r" id="cancle-picker" onclick="$('.datepicker-row').hide();$('#date-select-button').removeClass('active')">取消</button>
+                            <button class="btn btn-primary r" id="submit-picker">确定</button>
+                            <div class="input-daterange input-group r">
+                                <input type="text" class="form-control text-center" id="fromDate" placeholder="开始时间" name="start"/>
+                                <div class="input-group-addon">~</div>
+                                <input type="text" class="form-control text-center" id="toDate" placeholder="结束时间" name="end" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--全部宝贝-->
+                <div class="row margin-top-row hide">
+                    <div class="col-xs-12 margin-bottom17-row">
+                        <span class="date-des">最近7天数据</span>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="tb-head-bar">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button class="btn btn-default btn-export ico-before"> 导出</button>
+                                    <form class="form-inline" role="form" style="display:inline">
+                                      <div class="form-group">
+                                        <label class="sr-only" for="keyword-filter-input">宝贝关键词</label>
+                                        <input type="text" class="form-control" id="keyword-filter-input" placeholder="宝贝关键词">
+                                      </div>
+                                      <button type="submit" class="btn btn-default">过滤</button>
+                                    </form>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                   <span class="page-info">第1页（共3页）</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-left"><span class="ico-font">&#xe637;</span></button>
+                                        <button type="button" class="btn btn-default btn-right"><span class="ico-font">&#xe636;</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table data-table nth1-left product-list-table">
+                            <thead>
+                                <tr>
+                                    <th width="30%">宝贝名称</th>
+                                    <th width="10%">平均售价</th>
+                                    <th width="10%">销量</th>
+                                    <th width="10%">销售额</th>
+                                    <th width="10%">成交笔数</th>
+                                    <th width="10%">收藏量</th>
+                                    <th width="10%">营销</th>
+                                    <th width="10%">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                                        <div class="title-box">
+                                            <div class="title-wrapper">
+                                                <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="rmb-before">23.11</span></td>
+                                    <td>123</td>
+                                    <td><span class="rmb-before">1523.11</span></td>
+                                    <td>123</td>
+                                    <td>12345</td>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-primary">查看详情</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                                        <div class="title-box">
+                                            <div class="title-wrapper">
+                                                <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="rmb-before">23.11</span></td>
+                                    <td>123</td>
+                                    <td><span class="rmb-before">1523.11</span></td>
+                                    <td>123</td>
+                                    <td>12345</td>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-primary">查看详情</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-footer-bar">
+                            <div class="row">
+                                <div class="col-xs-8 col-xs-offset-4 text-right">
+                                    <span class="page-info">第1页（共3页）</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-left"><span class="ico-font">&#xe637;</span></button>
+                                        <button type="button" class="btn btn-default btn-right"><span class="ico-font">&#xe636;</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--上新情况-->
+                <div class="row margin-top-row hide">
+                    <div class="col-xs-12 margin-bottom17-row">
+                        <span class="date-des">最近7天上新宝贝情况</span>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="alert alert-warning" role="alert"><span class="glyphicon glyphicon-exclamation-sign"></span> 此店铺在指定的时间内无上新宝贝！</div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="tb-head-bar">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button class="btn btn-default btn-export ico-before"> 导出</button>
+                                    <form class="form-inline" role="form" style="display:inline">
+                                      <div class="form-group">
+                                        <label class="sr-only" for="keyword-filter-input">宝贝关键词</label>
+                                        <input type="text" class="form-control" id="keyword-filter-input" placeholder="宝贝关键词">
+                                      </div>
+                                      <button type="submit" class="btn btn-default">过滤</button>
+                                    </form>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                   <span class="page-info">第1页（共3页）</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-left"><span class="ico-font">&#xe637;</span></button>
+                                        <button type="button" class="btn btn-default btn-right"><span class="ico-font">&#xe636;</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table data-table nth1-left product-list-table new-online-product-list">
+                            <thead>
+                                <tr>
+                                    <th width="30%">宝贝名称</th>
+                                    <th width="10%">创建时间</th>
+                                    <th width="10%">上架时间</th>
+                                    <th width="10%">售价</th>
+                                    <th width="10%">当天营销 <span class="ico-font help" data-toggle="tooltip" title="上架当天参与的营销">&#xe607;</span></th>
+                                    <th width="10%">当天销量 <span class="ico-font help" data-toggle="tooltip" title="上架当天的销售量">&#xe607;</span></th>
+                                    <th width="10%">当天销售额 <span class="ico-font help" data-toggle="tooltip" title="上架当天的销售额">&#xe607;</span></th>
+                                    <th width="10%">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                                        <div class="title-box">
+                                            <div class="title-wrapper">
+                                                <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>2014-5-1</br>20:15:35</td>
+                                    <td>2014-5-1</br>20:15:35</td>
+                                    <td><span class="rmb-before">123.11</span></td>
+                                    <td></td>
+                                    <td>12345</td>
+                                    <td><span class="rmb-before">1523.11</span></td>
+                                    <td>
+                                        <button class="btn btn-primary">查看详情</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                                        <div class="title-box">
+                                            <div class="title-wrapper">
+                                                <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>2014-5-1</br>20:15:35</td>
+                                    <td>2014-5-1</br>20:15:35</td>
+                                    <td><span class="rmb-before">123.11</span></td>
+                                    <td></td>
+                                    <td>12345</td>
+                                    <td><span class="rmb-before">1523.11</span></td>
+                                    <td>
+                                        <button class="btn btn-primary">查看详情</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-footer-bar">
+                            <div class="row">
+                                <div class="col-xs-8 col-xs-offset-4 text-right">
+                                    <span class="page-info">第1页（共3页）</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-left"><span class="ico-font">&#xe637;</span></button>
+                                        <button type="button" class="btn btn-default btn-right"><span class="ico-font">&#xe636;</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--下线情况-->
+                <div class="row margin-top-row hide">
+                    <div class="col-xs-12 margin-bottom17-row">
+                        <span class="date-des">最近7天下线宝贝情况</span>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="alert alert-warning" role="alert"><span class="glyphicon glyphicon-exclamation-sign"></span> 此店铺在指定的时间内无下线宝贝！</div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="tb-head-bar">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button class="btn btn-default btn-export ico-before"> 导出</button>
+                                    <form class="form-inline" role="form" style="display:inline">
+                                      <div class="form-group">
+                                        <label class="sr-only" for="keyword-filter-input">宝贝关键词</label>
+                                        <input type="text" class="form-control" id="keyword-filter-input" placeholder="宝贝关键词">
+                                      </div>
+                                      <button type="submit" class="btn btn-default">过滤</button>
+                                    </form>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                   <span class="page-info">第1页（共3页）</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-left"><span class="ico-font">&#xe637;</span></button>
+                                        <button type="button" class="btn btn-default btn-right"><span class="ico-font">&#xe636;</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table data-table nth1-left product-list-table">
+                            <thead>
+                                <tr>
+                                    <th width="30%">宝贝名称</th>
+                                    <th width="10%">创建时间</th>
+                                    <th width="10%">下线时间</th>
+                                    <th width="10%">当天售价 <span class="ico-font help" data-toggle="tooltip" title="下线当天的售价">&#xe607;</span></th>
+                                    <th width="10%">当天营销 <span class="ico-font help" data-toggle="tooltip" title="下线当天的营销">&#xe607;</span></th>
+                                    <th width="10%">当天销量 <span class="ico-font help" data-toggle="tooltip" title="下线当天的销售量">&#xe607;</span></th>
+                                    <th width="10%">当天销售额 <span class="ico-font help" data-toggle="tooltip" title="下线当天的销售额">&#xe607;</span></th>
+                                    <th width="10%">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                                        <div class="title-box">
+                                            <div class="title-wrapper">
+                                                <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="rmb-before">23.11</span></td>
+                                    <td>123</td>
+                                    <td><span class="rmb-before">1523.11</span></td>
+                                    <td>123</td>
+                                    <td>12345</td>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-primary">查看详情</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                                        <div class="title-box">
+                                            <div class="title-wrapper">
+                                                <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="rmb-before">23.11</span></td>
+                                    <td>123</td>
+                                    <td><span class="rmb-before">1523.11</span></td>
+                                    <td>123</td>
+                                    <td>12345</td>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-primary">查看详情</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-footer-bar">
+                            <div class="row">
+                                <div class="col-xs-8 col-xs-offset-4 text-right">
+                                    <span class="page-info">第1页（共3页）</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-left"><span class="ico-font">&#xe637;</span></button>
+                                        <button type="button" class="btn btn-default btn-right"><span class="ico-font">&#xe636;</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--上下架分布-->
+                <div class="row margin-top-row">
+                    <div class="col-xs-6">
+                        <div class="d-table datetime-table">
+                            <div class="d-tr header-row">
+                                <div class="d-td hour">时间</div>
+                                <div class="d-td">周一</div>
+                                <div class="d-td">周二</div>
+                                <div class="d-td">周三</div>
+                                <div class="d-td">周四</div>
+                                <div class="d-td">周五</div>
+                                <div class="d-td">周六</div>
+                                <div class="d-td">周日</div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour">0:00</div>
+                                <div class="d-td rel">
+                                <span class="a"></span>
+                                <div role="tooltip" class="popover bottom">
+                                    <div class="popover-content">
+                                        <ul class="product-list-ul" data-brackets-id="44721">
+                                            <li><a href="#"><img alt="" src="images/none-pic.gif" class="img-thumbnail"></a></li>
+                                            <li><a href="#"><img alt="" src="images/none-pic.gif" class="img-thumbnail"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="d-td"><span class="b"></span></div>
+                                <div class="d-td"><span class="c"></span></div>
+                                <div class="d-td"><span class="d"></span></div>
+                                <div class="d-td"><span class="e"></span></div>
+                                <div class="d-td"><span class="a"></span></div>
+                                <div class="d-td"><span class="a"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+  </div>
+<style>
+.product-list-ul li{padding: 10px 10px;}
+.product-list-ul li:hover{background-color: #e7e7e7;}
+.product-list-ul li a{display: block;width: 50px;}
+</style>
+<div id="product-list" class="hide">
+    <ul class="product-list-ul">
+        <li><a href="#"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>
+        <li><a href="#"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>
+    </ul>
+</div>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dzt_bg.js"></script>
+<!--    <script src="js/jquery.sparkline.min.js"></script>-->
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".datetime-table .hour-row .d-td span").hover(function(){
+
+            });
+            $(".ico-font.help").tooltip({//帮助
+                placement:'top',
+                trigger:'hover'
+            });
+                //日期选择初始化
+            $('.datepicker-box .input-daterange').datepicker({
+                language: "zh-CN",
+                orientation: "auto right",
+                autoclose: true,
+                format:'yyyy-m-d'
+            });
+            $(".switch-date-btn-group button").click(function(){
+                $(".switch-date-btn-group button").removeClass("active");
+                $(this).addClass("active");
+                if(!$(this).is("#date-select-button")){
+                    $(".datepicker-row").css("display","none");
+                }else{
+                    $(".datepicker-row").css("display","block");
+                }
+            });
+        });
+    </script>
+  </body>
+</html>

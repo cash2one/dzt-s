@@ -213,6 +213,7 @@ body.hide-nav .content-bg .content-body{margin-left: 0;}
 .data-table>thead>tr>th,.data-table>tbody>tr>td{padding:13px 8px;font-size: 13px;}
 .data-table>tbody>tr>td:first-child{text-align: right;}
 .data-table.nth1-left>tbody>tr>td:first-child{text-align: left;}
+.data-table a:hover{text-decoration: underline;}
 /*表格按钮*/
 .tb-head-bar .btn-left,.tb-footer-bar .btn-left{border-top-left-radius: 5px;border-bottom-left-radius: 5px;}
 .tb-head-bar .btn-right,.tb-footer-bar .btn-right{border-top-right-radius: 5px;border-bottom-right-radius: 5px;}
