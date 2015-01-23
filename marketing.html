@@ -17,8 +17,23 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
+        .marketing-table thead th{text-align: center;}
+        .marketing-table thead th ul{margin-top: 17px;text-align: left;}
+        .marketing-table thead th ul li{color: #777;}
+        .marketing-table thead th.day-col{min-width: 100px;}
+        .marketing-table>thead>tr.chart-tr>th{padding: 20px 0 0 0;}
+        .marketing-table>tbody>tr>td{vertical-align: middle;text-align: center;}
+        .marketing-table>thead>tr>.marking-title,.marketing-table>tbody>tr>.marking-title{text-align: right;width: 150px;min-width: 100px;}
+        .marketing-table>tbody>tr>td.category{background-color: #ccc;padding:0px 8px;}
+        .marketing-table>tbody>tr>td.act{background-color: #4184f3;}
+        .marketing-table>tbody>tr>td.act a{color: #fff;display: block;width: 100%;height: 100%;}
 
-
+/*        #sales-chart{height: 100px;}*/
+        .product-list-table>tfoot nav{float: right;}
+        .product-list-table>tfoot .pagination{margin: 0px;}
+        .product-list-table>tbody>tr>td{vertical-align: middle;}
+        .product-list-table>tbody>tr>td>.title-box{display: table;height: 50px;margin-left: 60px;}
+        .product-list-table>tbody>tr>td>.title-box .title-wrapper{display: table-cell;vertical-align: middle;}
     </style>
   </head>
   <body>
@@ -159,29 +174,385 @@
                         </div>
                     </div>
                 </div>
+                <div class="row padding-row">
+                    <div class="col-xs-12">
+                        <table class="table data-table marketing-table">
+                            <thead>
+<!--
+                                <tr class="chart-tr">
+                                    <th></th>
+                                    <th></th>
+                                    <th colspan="7">
+                                        <div id="sales-chart-hide" style="display:none"></div>
+                                        <div id="sales-chart">
+
+                                        </div>
+                                    </th>
+                                </tr>
+-->
+                                <tr>
+                                    <th></th>
+                                    <th class="marking-title">营销</th>
+                                    <th class="day-col">
+                                        <div>12-23</div>
+                                        <ul>
+                                            <li><label>销售量：</label>251</li>
+                                            <li><label>销售额：</label>1321.00</li>
+                                        </ul>
+                                    </th>
+                                    <th class="day-col">
+                                        <div>12-23</div>
+                                        <ul>
+                                            <li><label>销售量：</label>251</li>
+                                            <li><label>销售额：</label>1321.00</li>
+                                        </ul>
+                                    </th>
+                                    <th class="day-col">
+                                        <div>12-23</div>
+                                        <ul>
+                                            <li><label>销售量：</label>251</li>
+                                            <li><label>销售额：</label>1321.00</li>
+                                        </ul>
+                                    </th>
+                                    <th class="day-col">
+                                        <div>12-23</div>
+                                        <ul>
+                                            <li><label>销售量：</label>251</li>
+                                            <li><label>销售额：</label>1321.00</li>
+                                        </ul>
+                                    </th>
+                                    <th class="day-col">
+                                        <div>12-23</div>
+                                        <ul>
+                                            <li><label>销售量：</label>251</li>
+                                            <li><label>销售额：</label>1321.00</li>
+                                        </ul>
+                                    </th>
+                                    <th class="day-col">
+                                        <div>12-23</div>
+                                        <ul>
+                                            <li><label>销售量：</label>251</li>
+                                            <li><label>销售额：</label>1321.00</li>
+                                        </ul>
+                                    </th>
+                                    <th class="day-col">
+                                        <div>12-23</div>
+                                        <ul>
+                                            <li><label>销售量：</label>251</li>
+                                            <li><label>销售额：</label>1321.00</li>
+                                        </ul>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3" width="5" class="category">店铺促销</td>
+                                    <td class="marking-title">满就减</td>
+                                    <td><span class="text-danger">全店</span></td>
+                                    <td><span class="text-danger">全店</span></td>
+                                    <td><span class="text-danger">全店</span></td>
+                                    <td><span class="text-danger">全店</span></td>
+                                    <td><span class="text-danger">全店</span></td>
+                                    <td><span class="text-danger">全店</span></td>
+                                    <td><span class="text-danger">全店</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">拍下减</td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">店铺优惠券</td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3" width="5" class="category">店铺推广</td>
+                                    <td class="marking-title">直通车</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">钻展</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">淘宝客</td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                    <td class="act"><a href="#">详</a></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="6" width="5" class="category">站内活动</td>
+                                    <td class="marking-title">聚划算</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">淘金币</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">天天特价</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">淘宝清仓</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">夜抢购</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">天猫预售</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="6" width="5" class="category">站外活动</td>
+                                    <td class="marking-title">折800</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">卷皮</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">米折</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">51返利</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">会员购</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="marking-title">淘粉吧</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-xs-12">
+
+                    </div>
+                </div>
             </div>
          </div>
       </div>
   </div>
 
+<div class="modal fade" id="marketDetailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">参与的宝贝列表</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div id="marketing-detail" style="display:none;">
+    <table class="table data-table product-list-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>宝贝</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.</td>
+                <td>
+                    <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                    <div class="title-box">
+                        <div class="title-wrapper">
+                            <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="btn btn-default">宝贝详情</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>
+                    <img class="img-thumbnail l" src="images/none-pic.gif" alt="">
+                    <div class="title-box">
+                        <div class="title-wrapper">
+                            <a href="#">中学生潮男生双肩背包旅游包韩版格子女生双肩包时尚防水格纹书包</a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="btn btn-default">宝贝详情</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+               <td colspan="3">
+                    <nav>
+                        <ul class="pagination">
+                        <li class="disabled"><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">上一页</span></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">下一页</span></a></li>
+                        </ul>
+                    </nav>
+               </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/dzt_bg.js"></script>
+    <script src="js/jquery.sparkline.min.js"></script>
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script type="text/javascript">
+        $(function(){
+            $('.marketing-table > tbody > tr > td.act a').click(function(){
+                $("#marketDetailModal .modal-body").html($("#marketing-detail table"))
+                $("#marketDetailModal").modal();
+            });
+        })
+//        $(function(){
+//            $('#sales-chart-hide').sparkline([1],{type:'bar',disableTooltips:true});
+//            $('#sales-chart').sparkline([1321,1561,1374,1201,1685,1442,1532],{
+//                type:'bar',
+//                height:"100%",
+//                width:"100%",
+//                barWidth:40,
+//                barSpacing:$('.marketing-table .day-col').width()+16-40,//16来自td的padding
+//                barColor:'#ccc',
+//                chartRangeMin:'0',
+//                highlightColor:'#f35a4a',
+//                disableTooltips:true
+//            });
+//
+//        })
+//        以下用于创建datepicker的7天显示
         function build7Days(date){
             var sevenDays = new Array();
             for(var i=0;i<7;i++){
-                sevenDays.push(new Date(date.getYear(),date.getMonth(),date.getDay()+i));
+                sevenDays.push(new Date(date.getFullYear(),date.getMonth(),date.getDate()+i));
             }
             return sevenDays;
         }
         var g_start_date;
         var g_sevenDays;
         $(function(){
-            g_start_date = new Date(2014,5-1,10);//此处定义当前页面显示的第一天,
+            g_start_date = new Date(2014,5-1,3);//此处定义当前页面显示的第一天
             g_sevenDays = build7Days(g_start_date);
 
             $('#date-for-marketing-btn').datepicker({
@@ -190,22 +561,10 @@
                 autoclose: true,
                 format:'yyyy-m-d',
                 beforeShowDay: function (date){
-//                    var start_date_str = $('#date-for-marketing-btn').attr("start-date");
-//                    if(start_date_str != ""){
-//                        var ymd_array = start_date_str.split("-");
-//                        var y = parseInt(ymd_array[0]);
-//                        var m = parseInt(ymd_array[1]) - 1;
-//                        var d = parseInt(ymd_array[2]);
-//                        var start_date = new Date(y,m,d);
-//                        var sevenDayArray = new Array();
-//                        for(var i=0;i<7;i++){
-//                            sevenDayArray.push(new Date(y,m,d+i));
-//                        }
                         var sign_start = false;
                         var sign_day = false;
                         for(var j in g_sevenDays){
-                            if(date.toDateString() == g_sevenDays[j].toDateString()){
-                                console.log(g_sevenDays[j].toDateString());
+                            if(date.toLocaleDateString() == g_sevenDays[j].toLocaleDateString()){
                                 sign_day = true;
                                 if(j == 0){
                                     sign_start = true;
@@ -213,18 +572,15 @@
                                 break;
                             }
                         }
-
                         if(sign_day){
                             if(!sign_start){
                                 return 'day range';
-                            }else{
-                                return 'day active';
                             }
                         }
-//                    }
                 }
 
             }).on('changeDate', function(e){
+//                改变日期后的跳转！
 //                $('#date-for-marketing-btn').attr("start-date",e.format(0,'yyyy-mm-dd'));
             });
 
