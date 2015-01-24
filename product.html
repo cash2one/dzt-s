@@ -53,15 +53,21 @@
         .datetime-table .hour-row .d-td .t{display:inline-block;width: 20px;height: 20px;}
         .datetime-table .hour-row .d-td .t:hover{cursor: pointer;}
         .datetime-table .hour-row .d-td .a{background-color: #eee;}
+        .datetime-table .hour-row .d-td .a:hover{cursor: default;}
         .datetime-table .hour-row .d-td .b{background-color: #ffbb9f;}
         .datetime-table .hour-row .d-td .c{background-color: #fc7d67;}
         .datetime-table .hour-row .d-td .d{background-color: #f35a4a;}
         .datetime-table .hour-row .d-td .e{background-color: #8b231d;}
 
 /*        .datetime-table .hour-row .d-td.rel{position: relative;}*/
-        .datetime-table .hour-row .d-td.rel .t{position: absolute;left: 50%; top: 50%;margin-left: -10px;margin-top: -12px;z-index: 2000;}/*如果更改了小方框的大小，则需要更改此处设置*/
+        .datetime-table .hour-row .d-td.rel .t{position: absolute;left: 50%; top: 50%;margin-left: -10px;z-index: 2000;margin-top: 0px;}/*如果更改了小方框的大小，则需要更改此处设置*/
+        @-moz-document url-prefix(){.datetime-table .hour-row .d-td.rel .t{margin-top: -12px;}}
+        @media screen and (-webkit-min-device-pixel-ratio:0) {.datetime-table .hour-row .d-td.rel .t {margin-top: -12px;}}
 
-        .datetime-table .hour-row .d-td.rel .popover.bottom{margin-top: 17px;display: block;left: 50%;top: 50%;margin-left: -136px;box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);width: 272px;max-width: 900px;}
+        .datetime-table .hour-row .d-td.rel .popover.bottom{margin-top: 29px;display: block;left: 50%;top: 50%;margin-left: -136px;box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);width: 272px;max-width: 900px;}
+        @-moz-document url-prefix(){.datetime-table .hour-row .d-td.rel .popover.bottom{margin-top: 17px;}}
+        @media screen and (-webkit-min-device-pixel-ratio:0) {.datetime-table .hour-row .d-td.rel .popover.bottom{margin-top: 17px;}}
+
         .datetime-table .hour-row .d-td.rel .popover .popover-arrow{position: absolute;border: 1px solid rgba(0, 0, 0, 0.2);width: 40px;height: 40px;margin-left: -20px;margin-top: -40px;border-bottom: 3px solid #f7f7f7;background-color: #f7f7f7;box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);left: 50%;border-top-left-radius: 3px;border-top-right-radius: 3px;}
         .datetime-table .hour-row .d-td.rel .popover .popover-content{padding: 14px 14px 9px;}
 
@@ -523,7 +529,7 @@
                 </div>
                 <!--上下架分布-->
                 <div class="row margin-top-row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-8">
                         <div class="d-table datetime-table">
                             <div class="d-tr header-row">
                                 <div class="d-td hour">时间</div>
@@ -824,13 +830,19 @@
     <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script type="text/javascript">
         $(function(){
-            $(".datetime-table .hour-row .d-td .t").hover(
+            $(".datetime-table .hour-row .d-td .t:not(.a)").hover(
                 function(){
                    var d_td = $(this).parent();
                    if(!d_td.is(".rel")){
-                        var popover = $('<div role="tooltip" class="popover bottom"><div class="popover-arrow"></div><h3 class="popover-title">数据</h3><div class="popover-content"><ul class="product-list-ul"></ul></div></div>');
-                       //这里加载数据
-                        for(i=0;i<6;i++){
+                        var popover = $('<div role="tooltip" class="popover bottom"><div class="popover-arrow"></div><div class="popover-content"><ul class="product-list-ul"></ul></div></div>');
+                        //这里加载数据
+                        var pro_length = 2;
+                        var col_index = d_td.index();
+                        var time_str = d_td.prevAll(".hour").text().replace(":00","时");
+                        var next_hour_str = (parseInt(time_str.replace("时","")) + 1) + "时";
+                        var date_time_str = $(".datetime-table .header-row .d-td").eq(col_index).text() + " " + time_str + "~" + next_hour_str;
+                        popover.find('.popover-arrow').after('<h3 class="popover-title">' + date_time_str  + ' 共<span class="text-danger">' + pro_length + '</span>个宝贝</h3>')
+                        for(i=0;i<pro_length;i++){
                             popover.find('ul').append('<li><a href="#" title="查看详情"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>')
                         }
                         d_td.append(popover);

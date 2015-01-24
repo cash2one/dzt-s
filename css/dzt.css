@@ -109,7 +109,7 @@ body{height:100%;color: #222222; background: #fff;font-family: "微软雅黑","�
 .nav-tree-box dl dl .checked{padding-left: 31px;}
 .nav-tree-box dl dl dl .checked{padding-left: 47px;}
 
-/*收缩样式*/
+/*导航收缩样式*/
 .pack-toggle{height:36px;line-height: 36px;position: fixed;bottom: 10px;width: 216px;background: #fafafa;z-index: 999;}
 .pack-toggle:hover{background: #f6f6f6;cursor: pointer;}
 .pack-toggle:hover .pack-toggle-trigger{color: #4184f3;}
