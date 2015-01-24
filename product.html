@@ -47,9 +47,12 @@
 
         .datetime-table{width: 100%;}
         .datetime-table .d-td{text-align: center;vertical-align: middle;}
-        .datetime-table .d-td.hour{width: 3%;}
-        .datetime-table .header-row .d-td{padding: 10px 0px;color: #777;}
+        .datetime-table .d-td.hour{width: 5%;text-align: right;min-width: 50px;}
+        .datetime-table .header-row .d-td{padding: 10px 0px;color: #777;font-weight: 700;}
+        .datetime-table .hour-row:hover{background-color: #fafafa;}
+        .datetime-table .hour-row:hover .d-td.hour{font-weight: 700;}
         .datetime-table .hour-row .d-td{padding: 2px 0px;position: relative;}
+        .datetime-table .hour-row .d-td.hour{}
         .datetime-table .hour-row .d-td .t{display:inline-block;width: 20px;height: 20px;}
         .datetime-table .hour-row .d-td .t:hover{cursor: pointer;}
         .datetime-table .hour-row .d-td .a{background-color: #eee;}
@@ -71,7 +74,15 @@
         .datetime-table .hour-row .d-td.rel .popover .popover-arrow{position: absolute;border: 1px solid rgba(0, 0, 0, 0.2);width: 40px;height: 40px;margin-left: -20px;margin-top: -40px;border-bottom: 3px solid #f7f7f7;background-color: #f7f7f7;box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);left: 50%;border-top-left-radius: 3px;border-top-right-radius: 3px;}
         .datetime-table .hour-row .d-td.rel .popover .popover-content{padding: 14px 14px 9px;}
 
-
+        .legend-box{width: 60px}
+        .legend li{line-height: 30px;}
+        .legend li span{display:inline-block;width: 20px;height: 20px;}
+        .legend li span:hover{cursor: pointer;border: 1px solid #777;}
+        .legend li .a{background-color: #eee;}
+        .legend li .b{background-color: #ffbb9f;}
+        .legend li .c{background-color: #fc7d67;}
+        .legend li .d{background-color: #f35a4a;}
+        .legend li .e{background-color: #8b231d;}
     </style>
   </head>
   <body>
@@ -798,6 +809,20 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-xs-4">
+                        <div class="legend-box border-box text-center">
+                            <div class="h4 text-success">图例</div>
+                            <ul class="legend">
+                                <li>少</li>
+                                <li><span class="a help" title="0个"></span></li>
+                                <li><span class="b help" title="1-5个"></span></li>
+                                <li><span class="c help" title="6-10个"></span></li>
+                                <li><span class="d help" title="11-15个"></span></li>
+                                <li><span class="e help" title="16-20个"></span></li>
+                                <li>多</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
          </div>
@@ -830,6 +855,11 @@
     <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script type="text/javascript">
         $(function(){
+            $(".legend span").tooltip({//帮助
+                placement:'right',
+                trigger:'hover'
+            });
+
             $(".datetime-table .hour-row .d-td .t:not(.a)").hover(
                 function(){
                    var d_td = $(this).parent();
