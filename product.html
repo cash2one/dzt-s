@@ -30,24 +30,42 @@
         .d-table .d-tr{display: table-row;}
         .d-table .d-td,.d-table .d-thead .d-th{display: table-cell;}
 
+
+        .datetime-table .hour.t1,.datetime-table .hour.t0{color: #2d334e;}
+        .datetime-table .hour.t2,.datetime-table .hour.t23{color: #39354e;}
+        .datetime-table .hour.t3,.datetime-table .hour.t22{color: #48384d;}
+        .datetime-table .hour.t4,.datetime-table .hour.t21{color: #5a3c4d;}
+        .datetime-table .hour.t5,.datetime-table .hour.t20{color: #6e404d;}
+        .datetime-table .hour.t6,.datetime-table .hour.t19{color: #83444c;}
+        .datetime-table .hour.t7,.datetime-table .hour.t18{color: #98484c;}
+        .datetime-table .hour.t8,.datetime-table .hour.t17{color: #ac4c4b;}
+        .datetime-table .hour.t9,.datetime-table .hour.t16{color: #c0504b;}
+        .datetime-table .hour.t10,.datetime-table .hour.t15{color: #d2544b;}
+        .datetime-table .hour.t11,.datetime-table .hour.t14{color: #e2574a;}
+        .datetime-table .hour.t12,.datetime-table .hour.t13{color: #ee594a;}
+
+
         .datetime-table{width: 100%;}
         .datetime-table .d-td{text-align: center;vertical-align: middle;}
-        .datetime-table .d-td.hour{width: 2%;}
+        .datetime-table .d-td.hour{width: 3%;}
         .datetime-table .header-row .d-td{padding: 10px 0px;color: #777;}
-        .datetime-table .hour-row .d-td{padding: 2px 0px;}
-        .datetime-table .hour-row .d-td span.a,.datetime-table .hour-row .d-td span.b,.datetime-table .hour-row .d-td span.c,.datetime-table .hour-row .d-td span.d,.datetime-table .hour-row .d-td span.e{display: inline-block;width: 20px;height: 20px;border: 1px solid #fff;}
-        .datetime-table .hour-row .d-td span.a:hover,.datetime-table .hour-row .d-td span.b:hover,.datetime-table .hour-row .d-td span.c:hover,.datetime-table .hour-row .d-td span.d:hover,.datetime-table .hour-row .d-td span.e:hover{border: 1px solid #222;cursor: pointer;}
-        .datetime-table .hour-row .d-td .a{background-color: #ccc;}
+        .datetime-table .hour-row .d-td{padding: 2px 0px;position: relative;}
+        .datetime-table .hour-row .d-td .t{display:inline-block;width: 20px;height: 20px;}
+        .datetime-table .hour-row .d-td .t:hover{cursor: pointer;}
+        .datetime-table .hour-row .d-td .a{background-color: #eee;}
         .datetime-table .hour-row .d-td .b{background-color: #ffbb9f;}
         .datetime-table .hour-row .d-td .c{background-color: #fc7d67;}
         .datetime-table .hour-row .d-td .d{background-color: #f35a4a;}
         .datetime-table .hour-row .d-td .e{background-color: #8b231d;}
 
-        .datetime-table .hour-row .d-td.rel{position: relative;}
-        .datetime-table .hour-row .d-td.rel span.a{position: absolute;left: 50%; top: 50%;margin-left: -10px;margin-top: -10px;z-index: 2000;}/*如果更改了小方框的大小，则需要更改此处设置*/
+/*        .datetime-table .hour-row .d-td.rel{position: relative;}*/
+        .datetime-table .hour-row .d-td.rel .t{position: absolute;left: 50%; top: 50%;margin-left: -10px;margin-top: -12px;z-index: 2000;}/*如果更改了小方框的大小，则需要更改此处设置*/
 
-        .datetime-table .hour-row .d-td.rel .popover.bottom{margin-top: -20px;display: block;left: 50%;top: 50%;margin-left: -20px;max-width: 800px;box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);}
-        .datetime-table .hour-row .d-td.rel .popover .popover-content{padding: 28px 14px 9px;}
+        .datetime-table .hour-row .d-td.rel .popover.bottom{margin-top: 17px;display: block;left: 50%;top: 50%;margin-left: -136px;box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);width: 272px;max-width: 900px;}
+        .datetime-table .hour-row .d-td.rel .popover .popover-arrow{position: absolute;border: 1px solid rgba(0, 0, 0, 0.2);width: 40px;height: 40px;margin-left: -20px;margin-top: -40px;border-bottom: 3px solid #f7f7f7;background-color: #f7f7f7;box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);left: 50%;border-top-left-radius: 3px;border-top-right-radius: 3px;}
+        .datetime-table .hour-row .d-td.rel .popover .popover-content{padding: 14px 14px 9px;}
+
+
     </style>
   </head>
   <body>
@@ -67,6 +85,7 @@
            </div>
        </div>
   </div>
+
   <div class="content-bg">
       <div class="contain-body clearfix">
          <div class="nav-side l">
@@ -517,24 +536,259 @@
                                 <div class="d-td">周日</div>
                             </div>
                             <div class="d-tr hour-row">
-                                <div class="d-td hour">0:00</div>
-                                <div class="d-td rel">
-                                <span class="a"></span>
-                                <div role="tooltip" class="popover bottom">
-                                    <div class="popover-content">
-                                        <ul class="product-list-ul" data-brackets-id="44721">
-                                            <li><a href="#"><img alt="" src="images/none-pic.gif" class="img-thumbnail"></a></li>
-                                            <li><a href="#"><img alt="" src="images/none-pic.gif" class="img-thumbnail"></a></li>
-                                        </ul>
+                                <div class="d-td hour t0">0:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t b"></span></div>
+                                <div class="d-td"><span class="t c"></span></div>
+                                <div class="d-td"><span class="t d"></span></div>
+                                <div class="d-td"><span class="t e"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span>
+<!--
+                                    <div role="tooltip" class="popover bottom">
+                                        <div class="popover-arrow"></div>
+                                        <div class="popover-content">
+                                            <ul class="product-list-ul">
+                                                <li><a href="#"><img alt="" src="images/none-pic.gif" class="img-thumbnail"></a></li>
+                                                <li><a href="#"><img alt="" src="images/none-pic.gif" class="img-thumbnail"></a></li>
+                                                <li><a href="#"><img alt="" src="images/none-pic.gif" class="img-thumbnail"></a></li>
+                                                <li><a href="#"><img alt="" src="images/none-pic.gif" class="img-thumbnail"></a></li>
+                                                <li><a href="#"><img alt="" src="images/none-pic.gif" class="img-thumbnail"></a></li>
+                                            </ul>
+                                        </div>
                                     </div>
+-->
                                 </div>
-                                </div>
-                                <div class="d-td"><span class="b"></span></div>
-                                <div class="d-td"><span class="c"></span></div>
-                                <div class="d-td"><span class="d"></span></div>
-                                <div class="d-td"><span class="e"></span></div>
-                                <div class="d-td"><span class="a"></span></div>
-                                <div class="d-td"><span class="a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t1">1:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t2">2:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t3">3:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t4">4:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t5">5:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t6">6:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t7">7:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t8">8:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t9">9:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t10">10:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t11">11:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t12">12:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t13">13:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t14">14:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t15">15:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t16">16:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t17">17:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t18">18:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t19">19:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t20">20:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t21">21:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t22">22:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                            </div>
+                            <div class="d-tr hour-row">
+                                <div class="d-td hour t23">23:00</div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
+                                <div class="d-td"><span class="t a"></span></div>
                             </div>
                         </div>
                     </div>
@@ -544,12 +798,20 @@
       </div>
   </div>
 <style>
-.product-list-ul li{padding: 10px 10px;}
+/*.popover{max-width: 268px;}*/
+.product-list-ul{}
+.product-list-ul li{padding: 5px 5px;display: inline-block;}
 .product-list-ul li:hover{background-color: #e7e7e7;}
 .product-list-ul li a{display: block;width: 50px;}
 </style>
 <div id="product-list" class="hide">
     <ul class="product-list-ul">
+        <li><a href="#"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>
+        <li><a href="#"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>
+        <li><a href="#"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>
+        <li><a href="#"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>
+        <li><a href="#"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>
+        <li><a href="#"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>
         <li><a href="#"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>
         <li><a href="#"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>
     </ul>
@@ -562,9 +824,49 @@
     <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script type="text/javascript">
         $(function(){
-            $(".datetime-table .hour-row .d-td span").hover(function(){
+            $(".datetime-table .hour-row .d-td .t").hover(
+                function(){
+                   var d_td = $(this).parent();
+                   if(!d_td.is(".rel")){
+                        var popover = $('<div role="tooltip" class="popover bottom"><div class="popover-arrow"></div><h3 class="popover-title">数据</h3><div class="popover-content"><ul class="product-list-ul"></ul></div></div>');
+                       //这里加载数据
+                        for(i=0;i<6;i++){
+                            popover.find('ul').append('<li><a href="#" title="查看详情"><img class="img-thumbnail" src="images/none-pic.gif" alt=""></a></li>')
+                        }
+                        d_td.append(popover);
+                        d_td.addClass("rel");
+                   }
+                },function(){
 
-            });
+                });
+            $(".datetime-table .hour-row .d-td").hover(function(){
+
+            },function(){
+                if($(this).is(".rel")){
+                    $(this).find(".popover").detach();
+                    $(this).removeClass("rel");
+                }
+            })
+//            $(".datetime-table .hour-row .d-td span").hover(
+//                function(e){
+//                    $('.popover').detach();
+//                    $(this).popover('show');
+//                },
+//                function(e){
+//                    $('.popover').detach();
+//                });
+//            $(".datetime-table .hour-row .d-td").hover(function(){},
+//                function(){
+//                    console.log("out")
+//                });
+//            $(".datetime-table .hour-row .d-td span").popover({
+//                trigger:'manual',
+//                html:true,
+//                container:'body',
+//                placement:'top',
+//                title:'下架宝贝',
+//                content:$("#product-list").html()
+//            });
             $(".ico-font.help").tooltip({//帮助
                 placement:'top',
                 trigger:'hover'
