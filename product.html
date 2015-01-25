@@ -53,7 +53,7 @@
         .datetime-table .header-row .d-td.hover{font-weight: 700;color: #222;}
         .datetime-table .hour-row .d-td.hover{background: url(images/dataTimeTableBg.png) center top repeat-y;}
 */
-        .datetime-table .hour-row:hover{background-color: #fefefe;}
+        .datetime-table .hour-row:hover{background-color: #fbfbfb;}
         .datetime-table .hour-row:hover .d-td.hour{font-weight: 700;}
         .datetime-table .hour-row .d-td{padding: 4px 10px 0px;position: relative;}
         .datetime-table .hour-row .d-td.hour{border-right: 1px solid #e7e7e7;}
@@ -567,11 +567,11 @@
                             <div class="h4 text-success">图例</div>
                             <ul class="legend">
                                 <li>少</li>
-                                <li><span class="a help" title="0个"></span></li>
-                                <li><span class="b help" title="1-5个"></span></li>
-                                <li><span class="c help" title="6-10个"></span></li>
-                                <li><span class="d help" title="11-15个"></span></li>
-                                <li><span class="e help" title="16-20个"></span></li>
+                                <li><span level="a" class="a help" title=""></span></li>
+                                <li><span level="b" class="b help" title=""></span></li>
+                                <li><span level="c" class="c help" title=""></span></li>
+                                <li><span level="d" class="d help" title=""></span></li>
+                                <li><span level="e" class="e help" title=""></span></li>
                                 <li>多</li>
                             </ul>
                         </div>
@@ -588,14 +588,28 @@
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script type="text/javascript">
+
+
         var list = {plist:[
             {id:123,title:'产品标题1',img:'none-pic.gif',timeStamp:1422083626},
             {id:124,title:'产品标题2',img:'none-pic.gif',timeStamp:1421985665},
             {id:126,title:'产品标题3',img:'none-pic.gif',timeStamp:1421985634},
-            {id:125,title:'产品标题4',img:'none-pic.gif',timeStamp:1421895665}
+            {id:125,title:'产品标题4',img:'none-pic.gif',timeStamp:1421895665},
+            {id:123,title:'产品标题1',img:'none-pic.gif',timeStamp:1422083626},
+            {id:124,title:'产品标题2',img:'none-pic.gif',timeStamp:1421985665},
+            {id:126,title:'产品标题3',img:'none-pic.gif',timeStamp:1421985634},
+            {id:123,title:'产品标题1',img:'none-pic.gif',timeStamp:1422083626},
+            {id:124,title:'产品标题2',img:'none-pic.gif',timeStamp:1421985665},
+            {id:126,title:'产品标题3',img:'none-pic.gif',timeStamp:1421985634},
+            {id:125,title:'产品标题4',img:'none-pic.gif',timeStamp:1421895665},
+            {id:123,title:'产品标题1',img:'none-pic.gif',timeStamp:1422083626},
+            {id:124,title:'产品标题2',img:'none-pic.gif',timeStamp:1421985665},
+            {id:126,title:'产品标题3',img:'none-pic.gif',timeStamp:1421985634},
         ]}
 
-        function builtArray(product_list){
+
+
+        function builtArray(productList){
             var proArray = new Array();
             for(var i=0;i<24;i++){
                 proArray[i] = new Array();
@@ -604,63 +618,102 @@
                 }
             }
 
-            for(var i in product_list.plist){
-                var date = new Date(product_list.plist[i].timeStamp * 1000);
+            for(var i in productList.plist){
+                var date = new Date(productList.plist[i].timeStamp * 1000);
                 var week = date.getDay();
                 var hour = date.getHours();
-                proArray[hour][week].push(product_list.plist[i]);
+                proArray[hour][week].push(productList.plist[i]);
             }
             return proArray;
         }
 
-        function builtDateTimeTable(product_list_array){
-            var daylist = [1,2,3,4,5,6,0];
+        function builtDateTimeTable(productInDayTimeArray){
+            var dayList = [1,2,3,4,5,6,0];
             var html = '';
+            var lengthArray = new Array();
 
             for(var i=0;i<24;i++){
                 html += '<div class="d-tr hour-row">';
                 html += '<div class="d-td hour t' + i + '">' + i +':00</div>';
-                for(var j in daylist){
-                    var length = product_list_array[i][daylist[j]].length;
-                    var level = "a";
+                for(var j in dayList){
+                    var length = productInDayTimeArray[i][dayList[j]].length;
 
-                    var pros="[";
+                    var pros = "[";
                     for(var z=0;z<length;z++){
-                        pros+="{id:"+product_list_array[i][daylist[j]][z].id+",title:'" + product_list_array[i][daylist[j]][z].title + "',img:'"+product_list_array[i][daylist[j]][z].img + "',timeStamp:" + product_list_array[i][daylist[j]][z].timeStamp + "},"
+                        pros += "{id:"+productInDayTimeArray[i][dayList[j]][z].id+",title:'" + productInDayTimeArray[i][dayList[j]][z].title + "',img:'"+productInDayTimeArray[i][dayList[j]][z].img + "',timeStamp:" + productInDayTimeArray[i][dayList[j]][z].timeStamp + "},";
                     }
-                    pros += "]"
-                    switch(length){
-                        case 0:
-                            level="a";
-                            break;
-                        case 1:
-                            level="b";
-                            break;
-                        case 2:
-                            level="c";
-                            break;
-                        case 3:
-                            level="d";
-                            break;
-                        case 4:
-                            level="e";
-                            break;
-                        default:
-                            level="e";
-                    }
-                    html += '<div class="d-td"><span class="t ' + level + '" pro-num="' + length + '" pro-list="' + pros +'"></span></div>';
+                    pros += "]";
+
+                    lengthArray.push(length);
+                    html += '<div class="d-td"><span class="t" pro-num="' + length + '" pro-list="' + pros +'"></span></div>';
                 }
                 html += '</div>';
             }
-            return html;
+
+            var level = assessLevel(lengthArray);
+            $(".legend-box li").each(function(){
+                if($(this).index()>0 && $(this).index()<6){
+                    var l = $(this).find(".help").attr("level");
+                    var range = level[l];
+                    var prevRange = 0;
+                    if($(this).index()==1){
+                        $(this).find(".help").attr("title","0个");
+                    }else{
+                        prevRange = level[$(".legend-box li").eq($(this).index() - 1).find("span").attr("level")];
+                        var leftRange = prevRange + 1;
+                        if(leftRange == range){
+                            $(this).find(".help").attr("title",range + "个");
+                        }else{
+                            $(this).find(".help").attr("title",leftRange + "-" + range + "个");
+                        }
+                    }
+                }
+            })
+            return fillLevel(html,level);
         }
 
-		function varLevel(){
+        function fillLevel(html,level){
+            return $(html).each(function(){
+                $(this).find(".t").each(function(){
+                    var num = parseInt($(this).attr("pro-num"));
+                    var levelClass = "a";
+                    if(num!=0){
+                        if(num>level.a && num<=level.b){
+                            levelClass = "b";
+                        }else if(num>level.b && num<=level.c){
+                            levelClass = "c";
+                        }else if(num>level.c && num<=level.d){
+                            levelClass = "d";
+                        }else if(num>level.d && num<=level.e){
+                            levelClass = "e";
+                        }
+                    }
+                    $(this).addClass(levelClass);
+                })
 
+            });
+        }
+
+        //评估等级
+		function assessLevel(array){
+            var max = Math.max.apply(Math,array);
+            var res = (max%4==0)?4:max%4;
+            var border = max + 4-res;
+            var a = 0;
+            var b = border/4;
+            var c = b*2
+            var d = b*3
+            var e = border;
+            var level = {a:a,b:b,c:c,d:d,e:e};
+            return level;
 		}
-        $(function(){
-            $(".datetime-table .header-row").after(builtDateTimeTable(builtArray(list)));
 
+
+
+        $(function(){
+            console.time("test");
+            $(".datetime-table .header-row").after(builtDateTimeTable(builtArray(list)));
+             console.timeEnd("test");
             $(".legend span").tooltip({//图例提示
                 placement:'right',
                 trigger:'hover'
@@ -683,7 +736,9 @@
                             popover.find('ul').append('<li><a href="' + pro_list[i].id + '" title="' + pro_list[i].title + '"><img class="img-thumbnail" src="images/' + pro_list[i].img + '" alt=""></a></li>')
                         }
                         d_td.append(popover);
-                        d_td.addClass("rel");
+//                        d_td.addClass("rel");
+                        $(".popover").fadeIn(100);
+                        d_td.addClass("rel")
                    }
                 },function(){
 

@@ -57,28 +57,24 @@
   </div>
   <div class="content">
       <div class="container-fluid">
-        <div class="row top-row">
-            <div class="col-xs-12">
-            </div>
-        </div>
         <div class="row search-row">
             <div class="col-xs-12 col-search">
-              <div class="text-center main-title">
-                 <h1>看看别人的生意怎么做？</h1>
-                 <h4>分析你的对手，学习你的对手，超越你的对手</h4>
-              </div>
-               <ul class="search-type-tab clearfix">
-                   <li id="type-key-word"><a href="javascript:;">关键词</a><div class="arrow"></div></li>
-                   <li id="type-product"><a href="javascript:;">宝贝</a><div class="arrow"></div></li>
-                   <li id="type-shop"><a href="javascript:;">店铺</a><div class="arrow"></div></li>
-               </ul>
+                <div class="text-center main-title">
+                    <h1>看看别人的生意怎么做？</h1>
+                    <h4>分析你的对手，学习你的对手，超越你的对手</h4>
+                </div>
+                <ul class="search-type-tab clearfix">
+                    <li id="type-key-word"><a href="javascript:;">关键词</a><div class="arrow"></div></li>
+                    <li id="type-product"><a href="javascript:;">宝贝</a><div class="arrow"></div></li>
+                    <li id="type-shop"><a href="javascript:;">店铺</a><div class="arrow"></div></li>
+                </ul>
                 <form class="form-inline clearfix" role="form">
-                  <div class="form-group search-form-group l">
-                    <div class="input-group search-input-group">
-                      <input id="search" class="form-control input-lg search-input" type="text" placeholder="请输入您要查询的关键词">
+                    <div class="form-group search-form-group l">
+                        <div class="input-group search-input-group">
+                            <input id="search" class="form-control input-lg search-input" type="text" placeholder="请输入您要查询的关键词">
+                        </div>
                     </div>
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg btn-submit-search l">&nbsp;&nbsp;搜&nbsp;索&nbsp;&nbsp;</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-submit-search l">&nbsp;&nbsp;搜&nbsp;索&nbsp;&nbsp;</button>
                 </form>
             </div>
         </div>
@@ -127,40 +123,13 @@
                     $("#search").attr("placeholder","请输入卖家旺旺");
                 }
             });
-        })
-        $(function(){
-            $(".nav-tree-box dt").each(function(i){
-              if(!$(this).next("dd").is(":empty")){
-                $(this).hover(
-                    function(e){
-                        if($(this).next("dd").is(":visible")){
-                            $(this).addClass("fold");
-                        }else{
-                            $(this).addClass("unfold");
-                        }
-                    },function(e){
-                        $(this).removeClass("fold");
-                        $(this).removeClass("unfold");
-                    });
-                $(this).click(function(e){
-                    $(this).next("dd").toggleClass("hide");
-                    $(this).toggleClass("fold");
-                    $(this).toggleClass("unfold");
-                })
-              }else{
-                $(this).click(function(e){
-                    $(".nav-tree-box a").removeClass("checked");
-                    $(this).find("a").toggleClass("checked");
-                });
-              }
-            });
             $("#user-button").popover({
                 trigger:'focus',
                 placement:'bottom',
                 html:true,
                 content:$("#user-pop-html").html()
             });
-        })
+        });
     </script>
   </body>
 </html>
