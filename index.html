@@ -9,86 +9,151 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/dzt.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-/*        .container-bg{height: 100%;}*/
-		.index-header{height: 90px;line-height: 90px;position:inherit;}
+        body{-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;}
+/*       header调整*/
+        .header-wrapper{box-shadow: none;border-bottom: 1px solid #e7e7e7;}
+        .btn-list .signUpBtn{margin-left: 20px;}
+        .btn-list .btn{border-radius: 999px;padding: 5px 32px;}
+		.index-header{height: 80px;line-height: 80px;position:inherit;}
         .index-content{padding-top: 0px;}
-        .main-title{margin-bottom: 50px;}
-        .main-title h4{color: #777;}
-/*        .search-row{margin:100px auto 200px;width: 600px;}*/
-        #search{width: 470px;}
-/*        .search-form-group,.search-input-group{width: 100%;}*/
-/*        .search-form-group{margin-left: -95px;padding-left: 95px;}*/
-        .btn-submit-search{margin-left: 5px;}
-        .search-type-tab{margin-bottom: 10px;}
-        .search-type-tab li{float: left;padding: 5px 10px;border-radius: 2px;position: relative;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
-        .search-type-tab li a{font-size: 17px;color: #777;-webkit-transition: color 0.2s ease-out 0s;-moz-transition: color 0.2s ease-out 0s;transition: color 0.2s ease-out 0s;}
-        .search-type-tab li a:hover{color:#222;}
+
 
         body.type-key-word #type-key-word,body.type-product #type-product,body.type-shop #type-shop{background-color: #f35a4a;}
         body.type-key-word #type-key-word a,body.type-product #type-product a,body.type-shop #type-shop a{color: #fff;}
         body.type-key-word #type-key-word .arrow,body.type-product #type-product .arrow,body.type-shop #type-shop .arrow{position: absolute;border-bottom: 0px;height: 0;width: 0;bottom: -5px;border-style: solid;left: 50%;margin-left: -5px; border-width: 5px 5px 0px 5px; border-color: transparent;border-top-color:#f35a4a;}
 
-        .search-table{display: table;width: 100%;height: 100%;}
-		.search-table-cell{display: table-cell;text-align: center;vertical-align: middle;}
-		.inline-box{display: inline-block;}
-		.placeholder{height: 300px;}
+        .d-table{display: table;width: 100%;height: 100%;}
+        .d-table-row{display: table-row;}
+		.d-table-cell{display: table-cell;text-align: center;vertical-align: middle;}
+        .d-table-cell h1.b{font-size: 72px;font-weight: 700;}
+        .d-table-cell h2.b{font-size: 64px;font-weight: 700;}
+        .d-table-cell h3.b{font-size: 48px;font-weight: 700;}
+        .d-table-cell h4.b{font-size: 32px;}
+        .d-table-cell h5.b{font-size: 24px;}
+        .search-table .top-fit{margin-top: -70px;}
+        .search-table .main-title{margin-bottom: 30px;}
+        .search-table .main-title h3{margin-bottom: 15px;font-weight: normal;}
+        .search-table .main-title h5{color: #777;}
+        .search-table #search{width: 470px;}
+        .search-table .btn-submit-search{margin-left: 5px;}
+        .search-table .search-type-tab{margin-bottom: 10px;}
+        .search-table .search-type-tab li{float: left;padding: 5px 10px;border-radius: 2px;position: relative;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
+        .search-table .search-type-tab li a{font-size: 17px;color: #777;-webkit-transition: color 0.2s ease-out 0s;-moz-transition: color 0.2s ease-out 0s;transition: color 0.2s ease-out 0s;}
+        .search-table .search-type-tab li a:hover{color:#222;}
+		.search-table .inline-box{display: inline-block;}
+		.search-table .placeholder{height: 300px;}
+
+
+        #fp-nav.right{right: 17px;}
+        #fp-nav{margin-top: -32px;opacity: 1;position: fixed;top: 50%;z-index: 100;}
+        #fp-nav ul li{display: block;height: 13px;margin: 7px;position: relative;width: 14px;}
+        #fp-nav ul li a{cursor: pointer;display: block;height: 100%;position: relative;text-decoration: none;width: 100%;z-index: 1;}
+        #fp-nav ul li a span{background-color: #222;border-radius: 50%;height: 10px;width:10px;left: 2px;position: absolute;top: 2px;z-index: 1;}
+        #fp-nav ul li a.active span{background-color: #f35a4a;}
+
+        .black-box{padding:20px 30px;background-color: rgba(0,0,0,0.1);border-radius: 5px;}
+
+        .circular{width: 680px;height: 680px;border-radius: 100%;position: absolute;margin-top: -340px;margin-left: 10%;}
+        .circular.blue{background-color:#4184f3; }
+        .left-cell,.right-cell{width:  50%;}
+        .left-cell{position:relative;}
+
+        .right-cell{text-align: left;}
+        .right-cell h1.b{margin-bottom: 40px;}
+        .right-cell .des-box{padding-right: 60px;}
+        .right-cell .des-box p{line-height: 180%;letter-spacing: 2px;font-size: 36px;text-indent: 2em;}
+        .right-cell .pics{margin-top: 30px;}
+        .right-cell .pics li{display: inline;margin-right: 10px;}
     </style>
   </head>
   <body class="type-key-word">
-  <div class="container-fluid header-wrapper index-header">
-       <div class="row">
-           <div class="col-xs-6 col-logo">
-               <a class="logo" href="#"><img src="images/logo_b.png" alt=""></a>
-               <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
-           </div>
-           <div class="col-xs-6 header-right-side">
-               <ul class="clearfix">
-                  <li class="user">
-                      <a id="user-button" href="#"><span class="account">102700317@qq.com</span><span class="ico-font">&#xe604;</span></a>
-                  </li>
-                  <li class="pay-text"><a href="#">续费升级</a></li>
-               </ul>
-           </div>
-       </div>
-  </div>
-  <div class="content index-content search-table">
-      <div class="search-table-cell">
-		  <div class="container-fluid">
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="text-center main-title">
-						<h1>看看别人的生意怎么做？</h1>
-						<h4>分析你的对手，学习你的对手，超越你的对手</h4>
-					</div>
-					<div class="inline-box">
-						<ul class="search-type-tab inline-box clearfix l">
-							<li id="type-key-word"><a href="javascript:;">关键词</a><div class="arrow"></div></li>
-							<li id="type-product"><a href="javascript:;">宝贝</a><div class="arrow"></div></li>
-							<li id="type-shop"><a href="javascript:;">店铺</a><div class="arrow"></div></li>
-						</ul>
-						<form class="form-inline clearfix" role="form">
-							<div class="form-group search-form-group l">
-								<div class="input-group search-input-group">
-									<input id="search" class="form-control input-lg search-input" type="text" placeholder="请输入您要查询的关键词">
-								</div>
-							</div>
-							<button type="submit" class="btn btn-primary btn-lg btn-submit-search l">&nbsp;&nbsp;搜&nbsp;索&nbsp;&nbsp;</button>
-						</form>
-					</div>
-					<div class="placeholder"></div>
-				</div>
-			</div>
-		  </div>
+  <div id="fullpage">
+      <div class="section">
+          <div class="container-fluid header-wrapper index-header">
+               <div class="row">
+                   <div class="col-xs-6 col-logo">
+                       <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+                       <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+                   </div>
+                   <div class="col-xs-6 header-right-side">
+                       <ul class="btn-list clearfix">
+                          <li class="signUpBtn"><button class="btn btn-danger btn-lg">注&nbsp册</button></li>
+                          <li><button class="btn btn-primary btn-lg">登&nbsp陆</button></li>
+                       </ul>
+                   </div>
+               </div>
+          </div>
+          <div class="content index-content search-table d-table">
+              <div class="d-table-cell">
+                  <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="top-fit">
+                                <div class="text-center main-title">
+                                    <h3 class="b">看看别人的生意怎么做？</h3>
+                                    <h5 class="b">分析你的对手，学习你的对手，超越你的对手</h5>
+                                </div>
+                                <div class="inline-box black-box">
+                                    <ul class="search-type-tab inline-box clearfix l">
+                                        <li id="type-key-word"><a href="javascript:;">关键词</a><div class="arrow"></div></li>
+                                        <li id="type-product"><a href="javascript:;">宝贝</a><div class="arrow"></div></li>
+                                        <li id="type-shop"><a href="javascript:;">店铺</a><div class="arrow"></div></li>
+                                    </ul>
+                                    <form class="form-inline clearfix" role="form">
+                                        <div class="form-group search-form-group l">
+                                            <div class="input-group search-input-group">
+                                                <input id="search" class="form-control input-lg search-input" type="text" placeholder="请输入您要查询的关键词">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-lg btn-submit-search l">&nbsp;&nbsp;搜&nbsp;索&nbsp;&nbsp;</button>
+                                    </form>
+                                </div>
+                                <div class="placeholder"></div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="section">
+          <div class="d-table">
+              <div class="d-table-row">
+                  <div class="d-table-cell left-cell">
+                      <div class="circular blue"></div>
+                  </div>
+                  <div class="d-table-cell right-cell">
+                      <h1 class="b">交易分析</h1>
+                      <div class="des-box">
+                          <p>持续监测竞争对手店铺每日销售情况及单品销售情况，整体上掌握对手的经营变化，为自己的营销策略提供可靠的数据支持。</p>
+                      </div>
+                      <ul class="pics">
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="section">
+          第三屏
+      </div>
+      <div class="section">
+          第四屏
+      </div>
+      <div class="section">
+          第五屏
       </div>
   </div>
-   <div class="footer-bottom">
+   <div class="footer-bottom hide">
        <div class="container-fluid footer">
            <div class="row">
                <div class="col-xs-12">
@@ -119,8 +184,15 @@
     </div>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
     <script type="application/javascript">
         $(function(){
+            $('#fullpage').fullpage({
+                slidesColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+                anchors: ['page1', 'page2', 'page3', 'page4'],
+                navigation: true
+
+            });
             $(".search-type-tab li").click(function(e){
                 $("body").attr("class",$(this).attr("id"));
                 if($(this).is("#type-key-word")){
