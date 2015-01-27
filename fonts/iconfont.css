@@ -70,6 +70,8 @@
 
 .icon-roundclose:before { content: "\e632"; }
 
+.icon-search:before { content: "\e65a"; }
+
 .icon-tag:before { content: "\e646"; }
 
 .icon-shop:before { content: "\e602"; }

@@ -62,21 +62,31 @@
         .left-cell,.right-cell{width:  50%;}
         .left-cell{}
 
-		.circular-box{width: 680px;height: 680px;margin-left: 10%;position: relative;}
+        .right-cell{text-align: left;}
+        .right-cell h1.b{margin-bottom: 40px;}
+        .right-cell .des-box{opacity: 1;}
+        .right-cell .des-box p{line-height: 180%;letter-spacing: 2px;font-size: 36px;text-indent: 2em;}
+        .right-cell .pics{margin-top: 30px;}
+        .right-cell .pics li{display: inline;margin-right: 10px;}
+
+
+		.lImg-rText .des-box{padding-right: 15%;}
+
+		.lText-rImg .right-cell h1.b{text-align: right;}
+		.lText-rImg .right-cell .des-box{padding-left: 15%;}
+		.lText-rImg .right-cell .pics{text-align: right;}
+
+		.circular-box{width: 680px;height: 680px;left: 50%;margin-left: -340px;position:  relative;}
 		.circular-dashed{width: 640px;height: 640px;border-radius: 50%;position: absolute;z-index: 999;}
         .circular{width: 600px;height: 600px;border-radius: 100%; margin: 20px;position: absolute;}
 		.circular .ico-font{font-size: 300px;color: #fff;height: 330px;margin-top: -100px;}
         .circular h3{font-size: 48px;color: #fff;}
 		.circular-dashed.blue{border: 2px dashed #4184f3;}
+		.circular-dashed.red{border: 2px dashed #f35a4a;}
         .circular.blue{background-color:#4184f3;}
 		.circular.red{background-color: #f35a4a;}
 
-        .right-cell{text-align: left;}
-        .right-cell h1.b{margin-bottom: 40px;opacity: 0;}
-        .right-cell .des-box{padding-right: 15%;opacity: 0;}
-        .right-cell .des-box p{line-height: 180%;letter-spacing: 2px;font-size: 36px;text-indent: 2em;}
-        .right-cell .pics{margin-top: 30px;}
-        .right-cell .pics li{display: inline;margin-right: 10px;}
+
         .animation-cell-1{opacity: 0}
 
 		.slideRightRetourn {
@@ -100,6 +110,8 @@
 			-webkit- animation-fill-mode: both;
 			animation-fill-mode: both;
 		}
+
+/*		右到左渐变出现*/
 		@-moz-keyframes slideRightRetourn {
 			0% {
 				-moz-transform-origin: 0 0;
@@ -266,15 +278,13 @@
 
 
 
-
-.animation-target {
-  -webkit-animation: animation 1800ms linear 1 both;
-  animation: animation 1800ms linear 1 both;
+/*图标从左到右弹性出现*/
+.slideRightRunning {
+  -webkit-animation: slideRightRunning 1800ms linear 1 both;
+  animation: slideRightRunning 1800ms linear 1 both;
 }
 
-/* Generated with Bounce.js. Edit at http://goo.gl/Hvlvju */
-
-@-webkit-keyframes animation {
+@-webkit-keyframes slideRightRunning {
   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -900, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -900, 0, 0, 1); }
   1.851852% { -webkit-transform: matrix3d(1, 0, 0, 0, 0.6376, 1, 0, 0, 0, 0, 1, 0, -502.8541, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0.6376, 1, 0, 0, 0, 0, 1, 0, -502.8541, 0, 0, 1); }
   3.703704% { -webkit-transform: matrix3d(1, 0, 0, 0, 0.82704, 1, 0, 0, 0, 0, 1, 0, -268.26428, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0.82704, 1, 0, 0, 0, 0, 1, 0, -268.26428, 0, 0, 1); }
@@ -332,7 +342,7 @@
   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 }
 
-@keyframes animation {
+@keyframes slideRightRunning {
   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -900, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -900, 0, 0, 1); }
   1.851852% { -webkit-transform: matrix3d(1, 0, 0, 0, 0.6376, 1, 0, 0, 0, 0, 1, 0, -502.8541, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0.6376, 1, 0, 0, 0, 0, 1, 0, -502.8541, 0, 0, 1); }
   3.703704% { -webkit-transform: matrix3d(1, 0, 0, 0, 0.82704, 1, 0, 0, 0, 0, 1, 0, -268.26428, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0.82704, 1, 0, 0, 0, 0, 1, 0, -268.26428, 0, 0, 1); }
@@ -390,12 +400,12 @@
   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 }
 
-
+#section1{}
     </style>
   </head>
   <body class="type-key-word">
   <div id="fullpage">
-      <div class="section">
+      <div class="section" id="section1">
           <div class="container-fluid header-wrapper index-header">
                <div class="row">
                    <div class="col-xs-6 col-logo">
@@ -421,7 +431,7 @@
                                     <h5 class="b">分析你的对手，学习你的对手，超越你的对手</h5>
                                 </div>
                                 <div class="inline-box black-box">
-                                    <ul class="search-type-tab inline-box clearfix l">
+                                    <ul class="search-type-tab clearfix">
                                         <li id="type-key-word"><a href="javascript:;">关键词</a><div class="arrow"></div></li>
                                         <li id="type-product"><a href="javascript:;">宝贝</a><div class="arrow"></div></li>
                                         <li id="type-shop"><a href="javascript:;">店铺</a><div class="arrow"></div></li>
@@ -443,7 +453,7 @@
           </div>
       </div>
       <div class="section" id="section2">
-          <div class="d-table">
+          <div class="d-table lImg-rText">
               <div class="d-table-row">
                   <div class="d-table-cell left-cell">
                       <div class="circular-box">
@@ -451,13 +461,31 @@
 						<div class="circular blue">
 							<div class="d-table">
 								<div class="d-table-cell magictime animation-cell-1">
-									<div class="ico-font">&#xe643;</div>
-									<h3>交易走势</h3>
+									<div class="ico-font">&#xe602;</div>
+									<h3>锁定对手</h3>
 								</div>
 							</div>
 						</div>
                       </div>
                   </div>
+                  <div class="d-table-cell right-cell">
+                      <h1 class="b magictime">监测对手</h1>
+                      <div class="des-box">
+                          <p>持续监控指定的店铺，生成每日经营情况报表，及时发现对手店铺的异动情况，为自己的运营策略提供可靠持续的数据支持。</p>
+                      </div>
+                      <ul class="pics">
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="section" id="section3">
+          <div class="d-table lText-rImg">
+              <div class="d-table-row">
                   <div class="d-table-cell right-cell">
                       <h1 class="b magictime">交易分析</h1>
                       <div class="des-box">
@@ -470,11 +498,21 @@
                           <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
                       </ul>
                   </div>
+                  <div class="d-table-cell left-cell">
+                      <div class="circular-box">
+                        <div class="circular-dashed red"></div>
+						<div class="circular red">
+							<div class="d-table">
+								<div class="d-table-cell magictime animation-cell-1">
+									<div class="ico-font">&#xe643;</div>
+									<h3>交易走势</h3>
+								</div>
+							</div>
+						</div>
+                      </div>
+                  </div>
               </div>
           </div>
-      </div>
-      <div class="section">
-          第三屏
       </div>
       <div class="section">
           第四屏
@@ -527,24 +565,45 @@
 						$("#section2 h1.b").addClass("slideRightRetourn").animate({
 							opacity:'1',
 						},500);
-                        $("#section2 .animation-cell-1").addClass("animation-target").animate({
+                        $("#section2 .animation-cell-1").addClass("slideRightRunning").animate({
 							opacity:'1',
 						},500);
 						$("#section2 .des-box").animate({
 							opacity:'1',
 						},300);
 
+					}else if(index == 3){
+						$("#section3 h1.b").addClass("slideLeftRetourn").animate({
+							opacity:'1',
+						},500);
+                        $("#section3 .animation-cell-1").addClass("slideRightRunning").animate({
+							opacity:'1',
+						},500);
+						$("#section3 .des-box").animate({
+							opacity:'1',
+						},300);
 					}
+
 				},
 				onLeave: function(index, direction){
 					if(index == '2'){
 						$("#section2 h1.b").removeClass("slideRightRetourn").animate({
 							opacity:'0',
 						},500);
-                        $("#section2 .animation-cell-1").removeClass("animation-target").animate({
+                        $("#section2 .animation-cell-1").removeClass("slideRightRunning").animate({
 							opacity:'0',
 						},500);
 						$("#section2 .des-box").animate({
+							opacity:'0',
+						},300);
+					}else if(index == 3){
+						$("#section3 h1.b").removeClass("slideLeftRetourn").animate({
+							opacity:'0',
+						},500);
+                        $("#section3 .animation-cell-1").removeClass("slideRightRunning").animate({
+							opacity:'0',
+						},500);
+						$("#section3 .des-box").animate({
 							opacity:'0',
 						},300);
 					}
