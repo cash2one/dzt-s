@@ -35,7 +35,7 @@
         .d-table-cell h3.b{font-size: 48px;font-weight: 700;}
         .d-table-cell h4.b{font-size: 32px;}
         .d-table-cell h5.b{font-size: 24px;}
-        .search-table .top-fit{margin-top: -70px;}
+        .search-table .top-fit{margin-top: -300px;}
         .search-table .main-title{margin-bottom: 30px;}
         .search-table .main-title h3{margin-bottom: 15px;font-weight: normal;}
         .search-table .main-title h5{color: #777;}
@@ -56,19 +56,141 @@
         #fp-nav ul li a span{background-color: #222;border-radius: 50%;height: 10px;width:10px;left: 2px;position: absolute;top: 2px;z-index: 1;}
         #fp-nav ul li a.active span{background-color: #f35a4a;}
 
-        .black-box{padding:20px 30px;background-color: rgba(0,0,0,0.1);border-radius: 5px;}
+        .black-box{padding:20px 30px;/*background-color: rgba(0,0,0,0.1);border-radius: 5px;*/}
 
-        .circular{width: 680px;height: 680px;border-radius: 100%;position: absolute;margin-top: -340px;margin-left: 10%;}
-        .circular.blue{background-color:#4184f3; }
+
         .left-cell,.right-cell{width:  50%;}
-        .left-cell{position:relative;}
+        .left-cell{}
+
+		.circular-box{width: 680px;height: 680px;margin-left: 10%;position: relative;}
+		.circular-dashed{width: 640px;height: 640px;border-radius: 50%;position: absolute;z-index: 999;}
+        .circular{width: 600px;height: 600px;border-radius: 100%; margin: 20px;position: absolute;}
+		.circular .ico-font{font-size: 300px;color: #ccc;}
+		.circular-dashed.blue{border: 2px dashed #4184f3;}
+        .circular.blue{background-color:#4184f3;}
+		.circular.red{background-color: #f35a4a;}
 
         .right-cell{text-align: left;}
-        .right-cell h1.b{margin-bottom: 40px;}
-        .right-cell .des-box{padding-right: 60px;}
+        .right-cell h1.b{margin-bottom: 40px;opacity: 0;}
+        .right-cell .des-box{padding-right: 15%;opacity: 0;}
         .right-cell .des-box p{line-height: 180%;letter-spacing: 2px;font-size: 36px;text-indent: 2em;}
         .right-cell .pics{margin-top: 30px;}
         .right-cell .pics li{display: inline;margin-right: 10px;}
+
+
+		.slideRightRetourn {
+			-webkit-animation-name: slideRightRetourn;
+			-moz-animation-name: slideRightRetourn;
+			-ms-animation-name: slideRightRetourn;
+			-o-animation-name: slideRightRetourn;
+			animation-name: slideRightRetourn
+		}
+		.magictime {
+			-webkit-animation-duration: 0.8s;
+			animation-duration: 0.8s;
+			-webkit- animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+		@-moz-keyframes slideRightRetourn {
+			0% {
+				-moz-transform-origin: 0 0;
+				-moz-transform: translateX(100%);
+				opacity: 0;
+			}
+			100% {
+				-moz-transform-origin: 0 0;
+				-moz-transform: translateX(0%);
+				opacity: 1;
+			}
+		}
+		@-webkit-keyframes slideRightRetourn {
+			0% {
+				-webkit-transform-origin: 0 0;
+				-webkit-transform: translateX(100%);
+				opacity: 0;
+			}
+			100% {
+				-webkit-transform-origin: 0 0;
+				-webkit-transform: translateX(0%);
+				opacity: 1;
+			}
+		}
+		@-o-keyframes slideRightRetourn {
+			0% {
+				-o-transform-origin: 0 0;
+				-o-transform: translateX(100%);
+				opacity: 0;
+			}
+			100% {
+				-o-transform-origin: 0 0;
+				-o-transform: translateX(0%);
+				opacity: 1;
+			}
+		}
+		@-ms-keyframes slideRightRetourn {
+			0% {
+				-ms-transform-origin: 0 0;
+				-ms-transform: translateX(100%);
+				opacity: 0;
+			}
+			100% {
+				-ms-transform-origin: 0 0;
+				-ms-transform: translateX(0%);
+				opacity: 1;
+			}
+		}
+
+/*		虚线圆形动画*/
+		.circular-dashed{
+			-webkit-animation: rotate-infinity 16s linear infinite;
+			-moz-animation: rotate-infinity 16s linear infinite;
+			-ms-animation: rotate-infinity 16s linear infinite;
+			animation: rotate-infinity 16s linear infinite
+		}
+		@keyframes rotate-infinity {
+			from {
+				-webkit-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
+				-ms-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+				-moz-transform: rotate(360deg);
+				-ms-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
+		@-moz-keyframes rotate-infinity {
+			from {
+				-moz-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
+			to {
+				-moz-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
+		@-webkit-keyframes rotate-infinity {
+			from {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
+		@-ms-keyframes rotate-infinity {
+			from {
+				-ms-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
+			to {
+				-ms-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
     </style>
   </head>
   <body class="type-key-word">
@@ -113,7 +235,6 @@
                                         <button type="submit" class="btn btn-primary btn-lg btn-submit-search l">&nbsp;&nbsp;搜&nbsp;索&nbsp;&nbsp;</button>
                                     </form>
                                 </div>
-                                <div class="placeholder"></div>
                             </div>
                         </div>
                     </div>
@@ -121,14 +242,24 @@
               </div>
           </div>
       </div>
-      <div class="section">
+      <div class="section" id="section2">
           <div class="d-table">
               <div class="d-table-row">
                   <div class="d-table-cell left-cell">
-                      <div class="circular blue"></div>
+                      <div class="circular-box">
+                        <div class="circular-dashed blue"></div>
+						<div class="circular blue">
+							<div class="d-table">
+								<div class="d-table-cell">
+									<div class="ico-font">&#xe643;</div>
+									<h3>交易走势</h3>
+								</div>
+							</div>
+						</div>
+                      </div>
                   </div>
                   <div class="d-table-cell right-cell">
-                      <h1 class="b">交易分析</h1>
+                      <h1 class="b magictime">交易分析</h1>
                       <div class="des-box">
                           <p>持续监测竞争对手店铺每日销售情况及单品销售情况，整体上掌握对手的经营变化，为自己的营销策略提供可靠的数据支持。</p>
                       </div>
@@ -190,7 +321,28 @@
             $('#fullpage').fullpage({
                 slidesColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
                 anchors: ['page1', 'page2', 'page3', 'page4'],
-                navigation: true
+                navigation: true,
+				scrollingSpeed:300,
+				afterLoad: function(anchorLink, index){
+					if(index == 2){
+						$("#section2 h1.b").addClass("slideRightRetourn").animate({
+							opacity:'1',
+						},500);
+						$("#section2 .des-box").animate({
+							opacity:'1',
+						},300);
+					}
+				},
+				onLeave: function(index, direction){
+					if(index == '2'){
+						$("#section2 h1.b").removeClass("slideRightRetourn").animate({
+							opacity:'0',
+						},500);;
+						$("#section2 .des-box").animate({
+							opacity:'0',
+						},300);
+					}
+				}
 
             });
             $(".search-type-tab li").click(function(e){
