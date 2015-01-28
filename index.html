@@ -90,6 +90,59 @@
 
         .animation-cell-1{opacity: 0}
 
+		/*		虚线圆形旋转动画*/
+		.circular-dashed{
+			-webkit-animation: rotate-infinity 16s linear infinite;
+			-moz-animation: rotate-infinity 16s linear infinite;
+			-ms-animation: rotate-infinity 16s linear infinite;
+			animation: rotate-infinity 16s linear infinite
+		}
+		@keyframes rotate-infinity {
+			from {
+				-webkit-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
+				-ms-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+				-moz-transform: rotate(360deg);
+				-ms-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
+		@-moz-keyframes rotate-infinity {
+			from {
+				-moz-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
+			to {
+				-moz-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
+		@-webkit-keyframes rotate-infinity {
+			from {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
+		@-ms-keyframes rotate-infinity {
+			from {
+				-ms-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
+			to {
+				-ms-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
+
+
 #section1{}
     </style>
   </head>
@@ -270,7 +323,7 @@
 						},300);
 
 					}else if(index == 3){
-						$("#section3 h1.b").addClass("slideLeftRetourn").animate({
+						$("#section3 h1.b").addClass("fadeInLeftBig").animate({
 							opacity:'1',
 						},500);
                         $("#section3 .animation-cell-1").addClass("slideRightRunning").animate({
@@ -294,7 +347,7 @@
 							opacity:'0',
 						},300);
 					}else if(index == 3){
-						$("#section3 h1.b").removeClass("slideLeftRetourn").animate({
+						$("#section3 h1.b").removeClass("fadeInLeftBig").animate({
 							opacity:'0',
 						},500);
                         $("#section3 .animation-cell-1").removeClass("slideRightRunning").animate({
