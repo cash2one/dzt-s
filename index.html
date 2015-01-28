@@ -261,7 +261,7 @@
 							opacity:'1',
 						},500);
                         $('#section2 .animation-cell-1').one(ANIMATION_END, function(){
-                            $(this).removeClass("fadeInLeftBig").addClass("flash");
+                            $(this).removeClass("fadeInLeftBig").addClass("rubberBand");
 //                            $(this).find(".ico-font").addClass("animated").addClass("rubberBand");
                         });
 
@@ -287,7 +287,7 @@
 						$("#section2 h1.b").removeClass("fadeInRightBig").animate({
 							opacity:'0',
 						},500);
-                        $("#section2 .animation-cell-1").removeClass("fadeInLeftBig").animate({
+                        $("#section2 .animation-cell-1").removeClass("fadeInLeftBig").removeClass("rubberBand").animate({
 							opacity:'0',
 						},500);
 						$("#section2 .des-box").animate({
