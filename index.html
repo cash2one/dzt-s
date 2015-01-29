@@ -88,7 +88,6 @@
 		.circular.red{background-color: #f35a4a;}
 
 
-        .animation-cell-1{opacity: 0}
 
 		/*		虚线圆形旋转动画*/
 		.circular-dashed{
@@ -142,13 +141,10 @@
 			}
 		}
 
-
-
         .runningToRight {
           -webkit-animation: runningToRight 2000ms linear 1 both;
           animation: runningToRight 2000ms linear 1 both;
         }
-
         @-webkit-keyframes runningToRight {
           0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -1000, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -1000, 0, 0, 1); }
           1.666667% { -webkit-transform: matrix3d(1, 0, 0, 0, 0.37121, 1, 0, 0, 0, 0, 1, 0, -751.64348, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0.37121, 1, 0, 0, 0, 0, 1, 0, -751.64348, 0, 0, 1); }
@@ -276,13 +272,10 @@
   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 }
 
-
-
         .runningToLeft {
           -webkit-animation: runningToLeft 2000ms linear 1 both;
           animation: runningToLeft 2000ms linear 1 both;
         }
-
         @-webkit-keyframes runningToLeft {
           0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1000, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1000, 0, 0, 1); }
           1.666667% { -webkit-transform: matrix3d(1, 0, 0, 0, -0.37121, 1, 0, 0, 0, 0, 1, 0, 751.64348, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, -0.37121, 1, 0, 0, 0, 0, 1, 0, 751.64348, 0, 0, 1); }
@@ -410,6 +403,15 @@
           100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 }
 
+#section2 .animation-cell-1{
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s;
+	-ms-animation-duration:1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode: both;
+	-ms-animation-fill-mode: both;
+	animation-fill-mode: both;}
 #section2 .po{position: absolute;font-size: 100px;}
 #section2 .po0{left:50%;top: 100px;margin-left: -50px;}
 #section2 .po1{left:50%;top: 220px;margin-left: 140px;}
@@ -477,7 +479,7 @@
                         <div class="circular-dashed blue"></div>
 						<div class="circular blue">
 							<div class="d-table">
-							    <div class="d-table-cell animated animation-cell-1 relative" style="display:none">
+							    <div class="d-table-cell animation-cell-1 relative">
 									<div class="ico-font">&#xe643;</div>
 									<h3>交易情况</h3>
 								</div>
@@ -602,17 +604,21 @@
 				scrollingSpeed:300,
 				afterLoad: function(anchorLink, index){
 					if(index == 2){
+//						主标题动画
 						$("#section2 h1.b").addClass("fadeInRightBig").animate({
 							opacity:'1',
 						},500);
 
-                        $("#section2 .animation-cell-1").addClass("runningToRight").animate({
-							opacity:'1',
-						},500);
+//						图标动画
+                        $("#section2 .animation-cell-1").addClass("zoomIn");
+						$("#section2 .animation-cell-1").one(ANIMATION_END,function(){
+							$(this).removeClass("zoomIn").animate({
+								opacity:'0',
+							},100)
+						});
 
-						$("#section2 .des-box").animate({
-							opacity:'1',
-						},300);
+//						描述动画
+						$("#section2 .des-box").animate({opacity:'1',},300);
 
 					}else if(index == 3){
 						$("#section3 h1.b").addClass("fadeInLeftBig").animate({
@@ -632,7 +638,7 @@
 						$("#section2 h1.b").removeClass("fadeInRightBig").animate({
 							opacity:'0',
 						},500);
-                        $("#section2 .animation-cell-1").removeClass("runningToRight").animate({
+                        $("#section2 .animation-cell-1").removeClass("zoomIn").animate({
 							opacity:'0',
 						},500);
 						$("#section2 .des-box").animate({
