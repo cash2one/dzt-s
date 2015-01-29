@@ -31,6 +31,7 @@
         .d-table{display: table;width: 100%;height: 100%;}
         .d-table-row{display: table-row;}
 		.d-table-cell{display: table-cell;text-align: center;vertical-align: middle;}
+		.d-table-cell.show{display: table-cell !important;}
         .d-table-cell h1.b{font-size: 72px;font-weight: 700;}
         .d-table-cell h2.b{font-size: 64px;font-weight: 700;}
         .d-table-cell h3.b{font-size: 48px;font-weight: 700;}
@@ -403,23 +404,37 @@
           100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 }
 
-#section2 .animation-cell-1{
-	-webkit-animation-duration:1s;
-	-moz-animation-duration:1s;
-	-ms-animation-duration:1s;
-	animation-duration: 1s;
+#section2 .d-table-cell.amimation05{
+	-webkit-animation-duration:0.5s;
+	-moz-animation-duration:0.5s;
+	-ms-animation-duration:0.5s;
+	animation-duration: 0.5s;
 	-webkit-animation-fill-mode: both;
 	-moz-animation-fill-mode: both;
 	-ms-animation-fill-mode: both;
 	animation-fill-mode: both;}
+
 #section2 .po{position: absolute;font-size: 100px;}
 #section2 .po0{left:50%;top: 100px;margin-left: -50px;}
 #section2 .po1{left:50%;top: 220px;margin-left: 140px;}
+
 #section2 .po2{left:50%;bottom: -80px;margin-left: 130px;}
 #section2 .po3{left:50%;bottom: -190px;margin-left: -50px;}
+
 #section2 .po4{right:50%;top: 220px;margin-right: 140px;}
 #section2 .po5{right:50%;bottom: -80px;margin-right: 130px;}
-#section2 .animation-cell-2 .ico-font,#section2 .animation-cell-3 .ico-font{font-size: 260px}
+
+#section2 .animation-cell-2 .ico-font,#section2 .animation-cell-3 .ico-font,#section2 .animation-cell-4 .ico-font{font-size: 270px}
+
+#section2 .centerAnimation .po{-webkit-transition:  all 0.5s ease-out 0s;-moz-transition: all 0.5s ease-out 0s;transition: all 0.5s ease-out 0s;opacity: 0;}
+#section2 .centerAnimation .po0,#section2 .centerAnimation .po1{left:50%;top: 50%;margin-left: -50px;margin-top: -50px;}
+#section2 .centerAnimation .po2,#section2 .centerAnimation .po3{left:50%;bottom: 0%;margin-left: -50px;}
+#section2 .centerAnimation .po4{right:50%;top: 50%;margin-right: -50px;}
+#section2 .centerAnimation .po5{bottom: 0;margin-right: -50px;right: 50%;}
+#section2 .centerAnimation .po-main{-webkit-transition: all 0.3s ease-out 0.5s;-moz-transition: all 0.3s ease-out 0.5s;transition: all 0.3s ease-out 0.5s;opacity: 0;}
+/*#section2 .centerAnimation .po-main2{transition: all 0.3s ease-in 1.3s;opacity: 1;font-size: 300px;margin-top: -100px;display: table-cell;}*/
+
+#section2 .d-table-cell.zoomIn,#section2 .d-table-cell.fadeOut{display: table-cell !important;}
     </style>
   </head>
   <body class="type-key-word">
@@ -479,31 +494,34 @@
                         <div class="circular-dashed blue"></div>
 						<div class="circular blue">
 							<div class="d-table">
-							    <div class="d-table-cell animation-cell-1 relative">
+							    <div class="d-table-cell animation-cell-1 relative" style="display:none">
 									<div class="ico-font">&#xe643;</div>
 									<h3>交易情况</h3>
 								</div>
-								<div class="d-table-cell animated animation-cell-2 relative" style="display:none">
+								<div class="d-table-cell animation-cell-2 relative" style="display:none">
 									<div class="ico-font">&#xe64b;</div>
 									<h3>引流情况</h3>
 								</div>
-								<div class="d-table-cell animated animation-cell-3 relative" style="display:none">
+								<div class="d-table-cell animation-cell-3 relative" style="display:none">
 									<div class="ico-font">&#xe65a;</div>
 									<h3>营销监控</h3>
 								</div>
-								<div class="d-table-cell animated animation-cell-4 relative" style="display:none">
+								<div class="d-table-cell animation-cell-4 relative" style="display:none">
 									<div class="ico-font">&#xe655;</div>
 									<h3>宝贝分析</h3>
 								</div>
-								<div class="d-table-cell animated animation-cell-5 relative" style="display:none">
+								<div class="d-table-cell animation-cell-5 relative" style="display:none">
 								    <div class="ico-font po po0">&#xe643;</div>
 								    <div class="ico-font po po1">&#xe64b;</div>
 								    <div class="ico-font po po2">&#xe65a;</div>
 								    <div class="ico-font po po3">&#xe655;</div>
 								    <div class="ico-font po po4">&#xe650;</div>
 								    <div class="ico-font po po5">&#xe657;</div>
-									<div class="ico-font">&#xe60b;<!--&#xe60b;--></div>
-									<h3 style="display:none">锁定对手</h3>
+									<div class="ico-font po-main">&#xe60b;</div>
+								</div>
+								<div class="d-table-cell animation-cell-6 relative" style="display:none">
+									<div class="ico-font po-main">&#xe60b;</div>
+									<h3>锁定对手</h3>
 								</div>
 							</div>
 						</div>
@@ -595,7 +613,19 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.fullPage.min.js"></script>
     <script type="application/javascript">
-        var ANIMATION_END = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
+		var ANIMATION_END = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
+		var exit_section2_animation = false;
+		function zoomInOut(e,callback){
+			console.log(e)
+			$(e).addClass("zoomIn").one(ANIMATION_END,function(){
+				$(this).removeClass("zoomIn").addClass("fadeOut").one(ANIMATION_END,function(){
+					$(this).removeClass("fadeOut");
+					if(typeof(callback) == "function"){
+						callback();
+					}
+				})
+			});
+		}
         $(function(){
             $('#fullpage').fullpage({
                 slidesColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
@@ -609,13 +639,30 @@
 							opacity:'1',
 						},500);
 
-//						图标动画
-                        $("#section2 .animation-cell-1").addClass("zoomIn");
-						$("#section2 .animation-cell-1").one(ANIMATION_END,function(){
-							$(this).removeClass("zoomIn").animate({
-								opacity:'0',
-							},100)
+////						图标动画
+						$("#section2 .animation-cell-1,#section2 .animation-cell-2,#section2 .animation-cell-3,#section2 .animation-cell-4").addClass("amimation05");
+						$("#section2 .animation-cell-5,#section2 .animation-cell-6").addClass("animated");
+						zoomInOut("#section2 .animation-cell-1"
+						,function(){
+							zoomInOut("#section2 .animation-cell-2"
+							,function(){
+								zoomInOut("#section2 .animation-cell-3"
+								,function(){
+									zoomInOut("#section2 .animation-cell-4"
+									,function(){
+										$("#section2 .animation-cell-5").addClass("fadeIn").show()
+										.one(ANIMATION_END,function(){
+											$(this).removeClass("fadeIn").addClass("centerAnimation");
+											setTimeout(function(){
+												$("#section2 .animation-cell-5").removeClass("centerAnimation").hide();
+												$("#section2 .animation-cell-6.animated").addClass("zoomIn");
+											},1000);
+										})
+									});
+								});
+							});
 						});
+
 
 //						描述动画
 						$("#section2 .des-box").animate({opacity:'1',},300);
@@ -638,9 +685,7 @@
 						$("#section2 h1.b").removeClass("fadeInRightBig").animate({
 							opacity:'0',
 						},500);
-                        $("#section2 .animation-cell-1").removeClass("zoomIn").animate({
-							opacity:'0',
-						},500);
+                        $("#section2 .d-table-cell").removeClass("zoomIn").removeClass("amimation05").removeClass("animated");
 						$("#section2 .des-box").animate({
 							opacity:'0',
 						},300);
