@@ -20,6 +20,8 @@
 
 .icon-tianmao:before { content: "\e61f"; }
 
+.icon-zhitongche:before { content: "\e65a"; }
+
 .icon-tianmaoxingxiang2:before { content: "\e61c"; }
 
 .icon-chiping:before { content: "\e640"; }
@@ -29,6 +31,8 @@
 .icon-xiugaichujia:before { content: "\e63e"; }
 
 .icon-rili:before { content: "\e657"; }
+
+.icon-icondocumentalt:before { content: "\e65b"; }
 
 .icon-shuangjiantouyou:before { content: "\e641"; }
 
@@ -69,8 +73,6 @@
 .icon-roundclosefill:before { content: "\e631"; }
 
 .icon-roundclose:before { content: "\e632"; }
-
-.icon-search:before { content: "\e65a"; }
 
 .icon-tag:before { content: "\e646"; }
 
@@ -124,6 +126,8 @@
 
 .icon-daochu:before { content: "\e63a"; }
 
+.icon-document:before { content: "\e65c"; }
+
 .icon-hssiconsoff:before { content: "\e658"; }
 
 .icon-tao:before { content: "\e60e"; }
@@ -145,6 +149,8 @@
 .icon-mobile:before { content: "\e63c"; }
 
 .icon-aliwangwang:before { content: "\e619"; }
+
+.icon-icon25:before { content: "\e65d"; }
 
 .icon-qq:before { content: "\e61a"; }
 
