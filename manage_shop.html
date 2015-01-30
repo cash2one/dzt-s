@@ -30,20 +30,23 @@
 /*        #shop-list-table thead th:hover{color:#222;}*/
         #shop-list-table tbody td{font-size: 14px;vertical-align:middle;padding:15px 9px;border-bottom: 1px solid #e7e7e7;color: #222;}
         #shop-list-table .shop-taobao::before,#shop-list-table .shop-tmall::before{font-size: 18px;margin-right: 4px;}
+		#shop-list-table .ww_ico{color: #4184f3;font-size: 16px;}
+		#shop-list-table .ww_ico:hover,#shop-list-table a.shop-link:hover{color: #3974e7;cursor: pointer;}
 
         #shop-list-table i[class^="ico-"]{margin-left: 5px;font-style: normal;font-size: 10px;}
         #shop-list-table .tip{background-color: #ffce55;border: 1px solid #e8af22;border-radius: 50%; width: 8px;height: 8px; display: inline-block;margin:0 13px 0 0;position: relative;}
         #shop-list-table .tip:hover{cursor: pointer;}
         #shop-list-table .delable{background-color: #4184f3;border: 1px solid #3778e3;}
-        #shop-list-table .tooltip.in{margin-top: -4px;}
-        #shop-list-table .tooltip-arrow{border-left-color: #ffce55;}
-        #shop-list-table .tooltip-inner{background-color: #ffce55;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;padding:4px 8px 5px}
-        #shop-list-table .delable+.tooltip .tooltip-arrow{border-left-color: #4184f3;}
-        #shop-list-table .delable+.tooltip .tooltip-inner{background-color: #4184f3;}
+        #shop-list-table .tooltip.left{margin-top: -4px;}
+        #shop-list-table .tooltip.left .tooltip-arrow{border-left-color: #ffce55;}
+        #shop-list-table .tooltip.left .tooltip-inner{background-color: #ffce55;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;padding:4px 8px 5px}
+        #shop-list-table .delable+.tooltip.left .tooltip-arrow{border-left-color: #4184f3;}
+        #shop-list-table .delable+.tooltip.left .tooltip-inner{background-color: #4184f3;}
         #shop-list-table .del-link{font: 12px/1.5 tahoma, arial, \5b8b\4f53;margin-left: 23px;color: #f35a4a;}
         #shop-list-table .del-link:hover{text-decoration:underline;}
 
-
+		#shop-list-table .tooltip.top .tooltip-arrow{border-top-color: #4184f3;}
+		#shop-list-table .tooltip.top .tooltip-inner{background-color: #4184f3;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
 
         .sort-table th .ico-after::after{margin-left: 6px;font-weight: 700;display: inline-block;}
         .sort-table th .ico-after{color: #777;-webkit-transition: color 0.3s ease-out 0s;-moz-transition: color 0.3s ease-out 0s;transition: color 0.3s ease-out 0s;vertical-align: bottom;cursor: pointer;}
@@ -56,6 +59,7 @@
 
         #add-shop-dialog .ico-font{font-size:24px;color:#4184f3; }
         #add-shop-dialog .alert{padding: 8px 15px;}
+
 
 
     </style>
@@ -189,31 +193,31 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <span class="shop-taobao ico-before i-shop-name">a几度家居旗舰店</span>
+                                            <span class="shop-taobao ico-before i-shop-name">a几度家居旗舰店</span> <span class="ico-font ww_ico" title="旺旺名称">&#xe619;</span> <a class="shop-link" href="#店铺网址"><span class="ico-font">&#xe635;</span></a>
                                         </td>
                                         <td><span class="i-sales-volume">223</span><i class="ico-before down">2.5%</i></td>
                                         <td><span class="i-sales-amount">126万</span><i class="ico-before flat">0%</i></td>
                                         <td><span class="i-sword-num">28</span><i class="ico-before up">3.5%</i></td>
                                         <td><span class="i-dfword-num">28</span><i class="ico-before up">3.5%</i></td>
                                         <td>
-                                            <i class="tip" data-toggle="tooltip" data-placement="left" title="该店5天后可修改"></i><button type="button" class="btn btn-primary">分析</button>
+                                            <i class="tip" title="该店5天后可修改"></i><button type="button" class="btn btn-primary">分析</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><span class="shop-tmall ico-before i-shop-name">b几度家居旗舰店</span></td>
+                                        <td><span class="shop-tmall ico-before i-shop-name">b几度家居旗舰店</span> <span class="ico-font ww_ico" title="旺旺名称">&#xe619;</span> <a class="shop-link" href="#店铺网址"><span class="ico-font">&#xe635;</span></a></td>
                                         <td><span class="i-sales-volume">323</span><i class="ico-before down">2.5%</i></td>
                                         <td><span class="i-sales-amount">136万</span><i class="ico-before up">3.5%</i></td>
                                         <td><span class="i-sword-num">15</span><i class="ico-before up">3.5%</i></td>
                                         <td><span class="i-dfword-num">5</span><i class="ico-before up">35%</i></td>
-                                        <td><i class="tip" data-toggle="tooltip" data-placement="left" title="该店3天后可修改"></i><button type="button" class="btn btn-primary">分析</button></td>
+                                        <td><i class="tip" title="该店3天后可修改"></i><button type="button" class="btn btn-primary">分析</button></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="shop-taobao ico-before i-shop-name">c几度家居旗舰店</span></td>
+                                        <td><span class="shop-taobao ico-before i-shop-name">c几度家居旗舰店</span> <span class="ico-font ww_ico" title="旺旺名称">&#xe619;</span> <a class="shop-link" href="#店铺网址"><span class="ico-font">&#xe635;</span></a></td>
                                         <td><span class="i-sales-volume">313</span><i class="ico-before down">0.51%</i></td>
                                         <td><span class="i-sales-amount">135万</span><i class="ico-before up">3.15%</i></td>
                                         <td><span class="i-sword-num">35</span><i class="ico-before up">3.5%</i></td>
                                         <td><span class="i-dfword-num">2</span><i class="ico-before up">36%</i></td>
-                                        <td><i class="tip delable" data-toggle="tooltip" data-placement="left" title="该店可修改"></i><button type="button" class="btn btn-primary">分析</button><a class="del-link" href="#del-warning-dialog" data-toggle="modal" shop-id="123456">删除</a></td>
+                                        <td><i class="tip delable" title="该店可修改"></i><button type="button" class="btn btn-primary">分析</button><a class="del-link" href="#del-warning-dialog" data-toggle="modal" shop-id="123456">删除</a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -286,7 +290,12 @@
         })
 
         $(function(){
-            $("#shop-list-table .tip").tooltip();
+            $("#shop-list-table .tip").tooltip({
+				placement:'left'
+			});
+			$("#shop-list-table .ww_ico").tooltip({
+				placement:'top'
+			});
             //表格排序实现
             $.tablesorter.addParser({
                 id: 'numParser',
