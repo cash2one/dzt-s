@@ -15,7 +15,7 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        body{-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;}
+        body{-webkit-font-smoothing: antialiased;/*-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;*/}
 /*       header调整*/
         .header-wrapper{box-shadow: none;border-bottom: 1px solid #e7e7e7;}
         .btn-list .signUpBtn{margin-left: 20px;}
@@ -66,17 +66,17 @@
 
         .right-cell{text-align: left;}
         .right-cell h1.b{margin-bottom: 40px;opacity: 0}
-        .right-cell .des-box{opacity: 1;}
-        .right-cell .des-box p{line-height: 180%;letter-spacing: 2px;font-size: 36px;text-indent: 2em;}
+        .right-cell .des-box{opacity: 0;}
+        .right-cell .des-box p{line-height: 180%;letter-spacing: 2px;font-size: 36px;}
         .right-cell .pics{margin-top: 30px;}
         .right-cell .pics li{display: inline;margin-right: 10px;}
 
 
 		.lImg-rText .des-box{padding-right: 15%;}
 
-		.lText-rImg .right-cell h1.b{text-align: right;}
-		.lText-rImg .right-cell .des-box{padding-left: 15%;}
-		.lText-rImg .right-cell .pics{text-align: right;}
+		.lText-rImg .right-cell{padding-left: 10%;}
+		.lText-rImg .right-cell h1.b{text-align: left;}
+		.lText-rImg .right-cell .pics{text-align: left;}
 
 		.circular-box{width: 680px;height: 680px;left: 50%;margin-left: -340px;position:  relative;}
 		.circular-dashed{width: 640px;height: 640px;border-radius: 50%;position: absolute;z-index: 999;}
@@ -404,11 +404,12 @@
           100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 }
 
+.section:not(#section2) .animation-cell-1{opacity: 0}
 #section2 .d-table-cell.amimation05{
-	-webkit-animation-duration:0.5s;
-	-moz-animation-duration:0.5s;
-	-ms-animation-duration:0.5s;
-	animation-duration: 0.5s;
+	-webkit-animation-duration:0.8s;
+	-moz-animation-duration:0.8s;
+	-ms-animation-duration:0.8s;
+	animation-duration: 0.8s;
 	-webkit-animation-fill-mode: both;
 	-moz-animation-fill-mode: both;
 	-ms-animation-fill-mode: both;
@@ -496,20 +497,22 @@
 							<div class="d-table">
 							    <div class="d-table-cell animation-cell-1 relative" style="display:none">
 									<div class="ico-font">&#xe643;</div>
-									<h3>交易情况</h3>
+									<h3>交易报告</h3>
 								</div>
 								<div class="d-table-cell animation-cell-2 relative" style="display:none">
 									<div class="ico-font">&#xe64b;</div>
-									<h3>引流情况</h3>
+									<h3>引流报告</h3>
 								</div>
 								<div class="d-table-cell animation-cell-3 relative" style="display:none">
 									<div class="ico-font">&#xe65a;</div>
-									<h3>营销监控</h3>
+									<h3>营销报告</h3>
 								</div>
+<!--
 								<div class="d-table-cell animation-cell-4 relative" style="display:none">
 									<div class="ico-font">&#xe655;</div>
 									<h3>宝贝分析</h3>
 								</div>
+-->
 								<div class="d-table-cell animation-cell-5 relative" style="display:none">
 								    <div class="ico-font po po0">&#xe643;</div>
 								    <div class="ico-font po po1">&#xe64b;</div>
@@ -528,9 +531,12 @@
                       </div>
                   </div>
                   <div class="d-table-cell right-cell">
-                      <h1 class="b animated">监测对手</h1>
+                      <h1 class="b animated">全面监测对手</h1>
                       <div class="des-box">
-                          <p>持续监控指定的店铺，生成每日经营情况报表，及时发现对手店铺的异动情况，为自己的运营策略提供可靠持续的数据支持。</p>
+                          <p>1.更全面的交易分析</p>
+                          <p>2.更透彻的引流分析</p>
+                          <p>3.更专业的营销分析</p>
+                          <p>4.更详细的宝贝分析</p>
                       </div>
                       <ul class="pics">
                           <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
@@ -546,9 +552,12 @@
           <div class="d-table lText-rImg">
               <div class="d-table-row">
                   <div class="d-table-cell right-cell">
-                      <h1 class="b animated">交易分析</h1>
+                      <h1 class="b animated">更全面的交易分析</h1>
                       <div class="des-box">
-                          <p>持续监测竞争对手店铺每日销售情况及单品销售情况，整体上掌握对手的经营变化，为自己的营销策略提供可靠的数据支持。</p>
+                          <p>1.对手全店、单品销售分析</p>
+                          <p>2.销售异动情况</p>
+                          <p>3.买家成交时间，买家分布</p>
+                          <p>4.更多...</p>
                       </div>
                       <ul class="pics">
                           <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
@@ -562,7 +571,7 @@
                         <div class="circular-dashed red"></div>
 						<div class="circular red">
 							<div class="d-table">
-								<div class="d-table-cell magictime animation-cell-1">
+								<div class="d-table-cell  animation-cell-1">
 									<div class="ico-font">&#xe643;</div>
 									<h3>交易走势</h3>
 								</div>
@@ -573,11 +582,103 @@
               </div>
           </div>
       </div>
-      <div class="section">
-          第四屏
+      <div class="section" id="section4">
+          <div class="d-table lImg-rText">
+              <div class="d-table-row">
+                  <div class="d-table-cell left-cell">
+                      <div class="circular-box">
+                        <div class="circular-dashed blue"></div>
+						<div class="circular blue">
+							<div class="d-table">
+								<div class="d-table-cell animation-cell-1">
+									<div class="ico-font" style="font-size:260px">&#xe64b;</div>
+									<h3>引流分析</h3>
+								</div>
+							</div>
+						</div>
+                      </div>
+                  </div>
+                  <div class="d-table-cell right-cell">
+                      <h1 class="b animated">更透彻的引流分析</h1>
+                      <div class="des-box">
+                          <p>持续监控指定的店铺，生成每日经营情况报表，及时发现对手店铺的异动情况，为自己的运营策略提供可靠持续的数据支持。</p>
+                      </div>
+                      <ul class="pics">
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="section">
-          第五屏
+      <div class="section" id="section5">
+          <div class="d-table lText-rImg">
+              <div class="d-table-row">
+                  <div class="d-table-cell right-cell">
+                      <h1 class="b animated">更专业的营销分析</h1>
+                      <div class="des-box">
+                          <p>1.全面掌握对手营销手段</p>
+                          <p>2.站内，站外，全网活动尽在掌握</p>
+                          <p>3.对手何时卖的好？</p>
+                          <p>4.更多...</p>
+                      </div>
+                      <ul class="pics">
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                      </ul>
+                  </div>
+                  <div class="d-table-cell left-cell">
+                      <div class="circular-box">
+                        <div class="circular-dashed red"></div>
+						<div class="circular red">
+							<div class="d-table">
+								<div class="d-table-cell animation-cell-1">
+									<div class="ico-font" style="font-size:260px">&#xe60d;</div>
+									<h3>营销监控</h3>
+								</div>
+							</div>
+						</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="section" id="section6">
+          <div class="d-table lImg-rText">
+              <div class="d-table-row">
+                  <div class="d-table-cell left-cell">
+                      <div class="circular-box">
+                        <div class="circular-dashed blue"></div>
+						<div class="circular blue">
+							<div class="d-table">
+								<div class="d-table-cell animation-cell-1">
+									<div class="ico-font" style="font-size:260px">&#xe64b;</div>
+									<h3>宝贝分析</h3>
+								</div>
+							</div>
+						</div>
+                      </div>
+                  </div>
+                  <div class="d-table-cell right-cell">
+                      <h1 class="b animated">更详细的宝贝分析</h1>
+                      <div class="des-box">
+                          <p>1.全面跟踪宝贝变动：</p>
+                          <p>&nbsp;&nbsp;价格/标题/主图/营销...变动情况完全掌控</p>
+                          <p>3.简单直观的上下架分布分析</p>
+                      </div>
+                      <ul class="pics">
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                          <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
       </div>
   </div>
    <div class="footer-bottom hide">
@@ -614,9 +715,8 @@
     <script src="js/jquery.fullPage.min.js"></script>
     <script type="application/javascript">
 		var ANIMATION_END = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
-		var exit_section2_animation = false;
+		var timeoutID;
 		function zoomInOut(e,callback){
-			console.log(e)
 			$(e).addClass("zoomIn").one(ANIMATION_END,function(){
 				$(this).removeClass("zoomIn").addClass("fadeOut").one(ANIMATION_END,function(){
 					$(this).removeClass("fadeOut");
@@ -629,9 +729,9 @@
         $(function(){
             $('#fullpage').fullpage({
                 slidesColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
-                anchors: ['page1', 'page2', 'page3', 'page4'],
+                anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
                 navigation: true,
-				scrollingSpeed:300,
+				scrollingSpeed:500,
 				afterLoad: function(anchorLink, index){
 					if(index == 2){
 //						主标题动画
@@ -639,8 +739,8 @@
 							opacity:'1',
 						},500);
 
-////						图标动画
-						$("#section2 .animation-cell-1,#section2 .animation-cell-2,#section2 .animation-cell-3,#section2 .animation-cell-4").addClass("amimation05");
+//						图标动画
+						$("#section2 .animation-cell-1,#section2 .animation-cell-2,#section2 .animation-cell-3").addClass("amimation05");
 						$("#section2 .animation-cell-5,#section2 .animation-cell-6").addClass("animated");
 						zoomInOut("#section2 .animation-cell-1"
 						,function(){
@@ -648,58 +748,66 @@
 							,function(){
 								zoomInOut("#section2 .animation-cell-3"
 								,function(){
-									zoomInOut("#section2 .animation-cell-4"
-									,function(){
+									if($("#section2 .animation-cell-3").is(":hidden")){
 										$("#section2 .animation-cell-5").addClass("fadeIn").show()
 										.one(ANIMATION_END,function(){
 											$(this).removeClass("fadeIn").addClass("centerAnimation");
-											setTimeout(function(){
+											timeoutID = setTimeout(function(){
 												$("#section2 .animation-cell-5").removeClass("centerAnimation").hide();
 												$("#section2 .animation-cell-6.animated").addClass("zoomIn");
 											},1000);
 										})
-									});
+									}
 								});
 							});
 						});
 
 
-//						描述动画
-						$("#section2 .des-box").animate({opacity:'1',},300);
 
-					}else if(index == 3){
-						$("#section3 h1.b").addClass("fadeInLeftBig").animate({
+					}else if(index == 3 || index == 5){
+						$("#section"+ index + " h1.b").addClass("fadeInLeftBig").animate({
 							opacity:'1',
 						},500);
-                        $("#section3 .animation-cell-1").addClass("runningToLeft").animate({
+                        $("#section"+ index + " .animation-cell-1").addClass("runningToLeft").animate({
 							opacity:'1',
 						},500);
-						$("#section3 .des-box").animate({
+
+					}else if(index == 4 || index == 6){
+//						主标题动画
+						$("#section"+ index + " h1.b").addClass("fadeInRightBig").animate({
 							opacity:'1',
-						},300);
+						},500);
+//						图标动画
+						$("#section"+ index + " .animation-cell-1").addClass("runningToRight").animate({
+							opacity:'1',
+						},500);
 					}
 
+//						描述动画
+					$("#section"+ index + " .des-box").animate({
+							opacity:'1',
+						},500);
 				},
 				onLeave: function(index, direction){
 					if(index == '2'){
-						$("#section2 h1.b").removeClass("fadeInRightBig").animate({
-							opacity:'0',
-						},500);
-                        $("#section2 .d-table-cell").removeClass("zoomIn").removeClass("amimation05").removeClass("animated");
-						$("#section2 .des-box").animate({
-							opacity:'0',
-						},300);
-					}else if(index == 3){
-						$("#section3 h1.b").removeClass("fadeInLeftBig").animate({
-							opacity:'0',
-						},500);
-                        $("#section3 .animation-cell-1").removeClass("runningToLeft").animate({
-							opacity:'0',
-						},500);
-						$("#section3 .des-box").animate({
-							opacity:'0',
-						},300);
+						$("#section2 h1.b").removeClass("fadeInRightBig").css("opacity","0");
+						clearTimeout(timeoutID);
+                        $("#section2 .d-table-cell").removeClass("zoomIn").removeClass("amimation05").removeClass("animated").removeClass("fadeOut").removeClass("centerAnimation");
+
+					}else if(index == 3 || index == 5){
+						$("#section"+ index + " h1.b").removeClass("fadeInLeftBig").css("opacity","0");
+                        $("#section"+ index + " .animation-cell-1").removeClass("runningToLeft").css("opacity","0");
+
+					}else if(index == 4 || index == 6){
+//						主标题动画
+						$("#section"+ index + " h1.b").removeClass("fadeInRightBig").css("opacity","0");
+						$("#section"+ index + " .animation-cell-1").removeClass("runningToRight").css("opacity","0");
+
 					}
+//						描述动画
+					$("#section"+ index + " .des-box").animate({
+							opacity:'0',
+						},300);
 				}
 
             });
