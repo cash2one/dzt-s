@@ -60,8 +60,17 @@
         #add-shop-dialog .ico-font{font-size:24px;color:#4184f3; }
         #add-shop-dialog .alert{padding: 8px 15px;}
 
-
-
+/*position: fixed;top: 0px;left: 50%;margin-left: -210px;*/
+/*display: inline;max-width: 600px; min-width: 320px;margin: 0px auto;position: relative;top: -58px;*/
+		.top-msg-container{float: left;left: 50%;position: relative;}
+		.top-msg{float: left;left: -50%;position: relative;top: -54px; padding: 0 20px; line-height: 42px; border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;box-shadow: 2px 2px 5px rgba(0,0,0,0.15);margin-top: -50px;font-size: 14px;color: #fff;-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
+		.top-msg a{color: #fff;text-decoration: underline;}
+		.top-msg a:hover{}
+		.top-msg .msg-box{}
+        .top-msg.msg-success{background-color: #36ae48;}
+		.top-msg.msg-warning{background-color: #ffce55;}
+		.top-msg.msg-danger{background-color:#f35a4a;}
+		.top-msg.show{top: -7px;}
     </style>
   </head>
   <body>
@@ -79,6 +88,21 @@
                   <li class="pay-text"><a href="#">续费升级</a></li>
                </ul>
            </div>
+       </div>
+       <div class="text-center top-msg-container">
+<!--
+            <div class="top-msg msg-danger text-center" delay="5">不要加上show的class，js会自动加载以显示动画,delay是显示时间长度/秒
+                <p><span class="glyphicon glyphicon-remove"></span> <strong>出错了：</strong>这里是错误提示信息！<a href="#">链接</a></p>
+            </div>
+-->
+            <div class="top-msg msg-success text-center" delay="3">
+                <p><span class="glyphicon glyphicon-ok"></span> <strong>成功：</strong>这里是成功提示信息！<a href="#">链接</a></p>
+            </div>
+<!--
+            <div class="top-msg msg-warning text-center" delay="3">
+                <p><span class="glyphicon glyphicon-warning-sign"></span> <strong>警告：</strong>这里是警告信息！<a href="#">链接</a></p>
+            </div>
+-->
        </div>
   </div>
   <div class="content-bg">
@@ -219,6 +243,16 @@
                                         <td><span class="i-dfword-num">2</span><i class="ico-before up">36%</i></td>
                                         <td><i class="tip delable" title="该店可修改"></i><button type="button" class="btn btn-primary">分析</button><a class="del-link" href="#del-warning-dialog" data-toggle="modal" shop-id="123456">删除</a></td>
                                     </tr>
+
+                                    <tr>
+                                        <td><span class="shop-taobao ico-before i-shop-name">c几度家居旗舰店</span> <span class="ico-font ww_ico" title="旺旺名称">&#xe619;</span> <a class="shop-link" href="#店铺网址"><span class="ico-font">&#xe635;</span></a></td>
+                                        <td><span class="i-sales-volume">...</span></td>
+                                        <td><span class="i-sales-amount">...</span></td>
+                                        <td><span class="i-sword-num">...</span></td>
+                                        <td><span class="i-dfword-num">...</span></td>
+                                        <td><i class="tip" title="30天后可修改"></i><span class="text-danger">新增</span> 请明天查看</td>
+                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
@@ -238,13 +272,14 @@
             <h4 class="modal-title" id="addShopLabel">添加店铺</h4>
           </div>
           <div class="modal-body">
-              <div class="form-group">
+              <div class="form-group has-error">
                 <div class="alert alert-warning alert-dismissible" role="alert"><strong>注意：</strong>添加监控后至少30天后才可更换。</div>
                 <label id="keyword-label" for="shop-keyword" class="control-label input-label">请输入需要监控的店铺旺旺ID或店铺名</label>
                 <div class="input-group">
                     <div class="input-group-addon ico-font">&#xe619;</div>
                     <input type="email" class="form-control input-lg" id="shop-keyword" placeholder="请输入需要监控的店铺旺旺ID或店铺名">
                 </div>
+                <div class="alert alert-danger alert-dismissible margin-top17-row" role="alert"><strong>错误：</strong>此店铺不存在</div>
               </div>
           </div>
           <div class="modal-footer">
@@ -290,6 +325,18 @@
         })
 
         $(function(){
+            if($(".top-msg-container .top-msg").size()>0){
+                var msg = $(".top-msg-container .top-msg");
+                var delay = msg.attr("delay") == undefined? 3:Math.abs(parseInt(msg.attr("delay")));
+                setTimeout(function(){
+                    msg.addClass("show")
+                },300);
+
+                setTimeout(function(){
+                    msg.removeClass("show");
+                },delay*1000);
+            }
+
             $("#shop-list-table .tip").tooltip({
 				placement:'left'
 			});
