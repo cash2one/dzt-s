@@ -63,12 +63,13 @@
 /*position: fixed;top: 0px;left: 50%;margin-left: -210px;*/
 /*display: inline;max-width: 600px; min-width: 320px;margin: 0px auto;position: relative;top: -58px;*/
 		.top-msg-container{float: left;left: 50%;position: relative;}
-		.top-msg{float: left;left: -50%;position: relative;top: -108px; padding: 0 20px; line-height: 48px; border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;box-shadow: 2px 2px 5px rgba(0,0,0,0.15);margin-top: -50px;font-size: 14px;-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
+		.top-msg{float: left;left: -50%;position: relative;top: -54px; padding: 0 20px; line-height: 42px; border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;box-shadow: 2px 2px 5px rgba(0,0,0,0.15);margin-top: -50px;font-size: 14px;color: #fff;-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
 		.top-msg a{color: #fff;text-decoration: underline;}
 		.top-msg a:hover{}
 		.top-msg .msg-box{}
-		.top-msg.msg-success{}
-		.top-msg.msg-danger{background-color:#f35a4a;color: #fff;}
+        .top-msg.msg-success{background-color: #36ae48;}
+		.top-msg.msg-warning{background-color: #ffce55;}
+		.top-msg.msg-danger{background-color:#f35a4a;}
 		.top-msg.show{top: -7px;}
     </style>
   </head>
@@ -89,10 +90,19 @@
            </div>
        </div>
        <div class="text-center top-msg-container">
-			<div class="top-msg msg-danger text-center show">
-				<strong>出错了：</strong>
-				<p>这里是错误提示信息！<a href="#">链接</a></p>
-		   </div>
+<!--
+            <div class="top-msg msg-danger text-center" delay="5">不要加上show的class，js会自动加载以显示动画,delay是显示时间长度/秒
+                <p><span class="glyphicon glyphicon-remove"></span> <strong>出错了：</strong>这里是错误提示信息！<a href="#">链接</a></p>
+            </div>
+-->
+            <div class="top-msg msg-success text-center" delay="3">
+                <p><span class="glyphicon glyphicon-ok"></span> <strong>成功：</strong>这里是成功提示信息！<a href="#">链接</a></p>
+            </div>
+<!--
+            <div class="top-msg msg-warning text-center" delay="3">
+                <p><span class="glyphicon glyphicon-warning-sign"></span> <strong>警告：</strong>这里是警告信息！<a href="#">链接</a></p>
+            </div>
+-->
        </div>
   </div>
   <div class="content-bg">
@@ -233,6 +243,16 @@
                                         <td><span class="i-dfword-num">2</span><i class="ico-before up">36%</i></td>
                                         <td><i class="tip delable" title="该店可修改"></i><button type="button" class="btn btn-primary">分析</button><a class="del-link" href="#del-warning-dialog" data-toggle="modal" shop-id="123456">删除</a></td>
                                     </tr>
+
+                                    <tr>
+                                        <td><span class="shop-taobao ico-before i-shop-name">c几度家居旗舰店</span> <span class="ico-font ww_ico" title="旺旺名称">&#xe619;</span> <a class="shop-link" href="#店铺网址"><span class="ico-font">&#xe635;</span></a></td>
+                                        <td><span class="i-sales-volume">...</span></td>
+                                        <td><span class="i-sales-amount">...</span></td>
+                                        <td><span class="i-sword-num">...</span></td>
+                                        <td><span class="i-dfword-num">...</span></td>
+                                        <td><i class="tip" title="30天后可修改"></i><span class="text-danger">新增</span> 请明天查看</td>
+                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
@@ -305,6 +325,18 @@
         })
 
         $(function(){
+            if($(".top-msg-container .top-msg").size()>0){
+                var msg = $(".top-msg-container .top-msg");
+                var delay = msg.attr("delay") == undefined? 3:Math.abs(parseInt(msg.attr("delay")));
+                setTimeout(function(){
+                    msg.addClass("show")
+                },300);
+
+                setTimeout(function(){
+                    msg.removeClass("show");
+                },delay*1000);
+            }
+
             $("#shop-list-table .tip").tooltip({
 				placement:'left'
 			});
