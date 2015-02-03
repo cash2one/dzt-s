@@ -21,7 +21,7 @@ a:focus{outline:none;-moz-outline:none;}
 .minW750{min-width: 750px;}
 .maxW1200{max-width: 1200px;}
 .font-simsun{font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
-.rmb-before:before{content:'￥';font-size: 14px;};
+.rmb-before:before{content:'￥';font-size: 14px;}
 .relative{position: relative;}
 
 
