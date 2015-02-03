@@ -80,6 +80,19 @@
 var user_pop_html='<div id="user-menu" class="user-menu"><ul><li><a href="#"><span class="ico-font">&#xe605;</span>用户设置</a></li><li><a href="#"><span class="ico-font">&#xe607;</span>客服帮助</a></li><li><a href="#"><span class="ico-font">&#xe615;</span>退出</a></li></ul></div>'
 
 $(function(){
+//	检查是否有消息需要弹出提示
+	if($(".top-msg-container .top-msg").size()>0){
+		var msg = $(".top-msg-container .top-msg");
+		var delay = msg.attr("delay") == undefined? 3:Math.abs(parseInt(msg.attr("delay")));
+		setTimeout(function(){
+			msg.addClass("show")
+		},300);
+
+		setTimeout(function(){
+			msg.removeClass("show");
+		},delay*1000);
+	}
+
     $(".nav-tree-box dt").each(function(i){
       if(!$(this).next("dd").is(":empty")){
         $(this).hover(
@@ -105,6 +118,7 @@ $(function(){
         });
       }
     });
+
     $("#user-button").popover({
         trigger:'focus',
         placement:'bottom',

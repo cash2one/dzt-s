@@ -65,6 +65,17 @@ body{height:100%;color: #222222; background: #fff;font-family: "微软雅黑","�
 .help+.tooltip.top .tooltip-arrow{border-top-color: #36ae48;}
 .help+.tooltip .tooltip-inner{background-color: #36ae48;padding:8px;font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
 
+/*后台消息提示*/
+.top-msg-container{float: left;left: 50%;position: relative;}
+.top-msg{float: left;left: -50%;position: relative;top: -54px; padding: 0 20px; line-height: 42px; border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;box-shadow: 2px 2px 5px rgba(0,0,0,0.15);margin-top: -50px;font-size: 14px;color: #fff;-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
+.top-msg a{color: #fff;text-decoration: underline;}
+.top-msg a:hover{}
+.top-msg .msg-box{}
+.top-msg.msg-success{background-color: #36ae48;}
+.top-msg.msg-warning{background-color: #ffce55;}
+.top-msg.msg-danger{background-color:#f35a4a;}
+.top-msg.show{top: -7px;}
+
 /*头部样式*/
 .header-wrapper{background: #fff;height: 56px;line-height: 56px;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);width: 100%;position: fixed;z-index: 999;/* border-bottom: 1px solid #eae9e9;*/}
 .col-logo{min-width: 340px;}
@@ -240,6 +251,7 @@ body.hide-nav .content-bg .content-body{margin-left: 0;}
 /*饼形图提示样式*/
 .jqtooltip-class{margin-right: 10px;margin-bottom: 12px;}
 #jqstooltip{background-color:rgba(255,255,255,0.95);border: 1px solid #e7e7e7;border-radius: 2px;color: #777;}
+
 
 
 /*loading*/
