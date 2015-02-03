@@ -60,17 +60,7 @@
         #add-shop-dialog .ico-font{font-size:24px;color:#4184f3; }
         #add-shop-dialog .alert{padding: 8px 15px;}
 
-/*position: fixed;top: 0px;left: 50%;margin-left: -210px;*/
-/*display: inline;max-width: 600px; min-width: 320px;margin: 0px auto;position: relative;top: -58px;*/
-		.top-msg-container{float: left;left: 50%;position: relative;}
-		.top-msg{float: left;left: -50%;position: relative;top: -54px; padding: 0 20px; line-height: 42px; border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;box-shadow: 2px 2px 5px rgba(0,0,0,0.15);margin-top: -50px;font-size: 14px;color: #fff;-webkit-transition:all 0.2s ease 0s;-moz-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;}
-		.top-msg a{color: #fff;text-decoration: underline;}
-		.top-msg a:hover{}
-		.top-msg .msg-box{}
-        .top-msg.msg-success{background-color: #36ae48;}
-		.top-msg.msg-warning{background-color: #ffce55;}
-		.top-msg.msg-danger{background-color:#f35a4a;}
-		.top-msg.show{top: -7px;}
+
     </style>
   </head>
   <body>
@@ -325,18 +315,6 @@
         })
 
         $(function(){
-            if($(".top-msg-container .top-msg").size()>0){
-                var msg = $(".top-msg-container .top-msg");
-                var delay = msg.attr("delay") == undefined? 3:Math.abs(parseInt(msg.attr("delay")));
-                setTimeout(function(){
-                    msg.addClass("show")
-                },300);
-
-                setTimeout(function(){
-                    msg.removeClass("show");
-                },delay*1000);
-            }
-
             $("#shop-list-table .tip").tooltip({
 				placement:'left'
 			});
