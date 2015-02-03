@@ -436,6 +436,10 @@
 /*#section2 .centerAnimation .po-main2{transition: all 0.3s ease-in 1.3s;opacity: 1;font-size: 300px;margin-top: -100px;display: table-cell;}*/
 
 #section2 .d-table-cell.zoomIn,#section2 .d-table-cell.fadeOut{display: table-cell !important;}
+
+		.more-container{position: relative;bottom: 0px;}
+		.more-container a{font-size:80px;color:#ccc;}
+		.more-container a:hover{color: #f35a4a;}
     </style>
   </head>
   <body class="type-key-word">
@@ -455,7 +459,7 @@
                    </div>
                </div>
           </div>
-          <div class="content index-content search-table d-table">
+          <div class="content index-content search-table d-table" style="margin-bottom:0px;">
               <div class="d-table-cell">
                   <div class="container-fluid">
                     <div class="row">
@@ -485,6 +489,13 @@
                     </div>
                   </div>
               </div>
+          </div>
+          <div class="container-fluid more-container" style="margin-top:-200px;">
+          	<div class="row">
+          		<div class="col-xs-12 text-center">
+					<a href="#page2" class="ico-font">&#xe625;</a>
+         		</div>
+          	</div>
           </div>
       </div>
       <div class="section" id="section2">
@@ -718,7 +729,9 @@
 		var timeoutID;
 		function zoomInOut(e,callback){
 			$(e).addClass("zoomIn").one(ANIMATION_END,function(){
+				console.log(e,"zoomInEnd",callback)
 				$(this).removeClass("zoomIn").addClass("fadeOut").one(ANIMATION_END,function(){
+					console.log(e,"fadeOutEnd",callback)
 					$(this).removeClass("fadeOut");
 					if(typeof(callback) == "function"){
 						callback();
@@ -792,7 +805,9 @@
 					if(index == '2'){
 						$("#section2 h1.b").removeClass("fadeInRightBig").css("opacity","0");
 						clearTimeout(timeoutID);
-                        $("#section2 .d-table-cell").removeClass("zoomIn").removeClass("amimation05").removeClass("animated").removeClass("fadeOut").removeClass("centerAnimation");
+                        $("#section2 .circular .d-table-cell").removeClass("zoomIn").removeClass("amimation05")
+							.removeClass("animated").removeClass("fadeOut")
+							.removeClass("centerAnimation").css("display","none").off(ANIMATION_END);
 
 					}else if(index == 3 || index == 5){
 						$("#section"+ index + " h1.b").removeClass("fadeInLeftBig").css("opacity","0");
