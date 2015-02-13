@@ -137,3 +137,138 @@ function loadingPointer(div_id,des){
     html += '</div>';
     $("#"+div_id).html(html);
 }
+
+
+function getEChartOption(){
+    var option = {
+                    animationDuration:500,
+                    animationEasing:'CircularInOut',
+                    title : {
+                        text: '按小时成交趋势',
+                        itemGap:17,
+                        textStyle:{
+                            color: '#222',
+                            fontFamily:'Arial,Helvetica,"微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif',
+                            fontWeight:'normal',
+                            fontSize:16
+                        },
+//                        subtext: '11月10日-12月8日'
+                    },
+                    color : ['#f35a4a','#4184f3'],
+                    grid : {
+                        x : 60,
+                        y : 50,
+                        x2 : 30,
+                        borderWidth : 0
+                    },
+                    tooltip : {
+                        trigger: 'axis',
+                        showDelay:0,
+                        hideDely:100,
+                        transitionDuration:0,
+                        backgroundColor:'rgba(255,255,255,0.9)',
+                        borderColor:'#e7e7e7',
+                        borderRadius:2,
+                        borderWidth:1,
+                        textStyle:{ color:'#777'},
+//                        formatter:'时间：{b}:00<br/>{a}：{c} 件',
+                        formatter:function(params,ticket,callback){
+                            var res = "时间：" + params[0].name + ' 时 - ' + (parseInt(params[0].name)+1) + ' 时';
+                            res += '<br/>' + params[0].seriesName + '：' + params[0].value + " 件";
+                            return res;
+                        },
+                        axisPointer:{
+                            type : 'line',
+                            lineStyle : {
+                                color: '#999',
+                                width: 1,
+                                type: 'dotted'
+                            },
+                            crossStyle : {
+                                color: '#999',
+                                width: 1,
+                                type: 'dashed'
+                            },
+                            shadowStyle : {
+                                size: 'auto',
+                                color: 'rgba(150,150,150,0.3)'
+                            }
+                        }
+                    },
+                    legend: {
+                        data:['销量'],
+                        orient:'horizontal',
+                        x:'left',
+                        y:'bottom'
+                    },
+                    toolbox: {
+                        show : true,
+                        itemSize:12,
+                        color:['#FF6B6B','#4184f3','#C7F464','#556270','#C44D58','#4ECDC4'],
+                        feature : {
+                            mark : {show: false},
+                            dataView : {show: false, readOnly: false},
+                            magicType : {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: false}
+                        }
+                    },
+                    calculable : false,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            splitLine:{show : false},
+                            boundaryGap : true,
+                            axisLine:{show:false},//边轴
+                            axisTick:{show:false},
+                            data : ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            axisLine:{show:false},//边轴
+                            splitNumber:6,
+                            splitLine:{lineStyle:{type:'dotted'}},
+                            axisLabel : {
+                                formatter: function(value){
+                                    return parseInt(value)+' 件';
+                                }
+                            }
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'销量',
+                            type:'line',
+                            smooth:true,
+                            barMaxWidth:16,
+                            symbolSize:3,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: true,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+//                                            color:"#4184f3"//标记文字颜色
+                                        },
+                                    },
+//                                    lineStyle : {
+//                                        color:'#4184f3'//线条
+//                                    },
+//                                    areaStyle : {
+//                                        color:'rgba(65,132,243,0.2)',
+//                                        type:'default'
+//                                    },
+                                },
+                                emphasis : {
+
+                                }
+                            },
+                            data:[10,5,1,0,0,0,0,3,8,16,29,26,31,29,33,36,34,38,27,29,35,36,42,15]
+                        }
+                    ]
+                };
+    return option;
+}
