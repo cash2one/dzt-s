@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>搜索结果</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dzt.css">
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .header-wrapper{box-shadow: none;border-bottom: 1px solid #e7e7e7;}
+        .btn-list .signUpBtn{margin-left: 20px;}
+        .btn-list .btn{border-radius: 999px;padding: 5px 32px;}
+		.index-header{height: 100px;line-height: 100px;position:inherit;}
+        .index-content{padding-top: 0px;}
+        
+        body.type-key-word #type-key-word,body.type-product #type-product,body.type-shop #type-shop{background-color: #f35a4a;}
+        body.type-key-word #type-key-word a,body.type-product #type-product a,body.type-shop #type-shop a{color: #fff;}
+        body.type-key-word #type-key-word .arrow,body.type-product #type-product .arrow,body.type-shop #type-shop .arrow{position: absolute;border-bottom: 0px;height: 0;width: 0;bottom: -5px;border-style: solid;left: 50%;margin-left: -5px; border-width: 5px 5px 0px 5px; border-color: transparent;border-top-color:#f35a4a;}
+        .search-table{line-height: normal;}
+        .search-table .top-fit{margin-top: -300px;}
+        .search-table .main-title{margin-bottom: 30px;}
+        .search-table .main-title h3{margin-bottom: 15px;font-weight: normal;}
+        .search-table .main-title h5{color: #777;}
+        .search-table #search{width: 350px;height: 38px;}
+        .search-table .btn-submit-search{margin-left: 5px;padding: 6px 14px;font-size: 17px;}
+        .search-table .search-type-tab{margin-bottom: 8px;}
+        .search-table .search-type-tab li{float: left;padding: 4px 10px;border-radius: 2px;position: relative;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;line-height: normal;}
+        .search-table .search-type-tab li a{font-size: 14px;color: #777;-webkit-transition: color 0.2s ease-out 0s;-moz-transition: color 0.2s ease-out 0s;transition: color 0.2s ease-out 0s;}
+        .search-table .search-type-tab li a:hover{color:#222;}
+        .search-input{font-size: 14px;}
+		.search-table .inline-box{display: inline-block;margin-top: 15px;}
+		.search-table .placeholder{height: 300px;}
+    </style>
+  </head>
+  <body class="type-key-word">
+   <div class="container-fluid header-wrapper index-header">
+       <div class="row">
+           <div class="col-xs-6 col-logo">
+               <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+               <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+           </div>
+           <div class="col-xs-6 header-right-side search-table text-right">
+               <div class="inline-box black-box">
+                    <ul class="search-type-tab clearfix">
+                        <li id="type-key-word"><a href="javascript:;">关键词</a><div class="arrow"></div></li>
+                        <li id="type-product"><a href="javascript:;">宝贝</a><div class="arrow"></div></li>
+                        <li id="type-shop"><a href="javascript:;">店铺</a><div class="arrow"></div></li>
+                    </ul>
+                    <form class="form-inline clearfix" role="form">
+                        <div class="form-group search-form-group l">
+                            <div class="input-group search-input-group">
+                                <input id="search" class="form-control search-input" type="text" placeholder="请输入您要查询的关键词">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit-search l">&nbsp;&nbsp;搜&nbsp;索&nbsp;&nbsp;</button>
+                    </form>
+                </div>
+           </div>
+       </div>
+  </div>
+  <div class="content index-content" style="margin-bottom:0px;">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-xs-12">
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dzt_bg.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".search-type-tab li").click(function(e){
+                $("body").attr("class",$(this).attr("id"));
+                if($(this).is("#type-key-word")){
+                    $("#search").attr("placeholder","请输入您要查询的关键词");
+                }else if($(this).is("#type-product")){
+                    $("#search").attr("placeholder","请输入您要查询的 宝贝链接 或 宝贝ID");
+                }else if($(this).is("#type-shop")){
+                    $("#search").attr("placeholder","请输入卖家旺旺");
+                }
+            });
+        })
+    </script>
+  </body>
+</html>
