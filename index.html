@@ -582,7 +582,7 @@
                         <div class="circular-dashed red"></div>
 						<div class="circular red">
 							<div class="d-table">
-								<div class="d-table-cell  animation-cell-1">
+								<div class="d-table-cell  animation-cell-1 animated">
 									<div class="ico-font">&#xe643;</div>
 									<h3>交易走势</h3>
 								</div>
@@ -601,7 +601,7 @@
                         <div class="circular-dashed blue"></div>
 						<div class="circular blue">
 							<div class="d-table">
-								<div class="d-table-cell animation-cell-1">
+								<div class="d-table-cell animation-cell-1 animated">
 									<div class="ico-font" style="font-size:260px">&#xe64b;</div>
 									<h3>引流分析</h3>
 								</div>
@@ -647,7 +647,7 @@
                         <div class="circular-dashed red"></div>
 						<div class="circular red">
 							<div class="d-table">
-								<div class="d-table-cell animation-cell-1">
+								<div class="d-table-cell animation-cell-1 animated">
 									<div class="ico-font" style="font-size:260px">&#xe60d;</div>
 									<h3>营销监控</h3>
 								</div>
@@ -666,8 +666,8 @@
                         <div class="circular-dashed blue"></div>
 						<div class="circular blue">
 							<div class="d-table">
-								<div class="d-table-cell animation-cell-1">
-									<div class="ico-font" style="font-size:260px">&#xe64b;</div>
+								<div class="d-table-cell animation-cell-1 animated">
+									<div class="ico-font" style="font-size:260px">&#xe655;</div>
 									<h3>宝贝分析</h3>
 								</div>
 							</div>
@@ -678,8 +678,9 @@
                       <h1 class="b animated">更详细的宝贝分析</h1>
                       <div class="des-box">
                           <p>1.全面跟踪宝贝变动：</p>
-                          <p>&nbsp;&nbsp;价格/标题/主图/营销...变动情况完全掌控</p>
-                          <p>3.简单直观的上下架分布分析</p>
+                          <p>&nbsp;&nbsp;&nbsp;价格/标题/主图/营销...变动情况完全掌控</p>
+                          <p>2.每日销售、评价、收藏等数据应有尽有</p>
+                          <p>3.上新，下线，上下架分布，一个不漏</p>
                       </div>
                       <ul class="pics">
                           <li><img class="img-thumbnail" src="images/snap.png" alt=""></li>
@@ -729,9 +730,9 @@
 		var timeoutID;
 		function zoomInOut(e,callback){
 			$(e).addClass("zoomIn").one(ANIMATION_END,function(){
-				console.log(e,"zoomInEnd",callback)
+//				console.log(e,"zoomInEnd",callback)
 				$(this).removeClass("zoomIn").addClass("fadeOut").one(ANIMATION_END,function(){
-					console.log(e,"fadeOutEnd",callback)
+//					console.log(e,"fadeOutEnd",callback)
 					$(this).removeClass("fadeOut");
 					if(typeof(callback) == "function"){
 						callback();
@@ -781,7 +782,7 @@
 						$("#section"+ index + " h1.b").addClass("fadeInLeftBig").animate({
 							opacity:'1',
 						},500);
-                        $("#section"+ index + " .animation-cell-1").addClass("runningToLeft").animate({
+                        $("#section"+ index + " .animation-cell-1").addClass("fadeInRightBig").animate({
 							opacity:'1',
 						},500);
 
@@ -791,7 +792,7 @@
 							opacity:'1',
 						},500);
 //						图标动画
-						$("#section"+ index + " .animation-cell-1").addClass("runningToRight").animate({
+						$("#section"+ index + " .animation-cell-1").addClass("fadeInLeftBig").animate({
 							opacity:'1',
 						},500);
 					}
@@ -811,12 +812,12 @@
 
 					}else if(index == 3 || index == 5){
 						$("#section"+ index + " h1.b").removeClass("fadeInLeftBig").css("opacity","0");
-                        $("#section"+ index + " .animation-cell-1").removeClass("runningToLeft").css("opacity","0");
+                        $("#section"+ index + " .animation-cell-1").removeClass("fadeInRightBig").css("opacity","0");
 
 					}else if(index == 4 || index == 6){
 //						主标题动画
 						$("#section"+ index + " h1.b").removeClass("fadeInRightBig").css("opacity","0");
-						$("#section"+ index + " .animation-cell-1").removeClass("runningToRight").css("opacity","0");
+						$("#section"+ index + " .animation-cell-1").removeClass("fadeInLeftBig").css("opacity","0");
 
 					}
 //						描述动画

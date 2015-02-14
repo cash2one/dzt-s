@@ -16,15 +16,30 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
+		.fit-top{margin-top: 20px;}
         .version-table th{text-align: center}
         .version-table .v1{color: #41A85F;}
         .version-table .v2{color: #4184F3;}
         .version-table .v3{color: #F35A4A;}
+		.version-table tbody td{font-size: 14px;}
+
         
-        #ver-th th{padding-bottom: 0px;color: #fff;vertical-align: middle}
+        #ver-th th{padding-bottom: 0px;color: #fff;vertical-align: middle;}
         #ver-th .v1{background-color: #41A85F;}
         #ver-th .v2{background-color: #4184F3;}
         #ver-th .v3{background-color: #F35A4A;}
+
+		.version-table tbody tr td,.version-table thead tr th{padding-left: 0px;text-align: center;}
+
+		.version-table tbody .yes::before{content: '\e62f';font-size: 28px;color: #41A85F;}
+		.version-table tbody .no::before{content: '\e631';font-size: 28px;color: #ccc;}
+
+		#version-table .l_td{text-align: left;padding-left: 11px;line-height: 38px;}
+		#version-table td{vertical-align: middle;}
+		#version-table .cat_td{background-color: #f7f7f7;font-size: 16px;}
+		#version-table .num_tr b{font-size: 28px;}
+
+		.content{min-width: 706px;}
     </style>
   </head>
   <body>
@@ -48,30 +63,64 @@
       <div class="container">
           <div class="row">
               <div class="col-xs-12">
+              	<div class="alert alert-warning fit-top">
+              		现在购买立即送三个月！
+              	</div>
+              	<div class="alert alert-danger fit-top">
+              		您订购的店侦探 <b>专业版</b>，已经于 <b>2014年12月28日</b> 过期.
+              	</div>
+              </div>
+              <div class="col-xs-12">
                   <h2>版本对比</h2>
-                  <table class="gtable version-table" width="100%">
+                  <table class="gtable version-table" width="100%" id="version-table">
                       <thead>
                           <tr id="ver-th">
-                              <th rowspan="2"></th>
-                              <th width="25%" class="v1"><div class="h3">基础版</div></th>
-                              <th width="25%" class="v2"><div class="h3">专业版</div></th>
-                              <th width="25%" class="v3"><div class="h3">企业版</div></th>
+                              <th width="40%" rowspan="2" colspan="2"><h1 class="text-danger">功能</h1></th>
+                              <th width="20%" class="v1"><div class="h3">基础版</div></th>
+                              <th width="20%" class="v2"><div class="h3">专业版</div></th>
+                              <th width="20%" class="v3"><div class="h3">企业版</div></th>
                           </tr>
-                          <tr>
-                              <th width="25%" class="v1"><div class="h1"><small>￥</small>1698<small>/年</small></div></th>
-                              <th width="25%" class="v2"><div class="h1"><small>￥</small>1898<small>/年</small></div></th>
-                              <th width="25%" class="v3"><div class="h1"><small>￥</small>2998<small>/年</small></div></th>
+                          <tr class="border-bottom-row">
+                              <th width="20%" class="v1"><div class="h1"><small>￥</small>1698<small>/年</small></div></th>
+                              <th width="20%" class="v2"><div class="h1"><small>￥</small>1898<small>/年</small></div></th>
+                              <th width="20%" class="v3"><div class="h1"><small>￥</small>2998<small>/年</small></div></th>
                           </tr>
                       </thead>
                       <tbody>
-                          <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
+                          <tr class="num_tr">
+                              <td colspan="2">监控店铺数量</td>
+							  <td><b>5</b>个</td>
+                              <td><b>20</b>个</td>
+                              <td><b>50</b>个</td>
                           </tr>
                           <tr>
-                              <td></td>
+                              <td width="8%" rowspan="2" class="cat_td"><b>引流分析</b></td>
+                              <td width="32%" class="l_td">淘宝综合搜索：自然引流宝贝，自然引流关键词</td>
+							  <td><span class="ico-before no"></span></td>
+                              <td><span class="ico-before yes"></span></td>
+                              <td><span class="ico-before yes"></span></td>
+                          </tr>
+                          <tr>
+                              <td width="30%" class="l_td">淘宝综合搜索：自然引流宝贝，自然引流关键词</td>
+							  <td><span class="ico-before no"></span></td>
+                              <td><span class="ico-before yes"></span></td>
+                              <td><span class="ico-before yes"></span></td>
+                          </tr>
+                          <tr>
+                              <td width="8%" rowspan="2" class="cat_td"><b>引流分析</b></td>
+                              <td width="32%" class="l_td">淘宝综合搜索：自然引流宝贝，自然引流关键词</td>
+							  <td><span class="ico-before no"></span></td>
+                              <td><span class="ico-before yes"></span></td>
+                              <td><span class="ico-before yes"></span></td>
+                          </tr>
+                          <tr>
+                              <td width="30%" class="l_td">淘宝综合搜索：自然引流宝贝，自然引流关键词</td>
+							  <td><span class="ico-before no"></span></td>
+                              <td><span class="ico-before yes"></span></td>
+                              <td><span class="ico-before yes"></span></td>
+                          </tr>
+                          <tr>
+                              <td class="l_td" colspan="2"></td>
                               <td><button class="btn btn-success btn-lg">立即购买</button></td>
                               <td><button class="btn btn-primary btn-lg">立即购买</button></td>
                               <td><button class="btn btn-danger btn-lg">立即购买</button></td>
