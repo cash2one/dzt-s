@@ -36,8 +36,10 @@
 		.dashed-bottom{border-bottom: 1px dashed #ccc;}
 		.pay_list ul li{display: inline-block;padding-left: 17px;margin: 0 10px 15px;line-height: 36px;}
 		.pay_list ul li input{vertical-align: middle;}
+/*
 		.pay_list .typ_img{border: 1px solid #fff;}
 		.pay_list ul li.checked .typ_img,.pay_list .typ_img:hover{border: 1px solid #f35a4a;cursor: pointer;}
+*/
 
 		.pay-tip{line-height: 180%;}
 		.pay-tip p{font-size: 14px;}
@@ -51,9 +53,10 @@
 
 		.pay_list .fix{margin-top: -26px;}
 		.ico-label{width: 160px;line-height: 36px;border: 1px solid #ccc;height: 38px;}
-		.ico-label:hover{border: 1px solid #f35a4a;}
+		.pay_list ul li.checked .ico-label,.ico-label:hover{border: 1px solid #f35a4a;}
+        .third_img{display: inline-block;width: 126px;height: 36px;background-image: url(images/pay/zfb.gif);line-height: 36px;position: relative;background-repeat: no-repeat;}
 		.bank_img{display: inline-block;width: 126px;height: 36px;background-image: url(images/banks.png);line-height: 36px;position: relative;background-repeat: no-repeat;}
-		.bank_img:hover{cursor: pointer;}
+		.bank_img:hover,.third_img:hover{cursor: pointer;}
 
 		.bank_img.ABC {background-position: 0 0;}
 		.bank_img.BJBANK {background-position: 0 -36px;}
@@ -81,6 +84,8 @@
 		.bank_img.SPDB {background-position: 0 -828px;}
 		.bank_img.WZCB {background-position: 0 -864px;}
 		.bank_img.ZJNX {background-position: 0 -900px;}
+
+        .third_img .zfb{background-position: 0 0;}
     </style>
   </head>
   <body>
@@ -114,7 +119,7 @@
     		<div class="col-xs-2">
     		</div>
     		<div class="col-xs-4">
-    			升级至 <a href="#" class="check-box v3">专业版 / 1年</a>
+    			升级至 <a href="javascript:;" class="check-box v3">专业版 / 1年</a>
     		</div>
     		<div class="col-xs-4">
     			<span class="h4">共计：<span class="h2 text-danger">888.00</span> 元</span>
@@ -139,38 +144,38 @@
     		</div>
     		<div id="third_pay" class="col-xs-12 margin-top-row pay_list">
     			<ul class="dashed-bottom">
-    				<li class="checked"><input type="radio" checked="true" id="zfb"> <label for="zfb"><img class="typ_img" src="images/pay/zfb.gif"></label></li>
+                    <li><input type="radio" class="fix" name="bank" id="zfb"> <label class="ico-label" for="zfb"><span class="third_img zfb" title="支付宝"></span></label></li>
     			</ul>
     		</div>
     		<div id="bank_pay" class="col-xs-12 margin-top-row pay_list" style="display:none">
     			<ul class="dashed-bottom">
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_ICBC"> <label class="ico-label" for="b_ICBC"><span class="bank_img ICBC" title="工商银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_CCB"> <label class="ico-label" for="b_CCB"><span class="bank_img CCB" title="中国建设银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_ABC"> <label class="ico-label" for="b_ABC"><span class="bank_img ABC" title="农业银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_PSBC"> <label class="ico-label" for="b_PSBC"><span class="bank_img PSBC" title="中国邮政储蓄银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_COMM"> <label class="ico-label" for="b_COMM"><span class="bank_img COMM" title="交通银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_CMB"> <label class="ico-label" for="b_CMB"><span class="bank_img CMB" title="招商银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_BOC"> <label class="ico-label" for="b_BOC"><span class="bank_img BOC" title="中国银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_CEB"> <label class="ico-label" for="b_CEB"><span class="bank_img CEB" title="中国光大银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_CITIC"> <label class="ico-label" for="b_CITIC"><span class="bank_img CITIC" title="中信银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_SPDB"> <label class="ico-label" for="b_SPDB"><span class="bank_img SPDB" title="浦发银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_CMBC"> <label class="ico-label" for="b_CMBC"><span class="bank_img CMBC" title="中国民生银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_CIB"> <label class="ico-label" for="b_CIB"><span class="bank_img CIB" title="兴业银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_SPABANK"> <label class="ico-label" for="b_SPABANK"><span class="bank_img SPABANK" title="平安银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_GDB"> <label class="ico-label" for="b_GDB"><span class="bank_img GDB" title="广发银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_SHRCB"> <label class="ico-label" for="b_SHRCB"><span class="bank_img SHRCB" title="上海农商银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_SHBANK"> <label class="ico-label" for="b_SHBANK"><span class="bank_img SHBANK" title="上海银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_NBBANK"> <label class="ico-label" for="b_NBBANK"><span class="bank_img NBBANK" title="宁波银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_HZCB"> <label class="ico-label" for="b_HZCB"><span class="bank_img HZCB" title="杭州银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_BJBANK"> <label class="ico-label" for="b_BJBANK"><span class="bank_img BJBANK" title="北京银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_BJRCB"> <label class="ico-label" for="b_BJRCB"><span class="bank_img BJRCB" title="北京农商行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_FDB"> <label class="ico-label" for="b_FDB"><span class="bank_img FDB" title="富滇银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_WZCB"> <label class="ico-label" for="b_WZCB"><span class="bank_img WZCB" title="温州银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_NJCB"> <label class="ico-label" for="b_NJCB"><span class="bank_img NJCB" title="南京银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_CSRCB"> <label class="ico-label" for="b_CSRCB"><span class="bank_img CSRCB" title="常熟农商银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_abc"> <label class="ico-label" for="b_abc"><span class="bank_img abc" title="成都银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_CDCB"> <label class="ico-label" for="b_CDCB"><span class="bank_img CDCB" title="农业银行"></span></label></li>
-    				<li class="checked"><input type="radio" class="fix" name="bank" id="b_ZJNX"> <label class="ico-label" for="b_ZJNX"><span class="bank_img ZJNX" title="浙江省农村信用社联合社"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_ICBC"> <label class="ico-label" for="b_ICBC"><span class="bank_img ICBC" title="工商银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_CCB"> <label class="ico-label" for="b_CCB"><span class="bank_img CCB" title="中国建设银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_ABC"> <label class="ico-label" for="b_ABC"><span class="bank_img ABC" title="农业银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_PSBC"> <label class="ico-label" for="b_PSBC"><span class="bank_img PSBC" title="中国邮政储蓄银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_COMM"> <label class="ico-label" for="b_COMM"><span class="bank_img COMM" title="交通银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_CMB"> <label class="ico-label" for="b_CMB"><span class="bank_img CMB" title="招商银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_BOC"> <label class="ico-label" for="b_BOC"><span class="bank_img BOC" title="中国银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_CEB"> <label class="ico-label" for="b_CEB"><span class="bank_img CEB" title="中国光大银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_CITIC"> <label class="ico-label" for="b_CITIC"><span class="bank_img CITIC" title="中信银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_SPDB"> <label class="ico-label" for="b_SPDB"><span class="bank_img SPDB" title="浦发银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_CMBC"> <label class="ico-label" for="b_CMBC"><span class="bank_img CMBC" title="中国民生银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_CIB"> <label class="ico-label" for="b_CIB"><span class="bank_img CIB" title="兴业银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_SPABANK"> <label class="ico-label" for="b_SPABANK"><span class="bank_img SPABANK" title="平安银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_GDB"> <label class="ico-label" for="b_GDB"><span class="bank_img GDB" title="广发银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_SHRCB"> <label class="ico-label" for="b_SHRCB"><span class="bank_img SHRCB" title="上海农商银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_SHBANK"> <label class="ico-label" for="b_SHBANK"><span class="bank_img SHBANK" title="上海银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_NBBANK"> <label class="ico-label" for="b_NBBANK"><span class="bank_img NBBANK" title="宁波银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_HZCB"> <label class="ico-label" for="b_HZCB"><span class="bank_img HZCB" title="杭州银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_BJBANK"> <label class="ico-label" for="b_BJBANK"><span class="bank_img BJBANK" title="北京银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_BJRCB"> <label class="ico-label" for="b_BJRCB"><span class="bank_img BJRCB" title="北京农商行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_FDB"> <label class="ico-label" for="b_FDB"><span class="bank_img FDB" title="富滇银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_WZCB"> <label class="ico-label" for="b_WZCB"><span class="bank_img WZCB" title="温州银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_NJCB"> <label class="ico-label" for="b_NJCB"><span class="bank_img NJCB" title="南京银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_CSRCB"> <label class="ico-label" for="b_CSRCB"><span class="bank_img CSRCB" title="常熟农商银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_abc"> <label class="ico-label" for="b_abc"><span class="bank_img abc" title="成都银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_CDCB"> <label class="ico-label" for="b_CDCB"><span class="bank_img CDCB" title="农业银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_ZJNX"> <label class="ico-label" for="b_ZJNX"><span class="bank_img ZJNX" title="浙江省农村信用社联合社"></span></label></li>
     			</ul>
     		</div>
     		<div class="col-xs-2 col-xs-offset-5 margin-top-row text-center">
@@ -247,9 +252,13 @@
 			$(".pay-tabs li a").click(function(e){
 				$(".pay_list").hide();
 				$("#" + $(this).attr("pay")).show();
-				$(".pay-tabs li.active").toggleClass("active");
-				$(this).parent().toggleClass("active");
-			})
+				$(".pay-tabs li.active").removeClass("active");
+				$(this).parent().addClass("active");
+			});
+            $(".pay_list ul li .ico-label,.pay_list ul li input[type='radio']").click(function(e){
+                $(".pay_list ul li.checked").removeClass("checked");
+                $(this).parent().addClass("checked");
+            })
 		})
 	</script>
   </body>
