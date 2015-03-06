@@ -52,7 +52,7 @@
 		.pay_list .fix{margin-top: -26px;}
 		.ico-label{width: 160px;line-height: 36px;border: 1px solid #ccc;height: 38px;}
 		.ico-label:hover{border: 1px solid #f35a4a;}
-		.bank_img{display: inline-block;width: 126px;height: 36px;background-image: url(images/banks.png);line-height: 36px;position: relative;}
+		.bank_img{display: inline-block;width: 126px;height: 36px;background-image: url(images/banks.png);line-height: 36px;position: relative;background-repeat: no-repeat;}
 		.bank_img:hover{cursor: pointer;}
 
 		.bank_img.ABC {background-position: 0 0;}
@@ -132,17 +132,17 @@
     			<h4>二. 支付方式：</h4>
     		</div>
     		<div class="col-xs-12 margin-top17-row">
-    			<ul class="nav nav-tabs">
-				  <li role="presentation" class="active"><a href="#">第三方</a></li>
-				  <li role="presentation"><a href="#">银行卡</a></li>
+    			<ul class="nav nav-tabs pay-tabs">
+				  <li role="presentation" class="active"><a pay="third_pay" href="javascript:;">第三方</a></li>
+				  <li role="presentation"><a pay="bank_pay" href="javascript:;">银行卡</a></li>
 				</ul>
     		</div>
-    		<div class="col-xs-12 margin-top-row pay_list hide">
+    		<div id="third_pay" class="col-xs-12 margin-top-row pay_list">
     			<ul class="dashed-bottom">
     				<li class="checked"><input type="radio" checked="true" id="zfb"> <label for="zfb"><img class="typ_img" src="images/pay/zfb.gif"></label></li>
     			</ul>
     		</div>
-    		<div class="col-xs-12 margin-top-row pay_list">
+    		<div id="bank_pay" class="col-xs-12 margin-top-row pay_list" style="display:none">
     			<ul class="dashed-bottom">
     				<li class="checked"><input type="radio" class="fix" name="bank" id="b_ICBC"> <label class="ico-label" for="b_ICBC"><span class="bank_img ICBC" title="工商银行"></span></label></li>
     				<li class="checked"><input type="radio" class="fix" name="bank" id="b_CCB"> <label class="ico-label" for="b_CCB"><span class="bank_img CCB" title="中国建设银行"></span></label></li>
@@ -173,7 +173,7 @@
     				<li class="checked"><input type="radio" class="fix" name="bank" id="b_ZJNX"> <label class="ico-label" for="b_ZJNX"><span class="bank_img ZJNX" title="浙江省农村信用社联合社"></span></label></li>
     			</ul>
     		</div>
-    		<div class="col-xs-2 col-xs-offset-5 margin-top-row pay_list text-center">
+    		<div class="col-xs-2 col-xs-offset-5 margin-top-row text-center">
     			<a href="#" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#payModal">确认支付</a>
     		</div>
     	</div>
@@ -242,5 +242,15 @@
 	</div>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+		$(function(){
+			$(".pay-tabs li a").click(function(e){
+				$(".pay_list").hide();
+				$("#" + $(this).attr("pay")).show();
+				$(".pay-tabs li.active").toggleClass("active");
+				$(this).parent().toggleClass("active");
+			})
+		})
+	</script>
   </body>
 </html>
