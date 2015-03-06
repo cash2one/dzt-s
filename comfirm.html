@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>店侦探</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dzt.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        body{-webkit-font-smoothing: antialiased;/*-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;*/}
+/*       header调整*/
+        .header-wrapper{box-shadow: none;border-bottom: 1px solid #e7e7e7;}
+        .btn-list .signUpBtn{margin-left: 20px;}
+        .btn-list .btn{border-radius: 999px;padding: 5px 32px;}
+		.index-header{height: 80px;line-height: 80px;position:inherit;}
+        .index-content{padding-top: 0px;}
+
+/*
+		.select-ver .check-box{width: 80%;margin: 0px auto;padding:15px 0px;border: 3px solid #fff;text-align: center;}
+		.select-ver .check-box.checked{border: 3px solid #4184F3;}
+		.select-ver .ver{font-size: 24px;}
+*/
+		.checked-ver .check-box{font-size: 20px;border: 1px dashed #333;padding: 10px 30px;}
+		.checked-ver .check-box.v1{background-color: #f6f5e1;color: #41A85F;}
+		.checked-ver .check-box.v2{background-color: #cfe1ff;color:#4184F3;}
+		.checked-ver .check-box.v3{background-color: #ffe0dd;color: #f35a4a;}
+    </style>
+  </head>
+  <body>
+	<div class="container-fluid header-wrapper index-header">
+	   <div class="row">
+		   <div class="col-xs-6 col-logo">
+			   <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+			   <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+		   </div>
+		   <div class="col-xs-6 header-right-side">
+			   <ul class="btn-list clearfix">
+				  <li class="signUpBtn"><button class="btn btn-danger btn-lg">注&nbsp册</button></li>
+				  <li><button class="btn btn-primary btn-lg">登&nbsp陆</button></li>
+			   </ul>
+		   </div>
+	   </div>
+	</div>
+    <div class="container">
+    	<div class="row margin-top-row">
+    		<div class="col-xs-6">
+    			<h4>一. 您将要购买的是：</h4>
+
+    		</div>
+    	</div>
+    	<div class="row margin-top-row checked-ver">
+    		<div class="col-xs-2">
+    		</div>
+    		<div class="col-xs-4">
+    			<a href="#" class="check-box v3">专业版</a>
+    		</div>
+    		<div class="col-xs-4">
+    			<span class="h4">共计：<span class="h2 text-danger">888.00</span> 元</span>
+    		</div>
+    	</div>
+    	<div class="row margin-top-row">
+    		<div class="col-xs-12">
+    			<h4>二. 请选择支付方式：</h4>
+    		</div>
+    		<div class="col-xs-12 margin-top17-row">
+    			<ul class="nav nav-tabs">
+				  <li role="presentation" class="active"><a href="#">支付宝</a></li>
+				  <li role="presentation"><a href="#">银行卡</a></li>
+				</ul>
+    		</div>
+    	</div>
+    </div>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
