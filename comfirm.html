@@ -42,7 +42,7 @@
 */
 
 		.pay-tip{line-height: 180%;}
-		.pay-tip p{font-size: 14px;}
+		.pay-tip p{font-size: 16px;}
 
 		.pay-result-box{width: 100%;padding: 20px 20px 40px 40px;}
 		.pay-result-box a:hover{text-decoration: underline;}
@@ -53,7 +53,9 @@
 
 		.pay_list .fix{margin-top: -26px;}
 		.ico-label{width: 160px;line-height: 36px;border: 1px solid #ccc;height: 38px;}
-		.pay_list ul li.checked .ico-label,.ico-label:hover{border: 1px solid #f35a4a;}
+		.pay_list ul li.checked .ico-label,.pay_list ul li .ico-label:hover{border: 1px solid #f35a4a;}
+		.pay_list ul li .ico-label{position: relative;}
+		.pay_list ul li em{position: absolute;display: inline-block;height: 36px;background-color: #d2eef7;font-size: 12px;font-weight: normal;font-style: normal;right: 0px;width: 18px;line-height: 18px;text-align: center;}
         .third_img{display: inline-block;width: 126px;height: 36px;background-image: url(images/pay/zfb.gif);line-height: 36px;position: relative;background-repeat: no-repeat;}
 		.bank_img{display: inline-block;width: 126px;height: 36px;background-image: url(images/banks.png);line-height: 36px;position: relative;background-repeat: no-repeat;}
 		.bank_img:hover,.third_img:hover{cursor: pointer;}
@@ -111,8 +113,7 @@
         </div>
     	<div class="row margin-top17-row">
     		<div class="col-xs-6">
-    			<h4>一. 您将要购买的是：</h4>
-
+    			<h4>一. 您将要购买的是：<small>（支付成功后，您的<b>专业版</b>到期时间为：<span class="text-danger">2015-5-5</span>）</small></h4>
     		</div>
     	</div>
     	<div class="row margin-top-row checked-ver">
@@ -149,9 +150,9 @@
     		</div>
     		<div id="bank_pay" class="col-xs-12 margin-top-row pay_list" style="display:none">
     			<ul class="dashed-bottom">
-    				<li><input type="radio" class="fix" name="bank" id="b_ICBC"> <label class="ico-label" for="b_ICBC"><span class="bank_img ICBC" title="工商银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_ICBC"> <label class="ico-label" for="b_ICBC"><span class="bank_img ICBC" title="中国工商银行"></span></label></li>
     				<li><input type="radio" class="fix" name="bank" id="b_CCB"> <label class="ico-label" for="b_CCB"><span class="bank_img CCB" title="中国建设银行"></span></label></li>
-    				<li><input type="radio" class="fix" name="bank" id="b_ABC"> <label class="ico-label" for="b_ABC"><span class="bank_img ABC" title="农业银行"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_ABC"> <label class="ico-label" for="b_ABC"><span class="bank_img ABC" title="中国农业银行"></span></label></li>
     				<li><input type="radio" class="fix" name="bank" id="b_PSBC"> <label class="ico-label" for="b_PSBC"><span class="bank_img PSBC" title="中国邮政储蓄银行"></span></label></li>
     				<li><input type="radio" class="fix" name="bank" id="b_COMM"> <label class="ico-label" for="b_COMM"><span class="bank_img COMM" title="交通银行"></span></label></li>
     				<li><input type="radio" class="fix" name="bank" id="b_CMB"> <label class="ico-label" for="b_CMB"><span class="bank_img CMB" title="招商银行"></span></label></li>
@@ -176,6 +177,12 @@
     				<li><input type="radio" class="fix" name="bank" id="b_abc"> <label class="ico-label" for="b_abc"><span class="bank_img abc" title="成都银行"></span></label></li>
     				<li><input type="radio" class="fix" name="bank" id="b_CDCB"> <label class="ico-label" for="b_CDCB"><span class="bank_img CDCB" title="农业银行"></span></label></li>
     				<li><input type="radio" class="fix" name="bank" id="b_ZJNX"> <label class="ico-label" for="b_ZJNX"><span class="bank_img ZJNX" title="浙江省农村信用社联合社"></span></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_ICBC_q"> <label class="ico-label" for="b_ICBC_q"><span class="bank_img ICBC" title="中国工商银行"></span><em class="font-simsun">企业</em></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_CCB_q"> <label class="ico-label" for="b_CCB_q"><span class="bank_img CCB" title="中国建设银行"></span><em class="font-simsun">企业</em></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_ABC_q"> <label class="ico-label" for="b_ABC_q"><span class="bank_img ABC" title="中国农业银行"></span><em class="font-simsun">企业</em></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_CMB_q"> <label class="ico-label" for="b_CMB_q"><span class="bank_img CMB" title="招商银行"></span><em class="font-simsun">企业</em></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_BOC_q"> <label class="ico-label" for="b_BOC_q"><span class="bank_img BOC" title="中国银行"></span><em class="font-simsun">企业</em></label></li>
+    				<li><input type="radio" class="fix" name="bank" id="b_SPDB_q"> <label class="ico-label" for="b_SPDB_q"><span class="bank_img SPDB" title="浦发银行"></span><em class="font-simsun">企业</em></label></li>
     			</ul>
     		</div>
     		<div class="col-xs-2 col-xs-offset-5 margin-top-row text-center">
