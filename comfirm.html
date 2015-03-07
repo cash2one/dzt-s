@@ -79,6 +79,12 @@
 		.bank_img.ZJNX {background-position: 0 -900px;}
 
         .third_img .zfb{background-position: 0 0;}
+
+		.pay_table th,.pay_table td{font-size: 16px;height: 48px;}
+		.pay_table th{font-weight: normal;width: 90px;}
+		.pay_table .underline th,.pay_table .underline td{border-bottom: 1px solid #ccc;}
+		.pay_table td{text-align: right;width: 110px;}
+		.pay_table .end-total{font-size: 20px;}
     </style>
   </head>
   <body>
@@ -103,23 +109,42 @@
             </div>
         </div>
     	<div class="row margin-top17-row">
-    		<div class="col-xs-6">
+    		<div class="col-xs-12">
     			<h4>一. 您将要购买的是：<small>（支付成功后，您的<b>专业版</b>到期时间为：<span class="text-danger">2015-5-5</span>）</small></h4>
     		</div>
     	</div>
     	<div class="row margin-top-row checked-ver">
-    		<div class="col-xs-2">
-    		</div>
-    		<div class="col-xs-4">
-    			升级至 <a href="javascript:;" class="check-box v2">专业版 / 1年</a>
-    		</div>
-    		<div class="col-xs-4">
-    			<span class="h4">应付：<span class="h2 text-danger">888.00</span> 元</span>
+    		<div class="col-xs-11 col-xs-offset-1">
+    			<a href="javascript:;" class="check-box v2">专业版 / 1年</a>
     		</div>
     	</div>
-    	<div class="row">
+    	<div class="row margin-top-row checked-ver">
     		<div class="col-xs-12">
-    			<h4>二. 支付方式：</h4>
+    			<h4>二. 应付金额：</h4>
+    		</div>
+    		<div class="col-xs-11  col-xs-offset-1">
+    			<table class="pay_table">
+    				<tbody>
+    					<tr>
+							<th>套餐总额</th>
+							<td>￥888.00</td>
+						</tr>
+						<tr class="underline">
+							<th>余额</th>
+							<td class="text-success">- ￥888.00</td>
+						</tr>
+						<tr>
+							<th>应付</th>
+							<td class="end-total text-danger">￥888.00</td>
+						</tr>
+    				</tbody>
+    			</table>
+<!--    			<span class="h4"><span class="h2 text-danger">￥ 888.00</span></span>-->
+    		</div>
+    	</div>
+    	<div class="row margin-top17-row">
+    		<div class="col-xs-12">
+    			<h4>三. 支付方式：</h4>
     		</div>
     		<div class="col-xs-12 margin-top17-row">
     			<ul class="nav nav-tabs pay-tabs">
