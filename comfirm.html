@@ -23,10 +23,10 @@
 		.index-header{height: 80px;line-height: 80px;position:inherit;}
         .index-content{padding-top: 0px;}
 
-		.checked-ver .check-box{font-size: 20px;border: 2px solid #4184F3;padding: 10px 30px;}
-		.checked-ver .check-box.v1{background-color: #f6f5e1;color: #41A85F;}
-		.checked-ver .check-box.v2{background-color: #fff;color:#333;}
-		.checked-ver .check-box.v3{background-color: #ffe0dd;color: #f35a4a;}
+		.checked-ver .box{border: 2px solid #4184F3;padding: 10px 30px;position: relative;}
+		.checked-ver .box:hover{cursor: pointer;}
+		.checked-ver .box .check_img{position: absolute;right: 0px;bottom: 0px;}
+		.checked-ver .box .title{font-size: 18px;}
 
 		.dashed-bottom{border-bottom: 1px dashed #ccc;}
 		.pay_list ul li{display: inline-block;padding-left: 17px;margin: 0 10px 15px;line-height: 36px;}
@@ -115,7 +115,10 @@
     	</div>
     	<div class="row margin-top-row checked-ver">
     		<div class="col-xs-11 col-xs-offset-1">
-    			<a href="javascript:;" class="check-box v2">专业版 / 1年</a>
+    			<div class="box l">
+    				<span class="title">专业版 / 1年</span>
+    				<img class="check_img" src="images/buy_check.png"/>
+    			</div>
     		</div>
     	</div>
     	<div class="row margin-top-row checked-ver">
