@@ -16,8 +16,11 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-
-
+        .account-table>tbody>tr.border-dash-bottom-tr>th,.account-table>tbody>tr.border-dash-bottom-tr>td{border-bottom: 1px dashed #ddd;}
+        .account-table>tbody>tr.border-bottom-tr>th,.account-table>tbody>tr.border-bottom-tr>td{border-bottom: 1px solid #ddd;}
+        .account-table>tbody>tr>th{font-weight: normal;}
+        .account-table>tbody>tr>th,.account-table>tbody>tr>td{border-top: none;padding: 20px 0 25px 0;}
+        .account-table>tbody>.edit-tr>th,.account-table>tbody>.edit-tr>td{padding: 10px 0 40px 0;}
     </style>
   </head>
   <body>
@@ -128,9 +131,95 @@
          <div class="pack-toggle text-center">
              <span id="pack-toggle-trigger" class="pack-toggle-trigger ico-font center-block"></span>
          </div>
-         <div class="content-side l">
+         <div class="content-side l padding-box">
             <div class="content-body container-fluid">
-            	content
+            	<div class="row padding-row border-bottom-row">
+                    <div class="col-xs-12">
+                        <h4 class="data-title">账户管理</h4>
+                    </div>
+                </div>
+                <div class="row margin-top17-row">
+                    <div class="col-xs-6">
+                        <table class="table account-table">
+                            <tbody>
+                                <tr>
+                                    <th width="15%">版本</th>
+                                    <td width="60%"><b>专业版</b></td>
+                                    <td width="25" class="text-right"><a href="#" class="hover-link">续费升级</a></td>
+                                </tr>
+                                <tr class="border-dash-bottom-tr">
+                                    <th width="15%">过期时间</th>
+                                    <td colspan="2" width="85%"><b>lizihang</b></td>
+                                </tr>
+                                <tr>
+                                    <th width="15%">昵称</th>
+                                    <td width="60%"><b>lizihang</b></td>
+                                    <td width="25" class="text-right"><a href="#" class="hover-link">修改</a></td>
+                                </tr>
+                                <tr>
+                                    <th width="15%">密码</th>
+                                    <td width="60%"><b>*******</b></td>
+                                    <td width="25" class="text-right"><a href="#" class="hover-link">修改</a></td>
+                                </tr>
+                                <tr class="edit-tr border-bottom-tr">
+                                    <td colspan="3">
+                                        <h4>修改密码</h4>
+                                        <div class="edit-row clearfix margin-top-row">
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label for="old_pw" class="h5 text-muted">原密码</label>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control input-lg" id="old_pw" placeholder="原密码">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label for="new_pw" class="h5 text-muted">新密码</label>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control input-lg" id="new_pw" placeholder="新密码">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label for="comfirm_pw" class="h5 text-muted">确认密码</label>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control input-lg" id="comfirm_pw" placeholder="确认密码">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-3 col-xs-offset-2">
+                                                    <button class="btn btn-primary btn-lg btn-block">修改</button>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <button class="btn btn-default btn-lg btn-block">取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="15%">QQ</th>
+                                    <td width="60%"><b>102***317</b></td>
+                                    <td width="25" class="text-right"><a href="#" class="hover-link">修改</a></td>
+                                </tr>
+                                <tr>
+                                    <th width="15%">登陆手机</th>
+                                    <td width="60%"><b>183****8886</b></td>
+                                    <td width="25" class="text-right"><a href="#" class="hover-link">修改</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
          </div>
       </div>
