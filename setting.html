@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>店侦探</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dzt.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+		.account-table{min-width: 600px;}
+        .account-table>tbody>tr.border-dash-bottom-tr>th,.account-table>tbody>tr.border-dash-bottom-tr>td{border-bottom: 1px dashed #ddd;}
+        .account-table>tbody>tr.border-bottom-tr>th,.account-table>tbody>tr.border-bottom-tr>td{border-bottom: 1px solid #ddd;}
+        .account-table>tbody>tr>th{font-weight: normal;}
+        .account-table>tbody>tr>th,.account-table>tbody>tr>td{border-top: none;padding: 20px 0 25px 0;}
+        .account-table>tbody>.edit-tr>th,.account-table>tbody>.edit-tr>td{padding: 10px 0 40px 0;}
+		.account-table>tbody>.edit-tr .edit-row .info{line-height: 1.42857;margin-bottom: 18px;padding: 10px 13px;}
+		.account-table>tbody>.edit-tr .edit-row .info .ico-font{font-size: 14px;}
+		.account-table>tbody>.login-qq-tr .item-k{height: 40px;line-height: 40px;}
+		.account-table>tbody>.login-qq-tr .item-v{height: 40px;line-height: 40px;margin-left: 25px;}
+		.account-table>tbody>.login-qq-tr ul li{margin-bottom: 15px;}
+		.usr-col{border-bottom: 1px dashed #ddd;padding-bottom: 15px;}
+		.usr{line-height: 1;}
+		.usr .ico-font{font-size: 110px;color: #4184f3;}
+		.usr-info{padding-left:15px;}
+		.usr-info .nick_name{font-size: 20px;}
+		.usr-info li{margin-bottom: 17px;}
+		.usr-info .item-k{display: inline-block;width: 80px;}
+		.usr-info .item-v .upgrade-link{margin-left: 70px;}
+    </style>
+  </head>
+  <body>
+   <div class="container-fluid header-wrapper">
+       <div class="row">
+           <div class="col-xs-6 col-logo">
+               <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+               <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+           </div>
+           <div class="col-xs-6 header-right-side">
+               <ul class="clearfix">
+                  <li class="user">
+                      <a id="user-button" href="#"><span class="account">102700317@qq.com</span><span class="ico-font">&#xe604;</span></a>
+                  </li>
+                  <li class="pay-text"><a href="#">续费升级</a></li>
+               </ul>
+           </div>
+       </div>
+  </div>
+  <div class="content-bg">
+      <div class="contain-body clearfix">
+         <div class="nav-side l">
+             <div class="ver-box">专业版</div>
+             <div class="nav-tree-box">
+                 <dl class="nav-tree">
+                     <dt class="nav-tree-node">
+                         <a href="#"><span>监控店铺</span></a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <a href="#">管理</a>
+                             </dt>
+                             <dd></dd>
+                         </dl>
+                     </dd>
+                     <dt class="nav-tree-node">
+                         <a href="#">分析</a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <a href="#">整店报告</a>
+                             </dt>
+                             <dd></dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">交易分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">引流分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">营销分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">宝贝分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                         </dl>
+                     </dd>
+                 </dl>
+             </div>
+             <div class="help-box">
+                 <ul>
+                     <li class="help-service"><a href="#"><span class="ico-font">&#xe61a;</span>客服</a><a href="#"><span class="ico-font">&#xe618;</span>客服</a></li>
+                 </ul>
+             </div>
+         </div>
+         <div class="pack-toggle text-center">
+             <span id="pack-toggle-trigger" class="pack-toggle-trigger ico-font center-block"></span>
+         </div>
+         <div class="content-side l padding-box">
+            <div class="content-body container-fluid">
+            	<div class="row padding-row border-bottom-row">
+                    <div class="col-xs-12">
+                        <h4 class="data-title">账户管理</h4>
+                    </div>
+                </div>
+                <div class="row margin-top17-row">
+                	<div class="col-xs-12 usr-col">
+                		<div class="usr l">
+                			<span class="ico-font">&#xe604;</span>
+                		</div>
+                		<ul class="usr-info l">
+                			<li><span class="nick_name text-muted">lizhang</span></li>
+                			<li><span class="item-k">当前版本</span><span class="item-v"><b class="text-success">专业版</b><a class="upgrade-link hover-link" href="#">续费升级</a></span></li>
+                			<li><span class="item-k">过期时间</span><span class="item-v"><b>2015年12月5日</b></span></li>
+                		</ul>
+                	</div>
+                </div>
+                <div class="row margin-top17-row">
+                    <div class="col-xs-6">
+
+                        <table class="table account-table">
+                            <tbody>
+                                <tr>
+                                    <th width="15%">手机</th>
+                                    <td width="60%"><b>183****8886</b></td>
+                                    <td width="25" class="text-right"><span class="ico-font">&#xe63e;</span> <a href="javascript:;" edit-data="mobile_tr" class="edit-link hover-link">修改</a></td>
+                                </tr>
+                                <tr id="mobile_tr" class="edit-tr border-bottom-tr hide">
+                                    <td colspan="3">
+                                        <h4 class="text-danger">修改手机号码</h4>
+                                        <div class="edit-row clearfix margin-top-row">
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label for="mobile_number" class="h5 text-muted">新手机</label>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-lg" id="mobile_number" placeholder="手机号" name="mobile">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                	<div class="info text-danger hide">
+                                                		<span class="ico-font">&#xe631;</span> 手机格式有误
+                                                	</div>
+                                                	<div class="info text-success">
+                                                		<span class="ico-font">&#xe62f;</span> 正确
+                                                	</div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-3 col-xs-offset-2">
+                                                    <button class="btn btn-primary btn-lg btn-block">修改</button>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <button class="btn btn-default btn-lg btn-block btn-cancel">取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="15%">密码</th>
+                                    <td width="60%"><b>*******</b></td>
+                                    <td width="25" class="text-right"><span class="ico-font">&#xe63e;</span> <a href="javascript:;" edit-data="pw_tr" class="edit-link hover-link">修改</a></td>
+                                </tr>
+                                <tr id="pw_tr" class="edit-tr border-bottom-tr hide">
+                                    <td colspan="3">
+                                        <h4 class="text-danger">修改密码</h4>
+                                        <div class="edit-row clearfix margin-top-row">
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label for="old_pw" class="h5 text-muted">原密码</label>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control input-lg" id="old_pw" placeholder="原密码" name="old_pw">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label for="new_pw" class="h5 text-muted">新密码</label>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control input-lg" id="new_pw" placeholder="新密码" name="new_pw">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label for="confirm_pw" class="h5 text-muted">确认密码</label>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control input-lg" id="confirm_pw" placeholder="确认密码" name="confirm_pw">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-3 col-xs-offset-2">
+                                                    <button class="btn btn-primary btn-lg btn-block">修改</button>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <button class="btn btn-default btn-lg btn-block btn-cancel">取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="15%">昵称</th>
+                                    <td width="60%"><b>lizihang</b></td>
+                                    <td width="25" class="text-right"><span class="ico-font">&#xe63e;</span> <a href="javascript:;" edit-data="nick_name_tr" class="edit-link hover-link">修改</a></td>
+                                </tr>
+                                <tr id="nick_name_tr" class="edit-tr border-bottom-tr hide">
+                                    <td colspan="3">
+                                        <h4 class="text-danger">修改昵称</h4>
+                                        <div class="edit-row clearfix margin-top-row">
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label for="nick_name" class="h5 text-muted">新昵称</label>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-lg" id="nick_name" placeholder="昵称" name="nick_name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-3 col-xs-offset-2">
+                                                    <button class="btn btn-primary btn-lg btn-block">修改</button>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <button class="btn btn-default btn-lg btn-block btn-cancel">取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="15%">QQ</th>
+                                    <td width="60%"><b>102700317</b></td>
+                                    <td width="25" class="text-right"><span class="ico-font">&#xe63e;</span> <a href="javascript:;" edit-data="qq_tr" class="edit-link hover-link">修改</a></td>
+                                </tr>
+                                <tr id="qq_tr" class="edit-tr border-bottom-tr hide">
+                                    <td colspan="3">
+                                        <h4 class="text-danger">修改QQ</h4>
+                                        <div class="edit-row clearfix margin-top-row">
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label for="qq_number" class="h5 text-muted">新QQ</label>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control input-lg" id="qq_number" placeholder="QQ" name="qq">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-3 col-xs-offset-2">
+                                                    <button class="btn btn-primary btn-lg btn-block">修改</button>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <button class="btn btn-default btn-lg btn-block btn-cancel">取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+								<tr class="login-qq-tr">
+                                    <th width="15%">已绑登陆QQ</th>
+                                    <td width="85%" colspan="2">
+                                    	<ul>
+                                    		<li class="clearfix">
+                                    			<div class="item-k l">
+                                    				<img class="img-thumbnail" src="images/qq_face_30.gif" alt="QQ头像"> 昵称：abcd
+                                    			</div>
+                                    			<div class="item-v l">
+                                    				<a href="javascript:;" class="hover-link">解绑</a>
+                                    			</div>
+                                    		</li>
+                                    		<li class="clearfix">
+                                    			<div class="item-k l">
+                                    				<img class="img-thumbnail" src="images/qq_face_30.gif" alt="QQ头像"> 昵称：abcd
+                                    			</div>
+                                    			<div class="item-v l">
+                                    				<a href="javascript:;" class="hover-link">解绑</a>
+                                    			</div>
+                                    		</li>
+                                    	</ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+  </div>
+
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dzt_bg.js"></script>
+    <script type="text/javascript">
+		$(".edit-link").click(function(){
+			$(".account-table tr:not(.edit-tr)").removeClass('hide');
+			$(".edit-tr:not(.hide)").addClass("hide");
+			$("#" + $(this).attr("edit-data")).removeClass("hide");
+			$(this).parents("tr").addClass("hide");
+		})
+		$(".btn-cancel").click(function(){
+			$(this).parents("tr.edit-tr").addClass("hide");
+			$(this).parents("tr.edit-tr").prev().removeClass("hide")
+		})
+    </script>
+  </body>
+</html>
