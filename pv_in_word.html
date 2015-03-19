@@ -28,7 +28,12 @@
         .pv-table td i a:hover{text-decoration: underline;}
         .pv-table td i::after{content: "个";font-size: 12px;margin-left: 7px;color: #777;}
         .pv-table td .trend{display: inline-block;margin-right: 7px;}
-        .pv-table.data-table tbody td:not(.nohover):hover{background-color:#f5f9fe;}
+        .pv-table td .trend canvas:hover{cursor: pointer;}
+/*        .pv-table.data-table tbody td:not(.nohover):hover{background-color:#f5f9fe;}*/
+        .pv-table>tbody>tr>td:not(.nohover){background: url(images/data_tab_bg_106.gif) repeat-x 0 0;background-image:-webkit-linear-gradient(to top, #f7f7f7, #fff);background-image:linear-gradient(to top,#f7f7f7, #fff);}
+        .pv-table>tbody>tr>td.checked{background: url(images/data_tab_bg_106_des.gif) repeat-x 0 0;background-image:-webkit-linear-gradient(to top, #fff, #f7f7f7);background-image:linear-gradient(to top,#fff, #f7f7f7);box-shadow: 0 1px 4px rgba(0,0,0,0.05) inset;position: relative;}
+        .pv-table>tbody>tr>td.checked .arrow-down{width: 13px;height: 8px;background: url(images/sprites.png) no-repeat 0 0px;position: absolute;left: 50%;margin-left: -13px;display: block;background-position:left -10px;bottom:-8px;}
+        .pv-table>tbody>tr>td.checked a{color: #666;}
 
         /*table内的小图表提示样式  */
         #jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;font-size: 12px; text-align: left;white-space: nowrap;padding: 5px;z-index: 10000;color: #fff;background-color:#f35a4a;border-radius: 2px;border: none;}
@@ -251,10 +256,13 @@
                                 <tr>
                                     <td class="ico-flag nohover"><div class="ico-font text-danger">&#xe654;</div><h5>PC端</h5></td>
                                     <td class="text-right nohover">引流关键词数</td>
-                                    <td class="bg"><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">12</a></i></td>
-                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">3</a></i></td>
-                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">20</a></i></td>
-                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">5</a></i></td>
+                                    <td class="checked">
+                                        <span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">12</a></i>
+                                        <span class="arrow-down"></span>
+                                    </td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">3</a></i><span class="arrow-down"></span></td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">20</a></i><span class="arrow-down"></span></td>
+                                    <td><span class="trend" date-start="2015-5-28">4,4,4,7,5,9,10</span><i><a href="#">5</a></i><span class="arrow-down"></span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -289,9 +297,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="col-xs-12">
-                        <div class="shadow-row"></div>
                     </div>
                 </div>
 
@@ -523,28 +528,44 @@
 
             });
             //生成每个栏目的小图表
+
+//            $('.pv-table .trend').sparkline('html',{
+//                type:'bar',
+//                barWidth:4,
+//                barSpacing:2,
+//                barColor:'#ccc',
+//                chartRangeMin:'0',
+//                highlightColor:'#f35a4a',
+//                disableTooltips:true
+//            });
             $('.pv-table .trend').sparkline('html',{
-                type:'bar',
-                barWidth:4,
-                barSpacing:2,
-                barColor:'#ccc',
-                chartRangeMin:'0',
-                highlightColor:'#f35a4a',
+                type: 'line',
+                width: '80px',
+                height: '18px',
+                lineColor: '#f35a4a',
+                fillColor: '#d9e6fd',
+                lineWidth: 0.7,
+                minSpotColor: '#4184f3',
+                maxSpotColor: '#4184f3',
+                highlightSpotColor: '#5ad26c',
+                highlightLineColor: '#5ad26c',
+                spotRadius: 1.8,
                 disableTooltips:true
             });
             //为图表绑定事件
             $('.pv-table .trend').bind('sparklineRegionChange', function(ev) {
                 var sparkline = ev.sparklines[0],
                     region = sparkline.getCurrentRegionFields();
-                var offset = $(this).offset();
-                if($("#jqstooltip").length == 0 ){
-                    $('<div id="jqstooltip" class="jqstooltip" style="width: auto; height: 26px; visibility: visible;"><div class="jqtooltip-class"></div></div>').appendTo("body");
-                    $("#jqstooltip").css("left",parseInt(offset.left - 5)+"px").css("top",parseInt(offset.top - 32) + "px");
+                if(sparkline.currentRegion != undefined){
+                    var offset = $(this).offset();
+                    var d_arr = $(this).attr("date-start").split("-");
+                    var d = new Date(d_arr[0],d_arr[1],(parseInt(d_arr[2])+sparkline.currentRegion).toString());
+                    if($("#jqstooltip").length == 0 ){
+                        $('<div id="jqstooltip" class="jqstooltip" style="width: auto; height: 26px; visibility: visible;"><div class="jqtooltip-class"></div></div>').appendTo("body");
+                        $("#jqstooltip").css("left",parseInt(offset.left - 5)+"px").css("top",parseInt(offset.top - 32) + "px");
+                    }
+                    $("#jqstooltip .jqtooltip-class").html(d.getMonth() + '月' + d.getDate() + '日 : ' + sparkline.values[sparkline.currentRegion] + '个');
                 }
-                var d_arr = $(this).attr("date-start").split("-");
-                var d = new Date(d_arr[0],d_arr[1],(parseInt(d_arr[2])+sparkline.currentRegion).toString());
-                $("#jqstooltip .jqtooltip-class").html(d.getMonth() + '月' + d.getDate() + '日 : ' + sparkline.values[sparkline.currentRegion] + '个');
-//                d.getDate() + sparkline.currentRegion
             }).bind('mouseleave', function() {
                 $("#jqstooltip").detach();
             });

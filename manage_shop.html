@@ -60,7 +60,7 @@
         #add-shop-dialog .ico-font{font-size:24px;color:#4184f3; }
         #add-shop-dialog .alert{padding: 8px 15px;}
 
-
+        .demo-col .toggle{margin-left: 25px;}
     </style>
   </head>
   <body>
@@ -246,6 +246,72 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="col-xs-12 demo-col">
+                            <div class="row margin-top17-row">
+                                <div class="col-xs-12">
+                                    <div class="title l">
+                                        <span class="text-success f18">示例店铺</span>
+                                    </div>
+                                    <div class="toggle l">
+                                        <div class="btn btn-default btn-toggle-demo">显示</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="demo-col-table" class="col-xs-12 hide">
+                            <table id="shop-list-table" class="table table-hover sort-table">
+                                <thead>
+                                    <tr>
+                                        <th width="29%" class="shop-name">店铺名</th>
+                                        <th width="15%" class="sales-volume"><span class="ico-after">昨天销量</span></th>
+                                        <th width="15%" class="sales-amount"><span class="ico-after">昨天销售额</span></th>
+                                        <th width="15%" class="sword-num"><span class="ico-after">昨天自然引流词</span></th>
+                                        <th width="15%" class="dfword-num"><span class="ico-after">昨天豆腐块词</span></th>
+                                        <th width="11%" class="op">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="shop-taobao ico-before i-shop-name">a几度家居旗舰店</span> <span class="ico-font ww_ico" title="旺旺名称">&#xe619;</span> <a class="shop-link" href="#店铺网址"><span class="ico-font">&#xe635;</span></a>
+                                        </td>
+                                        <td><span class="i-sales-volume">223</span><i class="ico-before down">2.5%</i></td>
+                                        <td><span class="i-sales-amount">126万</span><i class="ico-before flat">0%</i></td>
+                                        <td><span class="i-sword-num">28</span><i class="ico-before up">3.5%</i></td>
+                                        <td><span class="i-dfword-num">28</span><i class="ico-before up">3.5%</i></td>
+                                        <td>
+                                            <i class="tip" title="该店5天后可修改"></i><button type="button" class="btn btn-primary">分析</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="shop-tmall ico-before i-shop-name">b几度家居旗舰店</span> <span class="ico-font ww_ico" title="旺旺名称">&#xe619;</span> <a class="shop-link" href="#店铺网址"><span class="ico-font">&#xe635;</span></a></td>
+                                        <td><span class="i-sales-volume">323</span><i class="ico-before down">2.5%</i></td>
+                                        <td><span class="i-sales-amount">136万</span><i class="ico-before up">3.5%</i></td>
+                                        <td><span class="i-sword-num">15</span><i class="ico-before up">3.5%</i></td>
+                                        <td><span class="i-dfword-num">5</span><i class="ico-before up">35%</i></td>
+                                        <td><i class="tip" title="该店3天后可修改"></i><button type="button" class="btn btn-primary">分析</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="shop-taobao ico-before i-shop-name">c几度家居旗舰店</span> <span class="ico-font ww_ico" title="旺旺名称">&#xe619;</span> <a class="shop-link" href="#店铺网址"><span class="ico-font">&#xe635;</span></a></td>
+                                        <td><span class="i-sales-volume">313</span><i class="ico-before down">0.51%</i></td>
+                                        <td><span class="i-sales-amount">135万</span><i class="ico-before up">3.15%</i></td>
+                                        <td><span class="i-sword-num">35</span><i class="ico-before up">3.5%</i></td>
+                                        <td><span class="i-dfword-num">2</span><i class="ico-before up">36%</i></td>
+                                        <td><i class="tip delable" title="该店可修改"></i><button type="button" class="btn btn-primary">分析</button><a class="del-link" href="#del-warning-dialog" data-toggle="modal" shop-id="123456">删除</a></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><span class="shop-taobao ico-before i-shop-name">c几度家居旗舰店</span> <span class="ico-font ww_ico" title="旺旺名称">&#xe619;</span> <a class="shop-link" href="#店铺网址"><span class="ico-font">&#xe635;</span></a></td>
+                                        <td><span class="i-sales-volume">...</span></td>
+                                        <td><span class="i-sales-amount">...</span></td>
+                                        <td><span class="i-sword-num">...</span></td>
+                                        <td><span class="i-dfword-num">...</span></td>
+                                        <td><i class="tip" title="30天后可修改"></i><span class="text-danger">新增</span> 请明天查看</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
          </div>
@@ -303,6 +369,7 @@
     <script src="js/dzt_bg.js"></script>
     <script src="js/jquery.tablesorter.min.js"></script>
     <script type="text/javascript">
+
         //manage-shop-js-start
         function del_shop(id){
             alert("删除店铺"+id);
@@ -315,6 +382,14 @@
         })
 
         $(function(){
+            $(".btn-toggle-demo").click(function(){
+                if($(this).text()=="显示"){
+                    $(this).text("隐藏");
+                }else{
+                    $(this).text("显示");
+                }
+                $("#demo-col-table").toggleClass("hide")
+            })
             $("#shop-list-table .tip").tooltip({
 				placement:'left'
 			});
