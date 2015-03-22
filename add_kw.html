@@ -19,6 +19,7 @@
 		.top-warning-info ul li{margin: 5px 0px;}
 		.add-kw-table>tbody>tr>td.add-more{text-align: center;}
 		.error-info ul li{margin: 5px 0px;}
+        #kw-table>tbody>tr>td:first-child{text-align: left;}
     </style>
   </head>
   <body>
@@ -140,7 +141,7 @@
                 </div>
                 <div class="row margin-top17-row">
                 	<div class="col-xs-12">
-                		<div class="alert alert-warning top-warning-info">
+                		<div class="alert alert-warning top-warning-info hide">
                 			<ul>
                 				<li>1. 发现搜索某宝贝的相关关键词时，某些热门的关键词店侦探的数据却没有？</li>
                 				<li>2. 发现某宝贝投了某关键词，店侦探的数据却没有？</li>
@@ -155,6 +156,13 @@
                 </div>
                 <div class="row margin-top17-row">
                 	<div class="col-xs-4">
+                	    <div>
+                	        <textarea class="form-control" rows="10" placeholder="请输入关键词，一行一个，一次最多添加10个"></textarea>
+                	    </div>
+                	    <div class="text-right margin-top17-row">
+                	        <button class="btn btn-primary">提交</button>
+                	    </div>
+<!--
                 		<table class="table data-table add-kw-table">
                 			<thead>
                 				<tr>
@@ -182,6 +190,7 @@
                 				</tr>
                 			</tbody>
                 		</table>
+-->
                 		<div class="margin-top-row error-info">
                 			<ul>
                 				<li><span class="text-danger">错误解释：</span></li>
@@ -191,6 +200,35 @@
 
                 			</ul>
                 		</div>
+                	</div>
+                	<div class="col-xs-5">
+                	    <table id="kw-table" class="table data-table kw-table">
+                			<thead>
+                				<tr>
+                					<th width="70%">关键词</th>
+                					<th width="30%">结果</th>
+                				</tr>
+                			</thead>
+                			<tbody>
+                				<tr>
+                					<td>连衣裙 女</td>
+                					<td><span class="text-success">成功</span></td>
+                				</tr>
+                				<tr>
+                					<td>男士</td>
+                					<td><span class="text-danger">重复关键词</span></td>
+                				</tr>
+                				<tr>
+                					<td>男士</td>
+                					<td><span class="text-danger">无效关键词</span></td>
+                				</tr>
+                				<tr>
+                					<td colspan="2" style="text-align:center;">
+                					    您一共提交了<b class="text-success">3</b>个关键词
+                					</td>
+                				</tr>
+                			</tbody>
+                		</table>
                 	</div>
                 </div>
             </div>
