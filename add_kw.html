@@ -206,19 +206,32 @@
 		$(function(){
 			$(".submit-btn").click(function(){
 				var kws_str = $("#kw-textarea").val();
-				var kws = kws_str.replace("\r","").split('\n')
-				kws_num = kws.length
-				if(kws_num>10){
+				var kws = kws_str.replace("\r","").split('\n');
+				var kws_num,loop_num,textarea_str,textarea_str = "";
+                var new_kws = new Array();
+                for(i=0;i<kws.length;i++){
+                    if(kws[i].trim()!=""){
+                        new_kws.push(kws[i]);
+                        textarea_str = textarea_str + kws[i] + '\n'
+                    }
+                }
+                if(textarea_str.charAt(textarea_str.length-1) == "\n"){
+                    textarea_str = textarea_str.substring(0,textarea_str.length-1);
+                }
+                $("#kw-textarea").val(textarea_str);
+                kws_num = new_kws.length;
+                if(kws_num>10){
 					loop_num = 10
 				}else{
 					loop_num = kws_num
 				}
                 if(loop_num>0){
                     for(var i=0;i<loop_num;i++){
-                        kws[i] = kws[i].trim();
-                        console.log(kws[i])
-                        $("#kw-table").find('tbody').prepend('<tr><td class="kw">' + kws[i] + '</td><td class="post-ret"><img src="images/loading.gif"/></td></tr>');
+                        new_kws[i] = new_kws[i].trim();
+                        console.log(new_kws[i])
+                        $("#kw-table tbody .ret-tr").before('<tr><td class="kw">' + new_kws[i] + '</td><td class="post-ret"><img src="images/loading.gif"/></td></tr>');
                     }
+                    $("#kw-table tbody .ret-tr td").html("<span class='text-danger'>正在添加中，请稍后...</span>")
                     $("#kw-table").removeClass("hide");
                     $("#kw-table tbody tr:not(.tet-tr)").each(function(){
                         console.log("post:" + $(this).find(".kw").text());
