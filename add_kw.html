@@ -18,7 +18,11 @@
     <style type="text/css">
 		.top-warning-info ul li{margin: 5px 0px;}
 		.add-kw-table>tbody>tr>td.add-more{text-align: center;}
+		.error-info{margin-bottom: 10px;}
 		.error-info ul li{margin: 5px 0px;}
+        #kw-table>tbody>tr>td:first-child{text-align: left;}
+		#kw-table .ret{}
+		#kw-table .ret .ico-font{font-size: 14px;color: #4184f3;}
     </style>
   </head>
   <body>
@@ -140,7 +144,7 @@
                 </div>
                 <div class="row margin-top17-row">
                 	<div class="col-xs-12">
-                		<div class="alert alert-warning top-warning-info">
+                		<div class="alert alert-warning top-warning-info hide">
                 			<ul>
                 				<li>1. 发现搜索某宝贝的相关关键词时，某些热门的关键词店侦探的数据却没有？</li>
                 				<li>2. 发现某宝贝投了某关键词，店侦探的数据却没有？</li>
@@ -154,35 +158,14 @@
                 	</div>
                 </div>
                 <div class="row margin-top17-row">
-                	<div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
-                		<table class="table data-table add-kw-table">
-                			<thead>
-                				<tr>
-                					<th width="70%">关键词</th>
-                					<th width="30%"></th>
-                				</tr>
-                			</thead>
-                			<tbody>
-                				<tr>
-                					<td><input type="text" class="form-control"  placeholder=""></td>
-                					<td><button type="button" class="btn btn-default">提交</button></td>
-                				</tr>
-                				<tr>
-                					<td><input type="text" class="form-control"  placeholder=""></td>
-                					<td><button type="button" class="btn btn-default">提交</button></td>
-                				</tr>
-                				<tr>
-                					<td><input type="text" class="form-control"  placeholder=""></td>
-                					<td><button type="button" class="btn btn-default">提交</button></td>
-                				</tr>
-                				<tr>
-                					<td colspan="2" class="add-more">
-                						<button class="btn btn-danger add-more-input">增加一行</button> <button class="btn btn-primary">全部提交</button>
-                					</td>
-                				</tr>
-                			</tbody>
-                		</table>
-                		<div class="margin-top-row error-info">
+                	<div class="col-md-4 col-xs-9">
+                	    <div>
+                	        <textarea id="kw-textarea" class="form-control" rows="10" placeholder="请输入关键词，一行一个，一次最多添加10个"></textarea>
+                	    </div>
+                	    <div class="text-right margin-top17-row">
+                	        <button class="btn btn-primary submit-btn">全部提交</button>
+                	    </div>
+                		<div class="margin-top17-row error-info">
                 			<ul>
                 				<li><span class="text-danger">错误解释：</span></li>
                 				<li>1. 重复关键词：该关键词早前已收录</li>
@@ -191,6 +174,23 @@
 
                 			</ul>
                 		</div>
+                	</div>
+                	<div class="col-md-5 col-xs-9">
+                	    <table id="kw-table" class="table data-table kw-table hide">
+                			<thead>
+                				<tr>
+                					<th width="70%">关键词</th>
+                					<th width="30%">结果</th>
+                				</tr>
+                			</thead>
+                			<tbody>
+                				<tr class="ret-tr">
+                					<td class="bg-success" colspan="2" style="text-align:center;">
+                					    您一共提交了<b class="text-success">3</b>个关键词
+                					</td>
+                				</tr>
+                			</tbody>
+                		</table>
                 	</div>
                 </div>
             </div>
@@ -204,13 +204,29 @@
     <script src="js/dzt_bg.js"></script>
     <script type="text/javascript">
 		$(function(){
-			$(".add-more-input").click(function(){
-				$(this).parents("tr").before('<tr>' +
-                				'<td><input type="text" class="form-control"  placeholder=""></td>' +
-                				'<td><button type="button" class="btn btn-default">提交</button></td>' +
-                				'</tr>');
-				$(this).parents("tr").prev().find("input.form-control").trigger("focus");
-			})
+			$(".submit-btn").click(function(){
+				var kws_str = $("#kw-textarea").val();
+				var kws = kws_str.replace("\r","").split('\n')
+				kws_num = kws.length
+				if(kws_num>10){
+					loop_num = 10
+				}else{
+					loop_num = kws_num
+				}
+                if(loop_num>0){
+                    for(var i=0;i<loop_num;i++){
+                        kws[i] = kws[i].trim();
+                        console.log(kws[i])
+                        $("#kw-table").find('tbody').prepend('<tr><td class="kw">' + kws[i] + '</td><td class="post-ret"><img src="images/loading.gif"/></td></tr>');
+                    }
+                    $("#kw-table").removeClass("hide");
+                    $("#kw-table tbody tr:not(.tet-tr)").each(function(){
+                        console.log("post:" + $(this).find(".kw").text());
+                        console.log("success");
+                        $(this).find(".post-ret").empty().addClass("text-success").text("添加成功");
+                    });
+                }
+			});
 		});
     </script>
   </body>
