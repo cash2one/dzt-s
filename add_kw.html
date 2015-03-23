@@ -211,16 +211,19 @@
                 var new_kws = new Array();
                 for(i=0;i<kws.length;i++){
                     if(kws[i].trim()!=""){
-                        new_kws.push(kws[i]);
-                        textarea_str = textarea_str + kws[i] + '\n'
+                        new_kws.push(kws[i].trim());
+                        textarea_str = textarea_str + kws[i].trim() + '\n'
                     }
                 }
                 if(textarea_str.charAt(textarea_str.length-1) == "\n"){
                     textarea_str = textarea_str.substring(0,textarea_str.length-1);
                 }
                 $("#kw-textarea").val(textarea_str);
+                $("#kw-textarea").attr("readonly","true");
+                $(this).addClass("disabled")
+                
                 kws_num = new_kws.length;
-                if(kws_num>10){
+                if(kws_num >= 10){
 					loop_num = 10
 				}else{
 					loop_num = kws_num
@@ -228,8 +231,6 @@
                 $("#kw-table tbody tr:not(.ret-tr)").detach();
                 if(loop_num>0){
                     for(var i=0;i<loop_num;i++){
-                        new_kws[i] = new_kws[i].trim();
-                        console.log(new_kws[i])
                         $("#kw-table tbody .ret-tr").before('<tr><td class="kw">' + new_kws[i] + '</td><td class="post-ret"><img src="images/loading.gif"/></td></tr>');
                     }
                     $("#kw-table tbody .ret-tr td").html("<span class='text-danger'>正在添加中，请稍后...</span>")
@@ -239,6 +240,23 @@
                         console.log("success");
                         $(this).find(".post-ret").empty().addClass("text-success").text("添加成功");
                     });
+                    if(new_kws.length > 10){
+                        new_kws.splice(0,10);
+                    }else{
+                        new_kws.splice(0,new_kws.length);
+                    }
+                    textarea_str = "";
+                    for(i=0;i<new_kws.length;i++){
+                        if(new_kws[i].trim()!=""){
+                            textarea_str = textarea_str + new_kws[i].trim() + '\n'
+                        }
+                    }
+                    if(textarea_str.charAt(textarea_str.length-1) == "\n"){
+                        textarea_str = textarea_str.substring(0,textarea_str.length-1);
+                    }
+                    $("#kw-textarea").val(textarea_str);
+                    $("#kw-textarea").removeAttr("readonly");
+                    $(this).removeClass("disabled")
                 }
 			});
 		});
