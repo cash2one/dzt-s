@@ -225,6 +225,7 @@
 				}else{
 					loop_num = kws_num
 				}
+                $("#kw-table tbody tr:not(.ret-tr)").detach();
                 if(loop_num>0){
                     for(var i=0;i<loop_num;i++){
                         new_kws[i] = new_kws[i].trim();
