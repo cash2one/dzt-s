@@ -16,20 +16,22 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-		.rtable{width: 100%;min-width: 888px;}
+		.rtable{width: 100%;min-width: 988px;}
 		.rtable a:hover{text-decoration: underline;}
         .rtable a.ico-font:hover{text-decoration: none;color:#f35a4a; }
 		.rtable>thead>tr>th{text-align: center;font-size: 16px;color: #777;font-weight: normal;height: 40px;}
-		.rtable>tbody>tr>td{border-bottom: 1px dotted #ccc;height: 60px;text-align: center;position: relative;}
-		.rtable>tbody>tr>td>.wh{position: absolute;display: block;width: 16px;height: 16px;background-color: #fff;right: -8px;bottom: -8px;z-index: 10;}
-		.rtable>tbody>tr>td.th{font-size: 16px;text-align: right;padding-right: 10px;}
+		.rtable>tbody>tr>td{border-bottom: 1px dotted #ccc;height: 50px;text-align: center;position: relative;}
+		.rtable>tbody>tr>td>.wh{position: absolute;display: block;width: 16px;height: 16px;right: -8px;bottom: -8px;z-index: 10;background-color: #fff;}
+		.rtable>tbody>tr>td.th{font-size: 14px;text-align: right;padding-right: 10px;border-left: none;}
 		.rtable>tbody>tr>td.th .rate{color: #ccc;}
         .rtable>tbody>tr>td.th .tools .ico-font{font-size: 12px;padding:2px;border-radius: 3px;}
         .rtable>tbody>tr>td.th .tools .ico-font:hover{background-color:#e7e7e7;}
-		.rtable>tbody>tr>td:not(.th){border-left: 1px dotted #ccc;}
-		.rtable>tbody>tr.border-top-tr>td{border-top: 2px solid #ccc;}
+		.rtable>tbody>tr>td{border-left: 1px dotted #e7e7e7;}
+        .rtable>tbody>tr>td.th-cat{border-left: none;font-size: 16px;color: #777;background-color: #f0f0f0;}
+        .rtable>tbody>tr>td.th{}
+		.rtable>tbody>tr.border-top-tr>td{border-top: 1px solid #ccc;}
 		.rtable p{}
-		.rtable .v{font-weight: 700;font-size: 18px;}
+		.rtable .v{font-weight: 700;font-size: 16px;}
 		.rtable .v>em{font-size: 14px;font-style: normal;}
 		.rtable .value>i{font-style: normal;color: #777;font-size: 12px;padding-left: 3px;}
 		.rtable .value>i.ico-font{font-size: 10px;}
@@ -169,7 +171,7 @@
                 </div>
                 <div class="row padding-row border-bottom-row">
                     <div class="col-xs-6">
-                        <h4 class="data-title">店铺透视表 <small>2015-1-21 ~ 2015-1-28</small></h4>
+                        <h4 class="data-title">店铺透视表 <small class="text-danger">2015-1-21 ~ 2015-1-28</small></h4>
                     </div>
                     <div class="col-xs-6 text-right">
                         <div class="btn-group switch-date-btn-group">
@@ -183,18 +185,22 @@
                 	<table class="rtable">
                 		<thead>
                 			<tr>
-                				<th width="12.5%"></th>
-                				<th width="12.5%">3月14日</th>
-                				<th width="12.5%">3月13日</th>
-                				<th width="12.5%">3月12日</th>
-                				<th width="12.5%">3月11日</th>
-                				<th width="12.5%">3月10日</th>
-                				<th width="12.5%">3月9日</th>
-                				<th width="12.5%">3月8日</th>
+                			    <th width="4%"></th>
+                				<th width="12%"></th>
+                				<th width="12%">3月14日</th>
+                				<th width="12%">3月13日</th>
+                				<th width="12%">3月12日</th>
+                				<th width="12%">3月11日</th>
+                				<th width="12%">3月10日</th>
+                				<th width="12%">3月9日</th>
+                				<th width="12%">3月8日</th>
                 			</tr>
                 		</thead>
                 		<tbody>
                 			<tr>
+                			    <td class="th-cat" rowspan="4">
+                			        销<br>售<br>分<br>析
+                			    </td>
                 				<td class="th">
                 					<p class="text-muted">销售量</p>
                 					<p class="tools"><a href="#" class="ico-font" title="查看7天走势图表">&#xe669;</a></p>
@@ -334,8 +340,11 @@
                 				</td>
                 			</tr>
                 			<tr class="border-top-tr">
+                			    <td class="th-cat" rowspan="5">
+                			        引<br>流<br>分<br>析
+                			    </td>
                 				<td class="th">
-                					<p class="text-muted">自然引流宝贝数</p>
+                					<p class="text-muted">自然引流宝贝</p>
                 					<span class="wh"></span>
                 				</td>
                 				<td>
@@ -369,7 +378,7 @@
                 			</tr>
                 			<tr>
                 				<td class="th">
-                					<p class="text-muted">自然引流关键词数</p>
+                					<p class="text-muted">自然引流词</p>
                 					<span class="wh"></span>
                 				</td>
                 				<td>
@@ -403,7 +412,248 @@
                 			</tr>
                 			<tr>
                 				<td class="th">
-                					<p class="text-muted">豆腐块词数</p>
+                					<p class="text-muted">豆腐块词</p>
+                					<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td class="th">
+                					<p class="text-muted">直通车宝贝</p>
+                					<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td class="th">
+                					<p class="text-muted">直通车词</p>
+                					<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                			</tr>
+                			<tr class="border-top-tr">
+                			    <td class="th-cat" rowspan="5">
+                			        营<br>销<br>分<br>析
+                			    </td>
+                				<td class="th">
+                					<p class="text-muted">店铺促销</p>
+                					<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td class="th">
+                					<p class="text-muted">店铺推广</p>
+                					<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td class="th">
+                					<p class="text-muted">站内活动</p>
+                					<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td class="th">
+                					<p class="text-muted">站外活动</p>
+                					<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td class="th">
+                					<p class="text-muted">直通车词</p>
                 					<span class="wh"></span>
                 				</td>
                 				<td>
