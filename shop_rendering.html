@@ -18,14 +18,17 @@
     <style type="text/css">
 		.rtable{width: 100%;min-width: 888px;}
 		.rtable a:hover{text-decoration: underline;}
+        .rtable a.ico-font:hover{text-decoration: none;color:#f35a4a; }
 		.rtable>thead>tr>th{text-align: center;font-size: 16px;color: #777;font-weight: normal;height: 40px;}
 		.rtable>tbody>tr>td{border-bottom: 1px dotted #ccc;height: 60px;text-align: center;position: relative;}
-		.rtable>tbody>tr>td>.wh{position: absolute;display: block;width: 16px;height: 16px;background-color: #fff;right: -8px;bottom: -8px;}
+		.rtable>tbody>tr>td>.wh{position: absolute;display: block;width: 16px;height: 16px;background-color: #fff;right: -8px;bottom: -8px;z-index: 10;}
 		.rtable>tbody>tr>td.th{font-size: 16px;text-align: right;padding-right: 10px;}
 		.rtable>tbody>tr>td.th .rate{color: #ccc;}
+        .rtable>tbody>tr>td.th .tools .ico-font{font-size: 12px;padding:2px;border-radius: 3px;}
+        .rtable>tbody>tr>td.th .tools .ico-font:hover{background-color:#e7e7e7;}
 		.rtable>tbody>tr>td:not(.th){border-left: 1px dotted #ccc;}
 		.rtable>tbody>tr.border-top-tr>td{border-top: 2px solid #ccc;}
-		.rtable p{height: 34px;line-height: 34px;}
+		.rtable p{}
 		.rtable .v{font-weight: 700;font-size: 18px;}
 		.rtable .v>em{font-size: 14px;font-style: normal;}
 		.rtable .value>i{font-style: normal;color: #777;font-size: 12px;padding-left: 3px;}
@@ -194,6 +197,7 @@
                 			<tr>
                 				<td class="th">
                 					<p class="text-muted">销售量</p>
+                					<p class="tools"><a href="#" class="ico-font" title="查看7天走势图表">&#xe669;</a></p>
                 					<span class="wh"></span>
                 				</td>
                 				<td>
@@ -228,6 +232,7 @@
                 			<tr>
                 				<td class="th">
                 					<p class="text-muted">销售额</p>
+                					<p class="tools"><a href="#" class="ico-font" title="查看7天走势图表">&#xe669;</a></p>
                 					<span class="wh"></span>
                 				</td>
                 				<td>
@@ -262,6 +267,7 @@
                 			<tr>
                 				<td class="th">
                 					<p class="text-muted">销售宝贝数</p>
+                					<p class="tools"><a href="#" class="ico-font" title="查看7天走势图表">&#xe669;</a></p>
                 					<span class="wh"></span>
                 				</td>
                 				<td>
@@ -293,143 +299,142 @@
                 				<span class="wh"></span>
                 				</td>
                 			</tr>
-<!--
-                			<tr>
-                				<td class="th">
-                					<p class="text-muted">销售量</p>
-                					<p class="text-muted rate">较上一天</p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before up rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before up rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before up rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                			</tr>
-                			<tr>
-                				<td class="th">
-                					<p class="text-muted">销售额</p>
-                					<p class="text-muted rate">较上一天</p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">12.34<em>万</em></a><i>元</i></p><p><i class="ico-before up rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">12.34<em>万</em></a><i>元</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">12.34<em>万</em></a><i>元</i></p><p><i class="ico-before up rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">12.34<em>万</em></a><i>元</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">12.34<em>万</em></a><i>元</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">12.34<em>万</em></a><i>元</i></p><p><i class="ico-before up rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">12.34<em>万</em></a><i>元</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                			</tr>
-                			<tr>
-                				<td class="th">
-                					<p class="text-muted">销售商品数</p>
-                					<p class="text-muted rate">较上一天</p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before up rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before up rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before up rate">2.5%</i></p>
-                				</td>
-                				<td>
-                				<p class="value"><a href="#" class="v">1234</a><i>件</i></p><p><i class="ico-before down rate">2.5%</i></p>
-                				</td>
-                			</tr>
-                			<tr>
+                            <tr>
                 				<td class="th">
                 					<p class="text-muted">动销率</p>
-                					<p class="text-muted rate">较上一天</p>
+                					<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">12.34%</a></p><p><i class="ico-before down rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">12.34%</a><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">12.34%</a></p><p><i class="ico-before up rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">12.34%</a><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">12.34%</a></p><p><i class="ico-before up rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">12.34%</a><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">12.34%</a></p><p><i class="ico-before down rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">12.34%</a><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">12.34%</a></p><p><i class="ico-before down rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">12.34%</a><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">12.34%</a></p><p><i class="ico-before up rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">12.34%</a><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">12.34%</a></p><p><i class="ico-before down rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">12.34%</a><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 			</tr>
                 			<tr class="border-top-tr">
                 				<td class="th">
-                					<p class="text-muted">引流宝贝数</p>
-                					<p class="text-muted rate">较上一天</p>
+                					<p class="text-muted">自然引流宝贝数</p>
+                					<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">1225</a><i>个</i></p><p><i class="ico-before down rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">1225</a><i>个</i></p><p><i class="ico-before up rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">1225</a><i>个</i></p><p><i class="ico-before up rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">1225</a><i>个</i></p><p><i class="ico-before down rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">1225</a><i>个</i></p><p><i class="ico-before down rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">1225</a><i>个</i></p><p><i class="ico-before up rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 				<td>
-                				<p class="value"><a href="#" class="v">1225</a><i>个</i></p><p><i class="ico-before down rate">2.5%</i></p>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
                 				</td>
                 			</tr>
--->
+                			<tr>
+                				<td class="th">
+                					<p class="text-muted">自然引流关键词数</p>
+                					<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                			</tr>
+                			<tr>
+                				<td class="th">
+                					<p class="text-muted">豆腐块词数</p>
+                					<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                				<td>
+                				<p class="value"><a href="#" class="v">1234</a><i>个</i><i class="ico-font up" title="25%">&#xe623;</i></p>
+                				<span class="wh"></span>
+                				</td>
+                			</tr>
                 		</tbody>
                 	</table>
                 </div>

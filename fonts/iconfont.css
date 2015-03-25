@@ -71,7 +71,8 @@
 .icon-daochuexport:before { content: "\e639"; }
 .icon-iconfontfanhui:before { content: "\e647"; }
 .icon-arrow:before { content: "\e64d"; }
-.icon-icon1:before { content: "\e644"; }
+.icon-icon1:before { content: "\e665"; }
+.icon-icon2:before { content: "\e644"; }
 .icon-yuandian:before { content: "\e61b"; }
 .icon-daochu:before { content: "\e63a"; }
 .icon-document:before { content: "\e65c"; }
@@ -88,7 +89,7 @@
 .icon-aliwangwang:before { content: "\e619"; }
 .icon-icon25:before { content: "\e65d"; }
 .icon-qq:before { content: "\e61a"; }
-.icon-icon2:before { content: "\e650"; }
+.icon-icon3:before { content: "\e650"; }
 .icon-piegraph:before { content: "\e645"; }
 .icon-service:before { content: "\e617"; }
 .icon-you:before { content: "\e636"; }
@@ -114,3 +115,7 @@
 .icon-orderasc:before { content: "\e624"; }
 .icon-orderdesc:before { content: "\e625"; }
 .icon-icon120:before { content: "\e651"; }
+.icon-quxiantutongji:before { content: "\e668"; }
+.icon-chart:before { content: "\e669"; }
+.icon-up:before { content: "\e66b"; }
+.icon-linechart:before { content: "\e66c"; }
