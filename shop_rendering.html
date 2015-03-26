@@ -30,9 +30,12 @@
 		.rtable>thead>tr>th.date-th-l{border-top-left-radius: 10px;}
 		.rtable>thead>tr>th.date-th-r{border-top-right-radius: 10px;}
 		.rtable>tbody>tr>td{border-bottom: 1px solid #ccc;height: 58px;text-align: center;position: relative;border-left: 1px solid #ccc;}
+        .rtable>tbody>tr>td:last-child{border-right: 1px solid #ccc;}
+        .rtable>tbody>tr.last-tr>td{border-bottom: 1px solid #ccc;}
 		.rtable>tbody>.cat-tr>td:first-child{border-top-left-radius: 10px;border-bottom-left-radius: 10px;}
 		.rtable>tbody>tr>td.th{font-size: 14px;text-align: right;padding-right: 10px;background-color: rgba(65,132,243,0.09);border-left: none;}
-		.rtable>tbody>tr>td.th-cat{border-left: none;font-size: 16px;font-weight: 300;border-bottom: 1px solid #fff;background-color: rgba(65,132,243,1);color: #fff;}
+		.rtable>tbody>tr>td.th-cat{border-left: none;font-size: 16px;font-weight: 300;border-bottom: 1px solid #fff;background-color: rgba(65,132,243,1);color: #fff;position: relative;}
+        .rtable>tbody>tr>td.th-cat .ico-font{position: absolute;top: 5px;color: #fff;right: 5px;}
 		@-moz-document url-prefix() {.rtable>tbody>tr>td.th-cat{background-clip: padding-box;}}
 /*		rgba(54,174,72,0.9);color: #fff;*/
 /*		rgba(65,132,243,0.09)*/
@@ -76,7 +79,10 @@
 
 		.rtable-border-dotted>tbody>tr>td{border-bottom-style: dotted;border-left-style: dotted;}
 		.rtable-border-dotted>tbody>tr>td.th{border-bottom-style: solid;border-right:1px solid #ccc;}
-		.toolbar-row .btn.active{box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;}
+		.toolbar-row .btn.active{box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1) inset;background-color: rgba(0,0,0,0.04)}
+
+        .toggle-tr-group .btn .ico-font:before{content: '\e665';font-size: 12px;color: #222;}
+        .toggle-tr-group .btn.active .ico-font:before{content: '\e666';color: #4184f3;}
     </style>
   </head>
   <body>
@@ -220,14 +226,14 @@
                 <div class="row margin-top17-row toolbar-row">
                 	<div class="col-xs-9 text-left">
                 		<div class="btn-group toggle-tr-group" role="group" aria-label="...">
-						  <button type="button" class="b_sold_tr btn btn-default active">销售</button>
-						  <button type="button" class="b_item_tr btn btn-default active">宝贝</button>
-						  <button type="button" class="b_pv_tr btn btn-default active">引流</button>
-						  <button type="button" class="b_marketing_tr btn btn-default active">营销</button>
+						  <button type="button" class="b_sold_tr btn btn-default active"><span class="ico-font"></span> 销售</button>
+						  <button type="button" class="b_item_tr btn btn-default active"><span class="ico-font"></span> 宝贝</button>
+						  <button type="button" class="b_pv_tr btn btn-default active"><span class="ico-font"></span> 引流</button>
+						  <button type="button" class="b_marketing_tr btn btn-default active"><span class="ico-font"></span> 营销</button>
 						</div>
                 	</div>
                 	<div class="col-xs-3 text-right">
-                		<div class="btn-group btn-group-xs toggle-size-btn-group" role="group" aria-label="...">
+                		<div class="btn-group btn-group-sm toggle-size-btn-group" role="group" aria-label="...">
 						  <button type="button" class="btn btn-default s-view active">小视图</button>
 						  <button type="button" class="btn btn-default b-view">大视图</button>
 						</div>
@@ -269,6 +275,7 @@
 							<tbody>
 								<tr class="sold_tr cat-tr">
 									<td class="th-cat" rowspan="4">
+									    <a class="ico-font">&#xe653;</a>
 										销<br>售<br>分<br>析
 									</td>
 									<td class="th" colspan="2">
@@ -538,7 +545,7 @@
 									<td><p class="value"></p></td>
 									<td><p class="value"></p></td>
 								</tr>
-								<tr class="marketing_tr">
+								<tr class="marketing_tr last-tr">
 									<td class="th"><p>淘粉吧</p></td>
 									<td><p class="value"><a href="#" class="v">2</a><i>个</i><i class="ico-font flat" title="25%">&#xe640;</i></p></td>
 									<td><p class="value"><a href="#" class="v">2</a><i>个</i><i class="ico-font flat" title="25%">&#xe640;</i></p></td>
