@@ -15,176 +15,87 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        body{-webkit-font-smoothing: antialiased;/*-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;*/}
-/*       header调整*/
+        body{height: 100%;min-width: 800px; -webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;}
+
+        body.type-key-word #type-key-word,body.type-product #type-product,body.type-shop #type-shop{background-color: #f35a4a;}
+        body.type-key-word #type-key-word a,body.type-product #type-product a,body.type-shop #type-shop a{color: #fff;}
+        body.type-key-word #type-key-word .arrow,body.type-product #type-product .arrow,body.type-shop #type-shop .arrow{position: absolute;border-bottom: 0px;height: 0;width: 0;bottom: -5px;border-style: solid;left: 50%;margin-left: -5px; border-width: 5px 5px 0px 5px; border-color: transparent;border-top-color:#f35a4a;}
+        
+        /*       header调整*/
         .header-wrapper{box-shadow: none;border-bottom: 1px solid #e7e7e7;}
         .btn-list .signUpBtn{margin-left: 20px;}
         .btn-list .btn{border-radius: 999px;padding: 5px 32px;}
 		.index-header{height: 80px;line-height: 80px;position:inherit;}
         .index-content{padding-top: 0px;}
 
-
-        body.type-key-word #type-key-word,body.type-product #type-product,body.type-shop #type-shop{background-color: #f35a4a;}
-        body.type-key-word #type-key-word a,body.type-product #type-product a,body.type-shop #type-shop a{color: #fff;}
-        body.type-key-word #type-key-word .arrow,body.type-product #type-product .arrow,body.type-shop #type-shop .arrow{position: absolute;border-bottom: 0px;height: 0;width: 0;bottom: -5px;border-style: solid;left: 50%;margin-left: -5px; border-width: 5px 5px 0px 5px; border-color: transparent;border-top-color:#f35a4a;}
-
-        .d-table{display: table;width: 100%;height: 100%;}
+        /**********************************************************************************/
+        
+        #section1{background: url("images/bg.jpg");background-size: cover;height: 100%;}
+        .bg2{background: rgba(0,0,0,0.2);height: 100%;}
+        
+        .d-table{display: table;width: 100%;height: 90%;}
         .d-table-row{display: table-row;}
 		.d-table-cell{display: table-cell;text-align: center;vertical-align: middle;}
 		.d-table-cell.show{display: table-cell !important;}
-        .d-table-cell h1.b{font-size: 72px;font-weight: 700;}
-        .d-table-cell h2.b{font-size: 64px;font-weight: 700;}
-        .d-table-cell h3.b{font-size: 48px;font-weight: 700;}
-        .d-table-cell h4.b{font-size: 32px;}
-        .d-table-cell h5.b{font-size: 24px;}
-        .search-table .top-fit{margin-top: -300px;}
+        .d-table-cell .b{font-weight: 700;}
+        .search-table .top-fit{margin-top: -150px;}
         .search-table .main-title{margin-bottom: 30px;}
-        .search-table .main-title h3{margin-bottom: 15px;font-weight: normal;}
-        .search-table .main-title h5{color: #777;}
-        .search-table #search{width: 470px;}
-        .search-table .btn-submit-search{margin-left: 5px;}
+        .search-table .main-title h3{font-size: 52px;margin: 20px 0 20px;color: #222;}
+        .search-table .main-title h4{font-size: 48px;margin-bottom: 15px;color: #222;}
+        .search-table .main-title h5{color: #222;}
+        .search-table #search{width: 600px;}
+        .search-table .btn-submit-search{margin-left: 5px;font-size: 17px;}
         .search-table .search-type-tab{margin-bottom: 10px;}
-        .search-table .search-type-tab li{float: left;padding: 5px 10px;border-radius: 2px;position: relative;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
+        .search-table .search-type-tab li{float: left;padding: 5px 10px;border-radius: 2px;position: relative;}
+        .search-table .search-type-tab li{-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
         .search-table .search-type-tab li a{font-size: 17px;color: #777;-webkit-transition: color 0.2s ease-out 0s;-moz-transition: color 0.2s ease-out 0s;transition: color 0.2s ease-out 0s;}
         .search-table .search-type-tab li a:hover{color:#222;}
 		.search-table .inline-box{display: inline-block;}
 		.search-table .placeholder{height: 300px;}
+        
 
 
-        #fp-nav.right{right: 17px;}
-        #fp-nav{margin-top: -32px;opacity: 1;position: fixed;top: 50%;z-index: 100;}
-        #fp-nav ul li{display: block;height: 13px;margin: 7px;position: relative;width: 14px;}
-        #fp-nav ul li a{cursor: pointer;display: block;height: 100%;position: relative;text-decoration: none;width: 100%;z-index: 1;}
-        #fp-nav ul li a span{background-color: #222;border-radius: 50%;height: 10px;width:10px;left: 2px;position: absolute;top: 2px;z-index: 1;}
-        #fp-nav ul li a.active span{background-color: #f35a4a;}
+        .black-box{padding:20px 30px;background-color: rgba(255,255,255,0.6);border-radius: 5px;margin-top: 20px;}
 
-        .black-box{padding:20px 30px;/*background-color: rgba(0,0,0,0.1);border-radius: 5px;*/}
-
-
-        .left-cell,.right-cell{width:  50%;}
-        .left-cell{}
-
-        .right-cell{text-align: left;}
-        .right-cell h1.b{margin-bottom: 40px;opacity: 0}
-        .right-cell .des-box{opacity: 0;}
-        .right-cell .des-box p{line-height: 180%;letter-spacing: 2px;font-size: 36px;}
-        .right-cell .pics{margin-top: 30px;}
-        .right-cell .pics li{display: inline;margin-right: 10px;}
-
-
-		.lImg-rText .des-box{padding-right: 15%;}
-
-		.lText-rImg .right-cell{padding-left: 10%;}
-		.lText-rImg .right-cell h1.b{text-align: left;}
-		.lText-rImg .right-cell .pics{text-align: left;}
-
-		.circular-box{width: 680px;height: 680px;left: 50%;margin-left: -340px;position:  relative;}
-		.circular-dashed{width: 640px;height: 640px;border-radius: 50%;position: absolute;z-index: 999;}
-        .circular{width: 600px;height: 600px;border-radius: 100%; margin: 20px;position: absolute;}
-		.circular .ico-font{font-size: 300px;color: #fff;height: 330px;margin-top: -100px;}
-        .circular h3{font-size: 48px;color: #fff;}
-		.circular-dashed.blue{border: 2px dashed #4184f3;}
-		.circular-dashed.red{border: 2px dashed #f35a4a;}
-        .circular.blue{background-color:#4184f3;}
-		.circular.red{background-color: #f35a4a;}
-
-
-
-		/*		虚线圆形旋转动画*/
-		.circular-dashed{
-			-webkit-animation: rotate-infinity 16s linear infinite;
-			-moz-animation: rotate-infinity 16s linear infinite;
-			-ms-animation: rotate-infinity 16s linear infinite;
-			animation: rotate-infinity 16s linear infinite
-		}
-		@keyframes rotate-infinity {
-			from {
-				-webkit-transform: rotate(0deg);
-				-moz-transform: rotate(0deg);
-				-ms-transform: rotate(0deg);
-				transform: rotate(0deg)
-			}
-			to {
-				-webkit-transform: rotate(360deg);
-				-moz-transform: rotate(360deg);
-				-ms-transform: rotate(360deg);
-				transform: rotate(360deg)
-			}
-		}
-		@-moz-keyframes rotate-infinity {
-			from {
-				-moz-transform: rotate(0deg);
-				transform: rotate(0deg)
-			}
-			to {
-				-moz-transform: rotate(360deg);
-				transform: rotate(360deg)
-			}
-		}
-		@-webkit-keyframes rotate-infinity {
-			from {
-				-webkit-transform: rotate(0deg);
-				transform: rotate(0deg)
-			}
-			to {
-				-webkit-transform: rotate(360deg);
-				transform: rotate(360deg)
-			}
-		}
-		@-ms-keyframes rotate-infinity {
-			from {
-				-ms-transform: rotate(0deg);
-				transform: rotate(0deg)
-			}
-			to {
-				-ms-transform: rotate(360deg);
-				transform: rotate(360deg)
-			}
-		}
-
-
-.section:not(#section2) .animation-cell-1{opacity: 0}
-#section2 .d-table-cell.amimation05{
-	-webkit-animation-duration:0.8s;
-	-moz-animation-duration:0.8s;
-	-ms-animation-duration:0.8s;
-	animation-duration: 0.8s;
-	-webkit-animation-fill-mode: both;
-	-moz-animation-fill-mode: both;
-	-ms-animation-fill-mode: both;
-	animation-fill-mode: both;}
-
-#section2 .po{position: absolute;font-size: 100px;}
-#section2 .po0{left:50%;top: 100px;margin-left: -50px;}
-#section2 .po1{left:50%;top: 220px;margin-left: 140px;}
-
-#section2 .po2{left:50%;bottom: -80px;margin-left: 130px;}
-#section2 .po3{left:50%;bottom: -190px;margin-left: -50px;}
-
-#section2 .po4{right:50%;top: 220px;margin-right: 140px;}
-#section2 .po5{right:50%;bottom: -80px;margin-right: 130px;}
-
-#section2 .animation-cell-2 .ico-font,#section2 .animation-cell-3 .ico-font,#section2 .animation-cell-4 .ico-font{font-size: 270px}
-
-#section2 .centerAnimation .po{-webkit-transition:  all 0.5s ease-out 0s;-moz-transition: all 0.5s ease-out 0s;transition: all 0.5s ease-out 0s;opacity: 0;}
-#section2 .centerAnimation .po0,#section2 .centerAnimation .po1{left:50%;top: 50%;margin-left: -50px;margin-top: -50px;}
-#section2 .centerAnimation .po2,#section2 .centerAnimation .po3{left:50%;bottom: 0%;margin-left: -50px;}
-#section2 .centerAnimation .po4{right:50%;top: 50%;margin-right: -50px;}
-#section2 .centerAnimation .po5{bottom: 0;margin-right: -50px;right: 50%;}
-#section2 .centerAnimation .po-main{-webkit-transition: all 0.3s ease-out 0.5s;-moz-transition: all 0.3s ease-out 0.5s;transition: all 0.3s ease-out 0.5s;opacity: 0;}
-/*#section2 .centerAnimation .po-main2{transition: all 0.3s ease-in 1.3s;opacity: 1;font-size: 300px;margin-top: -100px;display: table-cell;}*/
-
-#section2 .d-table-cell.zoomIn,#section2 .d-table-cell.fadeOut{display: table-cell !important;}
-
-		.more-container{position: relative;bottom: 0px;}
-		.more-container a.ico-font{font-size:90px;color:#ccc;}
+		.more-container{position: absolute;bottom: 0px;left:50%;margin-left: -30px;-webkit-animation: bounce 1.5s infinite;-moz-animation:  bounce 1.5s infinite;-ms-animation:  bounce 1.5s infinite;  animation:  bounce 1.5s infinite}
+		.more-container a.ico-font{font-size:42px;color:#fff;}
 		.more-container a:hover{color: #f35a4a;}
         .pics .img-thumbnail{cursor: pointer;}
+
+        .footer-bottom{position: fixed;bottom:0px;z-index: 100;left: 0px;width: 100%;}
+        #myModal .modal-lg{width: 70%;}
+
+        .top-msg{top:-84px;border-radius: 5px;letter-spacing: 0.5px;font-size: 18px;}
+        .top-msg.show{top:50px;}
+        .top-msg a:hover{text-decoration: none;}
+        .demo-link a::after {-webkit-transition: all 0.1s ease-out 0s;-moz-transition: all 0.1s ease-out 0s;transition: all 0.1s ease-out 0s;font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
+        .demo-link a{letter-spacing:1px;position: relative;color:#fff;font-size: 24px;display: inline-block;background: rgba(243,90,74,1);padding: 10px 40px 10px 15px;border-radius: 999px;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
+        .demo-link a:hover{text-decoration: none;padding: 10px 60px 10px 15px;box-shadow: 0px 0px 5px rgba(0,0,0,0.2);}
+        .demo-link a::after{position: absolute;content: "\e608"; right: 10px;}
+        .demo-link a:hover::after {
+            -webkit-animation: goRight 0.8s ease infinite;-moz-animation: goRight 0.8s ease infinite;-ms-animation: goRight 0.8s ease infinite;  animation: goRight 0.8s ease infinite;
+        }
+
+
+        
+        .img-list{margin-bottom: 50px;}
+        .img-list li{position: relative;text-align: center;}
+        .img-list li .img-txt{opacity: 0;font-size:16px;position: absolute;display: inline-block;width: 130px;height: 78px;line-height:30px;text-align: center;vertical-align: middle;color: #fff;left: 5px;top:0px;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
+        .img-list li .img-txt:hover{opacity: 1;line-height:78px;cursor: pointer;background: rgba(0,0,0,0.5);}
+        .lt-msg .reg-link{background-color: rgba(255,255,255,0.3);padding:0 3px;border-radius: 3px;-webkit-transition: all 0.1s ease-out 0s;-moz-transition: all 0.1s ease-out 0s;transition: all 0.1s ease-out 0s;}
+        .lt-msg .reg-link:hover{background-color: rgba(255,255,255,0.7);padding:0 10px;}
+/*
+        .footer-bottom .more-footer{background-color: #fff;height: 20px;box-shadow: -5px -10px 10px rgba(0,0,0,0.2);border-top-left-radius: 5px;border-top-right-radius: 5px;
+            -webkit-animation: floatToZero 4s ease;-moz-animation: floatToZero 4s ease;-ms-animation: floatToZero 4s ease;  animation: floatToZero 4s ease}
+        .footer-bottom .more-footer .caret{border-left-width: 6px;border-right-width: 6px;border-top-width: 6px;}
+        .footer-bottom .more-footer .caret:hover{border-top-color: #f35a4a;}
+*/
+        
     </style>
   </head>
   <body class="type-key-word">
-  <div id="fullpage">
       <div class="section" id="section1">
+         <div class="bg2">
           <div class="container-fluid header-wrapper index-header">
                <div class="row">
                    <div class="col-xs-6 col-logo">
@@ -200,28 +111,45 @@
                </div>
           </div>
           <div class="content index-content search-table d-table" style="margin-bottom:0px;">
+              <div class="d-table-row">
               <div class="d-table-cell">
                   <div class="container-fluid">
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="top-fit">
-                                <div class="text-center main-title">
-                                    <h3 class="b">看看别人的生意怎么做？</h3>
-                                    <h5 class="b">分析你的对手，学习你的对手，超越你的对手</h5>
+                                <div class="text-center lt-msg">
+                                    <span class="h4 text-danger">现在<a href="{{ url_for('login.reg') }}" class="reg-link">注册</a>免费使用15天！</span>
                                 </div>
+                                <div class="text-center demo-link">
+                                    <h3><a href="/base/test" class="hover-line" target="_blank">[ 监控店铺 ] 演示体验<span class="ico-after"></span></a></h3>
+                                </div>
+                                <div class="text-center main-title relative">
+                                    <div class="item">
+                                        <h3 class="hidden-sm hidden-xs">看看别人的生意怎么做！</h3>
+                                        <h4 class="hidden-lg hidden-md">看看别人的生意怎么做！</h4>
+                                    </div>
+                                </div>
+                                <ul class="list-inline img-list hidden-md hidden-sm hidden-xs">
+                                    <li><a href="/gopage?p=member_r"><img class="img-thumbnail" src="images/snapshot/m/1-1.png"><span class="img-txt">七天透视</span></a></li>
+                                    <li><a href="/gopage?p=member_trades"><img class="img-thumbnail" src="images/snapshot/m/2-1.png"><span class="img-txt">交易分析</span></a></li>
+                                    <li><a href="gopage?p=member_pv"><img class="img-thumbnail" src="images/snapshot/m/3-1.png"><span class="img-txt">引流分析</span></a></li>
+                                    <li><a href="gopage?p=member_marketing"><img class="img-thumbnail" src="images/snapshot/m/4-1.png"><span class="img-txt">营销分析</span></a></li>
+                                    <li><a href="gopage?p=member_items"><img class="img-thumbnail" src="images/snapshot/m/6-1.png"><span class="img-txt">宝贝分析</span></a></li>
+                                </ul>
                                 <div class="inline-box black-box">
                                     <ul class="search-type-tab clearfix">
                                         <li id="type-key-word"><a href="javascript:;">关键词</a><div class="arrow"></div></li>
                                         <li id="type-product"><a href="javascript:;">宝贝</a><div class="arrow"></div></li>
                                         <li id="type-shop"><a href="javascript:;">店铺</a><div class="arrow"></div></li>
                                     </ul>
-                                    <form class="form-inline clearfix" role="form">
+                                    <form class="form-inline clearfix" role="form" action="{{ url_for('frontend.s') }}">
+                                        <input type="hidden" id="search_t" name="t" value="0">
                                         <div class="form-group search-form-group l">
                                             <div class="input-group search-input-group">
-                                                <input id="search" class="form-control input-lg search-input" type="text" placeholder="请输入您要查询的关键词">
+                                                <input id="search" name="k" class="form-control input-lg search-input" type="text" placeholder="请输入您要查询的关键词">
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-lg btn-submit-search l">&nbsp;&nbsp;搜&nbsp;索&nbsp;&nbsp;</button>
+                                        <button type="submit" class="btn btn-primary btn-lg btn-submit-search l ico-font">&nbsp;&nbsp;&nbsp;&#xe661;&nbsp;&nbsp;&nbsp;</button>
                                     </form>
                                 </div>
                             </div>
@@ -229,209 +157,21 @@
                     </div>
                   </div>
               </div>
+              </div>
           </div>
-          <div class="container-fluid more-container" style="margin-top:-240px;">
-          	<div class="row">
-          		<div class="col-xs-12 text-center">
-          			<div><a class="h3" href="#page2">更多介绍</a></div>
-					<a href="#page2" class="ico-font">&#xe625;</a>
-         		</div>
-          	</div>
-          </div>
-      </div>
-      <div class="section" id="section2">
-          <div class="d-table lImg-rText">
-              <div class="d-table-row">
-                  <div class="d-table-cell left-cell">
-                      <div class="circular-box">
-                        <div class="circular-dashed blue"></div>
-						<div class="circular blue">
-							<div class="d-table">
-							    <div class="d-table-cell animation-cell-1 relative" style="display:none">
-									<div class="ico-font">&#xe643;</div>
-									<h3>交易报告</h3>
-								</div>
-								<div class="d-table-cell animation-cell-2 relative" style="display:none">
-									<div class="ico-font">&#xe64b;</div>
-									<h3>引流报告</h3>
-								</div>
-								<div class="d-table-cell animation-cell-3 relative" style="display:none">
-									<div class="ico-font">&#xe65a;</div>
-									<h3>营销报告</h3>
-								</div>
 <!--
-								<div class="d-table-cell animation-cell-4 relative" style="display:none">
-									<div class="ico-font">&#xe655;</div>
-									<h3>宝贝分析</h3>
-								</div>
+          <div class="container-fluid more-container">
+            <div class="row">
+                <div class="col-xs-12 text-center relative">
+                    <div class="more-container-box bounce">
+                        <a href="#page2" class="ico-font">&#xe61c;</a>
+                    </div>
+                </div>
+            </div>
+          </div>
 -->
-								<div class="d-table-cell animation-cell-5 relative" style="display:none">
-								    <div class="ico-font po po0">&#xe643;</div>
-								    <div class="ico-font po po1">&#xe64b;</div>
-								    <div class="ico-font po po2">&#xe65a;</div>
-								    <div class="ico-font po po3">&#xe655;</div>
-								    <div class="ico-font po po4">&#xe650;</div>
-								    <div class="ico-font po po5">&#xe657;</div>
-									<div class="ico-font po-main">&#xe60b;</div>
-								</div>
-								<div class="d-table-cell animation-cell-6 relative" style="display:none">
-									<div class="ico-font po-main">&#xe60b;</div>
-									<h3>锁定对手</h3>
-								</div>
-							</div>
-						</div>
-                      </div>
-                  </div>
-                  <div class="d-table-cell right-cell">
-                      <h1 class="b animated">全面监测对手</h1>
-                      <div class="des-box">
-                          <p>1.更全面的交易分析</p>
-                          <p>2.更透彻的引流分析</p>
-                          <p>3.更专业的营销分析</p>
-                          <p>4.更详细的宝贝分析</p>
-                      </div>
-                      <ul class="pics">
-                          <li><img class="img-thumbnail" src="images/snapshot/m/1-1.png" l-pic="1-1.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                          <li><img class="img-thumbnail" src="images/snapshot/m/2-1.png" l-pic="2-1.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                          <li><img class="img-thumbnail" src="images/snapshot/m/3-1.png" l-pic="3-1.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                          <li><img class="img-thumbnail" src="images/snapshot/m/4-1.png" l-pic="4-1.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                      </ul>
-                  </div>
-              </div>
           </div>
       </div>
-      <div class="section" id="section3">
-          <div class="d-table lText-rImg">
-              <div class="d-table-row">
-                  <div class="d-table-cell right-cell">
-                      <h1 class="b animated">更全面的交易分析</h1>
-                      <div class="des-box">
-                          <p>1.对手全店、单品销售分析</p>
-                          <p>2.销售异动情况</p>
-                          <p>3.买家成交时间，买家分布</p>
-                          <p>4.更多...</p>
-                      </div>
-                      <ul class="pics">
-                          <li><img class="img-thumbnail" src="images/snapshot/m/3-1.png" l-pic="3-1.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                          <li><img class="img-thumbnail" src="images/snapshot/m/3-2.png" l-pic="3-2.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                          <li><img class="img-thumbnail" src="images/snapshot/m/3-3.png" l-pic="3-3.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                          <li><img class="img-thumbnail" src="images/snapshot/m/3-4.png" l-pic="3-4.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                          <li><img class="img-thumbnail" src="images/snapshot/m/3-5.png" l-pic="3-5.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                      </ul>
-                  </div>
-                  <div class="d-table-cell left-cell">
-                      <div class="circular-box">
-                        <div class="circular-dashed red"></div>
-						<div class="circular red">
-							<div class="d-table">
-								<div class="d-table-cell  animation-cell-1 animated">
-									<div class="ico-font">&#xe643;</div>
-									<h3>交易走势</h3>
-								</div>
-							</div>
-						</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="section" id="section4">
-          <div class="d-table lImg-rText">
-              <div class="d-table-row">
-                  <div class="d-table-cell left-cell">
-                      <div class="circular-box">
-                        <div class="circular-dashed blue"></div>
-						<div class="circular blue">
-							<div class="d-table">
-								<div class="d-table-cell animation-cell-1 animated">
-									<div class="ico-font" style="font-size:260px">&#xe64b;</div>
-									<h3>引流分析</h3>
-								</div>
-							</div>
-						</div>
-                      </div>
-                  </div>
-                  <div class="d-table-cell right-cell">
-                      <h1 class="b animated">更透彻的引流分析</h1>
-                      <div class="des-box">
-                          <p>1.多维度分析对手引流关键词</p>
-                          <p>2.PC端，移动端数据全面掌控</p>
-                          <p>3.关键词排名走势一眼看穿</p>
-                      </div>
-                      <ul class="pics">
-                          <li><img class="img-thumbnail" src="images/snapshot/m/4-1.png" l-pic="4-1.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                          <li><img class="img-thumbnail" src="images/snapshot/m/4-2.png" l-pic="4-2.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                          <li><img class="img-thumbnail" src="images/snapshot/m/4-3.png" l-pic="4-3.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="section" id="section5">
-          <div class="d-table lText-rImg">
-              <div class="d-table-row">
-                  <div class="d-table-cell right-cell">
-                      <h1 class="b animated">更专业的营销分析</h1>
-                      <div class="des-box">
-                          <p>1.全面掌握对手营销手段</p>
-                          <p>2.站内，站外，全网活动尽在掌握</p>
-                          <p>3.对手何时卖的好？</p>
-                          <p>4.更多...</p>
-                      </div>
-                      <ul class="pics">
-                          <li><img class="img-thumbnail" src="images/snapshot/m/5-1.png" l-pic="5-1.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                      </ul>
-                  </div>
-                  <div class="d-table-cell left-cell">
-                      <div class="circular-box">
-                        <div class="circular-dashed red"></div>
-						<div class="circular red">
-							<div class="d-table">
-								<div class="d-table-cell animation-cell-1 animated">
-									<div class="ico-font" style="font-size:260px">&#xe60d;</div>
-									<h3>营销监控</h3>
-								</div>
-							</div>
-						</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="section" id="section6">
-          <div class="d-table lImg-rText">
-              <div class="d-table-row">
-                  <div class="d-table-cell left-cell">
-                      <div class="circular-box">
-                        <div class="circular-dashed blue"></div>
-						<div class="circular blue">
-							<div class="d-table">
-								<div class="d-table-cell animation-cell-1 animated">
-									<div class="ico-font" style="font-size:260px">&#xe655;</div>
-									<h3>宝贝分析</h3>
-								</div>
-							</div>
-						</div>
-                      </div>
-                  </div>
-                  <div class="d-table-cell right-cell">
-                      <h1 class="b animated">更详细的宝贝分析</h1>
-                      <div class="des-box">
-                          <p>1.全面跟踪宝贝变动：</p>
-                          <p>&nbsp;&nbsp;&nbsp;价格/标题/主图/营销...变动情况完全掌控</p>
-                          <p>2.每日销售、评价、收藏等数据应有尽有</p>
-                          <p>3.上新，下线，上下架分布，一个不漏</p>
-                      </div>
-                      <ul class="pics">
-                          <li><img class="img-thumbnail" src="images/snapshot/m/6-1.png" l-pic="6-1.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                          <li><img class="img-thumbnail" src="images/snapshot/m/6-2.png" l-pic="6-2.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                          <li><img class="img-thumbnail" src="images/snapshot/m/6-3.png" l-pic="6-3.png" tabindex="-1"  data-toggle="modal" data-target="#myModal"></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
    <div class="footer-bottom hide">
        <div class="container-fluid footer">
            <div class="row">
@@ -481,111 +221,12 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.fullPage.min.js"></script>
     <script type="application/javascript">
-        $(".pics .img-thumbnail").click(function(){
-            $("#myModal .modal-body .img-thumbnail").attr("src","images/snapshot/l/" + $(this).attr("l-pic"))
+//        $(".pics .img-thumbnail").click(function(){
+//            $("#myModal .modal-body .img-thumbnail").attr("src","images/snapshot/l/" + $(this).attr("l-pic"))
+//
+//        });
 
-        });
-		var ANIMATION_END = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
-		var timeoutID;
-		function zoomInOut(e,callback){
-			$(e).addClass("zoomIn").one(ANIMATION_END,function(){
-//				console.log(e,"zoomInEnd",callback)
-				$(this).removeClass("zoomIn").addClass("fadeOut").one(ANIMATION_END,function(){
-//					console.log(e,"fadeOutEnd",callback)
-					$(this).removeClass("fadeOut");
-					if(typeof(callback) == "function"){
-						callback();
-					}
-				})
-			});
-		}
         $(function(){
-            $('#fullpage').fullpage({
-                slidesColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
-                anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
-                navigation: true,
-				scrollingSpeed:500,
-				afterLoad: function(anchorLink, index){
-					if(index == 2){
-//						主标题动画
-						$("#section2 h1.b").addClass("fadeInRightBig").animate({
-							opacity:'1',
-						},500);
-
-//						图标动画
-						$("#section2 .animation-cell-1,#section2 .animation-cell-2,#section2 .animation-cell-3").addClass("amimation05");
-						$("#section2 .animation-cell-5,#section2 .animation-cell-6").addClass("animated");
-						zoomInOut("#section2 .animation-cell-1"
-						,function(){
-							zoomInOut("#section2 .animation-cell-2"
-							,function(){
-								zoomInOut("#section2 .animation-cell-3"
-								,function(){
-									if($("#section2 .animation-cell-3").is(":hidden")){
-										$("#section2 .animation-cell-5").addClass("fadeIn").show()
-										.one(ANIMATION_END,function(){
-											$(this).removeClass("fadeIn").addClass("centerAnimation");
-											timeoutID = setTimeout(function(){
-												$("#section2 .animation-cell-5").removeClass("centerAnimation").hide();
-												$("#section2 .animation-cell-6.animated").addClass("zoomIn");
-											},1000);
-										})
-									}
-								});
-							});
-						});
-
-
-
-					}else if(index == 3 || index == 5){
-						$("#section"+ index + " h1.b").addClass("fadeInLeftBig").animate({
-							opacity:'1',
-						},500);
-                        $("#section"+ index + " .animation-cell-1").addClass("fadeInRightBig").animate({
-							opacity:'1',
-						},500);
-
-					}else if(index == 4 || index == 6){
-//						主标题动画
-						$("#section"+ index + " h1.b").addClass("fadeInRightBig").animate({
-							opacity:'1',
-						},500);
-//						图标动画
-						$("#section"+ index + " .animation-cell-1").addClass("fadeInLeftBig").animate({
-							opacity:'1',
-						},500);
-					}
-
-//						描述动画
-					$("#section"+ index + " .des-box").animate({
-							opacity:'1',
-						},500);
-				},
-				onLeave: function(index, direction){
-					if(index == '2'){
-						$("#section2 h1.b").removeClass("fadeInRightBig").css("opacity","0");
-						clearTimeout(timeoutID);
-                        $("#section2 .circular .d-table-cell").removeClass("zoomIn").removeClass("amimation05")
-							.removeClass("animated").removeClass("fadeOut")
-							.removeClass("centerAnimation").css("display","none").off(ANIMATION_END);
-
-					}else if(index == 3 || index == 5){
-						$("#section"+ index + " h1.b").removeClass("fadeInLeftBig").css("opacity","0");
-                        $("#section"+ index + " .animation-cell-1").removeClass("fadeInRightBig").css("opacity","0");
-
-					}else if(index == 4 || index == 6){
-//						主标题动画
-						$("#section"+ index + " h1.b").removeClass("fadeInRightBig").css("opacity","0");
-						$("#section"+ index + " .animation-cell-1").removeClass("fadeInLeftBig").css("opacity","0");
-
-					}
-//						描述动画
-					$("#section"+ index + " .des-box").animate({
-							opacity:'0',
-						},300);
-				}
-
-            });
             $(".search-type-tab li").click(function(e){
                 $("body").attr("class",$(this).attr("id"));
                 if($(this).is("#type-key-word")){
@@ -604,5 +245,53 @@
             });
         });
     </script>
+    <style type="text/css">
+    @keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+        @-moz-keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+         @-webkit-keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+        @-o-keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+        @keyframes floatToZero {
+            0%  {height: 0px;}
+            30% {height: 50px;}
+            50% {height: 50px;}
+            100%{height: 20px;}
+        }
+        @-moz-keyframes floatToZero {
+            0%  {height: 0px;}
+            30% {height: 50px;}
+            50% {height: 50px;}
+            100%{height: 20px;}
+        }
+
+        @-webkit-keyframes floatToZero {
+             0%  {height: 0px;}
+            30% {height: 50px;}
+            50% {height: 50px;}
+            100%{height: 20px;}
+        }
+
+        @-o-keyframes floatToZero {
+            0%  {height: 0px;}
+            30% {height: 50px;}
+            50% {height: 50px;}
+            100%{height: 20px;}
+        }
+    </style>
   </body>
 </html>
