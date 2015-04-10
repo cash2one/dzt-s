@@ -15,7 +15,7 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        body{min-width: 800px; /*-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;*/background-color: #e7e7e7;}
+        body{min-width: 800px; /*-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;*/background-color: #fbfbfb;}
 
         body.type-key-word #type-key-word,body.type-product #type-product,body.type-shop #type-shop{background-color: #f35a4a;}
         body.type-key-word #type-key-word a,body.type-product #type-product a,body.type-shop #type-shop a{color: #fff;}
@@ -29,12 +29,25 @@
         .index-content{padding-top: 0px;}
 
         /**********************************************************************************/
+		.btn-lg-padding{padding-left: 24px;padding-right: 24px;letter-spacing: 1.3px;font-size: 19px;}
+		.btn-radius{border-radius: 999px;}
+		.h330{height: 330px;}
+		.ico-font.f64{font-size: 64px;}
         
         #section1{background: url("images/bg.jpg");background-size: cover;height: 100%;}
         .bg2{background: rgba(0,0,0,0.2);height: 100%;position: relative;}
-        .screenshot-box{position: absolute;top: -250px;width: 1000px;left: 50%;margin-left: -500px;}
-		.screenshot-box .img-thumbnail{border-radius: 5px;border:1px solid #e7e7e7;box-shadow: 0px -10px 20px rgba(0,0,0,0.2);padding: 0px;}
-		.dzt-des{font-size: 18px;line-height: 180%;text-indent: 2em;margin-top: 30px;}
+
+		.demo-link a::after {-webkit-transition: all 0.1s ease-out 0s;-moz-transition: all 0.1s ease-out 0s;transition: all 0.1s ease-out 0s;font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
+        .demo-link a{letter-spacing:1px;position: relative;color:#fff;font-size: 24px;display: inline-block;background: rgba(243,90,74,1);padding: 10px 40px 10px 15px;border-radius: 999px;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
+        .demo-link a:hover{text-decoration: none;padding: 10px 60px 10px 15px;box-shadow: 0px 0px 5px rgba(0,0,0,0.2);}
+        .demo-link a::after{position: absolute;content: "\e608"; right: 10px;}
+        .demo-link a:hover::after {-webkit-animation: goRight 0.8s ease infinite;-moz-animation: goRight 0.8s ease infinite;-ms-animation: goRight 0.8s ease infinite;  animation: goRight 0.8s ease infinite;}
+        .img-list{margin-bottom: 50px;}
+        .img-list li{position: relative;text-align: center;}
+        .img-list li .img-txt{opacity: 0;font-size:16px;position: absolute;display: inline-block;width: 130px;height: 78px;line-height:30px;text-align: center;vertical-align: middle;color: #fff;left: 5px;top:0px;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
+        .img-list li .img-txt:hover{opacity: 1;line-height:78px;cursor: pointer;background: rgba(0,0,0,0.5);}
+        .lt-msg .reg-link{background-color: rgba(255,255,255,0.3);padding:0 3px;border-radius: 3px;-webkit-transition: all 0.1s ease-out 0s;-moz-transition: all 0.1s ease-out 0s;transition: all 0.1s ease-out 0s;}
+        .lt-msg .reg-link:hover{background-color: rgba(255,255,255,0.7);padding:0 10px;}
 
         .d-table{display: table;width: 100%;height: 90%;}
         .d-table-row{display: table-row;}
@@ -55,45 +68,41 @@
         .search-table .search-type-tab li a:hover{color:#222;}
 		.search-table .inline-box{display: inline-block;}
 		.search-table .placeholder{height: 300px;}
-
         .black-box{padding:20px 30px;background-color: rgba(255,255,255,0.6);border-radius: 5px;margin-top: 20px;}
 
-/*
-		.more-container{position: absolute;bottom: 0px;left:50%;margin-left: -30px;-webkit-animation: bounce 1.5s infinite;-moz-animation:  bounce 1.5s infinite;-ms-animation:  bounce 1.5s infinite;  animation:  bounce 1.5s infinite}
-		.more-container a.ico-font{font-size:42px;color:#fff;}
-		.more-container a:hover{color: #f35a4a;}
-        .pics .img-thumbnail{cursor: pointer;}
-*/
 
-/*
-        .footer-bottom{position: fixed;bottom:0px;z-index: 100;left: 0px;width: 100%;}
-        #myModal .modal-lg{width: 70%;}
-*/
+		.screenshot-box{position: absolute;top: -250px;width: 1000px;left: 50%;margin-left: -500px;-webkit-animation: floatbox 0.8s ease-out;-moz-animation: floatbox 0.8s ease-out;-ms-animation: floatbox 0.8s ease-out;  animation: floatbox 0.8s ease-out;}
+		.screenshot-box .img-thumbnail{border-radius: 5px;border:1px solid #e7e7e7;box-shadow: 0px 0px 20px rgba(0,0,0,0.2);padding: 0px;}
+		.dzt-des{font-size: 16px;line-height: 180%;text-indent: 2em;width: 800px;margin: 0px auto;color: #666;letter-spacing: 1px;}
 
-/*
-        .top-msg{top:-84px;border-radius: 5px;letter-spacing: 0.5px;font-size: 18px;}
-        .top-msg.show{top:50px;}
-        .top-msg a:hover{text-decoration: none;}
-*/
+		.ico-row{margin-top: 38px;}
+		.ico-row .item{margin-top: 68px;text-align: center;}
+		.ico-row h4{color: #666;width: 280px;margin: 20px auto 0px;line-height: 150%;letter-spacing: 1px;font-weight: 100;}
+		.ico-row h3{color: #222;letter-spacing: 1px;}
 
-        .demo-link a::after {-webkit-transition: all 0.1s ease-out 0s;-moz-transition: all 0.1s ease-out 0s;transition: all 0.1s ease-out 0s;font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
-        .demo-link a{letter-spacing:1px;position: relative;color:#fff;font-size: 24px;display: inline-block;background: rgba(243,90,74,1);padding: 10px 40px 10px 15px;border-radius: 999px;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
-        .demo-link a:hover{text-decoration: none;padding: 10px 60px 10px 15px;box-shadow: 0px 0px 5px rgba(0,0,0,0.2);}
-        .demo-link a::after{position: absolute;content: "\e608"; right: 10px;}
-        .demo-link a:hover::after {-webkit-animation: goRight 0.8s ease infinite;-moz-animation: goRight 0.8s ease infinite;-ms-animation: goRight 0.8s ease infinite;  animation: goRight 0.8s ease infinite;}
-        .img-list{margin-bottom: 50px;}
-        .img-list li{position: relative;text-align: center;}
-        .img-list li .img-txt{opacity: 0;font-size:16px;position: absolute;display: inline-block;width: 130px;height: 78px;line-height:30px;text-align: center;vertical-align: middle;color: #fff;left: 5px;top:0px;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
-        .img-list li .img-txt:hover{opacity: 1;line-height:78px;cursor: pointer;background: rgba(0,0,0,0.5);}
-        .lt-msg .reg-link{background-color: rgba(255,255,255,0.3);padding:0 3px;border-radius: 3px;-webkit-transition: all 0.1s ease-out 0s;-moz-transition: all 0.1s ease-out 0s;transition: all 0.1s ease-out 0s;}
-        .lt-msg .reg-link:hover{background-color: rgba(255,255,255,0.7);padding:0 10px;}
-/*
-        .footer-bottom .more-footer{background-color: #fff;height: 20px;box-shadow: -5px -10px 10px rgba(0,0,0,0.2);border-top-left-radius: 5px;border-top-right-radius: 5px;
-            -webkit-animation: floatToZero 4s ease;-moz-animation: floatToZero 4s ease;-ms-animation: floatToZero 4s ease;  animation: floatToZero 4s ease}
-        .footer-bottom .more-footer .caret{border-left-width: 6px;border-right-width: 6px;border-top-width: 6px;}
-        .footer-bottom .more-footer .caret:hover{border-top-color: #f35a4a;}
-*/
+		#section3{background-color: #fff;height:  100%;margin-top: 72px;}
         
+
+        @keyframes floatbox{
+            0%  {top: -0px;}
+            40% {top: -300px;}
+            100%{top: -250px;}
+        }
+        @-moz-keyframes floatbox{
+            0%  {top: -0px;}
+            40% {top: -300px;}
+            100%{top: -250px;}
+        }
+         @-webkit-keyframes floatbox{
+            0%  {top: -0px;}
+            40% {top: -300px;}
+            100%{top: -250px;}
+        }
+        @-o-keyframes floatbox{
+            0%  {top: -0px;}
+            40% {top: -300px;}
+            100%{top: -250px;}
+        }
     </style>
   </head>
   <body class="type-key-word">
@@ -177,21 +186,49 @@
           </div>
       </div>
       <div class="section" id="section2">
-		<div class="continer">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-xs-12 h330">
 					<div class="screenshot-box">
 						<img src="images/screenshot.png" alt="" class="img-thumbnail">
-						<p class="text-center dzt-des">店侦探是一款专门为淘宝及天猫卖家提供方便有效的数据查询、数据分析的卖家工具。通过对各个店铺、宝贝运用数据分析技术分析进行深度挖掘，掌控竞争对手店铺的销售数据、引流手段、广告投放、活动推广、买家购买行为，帮助卖家深度了解行业数据，从而给卖家的营销策略提供可靠持续的数据支持。</p>
 					  </div>
+				</div>
+				<div class="col-xs-12 margin-top-row">
+					<p class="dzt-des">店侦探是一款为淘宝及天猫卖家提供方便有效的数据查询、数据分析的卖家工具。通过对各个店铺、宝贝进行深度数据分析挖掘，掌控竞争对手的销售数据、引流手段、广告投放、活动推广、买家购买行为，帮助卖家深度了解行业数据，从而给卖家的营销策略提供可靠持续的数据支持。</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-12 text-center margin-top-row">
-					<a href="#" class="btn btn-success btn-lg">马上注册</a>
+					<a href="#" class="btn btn-success btn-lg btn-lg-padding btn-radius">现在注册免费使用15天</a>
+				</div>
+			</div>
+			<div class="row ico-row">
+				<div class="item col-xs-4">
+					<p><span class="ico-font f64 text-primary">&#xe65b;</span></p>
+					<h3><b>更直观的</b>七天透视</h3>
+					<h4>七天全部基础数据一页透视，让你更方便、更快速的发现竞争对手销售异常变动及走势！</h4>
+				</div>
+				<div class="item col-xs-4">
+					<p>
+						<span class="ico-font f64 text-primary">&#xe648;</span>
+					</p>
+					<h3><b>更全面的</b>店铺日报</h3>
+					<h4>更全面的店铺单日数据，凸显与上一天的相应数据比较走势。让你的分析更专注，更有效率！</h4>
+				</div>
+				<div class="item col-xs-4">
+					<p>
+						<span class="ico-font f64 text-primary">&#xe64b;</span>
+					</p>
+					<h3><b>更专业的</b>数据分析</h3>
+					<h4>交易，引流，营销，宝贝数据全方位详尽分析，破译竞争对手不为人知的销售密码！</h4>
 				</div>
 			</div>
 		</div>
+      </div>
+      <div class="section" id="section3">
+		  <div class="container-fluid">
+		  	<div class="row"></div>
+		  </div>
       </div>
    <div class="footer-bottom hide">
        <div class="container-fluid footer">
@@ -267,7 +304,7 @@
         });
     </script>
     <style type="text/css">
-    @keyframes goRight{
+		@keyframes goRight{
             0%  {right: 10px;}
             50% {right: 30px;}
             100%{right: 10px;}
@@ -287,32 +324,7 @@
             50% {right: 30px;}
             100%{right: 10px;}
         }
-        @keyframes floatToZero {
-            0%  {height: 0px;}
-            30% {height: 50px;}
-            50% {height: 50px;}
-            100%{height: 20px;}
-        }
-        @-moz-keyframes floatToZero {
-            0%  {height: 0px;}
-            30% {height: 50px;}
-            50% {height: 50px;}
-            100%{height: 20px;}
-        }
 
-        @-webkit-keyframes floatToZero {
-             0%  {height: 0px;}
-            30% {height: 50px;}
-            50% {height: 50px;}
-            100%{height: 20px;}
-        }
-
-        @-o-keyframes floatToZero {
-            0%  {height: 0px;}
-            30% {height: 50px;}
-            50% {height: 50px;}
-            100%{height: 20px;}
-        }
     </style>
   </body>
 </html>
