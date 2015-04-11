@@ -31,9 +31,9 @@
         /**********************************************************************************/
 		.btn-lg-padding{padding-left: 24px;padding-right: 24px;letter-spacing: 1.3px;font-size: 19px;}
 		.btn-radius{border-radius: 999px;}
-		.h330{height: 330px;}
+		.h380{height: 380px;}
 		.ico-font.f64{font-size: 64px;}
-        
+
         #section1{background: url("images/bg.jpg");background-size: cover;height: 100%;}
         .bg2{background: rgba(0,0,0,0.2);height: 100%;position: relative;}
 
@@ -71,40 +71,41 @@
         .black-box{padding:20px 30px;background-color: rgba(255,255,255,0.6);border-radius: 5px;margin-top: 20px;}
 
 
-		.screenshot-box{position: absolute;top: -250px;width: 1000px;left: 50%;margin-left: -500px;-webkit-animation: floatbox 1s ease-out;-moz-animation: floatbox 1s ease-out;-ms-animation: floatbox 1s ease-out;  animation: floatbox 1s ease-out;}
+		.screenshot-box{position: absolute;top: -200px;width: 1000px;left: 50%;margin-left: -500px;-webkit-animation: floatbox 1s ease-out;-moz-animation: floatbox 1s ease-out;-ms-animation: floatbox 1s ease-out;  animation: floatbox 1s ease-out;}
 		.screenshot-box .img-thumbnail{border-radius: 5px;border:1px solid #e7e7e7;box-shadow: 0px 0px 20px rgba(0,0,0,0.2);padding: 0px;}
 		.dzt-des{font-size: 16px;line-height: 180%;text-indent: 2em;width: 800px;margin: 0px auto;color: #666;letter-spacing: 1px;}
 
-		.ico-row{margin-top: 20px;}
+		.ico-row{bottom: 0px;width: 100%;position: absolute;}
 		.ico-row .item{padding-top:50px;padding-bottom: 50px; text-align: center;}
-		.ico-row h4{color: #666;min-width: 180px;max-width: 280px; margin: 20px auto 0px;line-height: 150%;letter-spacing: 1px;font-weight: 100;}
+		.ico-row h4{color: #666;min-width: 180px;max-width: 280px; margin: 20px auto 0px;line-height: 150%;letter-spacing: 1px;font-weight: 100;font-size: }
 		.ico-row h3{color: #222;letter-spacing: 1px;}
 
-		#section3{background: radial-gradient(circle, rgba(65,132,243,0.01), rgba(65,132,243,0.2)) repeat scroll 0 0 rgba(0, 0, 0, 0);height:  100%;margin-top: 92px;}
+		#section3{background: radial-gradient(circle, rgba(65,132,243,0.01), rgba(65,132,243,0.2)) repeat scroll 0 0 rgba(0, 0, 0, 0);height:  100%;margin-top: 92px;min-height: 960px;position: relative;}
         #section3 h1{margin-top: 40px;}
 		.trans-img{border: none;background-color: transparent;}
+		.step-img{border-radius: 5px;padding:0px;}
 
-		#section4{height:  100%;/*background: radial-gradient(circle, rgba(54,174,52,0.01), rgba(54,174,52,0.2)) repeat scroll 0 0 rgba(0, 0, 0, 0);*/margin-top: 62px;}
+		#section4{height:  100%;/*background: radial-gradient(circle, rgba(54,174,52,0.01), rgba(54,174,52,0.2)) repeat scroll 0 0 rgba(0, 0, 0, 0);*/margin-top: 17px;min-height: 960px;position: relative;}
 		.middle-row .row{padding-top: 30px;padding-bottom: 30px;}
         @keyframes floatbox{
             0%  {top: -0px;}
-            60% {top: -300px;}
-            100%{top: -250px;}
+            40% {top: -300px;}
+            100%{top: -200px;}
         }
         @-moz-keyframes floatbox{
             0%  {top: -0px;}
-            60% {top: -300px;}
-            100%{top: -250px;}
+            40% {top: -300px;}
+            100%{top: -200px;}
         }
          @-webkit-keyframes floatbox{
             0%  {top: -0px;}
-            60% {top: -300px;}
-            100%{top: -250px;}
+            40% {top: -300px;}
+            100%{top: -200px;}
         }
         @-o-keyframes floatbox{
             0%  {top: -0px;}
-            60% {top: -300px;}
-            100%{top: -250px;}
+            40% {top: -300px;}
+            100%{top: -200px;}
         }
     </style>
   </head>
@@ -191,7 +192,7 @@
       <div class="section" id="section2">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-12 h330">
+				<div class="col-xs-12 h380">
 					<div class="screenshot-box">
 						<img src="images/screenshot.png" alt="" class="img-thumbnail">
 					  </div>
@@ -202,7 +203,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12 text-center margin-top-row">
-					<a href="#" class="btn btn-primary btn-lg btn-lg-padding btn-radius">现在注册免费使用15天</a>
+					<a href="#" class="btn btn-primary btn-lg btn-lg-padding btn-radius"><span class="ico-font" style="font-size:20px;">&#xe608;</span> 现在注册,免费使用15天</a>
 				</div>
 			</div>
 			<div class="row ico-row hide">
@@ -233,13 +234,23 @@
 		  	<div class="row">
 		  		<div class="col-xs-12">
 		  			<h1 class="text-center margin-top-row">店侦探，最好用的电商数据分析工具</h1>
-		  			<h2 class="text-center margin-top-row text-danger">提升销量，从未如此简单！</h2>
+		  			<h2 class="text-center text-danger">提升销量，从未如此简单！</h2>
 		  		</div>
 		  	</div>
 		  	<div class="row margin-top-row">
 		  		<div class="col-xs-12 text-center">
+		  			<img class="img-thumbnail trans-img step-img" src="images/step.png" alt="">
+		  		</div>
+		  		<div class="col-xs-12 text-center margin-top-row">
 		  			<img class="img-thumbnail trans-img" src="images/sold_report.png" alt="">
 		  		</div>
+		  		<div class="col-xs-12 text-center">
+		  			<h3 class="text-danger">复制友商的成功经验，减少试错成本，迅速提升销量！</h3>
+		  		</div>
+		  		<div class="col-xs-12 text-center  margin-top17-row">
+					<a href="#" class="btn btn-danger btn-lg btn-lg-padding btn-radius">一键演示体验</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="#" class="btn btn-primary btn-lg btn-lg-padding btn-radius">立刻注册使用</a>
+				</div>
 		  	</div>
 		  	<div class="row ico-row">
 				<div class="item col-xs-4">
@@ -264,15 +275,16 @@
 			</div>
 		  </div>
       </div>
-      <div class="container-fluid middle-row hide">
+<!--
+      <div class="container-fluid middle-row">
       	<div class="row">
       		<div class="col-xs-12 text-center">
-
       			<a href="#" class="btn btn-danger btn-lg btn-lg-padding btn-radius">一键演示体验</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       			<a href="#" class="btn btn-primary btn-lg btn-lg-padding btn-radius">立刻注册使用</a>
       		</div>
       	</div>
       </div>
+-->
       <div class="section" id="section4">
 		  <div class="container-fluid">
 		  	<div class="row">
