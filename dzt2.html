@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>店侦探</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dzt.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        body{min-width: 800px; /*-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;*/background-color: #fbfbfb;}
+
+        body.type-key-word #type-key-word,body.type-product #type-product,body.type-shop #type-shop{background-color: #f35a4a;}
+        body.type-key-word #type-key-word a,body.type-product #type-product a,body.type-shop #type-shop a{color: #fff;}
+        body.type-key-word #type-key-word .arrow,body.type-product #type-product .arrow,body.type-shop #type-shop .arrow{position: absolute;border-bottom: 0px;height: 0;width: 0;bottom: -5px;border-style: solid;left: 50%;margin-left: -5px; border-width: 5px 5px 0px 5px; border-color: transparent;border-top-color:#f35a4a;}
+
+        /*       header调整*/
+        .header-wrapper{box-shadow: none;border-bottom: 1px solid #e7e7e7;background-color: rgba(255,255,255,0.7);}
+        .btn-list .signUpBtn{margin-left: 20px;}
+        .btn-list .btn{border-radius: 999px;padding: 5px 32px;}
+		.index-header{height: 80px;line-height: 80px;position:inherit;}
+        .index-content{padding-top: 0px;}
+
+        /**********************************************************************************/
+		.side-img-container{}
+		.demo-link{position: absolute;bottom: 60px;z-index: 99;left: 50%;margin-left: -105px;}
+		.demo-link a::after {-webkit-transition: all 0.1s ease-out 0s;-moz-transition: all 0.1s ease-out 0s;transition: all 0.1s ease-out 0s;font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
+        .demo-link a{letter-spacing:1px;position: relative;color:#fff;font-size: 24px;display: inline-block;background: #4184f3;padding: 10px 40px 10px 20px;border-radius: 5px;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;margin-top: 20px;}
+        .demo-link a:hover{text-decoration: none;padding: 10px 60px 10px 15px;box-shadow: 0px 0px 5px rgba(0,0,0,0.2);}
+        .demo-link a::after{position: absolute;content: "\e608"; right: 10px;}
+        .demo-link a:hover::after {-webkit-animation: goRight 0.8s ease infinite;-moz-animation: goRight 0.8s ease infinite;-ms-animation: goRight 0.8s ease infinite;  animation: goRight 0.8s ease infinite;}
+    </style>
+  </head>
+  <body class="type-key-word">
+      <div class="section" id="section1">
+         <div class="bg2">
+          <div class="container-fluid header-wrapper index-header">
+               <div class="row">
+                   <div class="col-xs-6 col-logo">
+                       <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+                       <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+                   </div>
+                   <div class="col-xs-6 header-right-side">
+                       <ul class="btn-list clearfix">
+                          <li class="signUpBtn"><button class="btn btn-danger btn-lg">注&nbsp册</button></li>
+                          <li><button class="btn btn-primary btn-lg">登&nbsp陆</button></li>
+                       </ul>
+                   </div>
+               </div>
+          </div>
+          <div class="container-fluid side-img-container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					  		<div class="text-center demo-link">
+								<h3><a href="/base/test" class="hover-line" target="_blank">立即免费体验<span class="ico-after"></span></a></h3>
+							</div>
+						  <!-- Indicators -->
+						  <ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+						  </ol>
+
+						  <!-- Wrapper for slides -->
+						  <div class="carousel-inner" role="listbox">
+							<div class="item active">
+							  <img src="images/side1.jpg" alt="...">
+							  <div class="carousel-caption">
+<!--
+								<h3>我是大标题</h3>
+    							<p>小标题</p>
+-->
+							  </div>
+							</div>
+							<div class="item">
+							  <img src="images/side2.jpg" alt="...">
+							  <div class="carousel-caption">
+							  </div>
+							</div>
+							<div class="item">
+							  <img src="images/side3.jpg" alt="...">
+							  <div class="carousel-caption">
+							  </div>
+							</div>
+							<div class="item">
+							  <img src="images/side4.jpg" alt="...">
+							  <div class="carousel-caption">
+							  </div>
+							</div>
+						  </div>
+
+						  <!-- Controls -->
+						  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						  </a>
+						  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						  </a>
+						</div>
+					</div>
+				</div>
+			  </div>
+
+          </div>
+      </div>
+
+
+   <div class="footer-bottom hide">
+       <div class="container-fluid footer">
+           <div class="row">
+               <div class="col-xs-12">
+                   <ul class="footer-links clearfix">
+                       <li><a href="#">关于我们</a></li>
+                       <li><a href="#">人才招聘</a></li>
+                       <li><a href="#">人才招聘</a></li>
+                       <li><a href="#">官方微信</a></li>
+                       <li><a href="#">意见反馈</a></li>
+                   </ul>
+               </div>
+           </div>
+           <div class="row copyright-row">
+               <div class="col-xs-12 text-center">
+                   <span class="copyright">店侦探-淘宝数据分析专家 © 2013 dzt.com 粤ICP备13046353号-7 济南诚雅贸易有限公司</span>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script type="application/javascript">
+
+    </script>
+    <style type="text/css">
+		@keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+        @-moz-keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+         @-webkit-keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+        @-o-keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+
+    </style>
+  </body>
+</html>
