@@ -20,7 +20,7 @@
         body.type-key-word #type-key-word,body.type-product #type-product,body.type-shop #type-shop{background-color: #f35a4a;}
         body.type-key-word #type-key-word a,body.type-product #type-product a,body.type-shop #type-shop a{color: #fff;}
         body.type-key-word #type-key-word .arrow,body.type-product #type-product .arrow,body.type-shop #type-shop .arrow{position: absolute;border-bottom: 0px;height: 0;width: 0;bottom: -5px;border-style: solid;left: 50%;margin-left: -5px; border-width: 5px 5px 0px 5px; border-color: transparent;border-top-color:#f35a4a;}
-
+		.b{font-weight: 700;}
         /*       header调整*/
         .header-wrapper{box-shadow: none;border-bottom: 1px solid #e7e7e7;background-color: rgba(255,255,255,0.7);}
         .btn-list .signUpBtn{margin-left: 20px;}
@@ -36,85 +36,110 @@
         .demo-link a:hover{text-decoration: none;padding: 10px 60px 10px 15px;box-shadow: 0px 0px 5px rgba(0,0,0,0.2);}
         .demo-link a::after{position: absolute;content: "\e608"; right: 10px;}
         .demo-link a:hover::after {-webkit-animation: goRight 0.8s ease infinite;-moz-animation: goRight 0.8s ease infinite;-ms-animation: goRight 0.8s ease infinite;  animation: goRight 0.8s ease infinite;}
+
+		.screenshot-box .img-thumbnail{border-radius: 5px;border:1px solid #e7e7e7;box-shadow: 0px 0px 20px rgba(0,0,0,0.2);padding: 0px;}
+		#section2{background: radial-gradient(circle, rgba(65,132,243,0.01), rgba(65,132,243,0.2)) repeat scroll 0 0 rgba(0, 0, 0, 0);height:  500px;margin-top: 32px;}
     </style>
   </head>
-  <body class="type-key-word">
-      <div class="section" id="section1">
-         <div class="bg2">
-          <div class="container-fluid header-wrapper index-header">
-               <div class="row">
-                   <div class="col-xs-6 col-logo">
-                       <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
-                       <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
-                   </div>
-                   <div class="col-xs-6 header-right-side">
-                       <ul class="btn-list clearfix">
-                          <li class="signUpBtn"><button class="btn btn-danger btn-lg">注&nbsp册</button></li>
-                          <li><button class="btn btn-primary btn-lg">登&nbsp陆</button></li>
-                       </ul>
-                   </div>
-               </div>
-          </div>
-          <div class="container-fluid side-img-container">
-				<div class="row">
-					<div class="col-xs-12">
-						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-					  		<div class="text-center demo-link">
-								<h3><a href="/base/test" class="hover-line" target="_blank">立即免费体验<span class="ico-after"></span></a></h3>
-							</div>
-						  <!-- Indicators -->
-						  <ol class="carousel-indicators">
-							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-						  </ol>
-
-						  <!-- Wrapper for slides -->
-						  <div class="carousel-inner" role="listbox">
-							<div class="item active">
-							  <img src="images/side1.jpg" alt="...">
-							  <div class="carousel-caption">
-<!--
-								<h3>我是大标题</h3>
-    							<p>小标题</p>
--->
-							  </div>
-							</div>
-							<div class="item">
-							  <img src="images/side2.jpg" alt="...">
-							  <div class="carousel-caption">
-							  </div>
-							</div>
-							<div class="item">
-							  <img src="images/side3.jpg" alt="...">
-							  <div class="carousel-caption">
-							  </div>
-							</div>
-							<div class="item">
-							  <img src="images/side4.jpg" alt="...">
-							  <div class="carousel-caption">
-							  </div>
-							</div>
-						  </div>
-
-						  <!-- Controls -->
-						  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						  </a>
-						  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						  </a>
+  <body>
+	  <div class="container-fluid header-wrapper index-header">
+		   <div class="row">
+			   <div class="col-xs-6 col-logo">
+				   <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+				   <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+			   </div>
+			   <div class="col-xs-6 header-right-side">
+				   <ul class="btn-list clearfix">
+					  <li class="signUpBtn"><button class="btn btn-danger btn-lg">注&nbsp册</button></li>
+					  <li><button class="btn btn-primary btn-lg">登&nbsp陆</button></li>
+				   </ul>
+			   </div>
+		   </div>
+	  </div>
+	  <div class="container-fluid side-img-container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<div class="text-center demo-link">
+							<h3><a href="/base/test" class="hover-line" target="_blank">立即免费体验<span class="ico-after"></span></a></h3>
 						</div>
+					  <ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					  </ol>
+					  <div class="carousel-inner" role="listbox">
+						<div class="item active">
+						  <img src="images/side1.jpg" alt="...">
+						  <div class="carousel-caption">
+<!--
+							<h3>我是大标题</h3>
+							<p>小标题</p>
+-->
+						  </div>
+						</div>
+						<div class="item">
+						  <img src="images/side2.jpg" alt="...">
+						  <div class="carousel-caption">
+						  </div>
+						</div>
+						<div class="item">
+						  <img src="images/side3.jpg" alt="...">
+						  <div class="carousel-caption">
+						  </div>
+						</div>
+						<div class="item">
+						  <img src="images/side4.jpg" alt="...">
+						  <div class="carousel-caption">
+						  </div>
+						</div>
+					  </div>
+
+					  <!-- Controls -->
+					  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					  </a>
 					</div>
 				</div>
-			  </div>
-
-          </div>
-      </div>
-
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="screenshot-box margin-top-row text-center">
+						<img src="images/sc2.jpg" alt="" class="img-thumbnail">
+					</div>
+					<div class="col-xs-12 margin-top17-row text-center">
+						<h2 class="text-danger b">店侦探，监控对手店铺数据，学习对手，超越对手</h2>
+						<p class="dzt-des margin-top17-row">全面监控对手的销量情况、引流关键词、直通车、营销活动、宝贝变更跟踪！</p>
+					</div>
+				</div>
+			</div>
+	  </div>
+	  <div class="section" id="section2">
+	  	<div class="container-fluid">
+	  		<div class="row">
+	  			<div class="col-xs-12">
+	  				<h1 class="text-center margin-top-row b">店侦探，七天透视分析</h1>
+		  			<h3 class="text-center text-danger">七天全部数据走势一目了然</h3>
+	  			</div>
+	  		</div>
+	  	</div>
+	  </div>
+	  <div class="section" id="section3">
+	  	<div class="container-fluid">
+	  		<div class="row">
+	  			<div class="col-xs-12">
+	  				<h1 class="text-center margin-top-row b">店侦探 vs 数据魔方</h1>
+		  			<h3 class="text-center text-danger">掌握对手销量走势，及时发现异动</h3>
+	  			</div>
+	  		</div>
+	  	</div>
+	  </div>
 
    <div class="footer-bottom hide">
        <div class="container-fluid footer">
@@ -131,7 +156,7 @@
            </div>
            <div class="row copyright-row">
                <div class="col-xs-12 text-center">
-                   <span class="copyright">店侦探-淘宝数据分析专家 © 2013 dzt.com 粤ICP备13046353号-7 济南诚雅贸易有限公司</span>
+                   <span class="copyright">店侦探-淘宝数据分析专家 © 2013 dzt.com 粤ICP备13046353号-7</span>
                </div>
            </div>
        </div>
