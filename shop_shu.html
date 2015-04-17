@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>店铺指数</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dzt.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+		.shop_icon{margin-top: 10px;}
+		.shop_info{margin-left: 26px;}
+		.shop_info .shop-name:before{font-size: 18px;margin-right: 5px;}
+		.shop_info .shop-name{font-size: 18px;font-weight: bold;}
+		.shop_info li{padding-bottom: 20px;}
+		.shop_info .info i{font-style: normal;color: #777;margin-right: 26px;}
+		.shop_info .info.main-title{}
+		.shop_info .info i span{color: #222;}
+		.shop_info .info i img.level{}
+		.shop_info .info i span.ww_ico{color: #4184f3;font-size: 14px;}
+
+    </style>
+  </head>
+  <body>
+   <div class="container-fluid header-wrapper">
+       <div class="row">
+           <div class="col-xs-6 col-logo">
+               <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+               <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+           </div>
+           <div class="col-xs-6 header-right-side">
+               <ul class="clearfix">
+                  <li class="user">
+                      <a id="user-button" href="#"><span class="account">102700317@qq.com</span><span class="ico-font">&#xe604;</span></a>
+                  </li>
+                  <li class="pay-text"><a href="#">续费升级</a></li>
+               </ul>
+           </div>
+       </div>
+  </div>
+  <div class="content-bg">
+      <div class="contain-body clearfix">
+         <div class="nav-side l">
+             <div class="ver-box">专业版</div>
+             <div class="nav-tree-box">
+                 <dl class="nav-tree">
+                     <dt class="nav-tree-node">
+                         <a href="#"><span>监控店铺</span></a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <a href="#">管理</a>
+                             </dt>
+                             <dd></dd>
+                         </dl>
+                     </dd>
+                     <dt class="nav-tree-node">
+                         <a href="#">分析</a>
+                     </dt>
+                     <dd>
+                         <dl>
+                             <dt>
+                                 <a href="#">整店报告</a>
+                             </dt>
+                             <dd></dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">交易分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">引流分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">营销分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                             <dt>
+                                 <div class="nav-tree-child">
+                                     <a href="#">宝贝分析</a>
+                                 </div>
+                             </dt>
+                             <dd class="hide">
+                                 <dl>
+                                     <dt><a href="#">概况报告</a></dt>
+                                     <dd></dd>
+                                     <dt><a href="#">深入分析</a></dt>
+                                     <dd></dd>
+                                 </dl>
+                             </dd>
+                         </dl>
+                     </dd>
+                 </dl>
+             </div>
+             <div class="help-box">
+                 <ul>
+                     <li class="help-service"><a href="#"><span class="ico-font">&#xe61a;</span>客服</a><a href="#"><span class="ico-font">&#xe618;</span>客服</a></li>
+                 </ul>
+             </div>
+         </div>
+         <div class="pack-toggle text-center">
+             <span id="pack-toggle-trigger" class="pack-toggle-trigger ico-font center-block"></span>
+         </div>
+         <div class="content-side l padding-box">
+            <div class="content-body container-fluid">
+            	<div class="row padding-row switch-shop-row border-bottom-row">
+                    <div class="col-xs-12 clearfix">
+                        <div class="dropdown switch-shop-menu l">
+                            <h4 class="dropdown-toggle" id="switch-shop-title" data-toggle="dropdown">
+                            几度家居旗舰店
+                            <span class="caret"></span>
+                            </h4>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">几度家居旗舰店</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">几度家居旗舰店</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">几度家居旗舰店</a></li>
+                            </ul>
+                        </div>
+                        <div class="last-update l">最后更新：2015-5-1</div>
+                    </div>
+                </div>
+                <div class="row padding-row border-bottom-row">
+                    <div class="col-xs-6">
+                        <h4 class="data-title">店铺信息及指数</h4>
+                    </div>
+                </div>
+                <div class="row margin-top17-row">
+                	<div class="col-xs-12 clearfix">
+                		<div class="shop_icon l">
+                			<img src="http://g.search.alicdn.com/img/bao/uploaded/i4/0a/2d/T1OctnFxFdXXb1upjX.jpg" alt="" class="img-thumbnail">
+                		</div>
+                		<div class="shop_info l">
+                			<ul>
+                				<li class="info main-title"><span class="shop-tmall ico-before shop-name">几度家居旗舰店</span>&nbsp;&nbsp;
+                				<i><img src="http://pics.taobaocdn.com/newrank/s_crown_2.gif" alt="" class="level"></i>
+                				<i><span class="ico-font ww_ico" title="旺旺名称">&#xe619;</span> <span>欣云户外专营店</span></i>
+
+                				<i>[ <a href="#" target="_blank">进入店铺</a> ]</i></li>
+                				<li class="info">
+
+                					<i>公司名称： <span>深圳欣云贸易有限公司</span></i>
+                					<i>创店时间： <span>2011-05-09 19:58:53</span></i>
+                				</li>
+                				<li class="info">
+                					<i>所在地： <span>广东深圳</span></i>
+                					<i>主营类目： <span>运动/户外</span></i>
+                				</li>
+                			</ul>
+                		</div>
+                	</div>
+                </div>
+                <div class="row padding-row shop_shu">
+                	<div class="col-xs-3 item">
+						<dl>
+							<dt>DSR</dt>
+							<dd>
+								<div class="volume">123</div>
+								<div class="rate">较上一天<span class="ico-before up">25%</span></div>
+							</dd>
+						</dl>
+					</div>
+					<div class="col-xs-3 item">
+						<dl>
+							<dt>店铺收藏</dt>
+							<dd>
+								<div class="volume"><span class="rmb-before">12352.00</span></div>
+								<div class="rate">较上一天<span class="ico-before down">25%</span></div>
+							</dd>
+						</dl>
+					</div>
+					<div class="col-xs-3 item">
+						<dl>
+							<dt>宝贝数</dt>
+							<dd>
+								<div class="volume">123</div>
+								<div class="rate">较上一天<span class="ico-before flat">0%</span></div>
+							</dd>
+						</dl>
+					</div>
+					<div class="col-xs-3 item">
+						<dl>
+							<dt>月成交</dt>
+							<dd>
+								<div class="volume">30.00%</div>
+								<div class="rate">较上一天<span class="ico-before flat">0%</span></div>
+							</dd>
+						</dl>
+					</div>
+					<div class="clearfix"></div>
+					<div class="col-xs-3 item">
+						<dl>
+							<dt>近30天平均退款速度</dt>
+							<dd>
+								<div class="volume">123</div>
+								<div class="rate">较上一天<span class="ico-before up">25%</span></div>
+							</dd>
+						</dl>
+					</div>
+					<div class="col-xs-3">
+						<dl>
+							<dt>近30天退款率</dt>
+							<dd>
+								<div class="volume">123</div>
+								<div class="rate">较上一天<span class="ico-before up">25%</span></div>
+							</dd>
+						</dl>
+					</div>
+					<div class="col-xs-3 item">
+						<dl>
+							<dt>近30天投诉率</dt>
+							<dd>
+								<div class="volume">123</div>
+								<div class="rate">较上一天<span class="ico-before up">25%</span></div>
+							</dd>
+						</dl>
+					</div>
+					<div class="col-xs-3 item">
+						<dl>
+							<dt>近30天处罚数</dt>
+							<dd>
+								<div class="volume">123</div>
+								<div class="rate">较上一天<span class="ico-before up">25%</span></div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+            </div>
+         </div>
+      </div>
+  </div>
+
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dzt_bg.js"></script>
+    <script type="text/javascript">
+
+    </script>
+  </body>
+</html>
