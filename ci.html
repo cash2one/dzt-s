@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>店侦探</title>
 
-    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/dzt.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -15,7 +14,7 @@
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        body{min-width: 800px;}
+        body{min-width: 800px;background-color: #f8f8f8}
 
         body.type-key-word #type-key-word,body.type-product #type-product,body.type-shop #type-shop{background-color: #f35a4a;}
         body.type-key-word #type-key-word a,body.type-product #type-product a,body.type-shop #type-shop a{color: #fff;}
@@ -29,87 +28,63 @@
 		.header-wrapper .col-logo, .header-wrapper .header-right-side {line-height: 80px;}
         .index-content{padding-top: 0px;}
 
-        /**********************************************************************************/
+        /******************************************************/
+		.b{font-weight: 700;}
+		.f16{font-size: 16px;}
+		a.text-danger.hover-line:hover{text-decoration-color: #d50f1f;color: #d50f1f;}
 		.btn-lg-padding{padding-left: 24px;padding-right: 24px;letter-spacing: 1.3px;font-size: 19px;}
 		.btn-radius{border-radius: 999px;}
-		.h380{height: 380px;}
-		.ico-font.f64{font-size: 64px;}
+		.ico-font.f64{font-size: 52px;}
 
-        #section1{}
-        .bg2{background: rgba(0,0,0,0.2);height: 100%;position: relative;}
+        #section1{height: 70%;}
+        .index-content{margin-top: 70px;}
+        .main-title h1{font-size: 38px;margin-bottom: 15px;color: #2a414d;letter-spacing: 2px;}
+        .main-title h5{color: #222;}
+		.search-table .btn-submit-search{margin-left: 5px;font-size: 17px;position: absolute;right: 24px;bottom:18px;width: 76px;}
+		.search-table .search-type-tab{margin-bottom: 10px;margin-left: 0px;}
+		.search-table .search-type-tab li{padding: 4px 8px;border-radius: 2px;position: relative;}
+		.search-table .search-type-tab li a{font-size: 15px;color: #777;}
+		.search-table .search-type-tab li a:hover{color:#222;}
+		.search-table .search-form-group{width: 100%;padding-right: 76px;}
+        .search-table .white-box{padding:18px 24px;background-color: rgba(255,255,255,1);border-radius: 2px;margin-top: 20px;box-shadow: 1px 3px 3px rgba(0,0,0,0.12)}
 
+
+		.demo-link.radius a{border-radius: 999px;}
+		.demo-link.primary a{background: #4184f3;color: #fff;border-color: #2974f1;background-image: linear-gradient(to bottom, #4b8af4, #4184f3);}
+		.demo-link.primary a:hover{background-color: #2974f1;background-image: linear-gradient(to bottom, #4184f3, #337bf2);border-color: #0f61e8;}
+		.demo-link.danger a{background: #f35a4a;color: #fff;border-color: #f14432;background-image: linear-gradient(to bottom, #f46354, #f35a4a);}
+		.demo-link.danger a:hover{background-color: #f14432;background-image: linear-gradient(to bottom, #f35a4a, #f24d3c);border-color: #ef2611;}
+		.demo-link.success a{color: #fff;background-color: #35aa47;background-image: linear-gradient(to bottom, #37b24a, #35aa47);border-color: #2f973f;}
+		.demo-link.success a:hover{background-color: #2f973f;background-image: linear-gradient(to bottom, #35aa47, #319e42);border-color: #267b34;}
 		.demo-link a::after {-webkit-transition: all 0.1s ease-out 0s;-moz-transition: all 0.1s ease-out 0s;transition: all 0.1s ease-out 0s;font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
-        .demo-link a{letter-spacing:1px;position: relative;color:#fff;font-size: 24px;display: inline-block;background: rgba(243,90,74,1);padding: 10px 40px 10px 15px;border-radius: 999px;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
+        .demo-link a{letter-spacing:1px;position: relative;color:#fff;font-size: 24px;display: inline-block;padding: 10px 40px 10px 20px;border-radius: 5px;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;margin-top: 20px;text-shadow: 0 1px rgba(0, 0, 0, 0.1);border-width: 1px;border-style: solid;}
         .demo-link a:hover{text-decoration: none;padding: 10px 60px 10px 15px;box-shadow: 0px 0px 5px rgba(0,0,0,0.2);}
         .demo-link a::after{position: absolute;content: "\e608"; right: 10px;}
         .demo-link a:hover::after {-webkit-animation: goRight 0.8s ease infinite;-moz-animation: goRight 0.8s ease infinite;-ms-animation: goRight 0.8s ease infinite;  animation: goRight 0.8s ease infinite;}
-/*
-        .img-list{margin-bottom: 50px;}
-        .img-list li{position: relative;text-align: center;}
-        .img-list li .img-txt{opacity: 0;font-size:16px;position: absolute;display: inline-block;width: 130px;height: 78px;line-height:30px;text-align: center;vertical-align: middle;color: #fff;left: 5px;top:0px;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
-        .img-list li .img-txt:hover{opacity: 1;line-height:78px;cursor: pointer;background: rgba(0,0,0,0.5);}
-*/
-        .lt-msg .reg-link{background-color: rgba(255,255,255,0.3);padding:0 3px;border-radius: 3px;-webkit-transition: all 0.1s ease-out 0s;-moz-transition: all 0.1s ease-out 0s;transition: all 0.1s ease-out 0s;}
-        .lt-msg .reg-link:hover{background-color: rgba(255,255,255,0.7);padding:0 10px;}
-
-        .d-table{display: table;width: 100%;height: 90%;}
-        .d-table-row{display: table-row;}
-		.d-table-cell{display: table-cell;text-align: center;vertical-align: middle;}
-		.d-table-cell.show{display: table-cell !important;}
-        .d-table-cell .b{font-weight: 700;}
-        .search-table .top-fit{margin-top: 0px;}
-        .search-table .main-title{margin-bottom: 30px;}
-        .search-table .main-title h3{font-size: 52px;margin: 20px 0 20px;color: #222;}
-        .search-table .main-title h4{font-size: 48px;margin-bottom: 15px;color: #222;}
-        .search-table .main-title h5{color: #222;}
-        .search-table #search{width: 600px;}
-        .search-table .btn-submit-search{margin-left: 5px;font-size: 17px;}
-        .search-table .search-type-tab{margin-bottom: 10px;}
-        .search-table .search-type-tab li{float: left;padding: 5px 10px;border-radius: 2px;position: relative;}
-        .search-table .search-type-tab li{-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;}
-        .search-table .search-type-tab li a{font-size: 17px;color: #777;-webkit-transition: color 0.2s ease-out 0s;-moz-transition: color 0.2s ease-out 0s;transition: color 0.2s ease-out 0s;}
-        .search-table .search-type-tab li a:hover{color:#222;}
-		.search-table .inline-box{display: inline-block;}
-		.search-table .placeholder{height: 300px;}
-        .black-box{padding:20px 30px;background-color: rgba(0,0,0,0.02);border-radius: 0px;margin-top: 20px;}
 
 
-		.screenshot-box{position: absolute;top: -200px;width: 1000px;left: 50%;margin-left: -500px;-webkit-animation: floatbox 1s ease-out;-moz-animation: floatbox 1s ease-out;-ms-animation: floatbox 1s ease-out;  animation: floatbox 1s ease-out;}
 		.screenshot-box .img-thumbnail{border-radius: 5px;border:1px solid #e7e7e7;box-shadow: 0px 0px 20px rgba(0,0,0,0.2);padding: 0px;}
-		.dzt-des{font-size: 16px;line-height: 180%;text-indent: 2em;width: 800px;margin: 0px auto;color: #666;letter-spacing: 1px;}
 
-		.ico-row{bottom: 0px;width: 100%;position: absolute;}
-		.ico-row .item{padding-top:50px;padding-bottom: 50px; text-align: center;}
-		.ico-row h4{color: #666;min-width: 180px;max-width: 280px; margin: 20px auto 0px;line-height: 150%;letter-spacing: 1px;font-weight: 100;font-size: }
-		.ico-row h3{color: #222;letter-spacing: 1px;}
 
-		#section3{background: radial-gradient(circle, rgba(65,132,243,0.01), rgba(65,132,243,0.2)) repeat scroll 0 0 rgba(0, 0, 0, 0);height:  100%;margin-top: 92px;min-height: 960px;position: relative;}
+		.section{padding-bottom: 30px;}
+		#section2,#section4{background: radial-gradient(circle, rgba(65,132,243,0.01), rgba(65,132,243,0.2)) repeat scroll 0 0 rgba(0, 0, 0, 0);margin-top: 92px;}
         #section3 h1{margin-top: 40px;}
 		.trans-img{border: none;background-color: transparent;}
 		.step-img{border-radius: 5px;padding:0px;}
 
-		#section4{height:  100%;/*background: radial-gradient(circle, rgba(54,174,52,0.01), rgba(54,174,52,0.2)) repeat scroll 0 0 rgba(0, 0, 0, 0);*/margin-top: 17px;min-height: 960px;position: relative;}
-		.middle-row .row{padding-top: 30px;padding-bottom: 30px;}
-        @keyframes floatbox{
-            0%  {top: -0px;}
-            40% {top: -300px;}
-            100%{top: -200px;}
-        }
-        @-moz-keyframes floatbox{
-            0%  {top: -0px;}
-            40% {top: -300px;}
-            100%{top: -200px;}
-        }
-         @-webkit-keyframes floatbox{
-            0%  {top: -0px;}
-            40% {top: -300px;}
-            100%{top: -200px;}
-        }
-        @-o-keyframes floatbox{
-            0%  {top: -0px;}
-            40% {top: -300px;}
-            100%{top: -200px;}
-        }
+		#section4{margin-top: 17px;}
+		.ico-row .item{padding-top:50px;padding-bottom: 50px; text-align: center;}
+		.ico-row h4{color: #666;min-width: 180px;max-width: 280px; margin: 20px auto 0px;line-height: 150%;letter-spacing: 1px;font-weight: 100;font-size: }
+		.ico-row h3{color: #222;letter-spacing: 1px;}
+
+		#vs-table{box-shadow: 0 0 10px rgba(0,0,0,0.2)}
+		#vs-table th{text-align: center;}
+		#vs-table th,#vs-table td{vertical-align: middle;background: #fff;}
+		#vs-table td.th{font-size: 18px;color: #222;}
+		#vs-table td.mf{font-size:18px;color:#999;}
+		#vs-table td.dzt{font-size:28px;color:#41A85F;}
+		#vs-table .yes::before{content:'\e62f';font-size:32px;color:#41A85F;}
+		#vs-table .no::before{content:'\e631';font-size:32px;color:#ccc;}
     </style>
   </head>
   <body class="type-key-word">
@@ -128,45 +103,193 @@
                    </div>
                </div>
           </div>
-          <div class="content index-content search-table d-table" style="margin-bottom:0px;">
-              <div class="d-table-row">
-              <div class="d-table-cell">
-                  <div class="container-fluid">
-                    <div class="row">
+          <div class="content index-content">
+			  <div class="container-fluid">
+					<div class="row">
                         <div class="col-xs-12">
-                            <div class="top-fit">
-                                <div class="text-center main-title relative">
-                                    <div class="item">
-                                        <h3 class="hidden-sm hidden-xs">看看别人的生意怎么做！</h3>
-                                        <h4 class="hidden-lg hidden-md">看看别人的生意怎么做！</h4>
-                                    </div>
-                                </div>
-                                <div class="inline-box black-box">
-                                    <ul class="search-type-tab clearfix">
-                                        <li id="type-key-word"><a href="javascript:;">关键词</a><div class="arrow"></div></li>
-                                        <li id="type-product"><a href="javascript:;">宝贝</a><div class="arrow"></div></li>
-                                        <li id="type-shop"><a href="javascript:;">店铺</a><div class="arrow"></div></li>
-                                    </ul>
-                                    <form class="form-inline clearfix" role="form" action="{{ url_for('frontend.s') }}">
-                                        <input type="hidden" id="search_t" name="t" value="0">
-                                        <div class="form-group search-form-group l">
-                                            <div class="input-group search-input-group">
-                                                <input id="search" name="k" class="form-control input-lg search-input" type="text" placeholder="请输入您要查询的关键词">
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary btn-lg btn-submit-search l ico-font">&nbsp;&nbsp;&nbsp;&#xe661;&nbsp;&nbsp;&nbsp;</button>
-                                    </form>
-                                </div>
-                            </div>
+                            <div class="text-center main-title">
+								<h1 class="margin-top17-row b">淘宝天猫搜索透视</h1>
+							</div>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3  col-lg-4 col-lg-offset-4 search-box-col">
+                        	<div class="text-right">
+                        		<a href="#" class="hover-line text-danger"><span class="">会员专用店铺监控</span></a> <span class="ico-font text-danger">&#xe656;</span>
+                        	</div>
+                        	<div class="search-table relative">
+								<div class="inline-box white-box">
+									<ul class="search-type-tab list-inline">
+										<li id="type-key-word"><a href="javascript:;">关键词</a><div class="arrow"></div></li>
+										<li id="type-product"><a href="javascript:;">宝贝</a><div class="arrow"></div></li>
+										<li id="type-shop"><a href="javascript:;">店铺</a><div class="arrow"></div></li>
+									</ul>
+									<form class="" role="form" action="{{ url_for('frontend.s') }}">
+										<input type="hidden" id="search_t" name="t" value="0">
+										<div class="search-form-group">
+											<div class="search-input-group">
+												<input id="search" name="k" class="form-control input-lg search-input" type="text" placeholder="请输入您要查询的关键词">
+											</div>
+										</div>
+										<button type="submit" class="btn btn-primary btn-lg btn-submit-search ico-font">&#xe661;</button>
+									</form>
+								</div>
+						   </div>
+                       		<div class="text-center margin-top17-row">
+                       			<a href="#" class="hover-line f16">看看热卖宝贝有哪些引流关键词</a>
+                       		</div>
                         </div>
                     </div>
-                  </div>
-              </div>
-              </div>
+			  </div>
           </div>
       </div>
+      <div class="section" id="section2">
+		  <div class="container-fluid">
+		  	<div class="row">
+		  		<div class="col-xs-12">
+		  			<h1 class="text-center margin-top-row">关键词搜索透视，揭秘爆款关键词</h1>
+		  			<h2 class="text-center text-danger">迅速发现对手引流秘密</h2>
+		  		</div>
+		  	</div>
+		  	<div class="row">
+		  		<div class="col-xs-12 margin-top-row text-center">
+		  			<img class="img-thumbnail trans-img" src="images/ci_yd.png" alt="">
+		  		</div>
+		  	</div>
+		  </div>
+      </div>
+      <div class="section" id="section3">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="text-center margin-top-row b">店侦探 VS 数据魔方</h1>
+						<h3 class="text-center text-danger">看看我们的优势！</h3>
+					</div>
+					<div class="col-xs-12 text-center margin-top-row">
+						<table id="vs-table" class="table data-table text-center">
+							<thead>
+								<tr>
+									<th width="24%"></th>
+									<th width="38%"><img src="images/mf_logo.png" alt=""></th>
+									<th width="38%"><img src="images/logo_b.png" alt=""></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="th">指定同行营收数据</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">查看对手直通车词</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">同行移动端直通车数据</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">宝贝上下架分布</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">宝贝调整跟踪</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">站外活动监控</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">搜索全行业词</td>
+									<td class="mf">限店铺所属行业词</td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">数据范围</td>
+									<td class="mf">单一行业</td>
+									<td class="dzt">全淘宝行业</td>
+								</tr>
 
-   <div class="footer-bottom hide">
+								<tr>
+									<td class="th">门槛</td>
+									<td class="mf">五钻以上或天猫用户</td>
+									<td class="dzt">全淘宝卖家</td>
+								</tr>
+								<tr>
+									<td class="th">实用性</td>
+									<td class="mf">中大卖家或品牌商</td>
+									<td class="dzt">全淘宝卖家</td>
+								</tr>
+								<tr>
+									<td class="th">价格</td>
+									<td class="mf">￥3600/年</td>
+									<td class="dzt">￥988/年<br><a href="#" class="btn btn-primary btn-lg">立即购买</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+      <div class="section" id="section4">
+		  <div class="container-fluid">
+		  	<div class="row">
+		  		<div class="col-xs-12">
+		  			<h1 class="text-center margin-top-row">店侦探，会员专用店铺监控</h1>
+		  			<h2 class="text-center margin-top-row text-danger">分析对手，学习对手，超越对手</h2>
+		  		</div>
+		  	</div>
+		  	<div class="row margin-top-row">
+		  		<div class="col-xs-12 text-center screenshot-box">
+		  			<img class="img-thumbnail trans-img" src="images/screenshot.png" alt="">
+		  		</div>
+		  		<div class="col-xs-6 text-right">
+		  			<div class="text-right demo-link primary radius">
+						<h3><a href="/base/test" class="hover-line" target="_blank">详细介绍<span class="ico-after"></span></a> </h3>
+					</div>
+		  		</div>
+		  		<div class="col-xs-6 text-left">
+					<div class="text-left demo-link success radius">
+						<h3><a href="/base/test" class="hover-line" target="_blank">免费体验<span class="ico-after"></span></a> </h3>
+					</div>
+		  		</div>
+		  	</div>
+		  	<div class="row ico-row">
+				<div class="item col-xs-3">
+					<p><span class="ico-font f64 text-primary">&#xe643;</span></p>
+					<h3>交易分析</h3>
+					<h4>轻松查看竞争对手全店、单品的销售走势及销售异动！</h4>
+				</div>
+				<div class="item col-xs-3">
+					<p>
+						<span class="ico-font f64 text-primary">&#xe65a;</span>
+					</p>
+					<h3>引流分析</h3>
+					<h4>PC端，移动端从多维度（自然引流，直通车，豆腐块）分析揭秘对手爆款关键词及排名走势！</h4>
+				</div>
+				<div class="item col-xs-3">
+					<p>
+						<span class="ico-font f64 text-primary">&#xe60d;</span>
+					</p>
+					<h3>营销分析</h3>
+					<h4>全面掌控对手的营销手段，站内、站外、全网营销活动尽在掌握！你也可以学习友商的营销手段！</h4>
+				</div>
+				<div class="item col-xs-3">
+					<p>
+						<span class="ico-font f64 text-primary">&#xe655;</span>
+					</p>
+					<h3>宝贝分析</h3>
+					<h4>宝贝上新，下线情况一览无遗，轻松查看宝贝主图、价格、标题、等的编辑改动历史。</h4>
+				</div>
+			</div>
+		  </div>
+      </div>
+
+   <div class="footer-bottom">
        <div class="container-fluid footer">
            <div class="row">
                <div class="col-xs-12">
