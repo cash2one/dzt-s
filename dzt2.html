@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>店侦探</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dzt.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        body{min-width: 800px; /*-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;*/background-color: #fbfbfb;}
+
+        body.type-key-word #type-key-word,body.type-product #type-product,body.type-shop #type-shop{background-color: #f35a4a;}
+        body.type-key-word #type-key-word a,body.type-product #type-product a,body.type-shop #type-shop a{color: #fff;}
+        body.type-key-word #type-key-word .arrow,body.type-product #type-product .arrow,body.type-shop #type-shop .arrow{position: absolute;border-bottom: 0px;height: 0;width: 0;bottom: -5px;border-style: solid;left: 50%;margin-left: -5px; border-width: 5px 5px 0px 5px; border-color: transparent;border-top-color:#f35a4a;}
+
+        /*       header调整*/
+        .header-wrapper{box-shadow: none;border-bottom: 1px solid #e7e7e7;background-color: rgba(255,255,255,0.7);}
+        .btn-list .signUpBtn{margin-left: 20px;}
+        .btn-list .btn{border-radius: 999px;padding: 5px 32px;}
+		.index-header{height: 80px;line-height: 80px;position:inherit;}
+		.header-wrapper .col-logo, .header-wrapper .header-right-side {line-height: 80px;}
+        .index-content{padding-top: 0px;}
+
+        /**********************************************************************************/
+		.b{font-weight: 700;}
+		.btn-radius{border-radius: 999px;}
+		.img-trans{background-color: transparent;border: none;}
+		.side-img-container{}
+
+		.demo-link.radius a{border-radius: 999px;}
+
+		.demo-link.primary a{background: #4184f3;color: #fff;border-color: #2974f1;background-image: linear-gradient(to bottom, #4b8af4, #4184f3);}
+		.demo-link.primary a:hover{background-color: #2974f1;background-image: linear-gradient(to bottom, #4184f3, #337bf2);border-color: #0f61e8;}
+
+
+		.demo-link.danger a{background: #f35a4a;color: #fff;border-color: #f14432;background-image: linear-gradient(to bottom, #f46354, #f35a4a);}
+		.demo-link.danger a:hover{background-color: #f14432;background-image: linear-gradient(to bottom, #f35a4a, #f24d3c);border-color: #ef2611;}
+
+
+		.demo-link.success a{color: #fff;background-color: #35aa47;background-image: linear-gradient(to bottom, #37b24a, #35aa47);border-color: #2f973f;}
+		.demo-link.success a:hover{background-color: #2f973f;background-image: linear-gradient(to bottom, #35aa47, #319e42);border-color: #267b34;}
+
+		.demo-link{}
+		.demo-link a::after {-webkit-transition: all 0.1s ease-out 0s;-moz-transition: all 0.1s ease-out 0s;transition: all 0.1s ease-out 0s;font-family:"iconfont" !important;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
+        .demo-link a{letter-spacing:1px;position: relative;color:#fff;font-size: 24px;display: inline-block;padding: 10px 40px 10px 20px;border-radius: 5px;-webkit-transition: all 0.2s ease-out 0s;-moz-transition: all 0.2s ease-out 0s;transition: all 0.2s ease-out 0s;margin-top: 20px;text-shadow: 0 1px rgba(0, 0, 0, 0.1);border-width: 1px;border-style: solid;}
+        .demo-link a:hover{text-decoration: none;padding: 10px 60px 10px 15px;box-shadow: 0px 0px 5px rgba(0,0,0,0.2);}
+        .demo-link a::after{position: absolute;content: "\e608"; right: 10px;}
+        .demo-link a:hover::after {-webkit-animation: goRight 0.8s ease infinite;-moz-animation: goRight 0.8s ease infinite;-ms-animation: goRight 0.8s ease infinite;  animation: goRight 0.8s ease infinite;}
+
+		#slide-over-btn{position: absolute;bottom: 60px;z-index: 99;left: 50%;margin-left: -105px;}
+		.screenshot-box .img-thumbnail{border-radius: 5px;border:1px solid #e7e7e7;box-shadow: 0px 0px 20px rgba(0,0,0,0.2);padding: 0px;}
+		.section{padding-bottom: 20px;}
+		#section2,#section4,#section6{background: radial-gradient(circle, rgba(65,132,243,0.01), rgba(65,132,243,0.2)) repeat scroll 0 0 rgba(0, 0, 0, 0);margin-top: 32px;}
+		.qt-demo-btn{}
+		#vs-table{box-shadow: 0 0 10px rgba(0,0,0,0.2)}
+		#vs-table th{text-align: center;}
+		#vs-table th,#vs-table td{vertical-align: middle;background: #fff;}
+		#vs-table td.th{font-size: 18px;color: #222;}
+		#vs-table td.mf{font-size:18px;color:#999;}
+		#vs-table td.dzt{font-size:28px;color:#41A85F;}
+		#vs-table .yes::before{content:'\e62f';font-size:32px;color:#41A85F;}
+		#vs-table .no::before{content:'\e631';font-size:32px;color:#ccc;}
+    </style>
+  </head>
+  <body>
+	  <div class="container-fluid header-wrapper index-header">
+		   <div class="row">
+			   <div class="col-xs-6 col-logo">
+				   <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+				   <a class="logo-des" href="#"><img src="images/logo-des.png" alt=""></a>
+			   </div>
+			   <div class="col-xs-6 header-right-side">
+				   <ul class="btn-list clearfix">
+					  <li class="signUpBtn"><button class="btn btn-danger btn-lg">注&nbsp册</button></li>
+					  <li><button class="btn btn-primary btn-lg">登&nbsp陆</button></li>
+				   </ul>
+			   </div>
+		   </div>
+	  </div>
+	  <div class="container-fluid side-img-container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<div id="slide-over-btn" class="text-center demo-link primary ">
+							<h3><a href="/base/test" class="hover-line" target="_blank">立即免费体验<span class="ico-after"></span></a></h3>
+						</div>
+					  <ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					  </ol>
+					  <div class="carousel-inner" role="listbox">
+						<div class="item active">
+						  <img src="images/side1.jpg" alt="...">
+						  <div class="carousel-caption">
+<!--
+							<h3>我是大标题</h3>
+							<p>小标题</p>
+-->
+						  </div>
+						</div>
+						<div class="item">
+						  <img src="images/side2.jpg" alt="...">
+						  <div class="carousel-caption">
+						  </div>
+						</div>
+						<div class="item">
+						  <img src="images/side3.jpg" alt="...">
+						  <div class="carousel-caption">
+						  </div>
+						</div>
+						<div class="item">
+						  <img src="images/side4.jpg" alt="...">
+						  <div class="carousel-caption">
+						  </div>
+						</div>
+					  </div>
+
+					  <!-- Controls -->
+					  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					  </a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col-xs-12 margin-top17-row text-center">
+					<h2 class="text-danger b">店侦探，监控对手店铺数据，学习对手，超越对手</h2>
+					<p class="dzt-des margin-top17-row">全面监控对手的销量情况、引流关键词、直通车、营销活动、宝贝变更跟踪！</p>
+				</div>
+				<div class="col-xs-12 margin-top-row">
+					<div class="screenshot-box text-center">
+						<img src="images/sc2.jpg" alt="" class="img-thumbnail">
+					</div>
+				</div>
+			</div>
+	  </div>
+	  <div class="section" id="section2">
+	  	<div class="container-fluid">
+	  		<div class="row">
+	  			<div class="col-xs-12">
+	  				<h1 class="text-center margin-top-row b">店侦探，七天透视分析</h1>
+		  			<h3 class="text-center text-danger">七天全部数据走势一目了然</h3>
+	  			</div>
+	  			<div class="col-xs-12 text-center margin-top-row">
+	  				<img src="images/yd_1.png" alt="" class="img-thumbnail img-trans">
+	  				<div class="text-center demo-link danger radius">
+						<h3><a href="/base/test" class="hover-line" target="_blank">看看销量好的店铺七天透视<span class="ico-after"></span></a></h3>
+					</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	  </div>
+	  <div class="section" id="section3">
+	  	<div class="container-fluid">
+	  		<div class="row">
+	  			<div class="col-xs-12">
+	  				<h1 class="text-center margin-top-row b">店侦探，揭秘对手引流关键词</h1>
+		  			<h3 class="text-center text-danger">摸清对手直通车词，搜索引流词，扩展自身流量</h3>
+	  			</div>
+	  			<div class="col-xs-12 text-center margin-top-row">
+	  				<img src="images/yd_2.png" alt="" class="img-thumbnail img-trans">
+	  				<div class="text-center demo-link primary radius">
+						<h3><a href="/base/test" class="hover-line" target="_blank">看看销量好的店铺如何引流<span class="ico-after"></span></a></h3>
+					</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	  </div>
+		<div class="section" id="section4">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="text-center margin-top-row b">店侦探，解密对手爆款宝贝</h1>
+						<h3 class="text-center text-danger">深度解密爆款宝贝数据，了解爆款原因，复制创造爆款！</h3>
+					</div>
+					<div class="col-xs-12 text-center margin-top-row">
+						<img src="images/yd_3.png" alt="" class="img-thumbnail img-trans">
+						<div class="text-center demo-link danger radius">
+							<h3><a href="/base/test" class="hover-line" target="_blank">看看爆款是如何炼成的<span class="ico-after"></span></a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section" id="section5">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="text-center margin-top-row b">店侦探，发现对手做了哪些活动</h1>
+						<h3 class="text-center text-danger">及时了解对手活动效果，复制对手活动经验，减少试错成本，高效报名活动！</h3>
+					</div>
+					<div class="col-xs-12 text-center margin-top-row">
+						<img src="images/yd_4.png" alt="" class="img-thumbnail img-trans">
+						<div class="text-center demo-link success radius">
+							<h3><a href="/base/test" class="hover-line" target="_blank">看看好店铺是如何做营销的<span class="ico-after"></span></a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section" id="section6">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="text-center margin-top-row b">店侦探、强大且免费使用的搜索栏</h1>
+						<h3 class="text-center text-danger">各种关键词、店铺、宝贝一键查询！注册用户终身免费使用</h3>
+					</div>
+					<div class="col-xs-12 text-center margin-top-row">
+						<img src="images/yd_5.png" alt="" class="img-thumbnail img-trans">
+						<div class="text-center demo-link danger radius">
+							<h3><a href="/base/test" class="hover-line" target="_blank">看看好店铺的引流词有哪些<span class="ico-after"></span></a> </h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section" id="section7">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="text-center margin-top-row b">店侦探 VS 数据魔方</h1>
+						<h3 class="text-center text-danger">看看我们的优势！</h3>
+					</div>
+					<div class="col-xs-12 text-center margin-top-row">
+						<table id="vs-table" class="table data-table text-center">
+							<thead>
+								<tr>
+									<th width="24%"></th>
+									<th width="38%"><img src="images/mf_logo.png" alt=""></th>
+									<th width="38%"><img src="images/logo_b.png" alt=""></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="th">指定同行营收数据</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">查看对手直通车词</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">同行移动端直通车数据</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">宝贝上下架分布</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">宝贝调整跟踪</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">站外活动监控</td>
+									<td class="mf"><span class="ico-before no"></span></td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">搜索全行业词</td>
+									<td class="mf">限店铺所属行业词</td>
+									<td class="dzt"><span class="ico-before yes"></span></td>
+								</tr>
+								<tr>
+									<td class="th">数据范围</td>
+									<td class="mf">单一行业</td>
+									<td class="dzt">全淘宝行业</td>
+								</tr>
+
+								<tr>
+									<td class="th">门槛</td>
+									<td class="mf">五钻以上或天猫用户</td>
+									<td class="dzt">全淘宝卖家</td>
+								</tr>
+								<tr>
+									<td class="th">实用性</td>
+									<td class="mf">中大卖家或品牌商</td>
+									<td class="dzt">全淘宝卖家</td>
+								</tr>
+								<tr>
+									<td class="th">价格</td>
+									<td class="mf">￥3600/年</td>
+									<td class="dzt">￥988/年<br><a href="#" class="btn btn-primary btn-lg">立即购买</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+   <div class="footer-bottom">
+       <div class="container-fluid footer">
+           <div class="row">
+               <div class="col-xs-12">
+                   <ul class="footer-links clearfix">
+                       <li><a href="#">关于我们</a></li>
+                       <li><a href="#">人才招聘</a></li>
+                       <li><a href="#">人才招聘</a></li>
+                       <li><a href="#">官方微信</a></li>
+                       <li><a href="#">意见反馈</a></li>
+                   </ul>
+               </div>
+           </div>
+           <div class="row copyright-row">
+               <div class="col-xs-12 text-center">
+                   <span class="copyright">店侦探-淘宝数据分析专家 © 2013 dzt.com 粤ICP备13046353号-7</span>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script type="application/javascript">
+
+    </script>
+    <style type="text/css">
+		@keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+        @-moz-keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+         @-webkit-keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+        @-o-keyframes goRight{
+            0%  {right: 10px;}
+            50% {right: 30px;}
+            100%{right: 10px;}
+        }
+
+    </style>
+  </body>
+</html>
