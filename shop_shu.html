@@ -271,7 +271,7 @@
                                 </div>
                                 <div class="col-xs-3 tab">
                                     <ul>
-                                        <li class="data-type">近30天店铺收藏<span class="ico-font help" data-toggle="tooltip" title="最近7天该店的销售金额（注：手动改价无法统计到）">&#xe607;</span></li>
+                                        <li class="data-type">店铺收藏<span class="ico-font help" data-toggle="tooltip" title="最近7天该店的销售金额（注：手动改价无法统计到）">&#xe607;</span></li>
                                         <li class="data-volume">12345  <span class="f12 text-muted">个</span></li>
                                         <li class="data-ratio">较上一天<span class="ico-before down">3%</span></li>
                                         <li class="arrow"></li>
@@ -279,7 +279,7 @@
                                 </div>
                                 <div class="col-xs-3 tab">
                                     <ul>
-                                        <li class="data-type">近30天评价数<span class="ico-font help" data-toggle="tooltip" title="最近7天该店销售的商品数量（例：1个链接销售10件商品，算1个）">&#xe607;</span></li>
+                                        <li class="data-type">评价数<span class="ico-font help" data-toggle="tooltip" title="最近7天该店销售的商品数量（例：1个链接销售10件商品，算1个）">&#xe607;</span></li>
                                         <li class="data-volume">13 <span class="f12 text-muted">个</span></li>
                                         <li class="data-ratio">较上一天<span class="ico-before flat">0%</span></li>
                                         <li class="arrow"></li>
@@ -381,7 +381,7 @@
 						}
                     },
                     legend: {
-                        data:['描述相符','5分占比','4分占比','3分占比','2分占比','1分占比'],
+                        data:['描述相符','服务态度','5分占比','4分占比','3分占比','2分占比','1分占比'],
                         orient:'horizontal',
                         x:'left',
                         y:'bottom'
@@ -450,8 +450,22 @@
                                 }
                             },
                             data:[4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023]
-                        },
-						{
+                        },{
+                            name:'服务态度',
+                            type:'line',
+                            symbolSize:3,
+                            itemStyle:{
+                                normal: {
+                                    lineStyle : {
+                                        color:'#4184f3'
+                                    },
+                                },
+                                emphasis : {
+
+                                }
+                            },
+                            data:[4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023]
+                        },{
                             name:'5分占比',
                             type:'bar',
 							stack:'评分占比',
