@@ -40,7 +40,7 @@
 		.dsr-table th,.dsr-table td{padding:2px 1px 0px 1px;vertical-align: middle;}
 		.dsr-table td{width: 150px;}
 		.dsr-table td .bar-container{position: relative;}
-		.dsr-table td .v{position: absolute;top: -2px;left: 2px; z-index: 999;color: #222;}
+		.dsr-table td .v{position: absolute;top: -2px;left: 2px; z-index: 99;color: #222;}
 		.dsr-table .v-bar{}
 		.v-bar{height: 12px;}
 		#dsr-5{background-color: rgba(243,90,74,0.8)}
@@ -48,7 +48,8 @@
 		#dsr-3{background-color: rgba(243,90,74,0.4)}
 		#dsr-2{background-color: rgba(243,90,74,0.2)}
 		#dsr-1{background-color: rgba(243,90,74,0.1)}
-		#tab-data-chart{height: 400px;}
+		#tab-data-chart,#tab-data-chart2,#tab-data-chart3{height: 250px;}
+        .data-chart canvas+div{box-shadow: 1px 3px 3px rgba(0,0,0,0.12)}
 		.content-body{min-width: 920px;}
     </style>
   </head>
@@ -245,33 +246,34 @@
                     <div class="col-xs-12">
                         <div class="row border-box">
                             <div class="tab-box clearfix">
-                                <div class="col-xs-2 tab checked">
+                                <div class="col-xs-4 tab checked">
                                     <ul>
                                         <li class="data-type">DSR：描述相符<span class="ico-font help" data-toggle="tooltip" title="DSR动态评分-宝贝与描述相符">&#xe607;</span></li>
                                         <li class="data-volume">4.6</li>
                                         <li class="data-ratio">较同行平均<span class="ico-before up">高3%</span></li>
-                                        <li class="arrow"></li>
+<!--                                        <li class="arrow"></li>-->
                                     </ul>
                                 </div>
-                                <div class="col-xs-2 tab">
+                                <div class="col-xs-4 tab checked">
                                     <ul>
                                         <li class="data-type">DSR：服务态度<span class="ico-font help" data-toggle="tooltip" title="DSR动态评分-卖家的服务态度">&#xe607;</span></li>
                                         <li class="data-volume">4.7</li>
                                         <li class="data-ratio">较同行平均<span class="ico-before flat">持平</span></li>
-                                        <li class="arrow"></li>
+<!--                                        <li class="arrow"></li>-->
                                     </ul>
                                 </div>
-                                <div class="col-xs-2 tab">
+                                <div class="col-xs-4 tab checked">
                                     <ul>
                                         <li class="data-type">DSR：发货速度<span class="ico-font help" data-toggle="tooltip" title="DSR动态评分-卖家的发货速度">&#xe607;</span></li>
                                         <li class="data-volume">4.7</li>
                                         <li class="data-ratio">较同行平均<span class="ico-before down">低0.34%</span></li>
-                                        <li class="arrow"></li>
+<!--                                        <li class="arrow"></li>-->
                                     </ul>
                                 </div>
+<!--
                                 <div class="col-xs-3 tab">
                                     <ul>
-                                        <li class="data-type">近30天店铺收藏<span class="ico-font help" data-toggle="tooltip" title="最近7天该店的销售金额（注：手动改价无法统计到）">&#xe607;</span></li>
+                                        <li class="data-type">店铺收藏<span class="ico-font help" data-toggle="tooltip" title="最近7天该店的销售金额（注：手动改价无法统计到）">&#xe607;</span></li>
                                         <li class="data-volume">12345  <span class="f12 text-muted">个</span></li>
                                         <li class="data-ratio">较上一天<span class="ico-before down">3%</span></li>
                                         <li class="arrow"></li>
@@ -279,17 +281,24 @@
                                 </div>
                                 <div class="col-xs-3 tab">
                                     <ul>
-                                        <li class="data-type">近30天评价数<span class="ico-font help" data-toggle="tooltip" title="最近7天该店销售的商品数量（例：1个链接销售10件商品，算1个）">&#xe607;</span></li>
+                                        <li class="data-type">评价数<span class="ico-font help" data-toggle="tooltip" title="最近7天该店销售的商品数量（例：1个链接销售10件商品，算1个）">&#xe607;</span></li>
                                         <li class="data-volume">13 <span class="f12 text-muted">个</span></li>
                                         <li class="data-ratio">较上一天<span class="ico-before flat">0%</span></li>
                                         <li class="arrow"></li>
                                     </ul>
                                 </div>
+-->
                             </div>
                         </div>
                         <div class="row border-box" style="border-top:none;">
                             <div class="col-xs-12">
                                 <div id="tab-data-chart" class="data-chart">
+
+                                </div>
+                                <div id="tab-data-chart2" class="data-chart" style="border-top:1px solid #e7e7e7;">
+
+                                </div>
+                                <div id="tab-data-chart3" class="data-chart" style="border-top:1px solid #e7e7e7;">
 
                                 </div>
                             </div>
@@ -324,32 +333,34 @@
             ],
             function(ec){
                 g_data_chart = ec.init(document.getElementById('tab-data-chart'));
+                g_data_chart2 = ec.init(document.getElementById('tab-data-chart2'));
+                g_data_chart3 = ec.init(document.getElementById('tab-data-chart3'));
                 var option = {
                     animationDuration:500,
                     animationEasing:'CircularInOut',
                     title : {
-                        text: 'DSR-描述相符',
+                        text: '宝贝与描述相符',
                         itemGap:17,
                         textStyle:{
                             color: '#222',
                             fontFamily:'Arial,Helvetica,"微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif',
                             fontWeight:'normal',
                             fontSize:16
-                        },
-                        subtext: '11月10日-12月8日'
+                        }
                     },
-                    color : ['#4184f3','#f35a4a'],
+                    color : ['#4184f3','#36ae48','#ff4e00'],
                     grid : {
-                        x : 60,
-                        y : 80,
+                        x : 30,
+                        y : 50,
                         x2 : 30,
+                        y2 : 30,
                         borderWidth : 0
                     },
                     tooltip : {
                         trigger: 'axis',
                         showDelay:0,
                         hideDely:100,
-                        transitionDuration:0,
+                        transitionDuration:0.3,
                         backgroundColor:'rgba(255,255,255,1)',
                         borderColor:'#e7e7e7',
                         borderRadius:2,
@@ -366,10 +377,12 @@
 						formatter:function(params,ticket,callback){
 							var d = params[0].name.split("-");
 							var res = "<span class='text-success'>" + d[0] + '月' + d[1] + '日</span>';
-							for(var i=params.length-1;i>=0;i--){
+							for(var i = params.length-1;i >= 0;i--){
 								if(i == params.length-1){
 									res += '<div class="tooltip-dsr">' + params[i].seriesName + '：<span class="text-danger f18">' + params[i].value + "</div>";
-									res += '<table class="dsr-table"><tbody>'
+									if(res.search(/<table class="dsr-table"><tbody>/ig) == -1 ){
+                                        res += '<table class="dsr-table"><tbody>'
+                                    }
 								}else{
 									res += '<tr><th>' + params[i].seriesName.replace(/占比/g,"") + '</th><td><div class="bar-container"><span class="v">' + params[i].value + '%</span><div id="dsr-' + (i + 1) ;
 									res += '" class="v-bar" style="width:' + params[i].value + '%"></div></div></td></tr>'
@@ -381,7 +394,510 @@
 						}
                     },
                     legend: {
+                        show:false,
                         data:['描述相符','5分占比','4分占比','3分占比','2分占比','1分占比'],
+                        orient:'horizontal',
+                        x:'left',
+                        y:'bottom'
+                    },
+                    toolbox: {
+                        show : true,
+                        itemSize:12,
+                        color:['#FF6B6B','#4184f3','#C7F464','#556270','#C44D58','#4ECDC4'],
+                        feature : {
+                            mark : {show: false},
+                            dataView : {show: false, readOnly: false},
+                            magicType : {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: false}
+                        }
+                    },
+                    calculable : false,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            splitLine:{show : false},
+                            boundaryGap : true,
+                            axisLine:{show:false},//边轴
+                            axisTick:{show:false},
+                            data : ['11-10','11-11','11-12','11-13','11-14','11-15','11-16','11-17','11-18','11-19','11-20','11-21','11-22','11-23','11-24','11-25','11-26','11-27','11-28','11-29','11-30','12-1','12-2','12-3','12-4','12-5','12-6','12-7','12-8','12-9']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            axisLine:{show:false},//边轴
+                            splitNumber:1,
+                            splitLine:{lineStyle:{type:'dotted'}},
+							min:4,
+							max:5,
+                            axisLabel : {
+                                formatter: function(value){
+                                    return parseInt(value);
+                                }
+                            }
+                        },{
+                            type : 'value',
+                            axisLine:{show:false},//边轴
+                            splitNumber:4,
+                            splitLine:{lineStyle:{type:'dotted'}},
+                            axisLabel : {
+                                formatter: function(value){
+                                    return parseInt(value);
+                                }
+                            }
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'描述相符',
+                            type:'line',
+                            symbolSize:3,
+                            itemStyle:{
+                                normal: {
+                                    lineStyle : {
+                                        color:'#4184f3'
+                                    },
+                                },
+                                emphasis : {
+
+                                }
+                            },
+                            data:[4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023]
+                        },{
+                            name:'5分占比',
+                            type:'bar',
+							stack:'评分占比',
+							yAxisIndex:1,
+                            barMaxWidth:16,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: false,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#f35a4a"
+                                        },
+                                    },
+									color:"rgba(243,90,74,0.8)"
+                                },
+                                emphasis : {
+									color:"rgba(207,70,70,1)"
+                                }
+                            },
+                            data:[11,11,15,13,12,13,20,25,23,28,29,26,31,29,33,36,34,38,27,29,35,36,42,35,96,28,27,32,31,40]
+                        },
+						{
+                            name:'4分占比',
+                            type:'bar',
+							stack:'评分占比',
+							yAxisIndex:1,
+                            barMaxWidth:16,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: false,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#f35a4a"
+                                        },
+                                    },
+									color:"rgba(243,90,74,0.6)"
+                                },
+                                emphasis : {
+									color:"rgba(207,70,70,1)"
+                                }
+                            },
+                            data:[11,11,15,13,12,13,20,25,23,28,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                        },
+						{
+                            name:'3分占比',
+                            type:'bar',
+							stack:'评分占比',
+							yAxisIndex:1,
+                            barMaxWidth:16,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: false,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#f35a4a"
+                                        },
+                                    },
+									color:"rgba(243,90,74,0.4)"
+                                },
+                                emphasis : {
+									color:"rgba(207,70,70,1)"
+                                }
+                            },
+                            data:[11,11,15,13,12,13,20,25,23,28,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                        },
+						{
+                            name:'2分占比',
+                            type:'bar',
+							stack:'评分占比',
+							yAxisIndex:1,
+                            barMaxWidth:16,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: false,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#f35a4a"
+                                        },
+                                    },
+									color:"rgba(243,90,74,0.2)"
+                                },
+                                emphasis : {
+									color:"rgba(207,70,70,1)"
+                                }
+                            },
+                            data:[11,11,15,13,12,13,20,25,23,28,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                        },
+						{
+                            name:'1分占比',
+                            type:'bar',
+							stack:'评分占比',
+							yAxisIndex:1,
+                            barMaxWidth:16,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: false,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#f35a4a"
+                                        },
+                                    },
+									color:"rgba(243,90,74,0.1)"
+                                },
+                                emphasis : {
+									color:"rgba(207,70,70,1)"
+                                }
+                            },
+                            data:[11,11,15,13,12,13,20,25,23,28,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                        }
+                    ]
+                };
+                var option2 = {
+                    animationDuration:500,
+                    animationEasing:'CircularInOut',
+                    title : {
+                        text: '卖家服务态度',
+                        itemGap:17,
+                        textStyle:{
+                            color: '#222',
+                            fontFamily:'Arial,Helvetica,"微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif',
+                            fontWeight:'normal',
+                            fontSize:16
+                        }
+                    },
+                    color : ['#36ae48','#4184f3','#ff4e00'],
+                    grid : {
+                        x : 30,
+                        y : 50,
+                        x2 : 30,
+                        y2 : 30,
+                        borderWidth : 0
+                    },
+                    tooltip : {
+                        trigger: 'axis',
+                        showDelay:0,
+                        hideDely:100,
+                        transitionDuration:0.3,
+                        backgroundColor:'rgba(255,255,255,1)',
+                        borderColor:'#e7e7e7',
+                        borderRadius:2,
+                        borderWidth:1,
+                        textStyle:{ color:'#777'},
+                        axisPointer:{
+                            type : 'line',
+                            lineStyle : {
+                                color: '#999',
+                                width: 1,
+                                type: 'dotted'
+                            }
+                        },
+						formatter:function(params,ticket,callback){
+							var d = params[0].name.split("-");
+							var res = "<span class='text-success'>" + d[0] + '月' + d[1] + '日</span>';
+							for(var i = params.length-1;i >= 0;i--){
+								if(i == params.length-1){
+									res += '<div class="tooltip-dsr">' + params[i].seriesName + '：<span class="text-danger f18">' + params[i].value + "</div>";
+									if(res.search(/<table class="dsr-table"><tbody>/ig) == -1 ){
+                                        res += '<table class="dsr-table"><tbody>'
+                                    }
+								}else{
+									res += '<tr><th>' + params[i].seriesName.replace(/占比/g,"") + '</th><td><div class="bar-container"><span class="v">' + params[i].value + '%</span><div id="dsr-' + (i + 1) ;
+									res += '" class="v-bar" style="width:' + params[i].value + '%"></div></div></td></tr>'
+								}
+
+							}
+							res += '</tbody></table>'
+							return res;
+						}
+                    },
+                    legend: {
+                        show:false,
+                        data:['服务态度','5分占比','4分占比','3分占比','2分占比','1分占比'],
+                        orient:'horizontal',
+                        x:'left',
+                        y:'bottom'
+                    },
+                    toolbox: {
+                        show : true,
+                        itemSize:12,
+                        color:['#FF6B6B','#4184f3','#C7F464','#556270','#C44D58','#4ECDC4'],
+                        feature : {
+                            mark : {show: false},
+                            dataView : {show: false, readOnly: false},
+                            magicType : {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: false}
+                        }
+                    },
+                    calculable : false,
+                    xAxis : [
+                        {
+                            type : 'category',
+                            splitLine:{show : false},
+                            boundaryGap : true,
+                            axisLine:{show:false},//边轴
+                            axisTick:{show:false},
+                            data : ['11-10','11-11','11-12','11-13','11-14','11-15','11-16','11-17','11-18','11-19','11-20','11-21','11-22','11-23','11-24','11-25','11-26','11-27','11-28','11-29','11-30','12-1','12-2','12-3','12-4','12-5','12-6','12-7','12-8','12-9']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            axisLine:{show:false},//边轴
+                            splitNumber:1,
+                            splitLine:{lineStyle:{type:'dotted'}},
+							min:4,
+							max:5,
+                            axisLabel : {
+                                formatter: function(value){
+                                    return parseInt(value);
+                                }
+                            }
+                        },{
+                            type : 'value',
+                            axisLine:{show:false},//边轴
+                            splitNumber:4,
+                            splitLine:{lineStyle:{type:'dotted'}},
+                            axisLabel : {
+                                formatter: function(value){
+                                    return parseInt(value);
+                                }
+                            }
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'服务态度',
+                            type:'line',
+                            symbolSize:3,
+                            itemStyle:{
+                                normal: {
+                                    lineStyle : {
+                                        color:'#36ae48'
+                                    },
+                                },
+                                emphasis : {
+
+                                }
+                            },
+                            data:[4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023]
+                        },{
+                            name:'5分占比',
+                            type:'bar',
+							stack:'评分占比',
+							yAxisIndex:1,
+                            barMaxWidth:16,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: false,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#f35a4a"
+                                        },
+                                    },
+									color:"rgba(243,90,74,0.8)"
+                                },
+                                emphasis : {
+									color:"rgba(207,70,70,1)"
+                                }
+                            },
+                            data:[11,11,15,13,12,13,20,25,23,28,29,26,31,29,33,36,34,38,27,29,35,36,42,35,96,28,27,32,31,40]
+                        },
+						{
+                            name:'4分占比',
+                            type:'bar',
+							stack:'评分占比',
+							yAxisIndex:1,
+                            barMaxWidth:16,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: false,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#f35a4a"
+                                        },
+                                    },
+									color:"rgba(243,90,74,0.6)"
+                                },
+                                emphasis : {
+									color:"rgba(207,70,70,1)"
+                                }
+                            },
+                            data:[11,11,15,13,12,13,20,25,23,28,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                        },
+						{
+                            name:'3分占比',
+                            type:'bar',
+							stack:'评分占比',
+							yAxisIndex:1,
+                            barMaxWidth:16,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: false,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#f35a4a"
+                                        },
+                                    },
+									color:"rgba(243,90,74,0.4)"
+                                },
+                                emphasis : {
+									color:"rgba(207,70,70,1)"
+                                }
+                            },
+                            data:[11,11,15,13,12,13,20,25,23,28,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                        },
+						{
+                            name:'2分占比',
+                            type:'bar',
+							stack:'评分占比',
+							yAxisIndex:1,
+                            barMaxWidth:16,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: false,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#f35a4a"
+                                        },
+                                    },
+									color:"rgba(243,90,74,0.2)"
+                                },
+                                emphasis : {
+									color:"rgba(207,70,70,1)"
+                                }
+                            },
+                            data:[11,11,15,13,12,13,20,25,23,28,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                        },
+						{
+                            name:'1分占比',
+                            type:'bar',
+							stack:'评分占比',
+							yAxisIndex:1,
+                            barMaxWidth:16,
+                            itemStyle:{
+                                normal: {
+                                    label : {
+                                        show: false,
+                                        position: 'top',
+                                        textStyle:{
+                                            fontSize:12,
+                                            color:"#f35a4a"
+                                        },
+                                    },
+									color:"rgba(243,90,74,0.1)"
+                                },
+                                emphasis : {
+									color:"rgba(207,70,70,1)"
+                                }
+                            },
+                            data:[11,11,15,13,12,13,20,25,23,28,29,26,31,29,33,36,34,38,27,29,35,36,42,35,46,28,27,32,31,40]
+                        }
+                    ]
+                };
+                var option3 = {
+                    animationDuration:500,
+                    animationEasing:'CircularInOut',
+                    title : {
+                        text: '卖家发货速度',
+                        itemGap:17,
+                        textStyle:{
+                            color: '#222',
+                            fontFamily:'Arial,Helvetica,"微软雅黑","黑体","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif',
+                            fontWeight:'normal',
+                            fontSize:16
+                        }
+                    },
+                    color : ['#f35a4a','#4184f3','#36ae48'],
+                    grid : {
+                        x : 30,
+                        y : 50,
+                        x2 : 30,
+                        y2 : 30,
+                        borderWidth : 0
+                    },
+                    tooltip : {
+                        trigger: 'axis',
+                        showDelay:0,
+                        hideDely:100,
+                        transitionDuration:0.3,
+                        backgroundColor:'rgba(255,255,255,1)',
+                        borderColor:'#e7e7e7',
+                        borderRadius:2,
+                        borderWidth:1,
+                        textStyle:{ color:'#777'},
+                        axisPointer:{
+                            type : 'line',
+                            lineStyle : {
+                                color: '#999',
+                                width: 1,
+                                type: 'dotted'
+                            }
+                        },
+						formatter:function(params,ticket,callback){
+							var d = params[0].name.split("-");
+							var res = "<span class='text-success'>" + d[0] + '月' + d[1] + '日</span>';
+							for(var i = params.length-1;i >= 0;i--){
+								if(i == params.length-1){
+									res += '<div class="tooltip-dsr">' + params[i].seriesName + '：<span class="text-danger f18">' + params[i].value + "</div>";
+									if(res.search(/<table class="dsr-table"><tbody>/ig) == -1 ){
+                                        res += '<table class="dsr-table"><tbody>'
+                                    }
+								}else{
+									res += '<tr><th>' + params[i].seriesName.replace(/占比/g,"") + '</th><td><div class="bar-container"><span class="v">' + params[i].value + '%</span><div id="dsr-' + (i + 1) ;
+									res += '" class="v-bar" style="width:' + params[i].value + '%"></div></div></td></tr>'
+								}
+
+							}
+							res += '</tbody></table>'
+							return res;
+						}
+                    },
+                    legend: {
+                        show:false,
+                        data:['发货速度','5分占比','4分占比','3分占比','2分占比','1分占比'],
                         orient:'horizontal',
                         x:'left',
                         y:'bottom'
@@ -436,13 +952,13 @@
                     ],
                     series : [
                         {
-                            name:'描述相符',
+                            name:'发货速度',
                             type:'line',
                             symbolSize:3,
                             itemStyle:{
                                 normal: {
                                     lineStyle : {
-                                        color:'#4184f3'
+                                        color:'#f35a4a'
                                     },
                                 },
                                 emphasis : {
@@ -450,8 +966,7 @@
                                 }
                             },
                             data:[4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023,4.83212,4.83219,4.82165,4.83210,4.85676,4.861023]
-                        },
-						{
+                        },{
                             name:'5分占比',
                             type:'bar',
 							stack:'评分占比',
@@ -574,6 +1089,11 @@
                     ]
                 };
                 g_data_chart.setOption(option);
+                g_data_chart2.setOption(option2);
+                g_data_chart3.setOption(option3);
+                g_data_chart.connect([g_data_chart2, g_data_chart3]);
+                g_data_chart2.connect([g_data_chart, g_data_chart3]);
+                g_data_chart3.connect([g_data_chart, g_data_chart2]);
             }
         );
 		function getNewOption(day_length,data_type){
