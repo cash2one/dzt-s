@@ -95,20 +95,20 @@ $(function(){
 
     $(".nav-tree-box dt").each(function(i){
       if(!$(this).next("dd").is(":empty")){
-        $(this).hover(
-            function(e){
-                if($(this).next("dd").is(":visible")){
-                    $(this).addClass("fold");
-                }else{
-                    $(this).addClass("unfold");
-                }
-            },function(e){
-                $(this).removeClass("fold");
-                $(this).removeClass("unfold");
-            });
+//        $(this).hover(
+//            function(e){
+//                if($(this).next("dd").is(":visible")){
+//                    $(this).addClass("fold");
+//                }else{
+//                    $(this).addClass("unfold");
+//                }
+//            },function(e){
+//                $(this).removeClass("fold");
+//                $(this).removeClass("unfold");
+//            });
         $(this).click(function(e){
             $(this).next("dd").toggleClass("hide");
-            $(this).toggleClass("fold");
+//            $(this).toggleClass("fold");
             $(this).toggleClass("unfold");
         })
       }else{

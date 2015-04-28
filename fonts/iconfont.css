@@ -82,7 +82,6 @@
 .icon-zhexiantu:before { content: "\e64c"; }
 .icon-mobile:before { content: "\e63c"; }
 .icon-aliwangwang:before { content: "\e619"; }
-.icon-icon25:before { content: "\e65d"; }
 .icon-qq:before { content: "\e61a"; }
 .icon-icon2:before { content: "\e650"; }
 .icon-piegraph:before { content: "\e645"; }
@@ -114,3 +113,4 @@
 .icon-shixinjiantouyou:before { content: "\e641"; }
 .icon-shixinjiantouzuo:before { content: "\e642"; }
 .icon-iconfontxiajiantou:before { content: "\e61c"; }
+.icon-xiajiantou1:before { content: "\e60c"; }
