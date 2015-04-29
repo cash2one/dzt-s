@@ -212,22 +212,24 @@ i.up,i.flat,i.down{font-style: normal;}
     -moz-osx-font-smoothing: grayscale;}
 .nav-tree-box>dl>dd>dl>dt>.nav-tree-child>a:before{content: '\e641';}
 .nav-tree-box>dl>dd>dl>dt.unfold>.nav-tree-child>a:before{content: '\e60c';}
-.nav-tree-node .ico-before{}
-.nav-tree-node .shop-ico:before{content: '\e602';font-size:24px;margin-right: 10px;}
-.nav-tree-node .analytis-ico:before{content: '\e648';font-size:24px;margin-right: 10px;}
 
-.nav-tree-box dl a{font-size: 15px;color: #222;font-weight: 700;padding-left: 3px;}
-.nav-tree-box dl dl a{font-size: 14px;font-weight: normal;padding-left: 48px;}
-.nav-tree-box dl dl dl a{font-size: 13px;font-weight: normal;padding-left: 68px;color: #666;}
+.nav-tree-node .shop-ico:before{content: '\e602';font-size:16px;margin-right: 10px;}
+.nav-tree-node .analytis-ico:before{content: '\e669';font-size:16px;margin-right: 10px;}
+
+.nav-tree-box dl a{font-size: 15px;color: #222;font-weight: 700;padding-left: 10px;padding-top:10px;padding-bottom:10px;}
+.nav-tree-box dl dl a{font-size: 14px;font-weight: normal;padding-left: 60px;padding-top:5px;padding-bottom:5px;}
+.nav-tree-box dl dl dl a{font-size: 13px;font-weight: normal;padding-left: 74px;color: #666;padding-top:3px;padding-bottom:3px;}
+
+.nav-tree-box>dl>dd>dl>dt>.nav-tree-child>a{padding-left: 48px}
 /*
 .nav-tree-box dl .unfold a:after,.nav-tree-box dl .fold a:after{float: right;font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;font-weight: normal;}
 .nav-tree-box dl .unfold a:after{content: "\e613";}
 .nav-tree-box dl .fold a:after{content: "\e612";}
 */
 .nav-tree-box dl .checked{color: #4184f3;border-left:5px solid #4184f3;padding-left: 15px;font-weight: 700;}
-.nav-tree-box dl dl .checked{padding-left: 43px;}
+.nav-tree-box dl dl .checked{padding-left: 55px;}
 .nav-tree-box dl dl .p.checked{border-left:none;padding-left: 48px;}
-.nav-tree-box dl dl dl .checked{padding-left: 63px;}
+.nav-tree-box dl dl dl .checked{padding-left: 69px;}
 .nav-side .tg-box{margin: 10px 20px 0 20px;}
 .nav-side .tg-box li{margin-bottom: 5px;}
 .nav-side .ico-lst-box{margin: 0px 20px 0;}
