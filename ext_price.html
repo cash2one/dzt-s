@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/echarts.js"></script>
+<style>
+/*	.price_link{margin-bottom:200px;}测试用，发布时勿加上此句样式*/
+
+	.price_link{position: relative;display: inline-block;}
+	.price_link a{font-size: 12px;}
+	.chart{width: 300px;height: 150px;border: 1px solid #ccc;position:absolute;left: 0;box-shadow: 0px 2px 3px rgba(0,0,0,0.125);z-index: 9999;display: none;}
+</style>
+<body>
+	<div class="price_link">
+		<a href="javascript:;">价格变动</a>
+		<div class="chart" loaded="false" pid="44122233879"></div>
+	</div>
+
+	<div class="price_link">
+		<a href="javascript:;">价格变动</a>
+		<div class="chart" loaded="false" pid="43689227153"></div>
+	</div>
+<script type="text/javascript">
+
+	var g_product_price_trend;
+	var loading_opt = {
+		text : "加载中...",
+		effect : "bar",
+		textStyle : {
+			color: '#222',
+			fontSize:16
+		}
+	};
+	var nodata_loading_opt = {
+		text : "暂无数据.",
+		effect : "whirling",
+		textStyle : {
+			color: '#ff0000',
+			fontSize:16
+		}
+	};
+	var chart_opt = {
+				animationDuration:500,
+				animationEasing:'CircularInOut',
+				color : ['#f35a4a','#4184f3'],
+				grid : {
+					x : 60,
+					y : 20,
+					x2 : 40,
+					y2 :30,
+					borderWidth : 0
+				},
+				tooltip : {
+					trigger: 'axis',
+					showDelay:0,
+					hideDely:100,
+					transitionDuration:0,
+					backgroundColor:'rgba(255,255,255,0.9)',
+					borderColor:'#e7e7e7',
+					borderRadius:2,
+					borderWidth:1,
+					textStyle:{ color:'#222'},
+					formatter:function(params,ticket,callback){
+						var res = "日期：" + params[0].name;
+						res += '<br/>' + params[0].seriesName + '：' + params[0].value + " 元";
+						return res;
+					},
+					axisPointer:{
+						type : 'line',
+						lineStyle : {
+							color: '#999',
+							width: 1,
+							type: 'dotted'
+						}
+					}
+				},
+				legend: {
+					show : false,
+					data:['价格'],
+					orient:'horizontal',
+					x:'left',
+					y:'bottom'
+				},
+				toolbox: {
+					show : false
+				},
+				calculable : false,
+				xAxis : [
+					{
+						type : 'category',
+						splitLine:{lineStyle:{type:'dotted'}},
+						boundaryGap : false,
+						axisLine:{lineStyle:{color: '#999',width: 1}},//边轴
+						axisTick:{show:false},
+						data : [0]
+					}
+				],
+				yAxis : [
+					{
+						type : 'value',
+						axisLine:{lineStyle:{color: '#999',width: 1}},//边轴
+						//boundaryGap:[1,1],
+						scale:true,
+						splitNumber:4,
+						splitLine:{lineStyle:{type:'dotted'}},
+						axisLabel : {
+							formatter: function(value){
+								return parseInt(value)+' 元';
+							}
+						}
+					}
+				],
+				series : [{
+						name:'价格',
+						type:'line',
+						symbolSize:1,
+						data:[0]
+					}
+				]
+			};
+	require.config({
+            paths:{
+                echarts:'js/dist'
+            }
+        });
+	require(['echarts','echarts/chart/line'],function(ec){});
+
+	var price_data;
+
+	$(function(){
+		$(".price_link").hover(
+			function(){
+				var chart_box = $(this).find(".chart");
+				chart_box.show();
+				if(chart_box.attr("loaded") == "false"){
+					var chart = require('echarts').init(chart_box.get(0));
+					chart.showLoading(loading_opt);
+					$.getJSON("http://ok.etao.com/api/price_history.do?nid=" + chart_box.attr("pid") + "&callback=?",function(data){
+						if(data && data.result && data.result.length > 0){
+							var st = data.result[0].data[0][0];
+							var ed = data.result[0].data[data.result[0].data.length-1][0];
+							var ret = getFullDate(st,ed,data.result[0].data);
+							var x_axis = new Array();
+							var series = new Array();
+							$.each(ret,function(i,item){
+								x_axis.push(item[0]);
+								series.push(item[1]);
+							});
+							chart_opt.xAxis[0].data = x_axis;
+							chart_opt.series[0].data = series;
+							chart.hideLoading();
+							chart.setOption(chart_opt);
+							chart_box.attr("loaded","true");
+						}else{
+							chart.showLoading(nodata_loading_opt);
+						}
+					});
+				}
+			},function(){
+				var chart_box = $(this).find(".chart");
+				chart_box.hide();
+			})
+	});
+	function getFullDate(st,ed,price_ret){
+		var data_arr = [];
+		var st_arr = st.split("-");
+		var ed_arr = ed.split("-");
+		var st_d = new Date(parseInt(st_arr[0]),parseInt(st_arr[1])-1,parseInt(st_arr[2]));
+		var ed_d = new Date(parseInt(ed_arr[0]),parseInt(ed_arr[1])-1,parseInt(ed_arr[2]));
+		var l = (ed_d.getTime() - st_d.getTime())/(86400*1000) + 1;
+
+		for(var i=0;i<l;i++){
+			var tmp = new Date(st_d.getFullYear(),st_d.getMonth(),st_d.getDate()+i);
+			var tmp_data = [tmp.getFullYear() + "-" + (tmp.getMonth()+1) + "-" + tmp.getDate()];
+			if(i > 0){
+				for(j in price_ret){
+					var tmp_d_arr = price_ret[j][0].split("-");
+					var tmp_ret_d = new Date(parseInt(tmp_d_arr[0]),parseInt(tmp_d_arr[1])-1,parseInt(tmp_d_arr[2]));
+					if(tmp.getTime() <= tmp_ret_d.getTime()){
+						if(tmp.getTime() === tmp_ret_d.getTime()){
+							tmp_data[1] = price_ret[j][1];
+							break;
+						}
+					}else{
+						continue;
+					}
+				}
+				if(tmp_data.length == 1){
+					tmp_data[1] = data_arr[data_arr.length-1][1];
+				}
+			}else{
+				tmp_data[1] = price_ret[0][1];
+			}
+			data_arr.push(tmp_data);
+		}
+		return data_arr;
+	}
+</script>
+</body>
+
+</html>
